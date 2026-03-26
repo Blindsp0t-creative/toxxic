@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Modifications
+  m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 98b8b2a52d342b442ad5017d4081ba4c, type: 2}
+  controls:
+  - name: Hair Salon
+    icon: {fileID: 2800000, guid: 7643f6fc6c4f8224099dbbe9bb5f43df, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: e4214b300abeaa44a944302ced10db00, type: 2}
+    subParameters: []
+    labels: []
+  - name: Species
+    icon: {fileID: 2800000, guid: b37e14b7f45c4a045954485e0bd166cd, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 1808be1cdbb006b4a91cee06ded7a921, type: 2}
+    subParameters: []
+    labels: []
+  - name: Body Changes
+    icon: {fileID: 2800000, guid: d44771810b69a7543911db5f75ea7510, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 879d4336b6debbc4e9adddfd6ee4db53, type: 2}
+    subParameters: []
+    labels: []
+  - name: Matswaps
+    icon: {fileID: 2800000, guid: 348872b237f3c3d4facb81ad9b0184e9, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 16b6ef72e39b8914589baed03b29cece, type: 2}
+    subParameters: []
+    labels: []
+  - name: Hueshifts
+    icon: {fileID: 2800000, guid: f294bd7249a24ed408d083e175327aea, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 65f65a422f28d3b49ab8e84d0baf1a8c, type: 2}
+    subParameters: []
+    labels: []

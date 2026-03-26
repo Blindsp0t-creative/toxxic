@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Body Acc 1
+  m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 98b8b2a52d342b442ad5017d4081ba4c, type: 2}
+  controls:
+  - name: Ankle Ruffles
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Ankle Ruffles
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Belly Piercing
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Belly Piercing
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Garter Ribbons
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Garter Ribbons
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Hand Accessories
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Hand Accessories
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Kneepad
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Kneepad
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Ribcage Top Piece
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: Toggle/Body Acc 1/Ribcage Top Piece
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: NEXT PAGE
+    icon: {fileID: 2800000, guid: a0749144a9696fe4db2f053c6e066a11, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: edabaefb78329ff4cb7d2673bc0c87f9, type: 2}
+    subParameters: []
+    labels: []

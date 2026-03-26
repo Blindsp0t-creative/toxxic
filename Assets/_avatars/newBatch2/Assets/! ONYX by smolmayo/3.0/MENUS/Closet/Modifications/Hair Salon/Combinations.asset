@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Combinations
+  m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 98b8b2a52d342b442ad5017d4081ba4c, type: 2}
+  controls:
+  - name: Wolf
+    icon: {fileID: 2800000, guid: 838fcae199bd51e49bb4c9fd87074110, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 5367e70007ffab643968f8c0a4315021, type: 2}
+    subParameters: []
+    labels: []
+  - name: Collar
+    icon: {fileID: 2800000, guid: 434c4fc24d839b749b884143a7ea8e86, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: a510e2c5eaa214940922002910cfc18e, type: 2}
+    subParameters: []
+    labels: []
+  - name: Pony
+    icon: {fileID: 2800000, guid: 05c53781351d29449b4fe688bfac30f6, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 9a0614cfcef57ff419b2c8db0b0100f5, type: 2}
+    subParameters: []
+    labels: []
+  - name: Bobcut
+    icon: {fileID: 2800000, guid: 72bc342354195484fadfb7871ce2a140, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: ab572e28b0e90054bbfd6bc9511e675b, type: 2}
+    subParameters: []
+    labels: []
+  - name: Hime
+    icon: {fileID: 2800000, guid: fc173aa5a201fef48845bc0a146617c4, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 3023949965a5f004492e1477aac8e518, type: 2}
+    subParameters: []
+    labels: []
+  - name: Buns
+    icon: {fileID: 2800000, guid: a7977ec8e8ec8a343a297801491ce409, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 85265d497075c0f45924ad5fc6de238e, type: 2}
+    subParameters: []
+    labels: []

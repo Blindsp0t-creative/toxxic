@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Accessories
+  m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 98b8b2a52d342b442ad5017d4081ba4c, type: 2}
+  controls:
+  - name: Head Acc
+    icon: {fileID: 2800000, guid: 99a8622a470c5cc4b8fa3ee3bdbd4d82, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 60575569a30b76943ad3f435045b6da8, type: 2}
+    subParameters: []
+    labels: []
+  - name: Neck Acc
+    icon: {fileID: 2800000, guid: 595a897672da18448b39e7c29e2861ef, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 0cada6656fc566a408725b10f018a1f3, type: 2}
+    subParameters: []
+    labels: []
+  - name: Body Acc
+    icon: {fileID: 2800000, guid: c5d45373b9879a844a81841b42973c2d, type: 3}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 6983f3218e245f047a3de4a593fce32d, type: 2}
+    subParameters: []
+    labels: []
