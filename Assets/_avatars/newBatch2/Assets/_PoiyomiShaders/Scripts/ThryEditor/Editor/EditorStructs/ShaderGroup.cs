@@ -97,7 +97,7 @@ namespace Thry
             if (isTopCall) ActiveShaderEditor.ApplyDrawers();
         }
 
-        public override void CopyToMaterial(Material m, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void CopyToMaterial(Material m, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             if (ShouldSkipProperty(MaterialProperty, skipPropertyTypes)) return;
 
@@ -123,7 +123,7 @@ namespace Thry
             }
         }
 
-        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, MaterialProperty.PropType[] propertyTypesToSkip = null)
+        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] propertyTypesToSkip = null)
         {
             if (ShouldSkipProperty(MaterialProperty, propertyTypesToSkip)) return;
             if (p is ShaderGroup == false) return;

@@ -171,9 +171,9 @@ namespace Thry
         private ThryPropertyType GetPropertyType(MaterialProperty p)
         {
             string name = p.name;
-            MaterialProperty.PropFlags flags = p.flags;
+            UnityEngine.Rendering.ShaderPropertyFlags flags = p.propertyFlags;
 
-            if (flags == MaterialProperty.PropFlags.HideInInspector)
+            if (flags == UnityEngine.Rendering.ShaderPropertyFlags.HideInInspector)
             {
                 if (name == PROPERTY_NAME_MASTER_LABEL)
                     return ThryPropertyType.master_label;
@@ -217,7 +217,7 @@ namespace Thry
             {
                 return ThryPropertyType.in_shader_presets;
             }
-            else if (flags.HasFlag(MaterialProperty.PropFlags.HideInInspector) == false)
+            else if (flags.HasFlag(UnityEngine.Rendering.ShaderPropertyFlags.HideInInspector) == false)
             {
                 return ThryPropertyType.property;
             }
@@ -348,8 +348,8 @@ namespace Thry
                         break;
                     case ThryPropertyType.none:
                     case ThryPropertyType.property:
-                        if (props[i].type == MaterialProperty.PropType.Texture)
-                            NewProperty = new ShaderTextureProperty(this, props[i], displayName, offset, optionsRaw, props[i].flags.HasFlag(MaterialProperty.PropFlags.NoScaleOffset) == false, false, i);
+                        if (props[i].propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture)
+                            NewProperty = new ShaderTextureProperty(this, props[i], displayName, offset, optionsRaw, props[i].propertyFlags.HasFlag(UnityEngine.Rendering.ShaderPropertyFlags.NoScaleOffset) == false, false, i);
                         else
                             NewProperty = new ShaderProperty(this, props[i], displayName, offset, optionsRaw, false, i);
                         break;

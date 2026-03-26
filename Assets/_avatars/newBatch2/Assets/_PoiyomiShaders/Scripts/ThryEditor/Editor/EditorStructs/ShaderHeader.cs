@@ -235,7 +235,7 @@ namespace Thry
             {
                 if (Mediator.copy_material != null || Mediator.transfer_group != null)
                 {
-                    var propsToIgnore = new MaterialProperty.PropType[] { MaterialProperty.PropType.Texture };
+                    var propsToIgnore = new UnityEngine.Rendering.ShaderPropertyType[] { UnityEngine.Rendering.ShaderPropertyType.Texture };
                     property.TransferFromMaterialAndGroup(Mediator.copy_material, Mediator.transfer_group, true, propsToIgnore);
                     List<Material> linked_materials = MaterialLinker.GetLinked(property.MaterialProperty);
                     if (linked_materials != null)

@@ -129,7 +129,7 @@ namespace Thry
             if (isTopCall) ActiveShaderEditor.ApplyDrawers();
         }
 
-        public override void CopyToMaterial(Material m, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void CopyToMaterial(Material m, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             if (ShouldSkipProperty(MaterialProperty, skipPropertyTypes)) return;
 
@@ -171,7 +171,7 @@ namespace Thry
             this.IsAnimatable = !DrawingData.LastPropertyDoesntAllowAnimation && IsAnimatable; // &&, so that IsAnimatable can be set to false before InitializeDrawers
             this._hasDrawer = DrawingData.LastPropertyUsedCustomDrawer;
 
-            if (MaterialProperty.type == MaterialProperty.PropType.Vector && _doForceIntoOneLine == false)
+            if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Vector && _doForceIntoOneLine == false)
             {
                 this.DoCustomHeightOffset = !DrawingData.LastPropertyUsedCustomDrawer;
                 this.CustomHeightOffset = -EditorGUIUtility.singleLineHeight;
@@ -268,7 +268,7 @@ namespace Thry
             else if (rect != null)
             {
                 // Custom Drawing for Range, because it doesnt draw correctly if inside the big texture property
-                if (!_hasDrawer && MaterialProperty.type == MaterialProperty.PropType.Range)
+                if (!_hasDrawer && MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Range)
                 {
                     MaterialProperty.floatValue = EditorGUI.Slider(rect.Value, content, MaterialProperty.floatValue, 0, MaterialProperty.rangeLimits.y);
                 }
@@ -301,10 +301,10 @@ namespace Thry
 
         public virtual void DrawDefault() { }
 
-        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             if (ShouldSkipProperty(p.MaterialProperty, skipPropertyTypes)) return;
-            if (MaterialProperty.type != p.MaterialProperty.type) return;
+            if (MaterialProperty.propertyType != p.MaterialProperty.propertyType) return;
             MaterialHelper.CopyMaterialValueFromProperty(MaterialProperty, p.MaterialProperty);
             if (Keyword != null) SetKeyword(ActiveShaderEditor.Materials, m.GetNumber(p.MaterialProperty) == 1);
             if (IsAnimatable && p.IsAnimatable)
@@ -321,7 +321,7 @@ namespace Thry
             {
                 isEnabled &= Options.condition_enable.Test();
             }
-            if (!isEnabled && MaterialProperty != null && MaterialProperty.type == MaterialProperty.PropType.Texture && MaterialProperty.textureValue != null)
+            if (!isEnabled && MaterialProperty != null && MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture && MaterialProperty.textureValue != null)
             {
                 unusedList.Add(MaterialProperty.name);
             }

@@ -62,12 +62,12 @@ namespace Thry
             throw new System.NotImplementedException();
         }
 
-        public override void CopyToMaterial(Material m, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void CopyToMaterial(Material m, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             throw new System.NotImplementedException();
         }
 
-        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             throw new System.NotImplementedException();
         }

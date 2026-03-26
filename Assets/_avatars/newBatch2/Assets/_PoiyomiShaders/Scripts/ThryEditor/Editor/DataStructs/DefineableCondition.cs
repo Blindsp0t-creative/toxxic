@@ -350,7 +350,7 @@ namespace Thry
             string propertyName = data.Substring(0, data.Length - 6);
             if (m.HasProperty(propertyName) == false) return false;
             MaterialProperty p = MaterialEditor.GetMaterialProperty(new Material[] { m }, propertyName);
-            return p.type == MaterialProperty.PropType.Texture;
+            return p.propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture;
         }
 
         static Material GetReferencedMaterial(Material useThisMaterialInsteadOfOpenEditor = null)

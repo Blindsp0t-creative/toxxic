@@ -187,7 +187,7 @@ namespace Thry.ThryEditor
             List<string> headers = new List<string>();
             foreach (MaterialProperty prop in props)
             {
-                if (prop.flags == MaterialProperty.PropFlags.HideInInspector &&
+                if (prop.propertyFlags == UnityEngine.Rendering.ShaderPropertyFlags.HideInInspector &&
                     prop.name.StartsWith("m_", StringComparison.Ordinal)
                     )
                 {

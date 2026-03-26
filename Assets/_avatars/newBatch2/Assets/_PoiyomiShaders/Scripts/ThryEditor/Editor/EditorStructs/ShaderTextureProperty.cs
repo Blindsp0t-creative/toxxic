@@ -67,10 +67,10 @@ namespace Thry
             DrawingData.LastGuiObjectRect = pos;
         }
 
-        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void TransferFromMaterialAndGroup(Material m, ShaderPart p, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             if (ShouldSkipProperty(p.MaterialProperty, skipPropertyTypes)) return;
-            if (MaterialProperty.type != p.MaterialProperty.type) return;
+            if (MaterialProperty.propertyType != p.MaterialProperty.propertyType) return;
             MaterialHelper.CopyMaterialValueFromProperty(MaterialProperty, p.MaterialProperty);
             TransferReferencePropertiesToMaterial(m, p);
         }

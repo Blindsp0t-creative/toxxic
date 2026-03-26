@@ -219,45 +219,45 @@ namespace Thry
 
         private void CopyAlternativeUpgradeValues()
         {
-            MaterialProperty.PropType type = this.MaterialProperty.type;
-            if (type == MaterialProperty.PropType.Color) type = MaterialProperty.PropType.Vector;
-            if (type == MaterialProperty.PropType.Range) type = MaterialProperty.PropType.Float;
+            UnityEngine.Rendering.ShaderPropertyType type = this.MaterialProperty.propertyType;
+            if (type == UnityEngine.Rendering.ShaderPropertyType.Color) type = UnityEngine.Rendering.ShaderPropertyType.Vector;
+            if (type == UnityEngine.Rendering.ShaderPropertyType.Range) type = UnityEngine.Rendering.ShaderPropertyType.Float;
 
             int index = ShaderEditor.Active.Shader.FindPropertyIndex(this.MaterialProperty.name);
 
             object defaultValue = null;
-            if (type == MaterialProperty.PropType.Float)
+            if (type == UnityEngine.Rendering.ShaderPropertyType.Float)
                 defaultValue = ShaderEditor.Active.Shader.GetPropertyDefaultFloatValue(index);
 #if UNITY_2022_1_OR_NEWER
-            else if (type == MaterialProperty.PropType.Int)
+            else if (type == UnityEngine.Rendering.ShaderPropertyType.Int)
                 defaultValue = ShaderEditor.Active.Shader.GetPropertyDefaultIntValue(index);
 #endif
-            else if (type == MaterialProperty.PropType.Vector)
+            else if (type == UnityEngine.Rendering.ShaderPropertyType.Vector)
                 defaultValue = ShaderEditor.Active.Shader.GetPropertyDefaultVectorValue(index);
-            else if (type == MaterialProperty.PropType.Texture)
+            else if (type == UnityEngine.Rendering.ShaderPropertyType.Texture)
                 defaultValue = ShaderEditor.Active.Shader.GetPropertyTextureDefaultName(index);
 
             foreach (Material m in ShaderEditor.Active.Materials)
             {
                 // Check if is not default value
-                if (type == MaterialProperty.PropType.Float)
+                if (type == UnityEngine.Rendering.ShaderPropertyType.Float)
                 {
                     if (m.GetNumber(this.MaterialProperty) != (float)defaultValue)
                         continue;
                 }
 #if UNITY_2022_1_OR_NEWER
-                else if (type == MaterialProperty.PropType.Int)
+                else if (type == UnityEngine.Rendering.ShaderPropertyType.Int)
                 {
                     if (m.GetInt(this.MaterialProperty.name) != (int)defaultValue)
                         continue;
                 }
 #endif
-                else if (type == MaterialProperty.PropType.Vector)
+                else if (type == UnityEngine.Rendering.ShaderPropertyType.Vector)
                 {
                     if (m.GetVector(this.MaterialProperty.name) != (Vector4)defaultValue)
                         continue;
                 }
-                else if (type == MaterialProperty.PropType.Texture)
+                else if (type == UnityEngine.Rendering.ShaderPropertyType.Texture)
                 {
                     if (m.GetTexture(this.MaterialProperty.name) != null &&
                         m.GetTexture(this.MaterialProperty.name).name != (string)defaultValue)
@@ -269,15 +269,15 @@ namespace Thry
                 foreach (string alt in Options.alts)
                 {
                     SerializedProperty arrayProp = null;
-                    if (type == MaterialProperty.PropType.Float)
+                    if (type == UnityEngine.Rendering.ShaderPropertyType.Float)
                         arrayProp = serializedObject.FindProperty("m_SavedProperties.m_Floats.Array");
 #if UNITY_2022_1_OR_NEWER
-                    else if (type == MaterialProperty.PropType.Int)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Int)
                         arrayProp = serializedObject.FindProperty("m_SavedProperties.m_Ints.Array");
 #endif
-                    else if (type == MaterialProperty.PropType.Vector)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Vector)
                         arrayProp = serializedObject.FindProperty($"m_SavedProperties.m_Colors.Array");
-                    else if (type == MaterialProperty.PropType.Texture)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Texture)
                         arrayProp = serializedObject.FindProperty($"m_SavedProperties.m_TexEnvs.Array");
 
                     if (arrayProp == null)
@@ -298,15 +298,15 @@ namespace Thry
                     if (valueProp == null)
                         continue;
 
-                    if (type == MaterialProperty.PropType.Float)
+                    if (type == UnityEngine.Rendering.ShaderPropertyType.Float)
                         this.MaterialProperty.floatValue = valueProp.floatValue;
 #if UNITY_2022_1_OR_NEWER
-                    else if (type == MaterialProperty.PropType.Int)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Int)
                         this.MaterialProperty.intValue = valueProp.intValue;
 #endif
-                    else if (type == MaterialProperty.PropType.Vector)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Vector)
                         this.MaterialProperty.colorValue = valueProp.colorValue;
-                    else if (type == MaterialProperty.PropType.Texture)
+                    else if (type == UnityEngine.Rendering.ShaderPropertyType.Texture)
                     {
                         var texProperty = valueProp.FindPropertyRelative("m_Texture").objectReferenceValue as Texture;
                         var scaleProperty = valueProp.FindPropertyRelative("m_Scale").vector2Value;
@@ -346,7 +346,7 @@ namespace Thry
 
         public abstract void DrawInternal(GUIContent content, Rect? rect = null, bool useEditorIndent = false, bool isInHeader = false);
         public abstract void CopyFromMaterial(Material m, bool isTopCall = false);
-        public abstract void CopyToMaterial(Material m, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null);
+        public abstract void CopyToMaterial(Material m, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null);
 
         protected void CopyReferencePropertiesToMaterial(Material target)
         {
@@ -378,7 +378,7 @@ namespace Thry
             }
         }
 
-        public abstract void TransferFromMaterialAndGroup(Material m, ShaderPart g, bool isTopCall = false, MaterialProperty.PropType[] propertyTypesToSkip = null);
+        public abstract void TransferFromMaterialAndGroup(Material m, ShaderPart g, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] propertyTypesToSkip = null);
 
         bool hasAddedDisabledGroup = false;
         public void Draw(Rect? rect = null, GUIContent content = null, bool useEditorIndent = false, bool isInHeader = false)
@@ -622,22 +622,22 @@ namespace Thry
         {
             MaterialProperty prop = MaterialProperty;
             Shader shader = ShaderEditor.Active.Shader;
-            switch (prop.type)
+            switch (prop.propertyType)
             {
-                case MaterialProperty.PropType.Float:
-                case MaterialProperty.PropType.Range:
+                case UnityEngine.Rendering.ShaderPropertyType.Float:
+                case UnityEngine.Rendering.ShaderPropertyType.Range:
                     prop.floatValue = shader.GetPropertyDefaultFloatValue(ShaderPropertyIndex);
                     break;
-                case MaterialProperty.PropType.Vector:
+                case UnityEngine.Rendering.ShaderPropertyType.Vector:
                     prop.vectorValue = shader.GetPropertyDefaultVectorValue(ShaderPropertyIndex);
                     break;
-                case MaterialProperty.PropType.Color:
+                case UnityEngine.Rendering.ShaderPropertyType.Color:
                     prop.colorValue = shader.GetPropertyDefaultVectorValue(ShaderPropertyIndex);
                     break;
-                case MaterialProperty.PropType.Int:
+                case UnityEngine.Rendering.ShaderPropertyType.Int:
                     prop.intValue = shader.GetPropertyDefaultIntValue(ShaderPropertyIndex);
                     break;
-                case MaterialProperty.PropType.Texture:
+                case UnityEngine.Rendering.ShaderPropertyType.Texture:
                     Texture texture = null;
                     var importer = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(shader)) as ShaderImporter;
                     if (importer != null)
@@ -672,7 +672,7 @@ namespace Thry
         {
             string propName = MaterialProperty.name;
             if (IsRenaming && !ShaderEditor.Active.IsLockedMaterial) propName = propName + "_" + ShaderEditor.Active.RenamedPropertySuffix;
-            if (MaterialProperty.type == MaterialProperty.PropType.Texture) propName = propName + "_ST";
+            if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture) propName = propName + "_ST";
             return propName;
         }
 
@@ -704,19 +704,19 @@ namespace Thry
             AnimationClip clip = new AnimationClip();
 
             string propertyname = "material." + GetAnimatedPropertyName();
-            if (MaterialProperty.type == MaterialProperty.PropType.Float || MaterialProperty.type == MaterialProperty.PropType.Range)
+            if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Float || MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Range)
             {
                 clip.SetCurve(path, rendererType, propertyname, new AnimationCurve(new Keyframe(0, MaterialProperty.floatValue)));
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, "", rendererType));
             }
 #if UNITY_2022_1_OR_NEWER
-            else if (MaterialProperty.type == MaterialProperty.PropType.Int)
+            else if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Int)
             {
                 clip.SetCurve(path, rendererType, propertyname, new AnimationCurve(new Keyframe(0, MaterialProperty.intValue)));
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, "", rendererType));
             }
 #endif
-            else if (MaterialProperty.type == MaterialProperty.PropType.Color)
+            else if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Color)
             {
                 clip.SetCurve(path, rendererType, propertyname + ".r", new AnimationCurve(new Keyframe(0, MaterialProperty.colorValue.r)));
                 clip.SetCurve(path, rendererType, propertyname + ".g", new AnimationCurve(new Keyframe(0, MaterialProperty.colorValue.g)));
@@ -727,7 +727,7 @@ namespace Thry
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, ".b", rendererType));
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, ".a", rendererType));
             }
-            else if (MaterialProperty.type == MaterialProperty.PropType.Vector)
+            else if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Vector)
             {
                 clip.SetCurve(path, rendererType, propertyname + ".x", new AnimationCurve(new Keyframe(0, MaterialProperty.vectorValue.x)));
                 clip.SetCurve(path, rendererType, propertyname + ".y", new AnimationCurve(new Keyframe(0, MaterialProperty.vectorValue.y)));
@@ -738,7 +738,7 @@ namespace Thry
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, ".z", rendererType));
                 keyframeList.Add(ClipToKeyFrame(animationCurveType, clip, path, ".w", rendererType));
             }
-            else if (MaterialProperty.type == MaterialProperty.PropType.Texture)
+            else if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture)
             {
                 clip.SetCurve(path, rendererType, propertyname + ".x", new AnimationCurve(new Keyframe(0, MaterialProperty.textureScaleAndOffset.x)));
                 clip.SetCurve(path, rendererType, propertyname + ".y", new AnimationCurve(new Keyframe(0, MaterialProperty.textureScaleAndOffset.y)));
@@ -801,7 +801,7 @@ namespace Thry
                 //Check if property is being animated
                 if (this is ShaderProperty && ActiveShaderEditor.ActiveRenderer != null && ActiveShaderEditor.IsInAnimationMode && IsAnimatable && !IsAnimated)
                 {
-                    if (MaterialProperty.type == MaterialProperty.PropType.Texture ?
+                    if (MaterialProperty.propertyType == UnityEngine.Rendering.ShaderPropertyType.Texture ?
                         AnimationMode.IsPropertyAnimated(ActiveShaderEditor.ActiveRenderer, "material." + MaterialProperty.name + "_ST.x") :
                         AnimationMode.IsPropertyAnimated(ActiveShaderEditor.ActiveRenderer, "material." + MaterialProperty.name))
                         SetAnimated(true, false);
@@ -856,11 +856,11 @@ namespace Thry
 
         public abstract void FindUnusedTextures(List<string> unusedList, bool isEnabled);
 
-        protected bool ShouldSkipProperty(MaterialProperty property, MaterialProperty.PropType[] propertyTypesToSkip)
+        protected bool ShouldSkipProperty(MaterialProperty property, UnityEngine.Rendering.ShaderPropertyType[] propertyTypesToSkip)
         {
             if (propertyTypesToSkip != null)
-                foreach (MaterialProperty.PropType typeToSkip in propertyTypesToSkip)
-                    if (property.type == typeToSkip)
+                foreach (UnityEngine.Rendering.ShaderPropertyType typeToSkip in propertyTypesToSkip)
+                    if (property.propertyType == typeToSkip)
                         return true;
             return false;
         }

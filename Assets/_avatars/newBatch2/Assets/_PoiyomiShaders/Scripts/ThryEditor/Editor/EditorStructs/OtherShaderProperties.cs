@@ -28,7 +28,7 @@ namespace Thry
         {
             foreach (Material m in ActiveShaderEditor.Materials) m.renderQueue = sourceM.renderQueue;
         }
-        public override void CopyToMaterial(Material targetM, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void CopyToMaterial(Material targetM, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             targetM.renderQueue = ActiveShaderEditor.Materials[0].renderQueue;
         }
@@ -73,7 +73,7 @@ namespace Thry
             string value = sourceM.GetTag("VRCFallback", false, "None");
             foreach (Material m in ActiveShaderEditor.Materials) m.SetOverrideTag("VRCFallback", value);
         }
-        public override void CopyToMaterial(Material targetM, bool isTopCall = false, MaterialProperty.PropType[] skipPropertyTypes = null)
+        public override void CopyToMaterial(Material targetM, bool isTopCall = false, UnityEngine.Rendering.ShaderPropertyType[] skipPropertyTypes = null)
         {
             string value = ActiveShaderEditor.Materials[0].GetTag("VRCFallback", false, "None");
             targetM.SetOverrideTag("VRCFallback", value);
