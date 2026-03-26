@@ -1,0 +1,3134 @@
+fileFormatVersion: 2
+guid: 81145fbf8f6fcce4cb092a74968db1f2
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Cleric Beast Armature|cleric fall' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Spine2' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Spine4' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Spine6'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Neck'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'L_Finger0'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Spine
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine1
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine3
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Antler01
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Antler01
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Jaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger4
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger41
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger42
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger3
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger31
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger32
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger2
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger21
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger22
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger11
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger12
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger01
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger02
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: L_Finger02_end
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger3
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger31
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger32
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger4
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger41
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger42
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger2
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger21
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger22
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger0
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger01
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger02
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger11
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: R_Finger12
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine5
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Cleric Beast 1(Clone)
+      parentName: 
+      position: {x: -0, y: 0.78999996, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: c5000_Body
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Body_end
+      parentName: c5000_Body
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00000000358848, y: -0.0025372743, z: 0.010803871}
+      rotation: {x: 0.045673996, y: 0.10652865, z: 0.99155897, w: 0.05810711}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Spine
+      parentName: Pelvis
+      position: {x: 0.002043499, y: 0.0041680965, z: 0.026606705}
+      rotation: {x: -0.056050953, y: 0.98284847, z: -0.17052092, w: -0.042306617}
+      scale: {x: 1, y: 1.0000005, z: 1.0000001}
+    - name: Spine1
+      parentName: Spine
+      position: {x: -0.000000024260952, y: -0.0032366198, z: -0.0008386593}
+      rotation: {x: 0.9395443, y: 0.008830162, z: -0.022887979, w: -0.34154755}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: Spine2
+      parentName: Spine1
+      position: {x: -9.313225e-11, y: 0.0033428657, z: -0.0000000014633406}
+      rotation: {x: 0.36210808, y: 0.046304345, z: 0.0013328533, w: 0.9309844}
+      scale: {x: 0.99999994, y: 0.99999964, z: 1}
+    - name: Spine3
+      parentName: Spine2
+      position: {x: -9.3132255e-12, y: 0.003344202, z: 4.4237822e-11}
+      rotation: {x: 0.036248516, y: -0.011015079, z: 0.0045042327, w: 0.999272}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: Spine4
+      parentName: Spine3
+      position: {x: 7.4505804e-11, y: 0.0033439987, z: 7.357448e-10}
+      rotation: {x: -0.14410889, y: -0.0155651355, z: 0.000023730594, w: 0.9894394}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+    - name: Spine5
+      parentName: Spine4
+      position: {x: -1.8626451e-11, y: 0.003343561, z: 0.0000000012791134}
+      rotation: {x: 0.12302395, y: -0.0010343031, z: -0.0017428722, w: 0.99240166}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine6
+      parentName: Spine5
+      position: {x: 2.3283063e-11, y: 0.0033437463, z: -1.14960125e-10}
+      rotation: {x: 0.18530242, y: -0.0016436155, z: 0.00066260033, w: 0.98267996}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Neck
+      parentName: Spine6
+      position: {x: -0.00000049543564, y: 0.0062458864, z: -0.002114184}
+      rotation: {x: 0.93144804, y: -0.018228188, z: 0.0006126458, w: -0.36341703}
+      scale: {x: 1, y: 0.9999999, z: 0.9999997}
+    - name: Neck1
+      parentName: Neck
+      position: {x: -0.0000008694734, y: 0.000855828, z: 0.003768005}
+      rotation: {x: 0.69924, y: -0.008140377, z: 0.005300689, w: 0.7148211}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: Head
+      parentName: Neck1
+      position: {x: 9.3132255e-12, y: 0.0029023741, z: 0.0000000015920523}
+      rotation: {x: 0.1225527, y: 0.016631171, z: 0.37127256, w: 0.9202505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Jaw
+      parentName: Head
+      position: {x: 0.000736543, y: 0.00051556947, z: -0.0015043598}
+      rotation: {x: -0.6125381, y: 0.19153894, z: -0.32108968, w: 0.6964275}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: L_Tusk02
+      parentName: Jaw
+      position: {x: -0.0012323143, y: 0.0038592194, z: 0.000025043068}
+      rotation: {x: 0.6372903, y: -0.34975412, z: 0.5961795, w: 0.34073913}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: L_Tusk02_end
+      parentName: L_Tusk02
+      position: {x: -0, y: 0.0014462617, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk02
+      parentName: Jaw
+      position: {x: 0.001232316, y: 0.0038592133, z: 0.000025046336}
+      rotation: {x: 0.6373365, y: 0.34968102, z: -0.5961743, w: 0.34073702}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: R_Tusk02_end
+      parentName: R_Tusk02
+      position: {x: -0, y: 0.0014462662, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk03
+      parentName: Jaw
+      position: {x: -0.0007326455, y: 0.005372431, z: -0.00002504778}
+      rotation: {x: 0.07467755, y: -0.21534488, z: 0.3677225, w: 0.90157086}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: L_Tusk03_end
+      parentName: L_Tusk03
+      position: {x: -0, y: 0.0010534961, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk03
+      parentName: Jaw
+      position: {x: 0.00073264324, y: 0.0053724307, z: -0.000025051359}
+      rotation: {x: 0.07474904, y: 0.21533372, z: -0.36770925, w: 0.901573}
+      scale: {x: 0.99999994, y: 0.99999976, z: 1}
+    - name: R_Tusk03_end
+      parentName: R_Tusk03
+      position: {x: -0, y: 0.0010534961, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk01
+      parentName: Head
+      position: {x: -0.00027553082, y: 0.0027177613, z: -0.0019302556}
+      rotation: {x: -0.45157465, y: 0.16518554, z: -0.03981025, w: 0.8759048}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: L_Tusk01_end
+      parentName: L_Tusk01
+      position: {x: -0, y: 0.0023331274, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk01
+      parentName: Head
+      position: {x: 0.003025112, y: -0.00037986008, z: -0.0013756523}
+      rotation: {x: -0.31999344, y: 0.009161968, z: -0.79183465, w: 0.5201136}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: R_Tusk01_end
+      parentName: R_Tusk01
+      position: {x: -0, y: 0.0037871886, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler01
+      parentName: Head
+      position: {x: -0.0016659208, y: 0.0025965958, z: 0.0016143828}
+      rotation: {x: 0.42395914, y: -0.13675927, z: 0.3362521, w: 0.82975304}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: L_Antler01_end
+      parentName: L_Antler01
+      position: {x: -0, y: 0.002593724, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler02
+      parentName: Head
+      position: {x: -0.0024903074, y: 0.0025339227, z: 0.0007888691}
+      rotation: {x: 0.1506451, y: 0.0034758153, z: 0.540081, w: 0.8280136}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: L_Antler02_end
+      parentName: L_Antler02
+      position: {x: -0, y: 0.002833434, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler03
+      parentName: Head
+      position: {x: -0.0020194375, y: 0.0026014769, z: -0.000000725463}
+      rotation: {x: -0.058090616, y: 0.08246839, z: 0.4982593, w: 0.86114}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: L_Antler03_end
+      parentName: L_Antler03
+      position: {x: -0, y: 0.0023313845, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Antler01
+      parentName: Head
+      position: {x: 0.002689538, y: -0.0005301259, z: 0.0024077264}
+      rotation: {x: -0.24541195, y: 0.22531734, z: 0.83229727, w: -0.4430421}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: R_Antler01_end
+      parentName: R_Antler01
+      position: {x: -0, y: 0.004110753, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Clavicle
+      parentName: Neck
+      position: {x: -0.00089997036, y: 0.0035905873, z: -0.0018841488}
+      rotation: {x: 0.5593025, y: -0.53807163, z: 0.5487471, w: 0.3107028}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999998}
+    - name: L_UpperArm
+      parentName: L_Clavicle
+      position: {x: 0.0000000014528632, y: 0.007989879, z: -2.7939676e-10}
+      rotation: {x: -0.03577144, y: 0.79951, z: -0.14920004, w: 0.58072674}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.9999999}
+    - name: L_Forearm
+      parentName: L_UpperArm
+      position: {x: 0.0000000015646219, y: 0.019311372, z: 0.000000002477318}
+      rotation: {x: 0.026599709, y: -0.016558785, z: -0.004247245, w: 0.99950004}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: L_Hand
+      parentName: L_Forearm
+      position: {x: -8.9406965e-10, y: 0.01990385, z: -0.0000000011920929}
+      rotation: {x: -0.18458405, y: 0.45121133, z: 0.097483836, w: 0.86766005}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+    - name: L_Finger0
+      parentName: L_Hand
+      position: {x: 0.0015920752, y: 0.0023591667, z: 0.0017995449}
+      rotation: {x: 0.35053894, y: 0.20848523, z: -0.29545242, w: 0.8639237}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: L_Finger01
+      parentName: L_Finger0
+      position: {x: -0.0000000017881393, y: 0.0038810058, z: 7.45058e-10}
+      rotation: {x: -0.36638567, y: 0.04678335, z: 0.16263475, w: 0.9149441}
+      scale: {x: 1.0000001, y: 1, z: 0.9999999}
+    - name: L_Finger02
+      parentName: L_Finger01
+      position: {x: 0.0000000040233132, y: 0.0023099633, z: 0.000000001490116}
+      rotation: {x: 0.027742604, y: 0.004748468, z: 0.024954742, w: 0.9992923}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1}
+    - name: L_Finger02_end
+      parentName: L_Finger02
+      position: {x: -0, y: 0.002309964, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger1
+      parentName: L_Hand
+      position: {x: 0.0014665645, y: 0.008387247, z: 0.0022528504}
+      rotation: {x: 0.08896602, y: -0.1679782, z: 0.04497304, w: 0.9807373}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: L_Finger11
+      parentName: L_Finger1
+      position: {x: -0.0000000011920929, y: 0.0027719554, z: 1.4901161e-10}
+      rotation: {x: -0.01325392, y: 0.056495007, z: -0.022040157, w: 0.9980716}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: L_Finger12
+      parentName: L_Finger11
+      position: {x: 0.00000000230968, y: 0.0024195933, z: -0.0000000020861626}
+      rotation: {x: -0.027526297, y: -0.028062796, z: -0.018549299, w: 0.9990549}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: L_Finger12_end
+      parentName: L_Finger12
+      position: {x: -0, y: 0.002419593, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger2
+      parentName: L_Hand
+      position: {x: -0.00025295065, y: 0.008329046, z: 0.00041430234}
+      rotation: {x: 0.086439766, y: -0.11323183, z: 0.06864065, w: 0.9874184}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: L_Finger21
+      parentName: L_Finger2
+      position: {x: -1.4901161e-10, y: 0.0030358236, z: -0.000000001490116}
+      rotation: {x: -0.010458776, y: 0.0118478015, z: -0.018224087, w: 0.99970907}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: L_Finger22
+      parentName: L_Finger21
+      position: {x: -0.0000000015087426, y: 0.0028364158, z: 7.45058e-10}
+      rotation: {x: -0.012161862, y: -0.0030960008, z: -0.018971298, w: 0.99974126}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: L_Finger22_end
+      parentName: L_Finger22
+      position: {x: -0, y: 0.002836415, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger3
+      parentName: L_Hand
+      position: {x: -0.0011033143, y: 0.008274718, z: -0.0012893323}
+      rotation: {x: -0.026326358, y: -0.05393633, z: -0.043778297, w: 0.99723685}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L_Finger31
+      parentName: L_Finger3
+      position: {x: -0.000000003837049, y: 0.0027719608, z: 6.705522e-10}
+      rotation: {x: -0.009630545, y: -0.002635231, z: -0.01702556, w: 0.9998052}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: L_Finger32
+      parentName: L_Finger31
+      position: {x: 0.0000000017136335, y: 0.0027330588, z: 0.0000000015707337}
+      rotation: {x: -0.014113312, y: 0.000018890461, z: -0.024653492, w: 0.9995965}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: L_Finger32_end
+      parentName: L_Finger32
+      position: {x: -0, y: 0.0027330595, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger4
+      parentName: L_Hand
+      position: {x: -0.001702373, y: 0.008049123, z: -0.0031773865}
+      rotation: {x: -0.3307658, y: -0.000010877841, z: -0.0023718686, w: 0.94370997}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: L_Finger41
+      parentName: L_Finger4
+      position: {x: -9.080395e-10, y: 0.0023099675, z: 6.705522e-10}
+      rotation: {x: -0.009530062, y: 0.04115184, z: -0.017200302, w: 0.9989594}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: L_Finger42
+      parentName: L_Finger41
+      position: {x: 0.0000000028684735, y: 0.0019349477, z: -0.0000000011618249}
+      rotation: {x: -0.0015167827, y: -0.038500756, z: -0.026034772, w: 0.99891824}
+      scale: {x: 0.99999976, y: 0.9999998, z: 0.9999999}
+    - name: L_Finger42_end
+      parentName: L_Finger42
+      position: {x: -0, y: 0.0019349483, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ForeTwist1
+      parentName: L_Forearm
+      position: {x: 0.0000000011920929, y: 0.009951919, z: -0.000000006854534}
+      rotation: {x: -0.00014701084, y: 0.28121054, z: 0.000055455494, w: 0.9596461}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: L_ForeTwist1_end
+      parentName: L_ForeTwist1
+      position: {x: -0, y: 0.009951919, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_ForeTwist
+      parentName: L_Forearm
+      position: {x: 7.0780515e-10, y: -0.0000000020489097, z: 0.0000000016205013}
+      rotation: {x: -0.00013194045, y: 0.14196728, z: 0.000080714795, w: 0.9898714}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: L_ForeTwist_end
+      parentName: L_ForeTwist
+      position: {x: -0, y: 0.009951919, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LUpArmTwist
+      parentName: L_UpperArm
+      position: {x: 0.000000001490116, y: -0.0000000054389235, z: -7.45058e-10}
+      rotation: {x: -0.000019535548, y: -0.11903029, z: -0.000024106263, w: 0.99289066}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LUpArmTwist1
+      parentName: LUpArmTwist
+      position: {x: -8.0093737e-10, y: 0.009655678, z: 1.11758706e-10}
+      rotation: {x: -0.0000008093613, y: 0.059603684, z: 0.000009222288, w: 0.9982221}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LUpArmTwist1_end
+      parentName: LUpArmTwist1
+      position: {x: -0, y: 0.009655675, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Clavicle
+      parentName: Neck
+      position: {x: 0.00090084015, y: 0.0035911165, z: -0.0018838529}
+      rotation: {x: 0.5703659, y: 0.5327822, z: -0.5419878, w: 0.31156886}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: R_UpperArm
+      parentName: R_Clavicle
+      position: {x: -5.2154064e-10, y: 0.007989883, z: 2.2351741e-10}
+      rotation: {x: -0.014157495, y: 0.9364477, z: -0.15745045, w: -0.3131689}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+    - name: R_Forearm
+      parentName: R_UpperArm
+      position: {x: 0.000000008195639, y: 0.01099478, z: 0.000000001490116}
+      rotation: {x: 0.027233623, y: 0.008512758, z: 0.0019224465, w: 0.999591}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: R_Hand
+      parentName: R_Forearm
+      position: {x: 0.0000000017881393, y: 0.013032739, z: 0.0000000035762786}
+      rotation: {x: 0.18396463, y: -0.35995245, z: 0.09479002, w: 0.90972865}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+    - name: R_Finger0
+      parentName: R_Hand
+      position: {x: -0.0020760938, y: 0.0029294163, z: 0.0009402481}
+      rotation: {x: 0.04306207, y: -0.22671093, z: 0.012265933, w: 0.9729324}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+    - name: R_Finger01
+      parentName: R_Finger0
+      position: {x: 8.9406965e-10, y: 0.0020347529, z: -6.705522e-10}
+      rotation: {x: -0.038686678, y: 0.019295651, z: -0.011251613, w: 0.99900174}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: R_Finger02
+      parentName: R_Finger01
+      position: {x: -2.9802322e-10, y: 0.0021351431, z: 2.2351741e-10}
+      rotation: {x: -0.026251057, y: -0.033542022, z: -0.008202064, w: 0.99905884}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: R_Finger02_end
+      parentName: R_Finger02
+      position: {x: -0, y: 0.0021351462, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger1
+      parentName: R_Hand
+      position: {x: -0.0002294606, y: 0.006445744, z: 0.0016467443}
+      rotation: {x: 0.070994936, y: 0.15518895, z: -0.08829546, w: 0.9813664}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger11
+      parentName: R_Finger1
+      position: {x: -0.0000000023841857, y: 0.0023401314, z: 4.4703483e-10}
+      rotation: {x: -0.015072752, y: -0.03828988, z: 0.020796994, w: 0.9989366}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger12
+      parentName: R_Finger11
+      position: {x: 6.705522e-10, y: 0.001758635, z: 0.0000000023841857}
+      rotation: {x: -0.01986277, y: -0.17894463, z: 0.029691938, w: 0.9832104}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: R_Finger12_end
+      parentName: R_Finger12
+      position: {x: -0, y: 0.0017586353, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger2
+      parentName: R_Hand
+      position: {x: 0.0005230498, y: 0.006241719, z: 0.00033041267}
+      rotation: {x: 0.017606098, y: 0.11869738, z: -0.11467012, w: 0.9861297}
+      scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
+    - name: R_Finger21
+      parentName: R_Finger2
+      position: {x: -5.9604643e-10, y: 0.0026349144, z: 0}
+      rotation: {x: -0.015873102, y: -0.020234315, z: 0.020399742, w: 0.9994611}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: R_Finger22
+      parentName: R_Finger21
+      position: {x: 0.0000000019371509, y: 0.0023641197, z: -8.9406965e-10}
+      rotation: {x: -0.020257156, y: -0.000005001198, z: 0.027148565, w: 0.9994262}
+      scale: {x: 1, y: 0.99999994, z: 0.9999998}
+    - name: R_Finger22_end
+      parentName: R_Finger22
+      position: {x: -0, y: 0.0023641186, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger3
+      parentName: R_Hand
+      position: {x: 0.0009340563, y: 0.0059961197, z: -0.00085059315}
+      rotation: {x: -0.28302062, y: 0.13172789, z: -0.024043325, w: 0.9497205}
+      scale: {x: 1, y: 0.9999999, z: 1.0000002}
+    - name: R_Finger31
+      parentName: R_Finger3
+      position: {x: -0.0000000013783574, y: 0.0025762147, z: -0.0000000011920929}
+      rotation: {x: -0.013774238, y: 0.047910124, z: 0.017609384, w: 0.9986015}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: R_Finger32
+      parentName: R_Finger31
+      position: {x: 0.0000000020116566, y: 0.0018728558, z: -0.0000000021792947}
+      rotation: {x: -0.02325491, y: -0.0000026747566, z: 0.02696315, w: 0.9993659}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: R_Finger32_end
+      parentName: R_Finger32
+      position: {x: -0, y: 0.0018728562, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger4
+      parentName: R_Hand
+      position: {x: 0.00084843516, y: 0.00564128, z: -0.0020668134}
+      rotation: {x: -0.040640548, y: 0.07005865, z: -0.03507579, w: 0.9960973}
+      scale: {x: 0.99999976, y: 0.9999999, z: 0.9999998}
+    - name: R_Finger41
+      parentName: R_Finger4
+      position: {x: 8.9406965e-10, y: 0.0022154453, z: -0.0000000017881393}
+      rotation: {x: -0.0040213126, y: 0.07493869, z: 0.013820527, w: 0.9970843}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999976}
+    - name: R_Finger42
+      parentName: R_Finger41
+      position: {x: 0.0000000019371509, y: 0.0014858864, z: 7.45058e-10}
+      rotation: {x: -0.011096377, y: 0.0000040754644, z: 0.029662423, w: 0.9994984}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: R_Finger42_end
+      parentName: R_Finger42
+      position: {x: -0, y: 0.001485886, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_R_Wrist
+      parentName: R_Forearm
+      position: {x: -0.000000003427267, y: 0.013032735, z: -0.0000000038743018}
+      rotation: {x: 0.22198525, y: -0.4689049, z: 0.8541828, w: 0.034964588}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: Support_R_Wrist_end
+      parentName: Support_R_Wrist
+      position: {x: -0, y: 0.000050001145, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ForeTwist
+      parentName: R_Forearm
+      position: {x: 5.9604643e-10, y: -0.000000001490116, z: -0.0000000010430813}
+      rotation: {x: 0.00003044168, y: -0.07078946, z: -0.00008161166, w: 0.9974913}
+      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+    - name: R_ForeTwist1
+      parentName: R_ForeTwist
+      position: {x: 1.4901161e-10, y: 0.006516369, z: 0.0000000011920929}
+      rotation: {x: -0.0000050576737, y: -0.07081979, z: 0.000021821663, w: 0.99748915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_ForeTwist1_end
+      parentName: R_ForeTwist1
+      position: {x: -0, y: 0.006516369, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RUpArmTwist
+      parentName: R_UpperArm
+      position: {x: 0.0000000055134297, y: 0.0000000010430813, z: -2.9802322e-10}
+      rotation: {x: 0.0000509442, y: 0.24030782, z: 0.000014807952, w: 0.97069675}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RUpArmTwist1
+      parentName: RUpArmTwist
+      position: {x: -0, y: 0.005497387, z: -7.45058e-10}
+      rotation: {x: -0.000005638706, y: -0.12103974, z: 0.0000006773953, w: 0.99264765}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: RUpArmTwist1_end
+      parentName: RUpArmTwist1
+      position: {x: -0, y: 0.0054973853, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_L_Back
+      parentName: Spine6
+      position: {x: -0.00015450541, y: 0.0015886783, z: 0.0066328067}
+      rotation: {x: 0.7394349, y: 0.033081714, z: 0.053829506, w: 0.6702567}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: Support_L_Back_end
+      parentName: Support_L_Back
+      position: {x: -0, y: 0.0066684135, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_R_Back
+      parentName: Spine6
+      position: {x: 0.00015411434, y: 0.001588637, z: 0.0066328202}
+      rotation: {x: 0.7395898, y: -0.032785628, z: -0.05338874, w: 0.67013556}
+      scale: {x: 0.99999976, y: 0.9999998, z: 1}
+    - name: Support_R_Back_end
+      parentName: Support_R_Back
+      position: {x: -0, y: 0.006668422, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Muscle_L_Chest
+      parentName: Spine6
+      position: {x: -0.0010454766, y: 0.0009367594, z: -0.005575787}
+      rotation: {x: -0.7730101, y: -0.038085528, z: 0.16873749, w: 0.6103545}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Muscle_L_Chest_end
+      parentName: Muscle_L_Chest
+      position: {x: -0, y: 0.0058250795, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Muscle_R_Chest
+      parentName: Spine6
+      position: {x: 0.0010463631, y: 0.00093654887, z: -0.005575659}
+      rotation: {x: -0.7666415, y: 0.1300339, z: -0.12940075, w: 0.61531085}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1.0000002}
+    - name: Muscle_R_Chest_end
+      parentName: Muscle_R_Chest
+      position: {x: -0, y: 0.005825166, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Thigh
+      parentName: Spine
+      position: {x: -0.0031707333, y: 0.0018877314, z: 0.00020969582}
+      rotation: {x: 0.70215076, y: -0.2708669, z: -0.17322636, w: 0.63530153}
+      scale: {x: 0.99999976, y: 1, z: 1.0000001}
+    - name: L_Calf
+      parentName: L_Thigh
+      position: {x: 0.0000000015366822, y: 0.020282332, z: -0.000000004172325}
+      rotation: {x: 0.1523432, y: 0.13611372, z: 0.032683577, w: -0.9783642}
+      scale: {x: 0.99999994, y: 1, z: 0.99999964}
+    - name: L_Foot
+      parentName: L_Calf
+      position: {x: 7.45058e-10, y: 0.01659695, z: -8.0093737e-10}
+      rotation: {x: 0.18407498, y: -0.88783664, z: 0.13546357, w: 0.3993899}
+      scale: {x: 0.99999976, y: 1.0000001, z: 1.0000001}
+    - name: L_Toe0
+      parentName: L_Foot
+      position: {x: -2.6077032e-10, y: 0.008852386, z: 7.4505804e-11}
+      rotation: {x: 0.9628583, y: 0.060619827, z: -0.11134038, w: 0.23839551}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999993}
+    - name: L_Toe00
+      parentName: L_Toe0
+      position: {x: 4.377216e-10, y: 0.000003207647, z: 1.8626451e-11}
+      rotation: {x: -0.6249368, y: 0.073792055, z: 0.08799363, w: 0.7721825}
+      scale: {x: 1, y: 0.9999998, z: 0.9999999}
+    - name: L_Toe01
+      parentName: L_Toe00
+      position: {x: 0.0021662898, y: 0.002909203, z: -0.000010046586}
+      rotation: {x: -0.03521973, y: -0.0014532695, z: -0.17857774, w: 0.9832942}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: L_Toe0102
+      parentName: L_Toe01
+      position: {x: 5.401671e-10, y: 0.001616075, z: 5.5879353e-11}
+      rotation: {x: 0.00021586017, y: 0.00007503226, z: -0.00026340032, w: 0.99999994}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+    - name: L_Toe0102_end
+      parentName: L_Toe0102
+      position: {x: -0, y: 0.0016160744, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe02
+      parentName: L_Toe00
+      position: {x: 0.0005540613, y: 0.003575848, z: 0.0002451095}
+      rotation: {x: -0.18824266, y: 0.017962605, z: -0.1192558, w: 0.9746897}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: L_Toe0202
+      parentName: L_Toe02
+      position: {x: -6.891787e-10, y: 0.0012807107, z: 1.11758706e-10}
+      rotation: {x: 0.000000002328306, y: 0.0000003222376, z: 0.00000012130477, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: L_Toe0202_end
+      parentName: L_Toe0202
+      position: {x: -0, y: 0.0012807102, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe03
+      parentName: L_Toe00
+      position: {x: -0.0007652931, y: 0.0038165434, z: 0.00008327693}
+      rotation: {x: -0.15385231, y: 0.015394739, z: -0.072985925, w: 0.9852744}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: L_Toe0302
+      parentName: L_Toe03
+      position: {x: -1.8626451e-11, y: 0.0012383439, z: -4.0978193e-10}
+      rotation: {x: -0.00000014109537, y: -0.000002027955, z: -0.000000067520894, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L_Toe0302_end
+      parentName: L_Toe0302
+      position: {x: -0, y: 0.0012383432, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe04
+      parentName: L_Toe00
+      position: {x: -0.0019550577, y: 0.0037953712, z: -0.00031834008}
+      rotation: {x: -0.20209198, y: 0.021770312, z: -0.046009954, w: 0.97804296}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: L_Toe0402
+      parentName: L_Toe04
+      position: {x: -4.842877e-10, y: 0.00094865385, z: 3.72529e-10}
+      rotation: {x: 0.00000010896474, y: 0.00000013038517, z: 0.0000000032596303, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: L_Toe0402_end
+      parentName: L_Toe0402
+      position: {x: -0, y: 0.0009486538, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_L_Heel
+      parentName: L_Calf
+      position: {x: 7.45058e-10, y: 0.01659695, z: -8.0093737e-10}
+      rotation: {x: 0.27159745, y: 0.013644229, z: 0.018093726, w: 0.96214414}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Support_L_Heel_end
+      parentName: Support_L_Heel
+      position: {x: -0, y: 0.016596956, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LCalfTwist
+      parentName: L_Calf
+      position: {x: 3.72529e-10, y: -0.00000000115484, z: -7.4505804e-11}
+      rotation: {x: 0.00001942191, y: 0.0032323198, z: -0.000046491885, w: 0.9999948}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.99999994}
+    - name: LCalfTwist1
+      parentName: LCalfTwist
+      position: {x: -2.2351741e-10, y: 0.008298472, z: -2.6077032e-10}
+      rotation: {x: -0.000017814447, y: 0.0034698457, z: -0.000005510204, w: 0.999994}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: LCalfTwist1_end
+      parentName: LCalfTwist1
+      position: {x: -0, y: 0.008298474, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_L_Knee
+      parentName: L_Thigh
+      position: {x: -0.0000000025238842, y: 0.02028234, z: 0.000000002682209}
+      rotation: {x: -0.11004323, y: -0.004454821, z: -0.024318395, w: 0.99361926}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Support_L_Knee_end
+      parentName: Support_L_Knee
+      position: {x: -0, y: 0.000050000333, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LThighTwist
+      parentName: L_Thigh
+      position: {x: -4.0978193e-10, y: -0.0000000025331974, z: 0.0000000019371509}
+      rotation: {x: -0.000003535822, y: -0.017177118, z: 0.000028192966, w: 0.9998525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LThighTwist1
+      parentName: LThighTwist
+      position: {x: -2.2351741e-10, y: 0.010141168, z: -5.9604643e-10}
+      rotation: {x: -0.000003077204, y: 0.008604031, z: -0.0000140602315, w: 0.999963}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: LThighTwist1_end
+      parentName: LThighTwist1
+      position: {x: -0, y: 0.010141169, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Thigh
+      parentName: Spine
+      position: {x: 0.003170746, y: 0.0018877022, z: 0.00020964167}
+      rotation: {x: 0.7029297, y: 0.26668274, z: 0.17025335, w: 0.6370117}
+      scale: {x: 0.9999998, y: 0.99999976, z: 1.0000002}
+    - name: R_Calf
+      parentName: R_Thigh
+      position: {x: 8.381903e-11, y: 0.020282336, z: 5.9604643e-10}
+      rotation: {x: 0.15407996, y: -0.15907729, z: -0.03484371, w: -0.97454596}
+      scale: {x: 1, y: 1.0000001, z: 0.9999997}
+    - name: R_Foot
+      parentName: R_Calf
+      position: {x: 2.2351741e-10, y: 0.016596956, z: -2.2817402e-10}
+      rotation: {x: 0.2573375, y: 0.8578701, z: -0.19087578, w: 0.40174952}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: R_Toe0
+      parentName: R_Foot
+      position: {x: -2.9802322e-10, y: 0.008852384, z: 2.2351741e-10}
+      rotation: {x: 0.93088245, y: -0.08841576, z: -0.020388952, w: 0.35387123}
+      scale: {x: 0.99999994, y: 0.99999976, z: 1.0000008}
+    - name: R_Toe00
+      parentName: R_Toe0
+      position: {x: -8.1490724e-11, y: 0.0000032160804, z: 5.0291415e-10}
+      rotation: {x: -0.6262895, y: -0.07393242, z: -0.08573758, w: 0.7713265}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+    - name: R_Toe01
+      parentName: R_Toe00
+      position: {x: -0.002166298, y: 0.0029091944, z: -0.000010041744}
+      rotation: {x: -0.035240192, y: 0.0014482746, z: 0.1785826, w: 0.9832926}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: R_Toe0102
+      parentName: R_Toe01
+      position: {x: -2.0489097e-10, y: 0.0016160845, z: -7.916242e-11}
+      rotation: {x: 0.00021581071, y: -0.000027477197, z: 0.00026795114, w: 0.99999994}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999994}
+    - name: R_Toe0102_end
+      parentName: R_Toe0102
+      position: {x: -0, y: 0.0016160859, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe02
+      parentName: R_Toe00
+      position: {x: -0.00055405754, y: 0.003575839, z: 0.00024510536}
+      rotation: {x: -0.18826364, y: -0.017953712, z: 0.11928305, w: 0.9746825}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: R_Toe0202
+      parentName: R_Toe02
+      position: {x: -2.840534e-10, y: 0.0012807151, z: -1.4901161e-10}
+      rotation: {x: -0.000000111758716, y: 0.00000023283064, z: 0.000000008847565, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe0202_end
+      parentName: R_Toe0202
+      position: {x: -0, y: 0.0012807164, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe03
+      parentName: R_Toe00
+      position: {x: 0.0007652956, y: 0.0038165383, z: 0.00008328227}
+      rotation: {x: -0.15387465, y: -0.015416409, z: 0.07301158, w: 0.98526865}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: R_Toe0302
+      parentName: R_Toe03
+      position: {x: -0.0000000011187512, y: 0.0012383433, z: 0}
+      rotation: {x: 0.00000003352762, y: 0.000003368245, z: 0.00000010459918, w: 1}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999999}
+    - name: R_Toe0302_end
+      parentName: R_Toe0302
+      position: {x: -0, y: 0.001238346, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe04
+      parentName: R_Toe00
+      position: {x: 0.001955059, y: 0.0037953602, z: -0.00031834506}
+      rotation: {x: -0.20212182, y: -0.021750277, z: 0.046054147, w: 0.97803515}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe0402
+      parentName: R_Toe04
+      position: {x: -5.098991e-10, y: 0.0009486562, z: -5.9604643e-10}
+      rotation: {x: 0.00000010803341, y: -0.000005115522, z: 0.0000001284061, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: R_Toe0402_end
+      parentName: R_Toe0402
+      position: {x: -0, y: 0.00094865833, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_R_Heel
+      parentName: R_Calf
+      position: {x: 2.2351741e-10, y: 0.016596956, z: -2.2817402e-10}
+      rotation: {x: 0.3088821, y: -0.03502758, z: -0.008854674, w: 0.9504139}
+      scale: {x: 0.99999964, y: 0.9999999, z: 0.9999999}
+    - name: Support_R_Heel_end
+      parentName: Support_R_Heel
+      position: {x: -0, y: 0.016596962, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RCalfTwist
+      parentName: R_Calf
+      position: {x: 7.4505804e-11, y: -0.000000003054738, z: -1.862645e-10}
+      rotation: {x: 0.000052872983, y: -0.016169155, z: 0.000026672851, w: 0.9998693}
+      scale: {x: 0.99999976, y: 0.9999998, z: 1}
+    - name: RCalfTwist1
+      parentName: RCalfTwist
+      position: {x: -3.7252902e-11, y: 0.00829848, z: 5.5879353e-11}
+      rotation: {x: -0.000025306706, y: -0.016303152, z: 0.000005760998, w: 0.99986714}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: RCalfTwist1_end
+      parentName: RCalfTwist1
+      position: {x: -0, y: 0.008298481, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Support_R_Knee
+      parentName: R_Thigh
+      position: {x: 8.381903e-11, y: 0.020282336, z: 5.9604643e-10}
+      rotation: {x: -0.34534982, y: 0.00003562238, z: 0.0025195908, w: 0.93847066}
+      scale: {x: 1, y: 0.9999998, z: 1.0000001}
+    - name: Support_R_Knee_end
+      parentName: Support_R_Knee
+      position: {x: -0, y: 0.020282341, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RThighTwist
+      parentName: R_Thigh
+      position: {x: 5.401671e-10, y: -0.0000000023841857, z: 0.0000000011920929}
+      rotation: {x: -0.000003468758, y: 0.017178472, z: -0.000028498958, w: 0.9998525}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1}
+    - name: RThighTwist1
+      parentName: RThighTwist
+      position: {x: 4.0978193e-10, y: 0.010141168, z: 4.4703483e-10}
+      rotation: {x: -0.0000027195629, y: -0.0086056385, z: 0.000014102611, w: 0.999963}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: RThighTwist1_end
+      parentName: RThighTwist1
+      position: {x: -0, y: 0.010141169, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Head_cloth_
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.000071049995, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Head_cloth__end
+      parentName: c5000_Fur_Head_cloth_
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth_
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth__end
+      parentName: c5000_Fur_L_Arm_cloth_
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head_end
+      parentName: c5000_Head
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Teeth
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Teeth_end
+      parentName: c5000_Teeth
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: __dmy_PC
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: __dmy_PC_end
+      parentName: __dmy_PC
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Body_Damaged
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Body_Damaged_end
+      parentName: c5000_Body_Damaged
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head_Damaged
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head_Damaged_end
+      parentName: c5000_Head_Damaged
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head_Cured
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Head_Cured_end
+      parentName: c5000_Head_Cured
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Body_Cured
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Body_Cured_end
+      parentName: c5000_Body_Cured
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy001_end
+      parentName: Model_Dmy001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy________9___
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy________9____end
+      parentName: Model_Dmy________9___
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Arm
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Arm_end
+      parentName: Fur_Short_Arm
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_WhiteShort__cloth_
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_WhiteShort__cloth__end
+      parentName: c5000_Fur_WhiteShort__cloth_
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Neck_cloth_
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Neck_cloth__end
+      parentName: c5000_Fur_Neck_cloth_
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L_end
+      parentName: c5000_Fur_Back_cloth_L
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R_end
+      parentName: c5000_Fur_Back_cloth_R
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Short_R
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Short_R_end
+      parentName: c5000_Fur_Short_R
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Short_L
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Short_L_end
+      parentName: c5000_Fur_Short_L
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy_Blood
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy_Blood_end
+      parentName: Model_Dmy_Blood
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmysfx
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmysfx_end
+      parentName: Model_Dmysfx
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Pelvis
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Pelvis_end
+      parentName: Fur_Short_Pelvis
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Leg
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Short_Leg_end
+      parentName: Fur_Short_Leg
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Spike
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Spike_end
+      parentName: c5000_Spike
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Spike_Blood
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Spike_Blood_end
+      parentName: c5000_Spike_Blood
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy3
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy3_end
+      parentName: Model_Dmy3
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy4
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy4_end
+      parentName: Model_Dmy4
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy005
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Model_Dmy005_end
+      parentName: Model_Dmy005
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_WhiteShort_001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_WhiteShort_001_end
+      parentName: c5000_Fur_WhiteShort_001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth_001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth_001_end
+      parentName: c5000_Fur_L_Arm_cloth_001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth_002
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_L_Arm_cloth_002_end
+      parentName: c5000_Fur_L_Arm_cloth_002
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L001_end
+      parentName: c5000_Fur_Back_cloth_L001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L002
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L002_end
+      parentName: c5000_Fur_Back_cloth_L002
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L003
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_L003_end
+      parentName: c5000_Fur_Back_cloth_L003
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R001_end
+      parentName: c5000_Fur_Back_cloth_R001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R002
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R002_end
+      parentName: c5000_Fur_Back_cloth_R002
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R003
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: c5000_Fur_Back_cloth_R003_end
+      parentName: c5000_Fur_Back_cloth_R003
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Master
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: -0.0061485395, z: 0.0367376}
+      rotation: {x: 0.025117964, y: -0.17420319, z: 0.9843826, w: 0.0036271752}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Master_end
+      parentName: Master
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HeadNub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.013125059, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HeadNub_end
+      parentName: HeadNub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _______1Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00610541, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: _______1Nub_end
+      parentName: _______1Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0013514, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk02Nub_end
+      parentName: L_Tusk02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0013514, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk02Nub_end
+      parentName: R_Tusk02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0013190401, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk03Nub_end
+      parentName: L_Tusk03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0013190401, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk03Nub_end
+      parentName: R_Tusk03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair21
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00271958, y: -0.00135878, z: 0.0017295299}
+      rotation: {x: -0.0046128207, y: 0.018871652, z: 0.9998023, w: -0.004239594}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair21_end
+      parentName: L_Hair21
+      position: {x: -0, y: 0.0049999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair2102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0042578597, y: -0.00392285, z: 0.00191497}
+      rotation: {x: -0.0046126996, y: 0.018867051, z: 0.99980235, w: -0.004239617}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair2102_end
+      parentName: L_Hair2102
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair21Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0060823997, y: -0.00629611, z: 0.0020333098}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair21Nub_end
+      parentName: L_Hair21Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair21
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00271958, y: -0.00135879, z: -0.0017295199}
+      rotation: {x: -0.0048492234, y: 0.018873695, z: 0.9997963, w: -0.005263491}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair21_end
+      parentName: R_Hair21
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair2102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0042578597, y: -0.00392286, z: -0.00191495}
+      rotation: {x: -0.004848859, y: 0.018866036, z: 0.9997964, w: -0.0052651325}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair2102_end
+      parentName: R_Hair2102
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair21Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00608239, y: -0.00629611, z: -0.00203328}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair21Nub_end
+      parentName: R_Hair21Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00170957, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Tusk01Nub_end
+      parentName: L_Tusk01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00170957, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Tusk01Nub_end
+      parentName: R_Tusk01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.023430109, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler01Nub_end
+      parentName: L_Antler01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0068010297, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler02Nub_end
+      parentName: L_Antler02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00718587, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Antler03Nub_end
+      parentName: L_Antler03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Antler01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01893854, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Antler01Nub_end
+      parentName: R_Antler01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair22
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0016008, y: 0.00018051, z: 0.0033876898}
+      rotation: {x: -0.0027706341, y: -0.028804401, z: 0.99956894, w: -0.004963719}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair22_end
+      parentName: L_Hair22
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair2202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0047493, y: 0.00028664, z: 0.00315271}
+      rotation: {x: -0.0027707673, y: -0.028804401, z: 0.99956894, w: -0.004963723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair2202_end
+      parentName: L_Hair2202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair22Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.007897589, y: 0.00039347998, z: 0.0029153298}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair22Nub_end
+      parentName: L_Hair22Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair23
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0041406197, y: 0.00061681, z: -0.00000094}
+      rotation: {x: -0.0025686717, y: -0.02842974, z: 0.9995791, w: -0.005178467}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: M_Hair23_end
+      parentName: M_Hair23
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair2302
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00502946, y: 0.00393978, z: 0.00000111}
+      rotation: {x: -0.0025685325, y: -0.028431602, z: 0.999579, w: -0.0051783477}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: L_Hair2302_end
+      parentName: L_Hair2302
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair23Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00561453, y: 0.00732971, z: 0.0000031599998}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair23Nub_end
+      parentName: L_Hair23Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair22
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0016008, y: 0.00018049, z: -0.0033876898}
+      rotation: {x: -0.0027708854, y: -0.02881346, z: 0.99956864, w: -0.0049673305}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair22_end
+      parentName: R_Hair22
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair2202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0047492897, y: 0.00028663, z: -0.00315272}
+      rotation: {x: -0.0027708851, y: -0.02881346, z: 0.99956864, w: -0.004967332}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair2202_end
+      parentName: R_Hair2202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair22Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.007897589, y: 0.00039347, z: -0.0029153298}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair22Nub_end
+      parentName: R_Hair22Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger0Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0027377799, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger0Nub_end
+      parentName: L_Finger0Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger1Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00241959, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger1Nub_end
+      parentName: L_Finger1Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger2Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00283641, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger2Nub_end
+      parentName: L_Finger2Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger3Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0027330602, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger3Nub_end
+      parentName: L_Finger3Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger4Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00193495, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Finger4Nub_end
+      parentName: L_Finger4Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair15
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00073495996, y: 0.0011019399, z: 0.0018890899}
+      rotation: {x: -0.15574968, y: -0.46314716, z: 0.8444906, w: 0.21925423}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair15_end
+      parentName: L_Hair15
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1502
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00555057, y: 0.00369894, z: 0.0018473599}
+      rotation: {x: -0.1557498, y: -0.46314704, z: 0.8444906, w: 0.21925445}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1502_end
+      parentName: L_Hair1502
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair15Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.011834219, y: 0.0063005197, z: 0.00180786}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair15Nub_end
+      parentName: L_Hair15Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair10
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00196051, y: -0.0061000697, z: 0.00409964}
+      rotation: {x: 0.019230774, y: -0.06959015, z: 0.9751467, w: -0.20946686}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair10_end
+      parentName: L_Hair10
+      position: {x: -0, y: 0.0050000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1002
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0067480896, y: -0.00647852, z: 0.00891523}
+      rotation: {x: 0.019230887, y: -0.06959054, z: 0.97514665, w: -0.20946698}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: L_Hair1002_end
+      parentName: L_Hair1002
+      position: {x: -0, y: 0.0049999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair10Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01153209, y: -0.00685922, z: 0.01373418}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair10Nub_end
+      parentName: L_Hair10Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair11
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0020977599, y: 0.0016665501, z: 0.00095665}
+      rotation: {x: 0.019700557, y: -0.06944373, z: 0.9750923, w: -0.20972487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair11_end
+      parentName: L_Hair11
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00809687, y: 0.0031536298, z: -0.00037753}
+      rotation: {x: 0.019700566, y: -0.06944378, z: 0.9750923, w: -0.20972487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1102_end
+      parentName: L_Hair1102
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair11Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01409454, y: 0.00464534, z: -0.00171305}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair11Nub_end
+      parentName: L_Hair11Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair12
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00956175, y: -0.00082837, z: 0.0035266797}
+      rotation: {x: 0.019197732, y: -0.069099806, z: 0.97518677, w: -0.2094456}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: L_Hair12_end
+      parentName: L_Hair12
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01543556, y: 0.00123174, z: 0.00626681}
+      rotation: {x: 0.019197883, y: -0.06909996, z: 0.97518677, w: -0.20944558}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: L_Hair1202_end
+      parentName: L_Hair1202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair12Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.02130688, y: 0.00329259, z: 0.0090117}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair12Nub_end
+      parentName: L_Hair12Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair13
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01024922, y: -0.00234522, z: 0.00319828}
+      rotation: {x: 0.01982226, y: -0.069620416, z: 0.975147, w: -0.20940027}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L_Hair13_end
+      parentName: L_Hair13
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1302
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.015772939, y: -0.00585142, z: 0.0013410901}
+      rotation: {x: 0.019822335, y: -0.06962043, z: 0.97514707, w: -0.20940001}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1302_end
+      parentName: L_Hair1302
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair13Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.021293908, y: -0.00936226, z: -0.00051547}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair13Nub_end
+      parentName: L_Hair13Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair14
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.016345968, y: -0.00187411, z: 0.00305793}
+      rotation: {x: 0.019362474, y: -0.069206774, z: 0.9752837, w: -0.20894316}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair14_end
+      parentName: L_Hair14
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair1402
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.02185533, y: -0.00543034, z: 0.00486189}
+      rotation: {x: 0.019362401, y: -0.06920624, z: 0.9752838, w: -0.2089429}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: L_Hair1402_end
+      parentName: L_Hair1402
+      position: {x: -0, y: 0.0050000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair14Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.027363578, y: -0.00898562, z: 0.0066710697}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair14Nub_end
+      parentName: L_Hair14Nub
+      position: {x: -0, y: 0.0049999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger0Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00213514, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger0Nub_end
+      parentName: R_Finger0Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger1Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00273014, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger1Nub_end
+      parentName: R_Finger1Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger2Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00254796, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger2Nub_end
+      parentName: R_Finger2Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger3Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00227314, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger3Nub_end
+      parentName: R_Finger3Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger4Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00154229, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Finger4Nub_end
+      parentName: R_Finger4Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair10
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00248124, y: 0.0000519, z: -0.0034371098}
+      rotation: {x: 0.022649199, y: 0.17469384, z: 0.98406553, w: -0.024168504}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair10_end
+      parentName: R_Hair10
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair1002
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0043678298, y: 0.00388929, z: -0.00321958}
+      rotation: {x: 0.022649199, y: 0.17469384, z: 0.98406553, w: -0.024168503}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair1002_end
+      parentName: R_Hair1002
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair10Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01121693, y: 0.00772696, z: -0.00300828}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair10Nub_end
+      parentName: R_Hair10Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair11
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00413021, y: -0.00249956, z: -0.00378585}
+      rotation: {x: 0.02269943, y: 0.17478034, z: 0.9840368, w: -0.024660304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair11_end
+      parentName: R_Hair11
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair1102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00596153, y: -0.00352173, z: -0.0057656197}
+      rotation: {x: 0.022699213, y: 0.17478031, z: 0.98403686, w: -0.024660021}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: R_Hair1102_end
+      parentName: R_Hair1102
+      position: {x: -0, y: 0.0049999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair11Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.01605307, y: -0.00453706, z: -0.00774993}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair11Nub_end
+      parentName: R_Hair11Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair06
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0030212398, y: 0.0034526398, z: 0.00199851}
+      rotation: {x: 0.008782831, y: -0.27552155, z: 0.9612545, w: -0.00075507443}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair06_end
+      parentName: L_Hair06
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0602
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00233371, y: 0.00670277, z: 0.00464712}
+      rotation: {x: 0.008782778, y: -0.27552134, z: 0.96125454, w: -0.0007549531}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0602_end
+      parentName: L_Hair0602
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair06Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00768653, y: 0.00995765, z: 0.00729421}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair06Nub_end
+      parentName: L_Hair06Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair06
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0030212398, y: 0.00345263, z: -0.0020009798}
+      rotation: {x: 0.00877451, y: -0.2755278, z: 0.9612528, w: -0.00078386045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair06_end
+      parentName: R_Hair06
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0602
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00233371, y: 0.0067027495, z: -0.00464963}
+      rotation: {x: 0.008774527, y: -0.2755278, z: 0.9612528, w: -0.00078399375}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0602_end
+      parentName: R_Hair0602
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair06Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00768652, y: 0.00995761, z: -0.00729675}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair06Nub_end
+      parentName: R_Hair06Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Chest01
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0032038998, y: -0.0041710697, z: 0.0000013099999}
+      rotation: {x: -0.008647677, y: -0.42120326, z: 0.90690356, w: 0.006243932}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L_Chest01_end
+      parentName: L_Chest01
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Chest01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00375131, y: -0.01095003, z: 0.0000013299999}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Chest01Nub_end
+      parentName: L_Chest01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair02
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0026900899, y: 0.0024068898, z: 0.00149974}
+      rotation: {x: -0.008636355, y: -0.42089307, z: 0.90704775, w: 0.0062388033}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair02_end
+      parentName: L_Hair02
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0022535399, y: 0.0057872096, z: 0.00472277}
+      rotation: {x: -0.0086362315, y: -0.4208928, z: 0.9070478, w: 0.006238858}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0202_end
+      parentName: L_Hair0202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0071935803, y: 0.009171249, z: 0.00794742}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair02Nub_end
+      parentName: L_Hair02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair02
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00269005, y: 0.00240691, z: -0.00149974}
+      rotation: {x: -0.008646331, y: -0.42088863, z: 0.9070496, w: 0.006251546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair02_end
+      parentName: R_Hair02
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00221402, y: 0.00582777, z: -0.0047404}
+      rotation: {x: -0.008646118, y: -0.42088875, z: 0.90704954, w: 0.006252036}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: R_Hair0202_end
+      parentName: R_Hair0202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0071144598, y: 0.00925232, z: -0.0079826405}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair02Nub_end
+      parentName: R_Hair02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair03
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00214532, y: 0.0012437, z: 0.00617733}
+      rotation: {x: -0.0089405, y: -0.4207811, z: 0.9070977, w: 0.006092451}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: L_Hair03_end
+      parentName: L_Hair03
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0302
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0038425897, y: -0.00070745, z: 0.0087447995}
+      rotation: {x: -0.00894062, y: -0.4207811, z: 0.9070977, w: 0.0060923933}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: L_Hair0302_end
+      parentName: L_Hair0302
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00982994, y: -0.00265501, z: 0.011316299}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair03Nub_end
+      parentName: L_Hair03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair03
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00214534, y: 0.00124366, z: -0.0061773094}
+      rotation: {x: -0.008348482, y: -0.42077634, z: 0.9071034, w: 0.006402695}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair03_end
+      parentName: R_Hair03
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0302
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00384257, y: -0.0007075, z: -0.00874478}
+      rotation: {x: -0.008348459, y: -0.4207761, z: 0.90710354, w: 0.0064029694}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: R_Hair0302_end
+      parentName: R_Hair0302
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00982992, y: -0.00265509, z: -0.01131627}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair03Nub_end
+      parentName: R_Hair03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair04
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00352517, y: 0.00527619, z: 0.0087687895}
+      rotation: {x: -0.0086326, y: -0.42090577, z: 0.90704185, w: 0.0062370454}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L_Hair04_end
+      parentName: L_Hair04
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0402
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00011632, y: 0.00726163, z: 0.01430881}
+      rotation: {x: -0.008632747, y: -0.42090628, z: 0.90704167, w: 0.0062367157}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: L_Hair0402_end
+      parentName: L_Hair0402
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair04Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00329189, y: 0.00925223, z: 0.01984737}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair04Nub_end
+      parentName: L_Hair04Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair04
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0035251798, y: 0.0052761296, z: -0.0087687895}
+      rotation: {x: -0.008635199, y: -0.4208811, z: 0.90705323, w: 0.0062454594}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: R_Hair04_end
+      parentName: R_Hair04
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0402
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.000116339994, y: 0.00726153, z: -0.01430883}
+      rotation: {x: -0.008635272, y: -0.42088133, z: 0.9070532, w: 0.0062452937}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: R_Hair0402_end
+      parentName: R_Hair0402
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair04Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0032918598, y: 0.009252099, z: -0.01984741}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair04Nub_end
+      parentName: R_Hair04Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair05
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00574573, y: 0.0042815697, z: 0.0011354199}
+      rotation: {x: -0.00864257, y: -0.4208946, z: 0.90704685, w: 0.006249309}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair05_end
+      parentName: L_Hair05
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0502
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00386209, y: 0.01005365, z: 0.0041995496}
+      rotation: {x: -0.008642692, y: -0.4208947, z: 0.9070468, w: 0.0062492527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0502_end
+      parentName: L_Hair0502
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair05Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00198361, y: 0.015827348, z: 0.00726382}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair05Nub_end
+      parentName: L_Hair05Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair05
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0057457397, y: 0.0042815697, z: -0.0011354}
+      rotation: {x: -0.008653635, y: -0.42089403, z: 0.90704715, w: 0.006239316}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair05_end
+      parentName: R_Hair05
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0502
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0038621, y: 0.01005363, z: -0.00419958}
+      rotation: {x: -0.008653754, y: -0.420894, z: 0.9070471, w: 0.0062392596}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0502_end
+      parentName: R_Hair0502
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair05Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00198363, y: 0.01582731, z: -0.0072639}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair05Nub_end
+      parentName: R_Hair05Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair01
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00336337, y: 0.00322465, z: 0.00158025}
+      rotation: {x: -0.008092539, y: -0.2680009, z: 0.96337634, w: 0.004012961}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: L_Hair01_end
+      parentName: L_Hair01
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair0102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00127426, y: 0.00620751, z: 0.00491479}
+      rotation: {x: -0.008092508, y: -0.2680009, z: 0.96337634, w: 0.004012847}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: L_Hair0102_end
+      parentName: L_Hair0102
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00590873, y: 0.00919431, z: 0.00825018}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Hair01Nub_end
+      parentName: L_Hair01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair01
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00336338, y: 0.00322464, z: -0.00158025}
+      rotation: {x: -0.00805436, y: -0.2680011, z: 0.9633739, w: 0.0046114214}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair01_end
+      parentName: R_Hair01
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00127424, y: 0.0062074796, z: -0.0049148197}
+      rotation: {x: -0.008054393, y: -0.26800132, z: 0.96337384, w: 0.004611536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair0102_end
+      parentName: R_Hair0102
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00590869, y: 0.00919427, z: -0.0082502505}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Hair01Nub_end
+      parentName: R_Hair01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair01
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00106999, y: -0.00346151, z: 0.00000002}
+      rotation: {x: 0.0028876595, y: -0.20402199, z: 0.97875446, w: -0.020160316}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: M_Hair01_end
+      parentName: M_Hair01
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair0102
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00183486, y: -0.0064200503, z: 0.00000002}
+      rotation: {x: 0.0028878131, y: -0.20402199, z: 0.97875446, w: -0.0201604}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair0102_end
+      parentName: M_Hair0102
+      position: {x: -0, y: 0.0049999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00474206, y: -0.009376279, z: 0.00000002}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair01Nub_end
+      parentName: M_Hair01Nub
+      position: {x: -0, y: 0.0050000004, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe0Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0033722, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe0Nub_end
+      parentName: L_Toe0Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe00Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00109582, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe00Nub_end
+      parentName: L_Toe00Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00290054, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe01Nub_end
+      parentName: L_Toe01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.001706, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe02Nub_end
+      parentName: L_Toe02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0014436799, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe03Nub_end
+      parentName: L_Toe03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe04Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0014386099, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_Toe04Nub_end
+      parentName: L_Toe04Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe0Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0033722, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe0Nub_end
+      parentName: R_Toe0Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe00Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00109582, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe00Nub_end
+      parentName: R_Toe00Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe01Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00290054, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe01Nub_end
+      parentName: R_Toe01Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.001706, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe02Nub_end
+      parentName: R_Toe02Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe03Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0014436799, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe03Nub_end
+      parentName: R_Toe03Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe04Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0014386099, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_Toe04Nub_end
+      parentName: R_Toe04Nub
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair02
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: -0.0063130697, z: 0.04410746}
+      rotation: {x: 0.025019234, y: -0.17477964, z: 0.9842842, w: 0.0032663865}
+      scale: {x: 0.9999999, y: 1, z: 0.99999994}
+    - name: M_Hair02_end
+      parentName: M_Hair02
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair0202
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00000002, y: -0.010901051, z: 0.03908705}
+      rotation: {x: 0.025019232, y: -0.17477961, z: 0.9842842, w: 0.0032663853}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: M_Hair0202_end
+      parentName: M_Hair0202
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair02Nub
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00000004, y: -0.0154930195, z: 0.0340703}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: M_Hair02Nub_end
+      parentName: M_Hair02Nub
+      position: {x: -0, y: 0.0050000013, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_Back
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0.00394821, z: 0.05958156}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_Back_end
+      parentName: Point_Back
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_L_Clavicle
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00090044, y: 0.01280387, z: 0.054126967}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_L_Clavicle_end
+      parentName: Point_L_Clavicle
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_L_Back
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00609874, y: 0.0012833899, z: 0.05999577}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_L_Back_end
+      parentName: Point_L_Back
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_R_Clavicle
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00090037, y: 0.01280387, z: 0.054126967}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_R_Clavicle_end
+      parentName: Point_R_Clavicle
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_R_Back
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.00609874, y: 0.00128338, z: 0.05999577}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Point_R_Back_end
+      parentName: Point_R_Back
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Up_Muscle_L_Chest
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Up_Muscle_L_Chest_end
+      parentName: Up_Muscle_L_Chest
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Up_Muscle_R_Chest
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Up_Muscle_R_Chest_end
+      parentName: Up_Muscle_R_Chest
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_L_Arm_Ref
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00442737, y: 0.009983149, z: 0.05727919}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_L_Arm_Ref_end
+      parentName: Fur_L_Arm_Ref
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Back_Ref
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0.009817489, z: 0.056934398}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Back_Ref_end
+      parentName: Fur_Back_Ref
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Head_Ref
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: 0.02144897, z: 0.060137346}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_Head_Ref_end
+      parentName: Fur_Head_Ref
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_WhiteShort_Ref
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: -0.01703148, z: 0.0748641}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fur_WhiteShort_Ref_end
+      parentName: Fur_WhiteShort_Ref
+      position: {x: -0, y: 0.0049999985, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Pelvis
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: -0.0061485395, z: 0.0367376}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Pelvis_end
+      parentName: Collidable_Pelvis
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine1
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0, y: -0.0023534, z: 0.04033687}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine1_end
+      parentName: Collidable_Spine1
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine4
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00000001, y: 0.00116907, z: 0.04593587}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine4_end
+      parentName: Collidable_Spine4
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine6
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00000003, y: 0.00760749, z: 0.05293199}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Spine6_end
+      parentName: Collidable_Spine6
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Neck
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0000012300001, y: 0.01238986, z: 0.058160882}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Neck_end
+      parentName: Collidable_Neck
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_UpperArm001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0073232297, y: 0.0099754, z: 0.05687539}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_UpperArm001_end
+      parentName: Collidable_L_UpperArm001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_Forearm001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.02159388, y: 0.0095957, z: 0.04371781}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_Forearm001_end
+      parentName: Collidable_L_Forearm001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_UpperArm001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0076094195, y: 0.00947258, z: 0.056994647}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_UpperArm001_end
+      parentName: Collidable_R_UpperArm001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_Forearm001
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.01605976, y: 0.01020598, z: 0.049099278}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_Forearm001_end
+      parentName: Collidable_R_Forearm001
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Head
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0000012300001, y: 0.019380689, z: 0.05946539}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Head_end
+      parentName: Collidable_Head
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Jaw
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.00000128, y: 0.020799339, z: 0.058180477}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_Jaw_end
+      parentName: Collidable_Jaw
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_Thigh
+      parentName: Cleric Beast 1(Clone)
+      position: {x: -0.0031707399, y: -0.00614853, z: 0.0367376}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_L_Thigh_end
+      parentName: Collidable_L_Thigh
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_Thigh
+      parentName: Cleric Beast 1(Clone)
+      position: {x: 0.0031707399, y: -0.0061485395, z: 0.0367376}
+      rotation: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Collidable_R_Thigh_end
+      parentName: Collidable_R_Thigh
+      position: {x: -0, y: 0.005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
