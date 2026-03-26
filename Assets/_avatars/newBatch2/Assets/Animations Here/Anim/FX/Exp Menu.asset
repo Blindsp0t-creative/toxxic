@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Exp Menu
+  m_EditorClassIdentifier: 
+  controls:
+  - name: Hair
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 6d5abff0f668271409b4c4e9a97c1e0b, type: 2}
+    subParameters: []
+    labels: []
+  - name: Body Types
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: acd6038e2fb962a49a589719a886896d, type: 2}
+    subParameters: []
+    labels: []
+  - name: Clothes
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 7605ec42a6b68134e8eb8408adaa5ccb, type: 2}
+    subParameters: []
+    labels: []
+  - name: Clothes Changes
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: e3f8e07ada60a3c4a874d4df293ca189, type: 2}
+    subParameters: []
+    labels: []
+  - name: Mask and Glasses
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 7b0a77121edd61445a4f542c3e121baf, type: 2}
+    subParameters: []
+    labels: []
+  - name: Ears And Tail
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 355126efc33fe2440858082e5d7d8966, type: 2}
+    subParameters: []
+    labels: []

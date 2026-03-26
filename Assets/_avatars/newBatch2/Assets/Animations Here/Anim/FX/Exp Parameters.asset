@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1506855854, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Exp Parameters
+  m_EditorClassIdentifier: 
+  parameters:
+  - name: VRCEmote
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: VRCFaceBlendH
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+  - name: VRCFaceBlendV
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+  - name: 
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: Mask up or down
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: Glasses Up or Down
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: No Tails
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: Skirt
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: Ears
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: Hair Color
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: Hue
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+  - name: Boots
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: Boob Slider
+    valueType: 1
+    saved: 1
+    defaultValue: 0
+  - name: Skin Color
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: Body Types
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: Hair
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Beanie!
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Bottoms
+    valueType: 0
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Bra
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Collar
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Elf Ears
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Gloves
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Harness
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Horns
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Long Hair
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Mask
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Brow
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Panties
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Panties 2
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Pasties
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Pigtails
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Shirt
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Short Straight hair
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Straps
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Top
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Wrap
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Tail
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/Halo Ring
+    valueType: 2
+    saved: 1
+    defaultValue: 0
+  - name: A3C/Toggle/rayband glasses by kaykaysnow
+    valueType: 2
+    saved: 1
+    defaultValue: 0
