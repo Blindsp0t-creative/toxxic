@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.toxxic05.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "K:\\TOXXIC\\Toxxic05\\toxxic05\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "toxxic05 [Testing]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1168 @@
+12:43:14 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:14 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:14 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:14 DUMM-Warper "Camera8" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=7
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:14 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:14 File found and openend.
+
+12:43:14 File contains 24 chunks.
+
+12:43:14 Load warp map 0...
+
+12:43:14 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load warp map 1...
+
+12:43:14 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load warp map 2...
+
+12:43:14 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load warp map 3...
+
+12:43:14 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load warp map 4...
+
+12:43:14 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load warp map 5...
+
+12:43:14 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Load warp map 6...
+
+12:43:14 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Load warp map 7...
+
+12:43:14 Warp map successfully loaded, new dataset (8) 1920x1200 created.
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 Blend image set.
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 Black image set.
+
+12:43:14 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:14 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D2 BTSX (BIT0000)  [ 1,1 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 7680,1200
+
+12:43:14 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:14 left-handedness detected.
+
+12:43:14 INFO: AutoView mapping display corners:
+ tl(-481.6711,-0.0000,236.5482)
+ tr(57.7787,36.0020,255.5255)
+ bl(-478.6822,0.0000,570.4113)
+ br(60.8950,43.9382,573.5985).
+
+12:43:14 INFO: AutoView average resolution is 1970x1303.
+12:43:14 INFO: AutoView optimal resolution coverage is 99%x99%.
+12:43:14 INFO: AutoView for channel [Camera8] yields:
+dir=[-85.725845, 98.837288, 97.639481]
+fov=[41.433296, 44.091267, 67.403008, 44.940212]
+screen=1.699525
+optimalRes=[2791, 1524]
+optimalRect=[0, 0, 2791, 1524]
+handedness=left
+borderFitError=[1px, 1px, 1px, 1px]
+
+12:43:14 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:14 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:14 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:14 DUMM-Warper "Camera7" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=6
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:14 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:14 File found and openend.
+
+12:43:14 File contains 24 chunks.
+
+12:43:14 Load warp map 0...
+
+12:43:14 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load warp map 1...
+
+12:43:14 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load warp map 2...
+
+12:43:14 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load warp map 3...
+
+12:43:14 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load warp map 4...
+
+12:43:14 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load warp map 5...
+
+12:43:14 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Load warp map 6...
+
+12:43:14 Warp map successfully loaded, new dataset (7) 1920x1200 created.
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Blend image set.
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Black image set.
+
+12:43:14 Load warp map 7...
+
+12:43:14 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:14 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D2 BTSX (BIT0000)  [ 1,0 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 5760,1200
+
+12:43:14 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:14 left-handedness detected.
+
+12:43:14 INFO: AutoView mapping display corners:
+ tl(-799.7766,0.0000,240.9303)
+ tr(-273.7020,-0.0000,237.3265)
+ bl(-799.9534,3.4201,557.8456)
+ br(-270.9545,-0.0000,571.0156).
+
+12:43:14 INFO: AutoView average resolution is 1841x1212.
+12:43:14 INFO: AutoView optimal resolution coverage is 93%x93%.
+12:43:14 INFO: AutoView for channel [Camera7] yields:
+dir=[-89.644073, -148.027832, -148.546814]
+fov=[68.460190, 42.588585, 24.274273, 44.588318]
+screen=1.797630
+optimalRes=[3482, 1930]
+optimalRect=[0, 0, 3482, 1930]
+handedness=left
+borderFitError=[1px, 0px, 0px, 1px]
+
+12:43:14 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:14 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:14 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:14 DUMM-Warper "Camera6" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=5
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:14 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:14 File found and openend.
+
+12:43:14 File contains 24 chunks.
+
+12:43:14 Load warp map 0...
+
+12:43:14 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load bitmap for dataset 1...
+
+12:43:14 Load warp map 1...
+
+12:43:14 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load bitmap for dataset 2...
+
+12:43:14 Load warp map 2...
+
+12:43:14 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load bitmap for dataset 3...
+
+12:43:14 Load warp map 3...
+
+12:43:14 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load bitmap for dataset 4...
+
+12:43:14 Load warp map 4...
+
+12:43:14 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load bitmap for dataset 5...
+
+12:43:14 Load warp map 5...
+
+12:43:14 Warp map successfully loaded, new dataset (6) 1920x1200 created.
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Blend image set.
+
+12:43:14 Load bitmap for dataset 6...
+
+12:43:14 Black image set.
+
+12:43:14 Load warp map 6...
+
+12:43:14 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Load bitmap for dataset 7...
+
+12:43:14 Load warp map 7...
+
+12:43:14 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 Load bitmap for dataset 8...
+
+12:43:14 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:14 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D2 BTSX (BIT0000)  [ 0,1 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 7680,0
+
+12:43:14 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:14 left-handedness detected.
+
+12:43:15 INFO: AutoView mapping display corners:
+ tl(-465.3028,34.3233,-56.1932)
+ tr(40.8646,71.1810,-48.8278)
+ bl(-459.8572,-0.0000,285.9213)
+ br(57.0606,34.5471,270.5533).
+
+12:43:15 INFO: AutoView average resolution is 1987x1366.
+12:43:15 INFO: AutoView optimal resolution coverage is 96%x96%.
+12:43:15 INFO: AutoView for channel [Camera6] yields:
+dir=[-82.626190, 32.187473, 32.852093]
+fov=[33.506676, 67.056564, 64.886932, -21.676628]
+screen=1.847657
+optimalRes=[2989, 1976]
+optimalRect=[0, 0, 2989, 1976]
+handedness=left
+borderFitError=[0px, 0px, 0px, 11px]
+
+12:43:15 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:15 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:15 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:15 DUMM-Warper "Camera5" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=4
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:15 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:15 File found and openend.
+
+12:43:15 File contains 24 chunks.
+
+12:43:15 Load warp map 0...
+
+12:43:15 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load warp map 1...
+
+12:43:15 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load warp map 2...
+
+12:43:15 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Load warp map 3...
+
+12:43:15 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Load warp map 4...
+
+12:43:15 Warp map successfully loaded, new dataset (5) 1920x1200 created.
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Blend image set.
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Black image set.
+
+12:43:15 Load warp map 5...
+
+12:43:15 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load warp map 6...
+
+12:43:15 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load warp map 7...
+
+12:43:15 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:15 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D2 BTSX (BIT0000)  [ 0,0 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 5760,0
+
+12:43:15 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:15 left-handedness detected.
+
+12:43:15 INFO: AutoView mapping display corners:
+ tl(-797.6543,40.1750,-58.8599)
+ tr(-280.2939,32.4393,-55.2636)
+ bl(-799.9534,2.7803,280.6071)
+ br(-272.0900,-0.0000,289.8479).
+
+12:43:15 INFO: AutoView average resolution is 2027x1210.
+12:43:15 INFO: AutoView optimal resolution coverage is 97%x97%.
+12:43:15 INFO: AutoView for channel [Camera5] yields:
+dir=[-84.158157, -4.939198, -5.672114]
+fov=[67.249008, 66.575905, 22.506762, -25.701864]
+screen=1.909509
+optimalRes=[2243, 2025]
+optimalRect=[0, 0, 2243, 2025]
+handedness=left
+borderFitError=[0px, 0px, 0px, 1px]
+
+12:43:15 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:15 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:15 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:15 DUMM-Warper "Camera4" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=3
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:15 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:15 File found and openend.
+
+12:43:15 File contains 24 chunks.
+
+12:43:15 Load warp map 0...
+
+12:43:15 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load warp map 1...
+
+12:43:15 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load warp map 2...
+
+12:43:15 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Load warp map 3...
+
+12:43:15 Warp map successfully loaded, new dataset (4) 1920x1200 created.
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Blend image set.
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Black image set.
+
+12:43:15 Load warp map 4...
+
+12:43:15 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Load warp map 5...
+
+12:43:15 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load warp map 6...
+
+12:43:15 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load warp map 7...
+
+12:43:15 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:15 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D1 BTSX (BIT0000)  [ 1,1 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 3840,1200
+
+12:43:15 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:15 left-handedness detected.
+
+12:43:15 INFO: AutoView mapping display corners:
+ tl(-13.8462,414.7344,-62.4603)
+ tr(63.9076,416.5277,577.3087)
+ bl(-18.0664,35.5229,-56.7852)
+ br(40.7156,14.1671,569.7031).
+
+12:43:15 INFO: AutoView average resolution is 1904x1266.
+12:43:15 INFO: AutoView optimal resolution coverage is 96%x96%.
+12:43:15 INFO: AutoView for channel [Camera4] yields:
+dir=[-1.981814, 83.815331, -0.880529]
+fov=[48.697838, 33.442070, 29.608400, 22.509836]
+screen=3.798273
+optimalRes=[2297, 2400]
+optimalRect=[0, 0, 2297, 2400]
+handedness=left
+borderFitError=[0px, 0px, 0px, 5px]
+
+12:43:15 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:15 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:15 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:15 DUMM-Warper "Camera3" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=2
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:15 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:15 File found and openend.
+
+12:43:15 File contains 24 chunks.
+
+12:43:15 Load warp map 0...
+
+12:43:15 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load bitmap for dataset 1...
+
+12:43:15 Load warp map 1...
+
+12:43:15 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load bitmap for dataset 2...
+
+12:43:15 Load warp map 2...
+
+12:43:15 Warp map successfully loaded, new dataset (3) 1920x1200 created.
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Blend image set.
+
+12:43:15 Load bitmap for dataset 3...
+
+12:43:15 Black image set.
+
+12:43:15 Load warp map 3...
+
+12:43:15 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Load bitmap for dataset 4...
+
+12:43:15 Load warp map 4...
+
+12:43:15 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Load bitmap for dataset 5...
+
+12:43:15 Load warp map 5...
+
+12:43:15 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load bitmap for dataset 6...
+
+12:43:15 Load warp map 6...
+
+12:43:15 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load bitmap for dataset 7...
+
+12:43:15 Load warp map 7...
+
+12:43:15 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 Load bitmap for dataset 8...
+
+12:43:15 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:15 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D1 BTSX (BIT0000)  [ 1,0 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 1920,1200
+
+12:43:15 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:15 left-handedness detected.
+
+12:43:15 INFO: AutoView mapping display corners:
+ tl(-799.9539,423.1989,579.7241)
+ tr(-799.3546,423.2237,-62.4607)
+ bl(-799.9534,4.1272,557.8267)
+ br(-799.9534,34.9153,-47.5872).
+
+12:43:15 INFO: AutoView average resolution is 1829x1245.
+12:43:15 INFO: AutoView optimal resolution coverage is 92%x92%.
+12:43:15 INFO: AutoView for channel [Camera3] yields:
+dir=[0.042691, -89.973534, 1.414786]
+fov=[21.485125, 28.783749, 46.146450, 22.993412]
+screen=4.499006
+optimalRes=[3812, 2400]
+optimalRect=[0, 0, 3812, 2400]
+handedness=left
+borderFitError=[0px, 0px, 0px, 0px]
+
+12:43:16 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:16 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:16 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:16 DUMM-Warper "Camera2" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=1
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:16 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:16 File found and openend.
+
+12:43:16 File contains 24 chunks.
+
+12:43:16 Load warp map 0...
+
+12:43:16 Warp map successfully added, new dataset (1) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 1...
+
+12:43:16 Load bitmap for dataset 1...
+
+12:43:16 Load warp map 1...
+
+12:43:16 Warp map successfully loaded, new dataset (2) 1920x1200 created.
+
+12:43:16 Load bitmap for dataset 2...
+
+12:43:16 Blend image set.
+
+12:43:16 Load bitmap for dataset 2...
+
+12:43:16 Black image set.
+
+12:43:16 Load warp map 2...
+
+12:43:16 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 3...
+
+12:43:16 Load bitmap for dataset 3...
+
+12:43:16 Load warp map 3...
+
+12:43:16 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 4...
+
+12:43:16 Load bitmap for dataset 4...
+
+12:43:16 Load warp map 4...
+
+12:43:16 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 5...
+
+12:43:16 Load bitmap for dataset 5...
+
+12:43:16 Load warp map 5...
+
+12:43:16 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 6...
+
+12:43:16 Load bitmap for dataset 6...
+
+12:43:16 Load warp map 6...
+
+12:43:16 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 7...
+
+12:43:16 Load bitmap for dataset 7...
+
+12:43:16 Load warp map 7...
+
+12:43:16 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 8...
+
+12:43:16 Load bitmap for dataset 8...
+
+12:43:16 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:16 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D1 BTSX (BIT0000)  [ 0,1 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 3840,0
+
+12:43:16 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:16 left-handedness detected.
+
+12:43:16 INFO: AutoView mapping display corners:
+ tl(-467.3309,417.1853,-62.4604)
+ tr(59.4082,415.6174,-23.5582)
+ bl(-480.4102,8.3096,-31.5692)
+ br(55.5231,40.2512,-18.3487).
+
+12:43:16 INFO: AutoView average resolution is 1601x1242.
+12:43:16 INFO: AutoView optimal resolution coverage is 77%x77%.
+12:43:16 INFO: AutoView for channel [Camera2] yields:
+dir=[-2.694525, 2.885018, 1.637051]
+fov=[19.921070, 30.585533, 42.440205, 20.271086]
+screen=4.381874
+optimalRes=[3063, 2366]
+optimalRect=[0, 0, 3063, 2366]
+handedness=left
+borderFitError=[1px, 0px, 1px, 1px]
+
+12:43:16 2025/06/30 VIOSOWarpBlend API 1.6.27.98.
+
+12:43:16 lib-path C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend64.dll.
+
+12:43:16 process path C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe.
+
+12:43:16 DUMM-Warper "Camera1" created. Logging level is 2
+Evaluated parameters from
+C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\VIOSOWarpBlend.ini:
+calibFile=LABLAB_unity3D.vwf
+calibIndex=0
+calibSplit=[0,0,0,0]
+bTurnWithView=1
+bDoNotBlend=0
+eyePointProvider=
+eyePointProviderParam=
+eye=[0.00000, 0.00000, 0.00000]
+near=0.10000
+far=20000.00000
+bBicubic=0
+bUseGL110=0
+bPartialInput=0
+splice=0
+trans=[100.00000, 0.00000, 0.00000, -350.00000; 0.00000, 100.00000, 0.00000, 180.00000; 0.00000, 0.00000, -100.00000, 400.00000; 0.00000, 0.00000, 0.00000, 1.00000]
+autoViewC=1.00000
+bAutoView=1
+dir=[0.00000, 0.00000, 0.00000]
+fov=[35.00000, 30.00000, 35.00000, 30.00000]
+screen=1.00000
+optimalRes=[0, 0]
+optimalRect=[0, 0, 0, 0]
+port=0
+heartbeatPort=0
+address=0.0.0.0
+mouseMode=0
+bDoNoBlack=0
+overrideStatemask=0
+bFixWraparound=0
+D3D12RTVF=28
+blackScale=1.000000
+
+
+12:43:16 Open "C:\Users\chamb\Documents\TOXXIC\UNITY\toxxic05_HDRP\toxxic05_hdrp\Assets\Plugins\Vioso\LABLAB_unity3D.vwf"...
+
+12:43:16 File found and openend.
+
+12:43:16 File contains 24 chunks.
+
+12:43:16 Load warp map 0...
+
+12:43:16 Warp map successfully loaded, new dataset (1) 1920x1200 created.
+
+12:43:16 Load bitmap for dataset 1...
+
+12:43:16 Blend image set.
+
+12:43:16 Load bitmap for dataset 1...
+
+12:43:16 Black image set.
+
+12:43:16 Load warp map 1...
+
+12:43:16 Warp map successfully added, new dataset (2) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 2...
+
+12:43:16 Load bitmap for dataset 2...
+
+12:43:16 Load warp map 2...
+
+12:43:16 Warp map successfully added, new dataset (3) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 3...
+
+12:43:16 Load bitmap for dataset 3...
+
+12:43:16 Load warp map 3...
+
+12:43:16 Warp map successfully added, new dataset (4) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 4...
+
+12:43:16 Load bitmap for dataset 4...
+
+12:43:16 Load warp map 4...
+
+12:43:16 Warp map successfully added, new dataset (5) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 5...
+
+12:43:16 Load bitmap for dataset 5...
+
+12:43:16 Load warp map 5...
+
+12:43:16 Warp map successfully added, new dataset (6) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 6...
+
+12:43:16 Load bitmap for dataset 6...
+
+12:43:16 Load warp map 6...
+
+12:43:16 Warp map successfully added, new dataset (7) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 7...
+
+12:43:16 Load bitmap for dataset 7...
+
+12:43:16 Load warp map 7...
+
+12:43:16 Warp map successfully added, new dataset (8) 1920x1200 created, data loading skipped.
+
+12:43:16 Load bitmap for dataset 8...
+
+12:43:16 Load bitmap for dataset 8...
+
+12:43:16 LoadVWF: Successfully added 8 datasets to the mappings set.
+
+12:43:16 Mapping Info:
+    Hostname: "localhost"
+  Devicename: "D1 BTSX (BIT0000)  [ 0,0 ]"
+   SplitInfo: (0,0) of (0,0)
+  Resolution: 1920x1200
+    Position: 1920,0
+
+12:43:16 3D data found in mapping. Using DYNAMIC EYE settings.
+
+12:43:16 left-handedness detected.
+
+12:43:16 INFO: AutoView mapping display corners:
+ tl(-799.6165,423.7557,-62.4608)
+ tr(-277.4713,416.6773,-62.4604)
+ bl(-789.7474,7.1034,-29.1227)
+ br(-270.6814,8.1309,-31.2068).
+
+12:43:16 INFO: AutoView average resolution is 1498x1213.
+12:43:16 INFO: AutoView optimal resolution coverage is 74%x74%.
+12:43:16 INFO: AutoView for channel [Camera1] yields:
+dir=[-4.478454, -0.140744, -0.333989]
+fov=[45.449295, 31.974049, 10.384055, 17.719728]
+screen=4.427518
+optimalRes=[3535, 2400]
+optimalRect=[0, 0, 3535, 2400]
+handedness=left
+borderFitError=[0px, 0px, 0px, 0px]
+
