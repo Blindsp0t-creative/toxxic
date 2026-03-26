@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Menu
+  m_EditorClassIdentifier: 
+  controls:
+  - name: Marker
+    icon: {fileID: 2800000, guid: d7f5ccd8035dd4d4d9f80706d359fdfa, type: 3}
+    type: 103
+    parameter:
+      name: M_Menu
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 4a07fd24e03141246a6dc63aca50487f, type: 2}
+    subParameters: []
+    labels: []
+  - name: Clothing
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: c0cbf6a644565c1408355d09ad32478e, type: 2}
+    subParameters: []
+    labels: []
+  - name: Extras
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: d5d1a488569dcba4f8e191ea5bf21cf7, type: 2}
+    subParameters: []
+    labels: []
+  - name: Colours
+    icon: {fileID: 0}
+    type: 103
+    parameter:
+      name: 
+    value: 1
+    style: 0
+    subMenu: {fileID: 11400000, guid: 69a7faaa9b2b3394f936b7708c36b99f, type: 2}
+    subParameters: []
+    labels: []
+  - name: DisLocomotion
+    icon: {fileID: 0}
+    type: 102
+    parameter:
+      name: DisLocomotion
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
