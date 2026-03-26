@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_scenes/toxxic_lablab_jour02_EVG_immersive.unity
+    guid: 0d0addd818a31494a84c4c2fbf76ca08
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8ea57daa848b28242ae5a7605eb542fb,
+      type: 2}
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 3fec1ca61e9e50349b22a70d01f9e1f1,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 33a9305e1e810b74680359a5df81b232,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 8b67494f9939e2048938e28ee6a5dc15,
+      type: 2}
