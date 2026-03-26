@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d655b07d2cd0339744b343f35ac324, type: 3}
+  m_Name: ColorGrading 5
+  m_EditorClassIdentifier:
+  settings:
+  - {fileID: 11400000, guid: 1f77b4531f185964292ba7ca5d330d06, type: 2}
+  - {fileID: 11400000, guid: c2f9446bf4c35484ca3a76a375096a84, type: 2}
+  - {fileID: 11400000, guid: 3a6ac30c0e799aa4d85c179a5196720f, type: 2}
