@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fce15f2e3a8eaa439b5054c6984d8a0, type: 3}
+  m_Name: parameters
+  m_EditorClassIdentifier: 
+  floats:
+  - name: elevationAvatar
+    fullname: elevationAvatar_conduite_script01
+    compName: conduite_script01
+    exposed: 1
+    hasRange: 1
+    minRange: -1
+    maxRange: 1
+    type: System.Single
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: -0.37
+    faderId: 1
+  - name: positionSol
+    fullname: positionSol_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    hasRange: 0
+    minRange: 0
+    maxRange: 1
+    type: System.Single
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+    faderId: 0
+  - name: positionStandUP
+    fullname: positionStandUP_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    hasRange: 0
+    minRange: 0
+    maxRange: 1
+    type: System.Single
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+    faderId: 0
+  - name: multiplierLerpTime
+    fullname: multiplierLerpTime_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    hasRange: 0
+    minRange: 0
+    maxRange: 1
+    type: System.Single
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+    faderId: 0
+  ints:
+  - name: sceneNB
+    fullname: sceneNB_conduite_script01
+    compName: conduite_script01
+    exposed: 1
+    hasRange: 1
+    minRange: 1
+    maxRange: 7
+    type: System.Int32
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 5
+  bools:
+  - name: NEXT
+    fullname: NEXT_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    type: System.Boolean
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+  - name: BACK
+    fullname: BACK_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    type: System.Boolean
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+  - name: goDown
+    fullname: goDown_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    type: System.Boolean
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+  - name: toto
+    fullname: toto_conduite_script02
+    compName: conduite_script02
+    exposed: 1
+    type: System.Boolean
+    compInfo:
+      comp: {fileID: 0}
+      infoType: 1
+    currentValue: 0
+  strings: []
