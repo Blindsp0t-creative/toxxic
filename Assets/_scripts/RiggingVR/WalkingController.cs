@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingController : MonoBehaviour
+public class WalkingControllerModified : MonoBehaviour
 {
     [SerializeField]
     private float speedMinimum = 0.05f;
