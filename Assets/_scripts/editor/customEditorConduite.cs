@@ -4,7 +4,7 @@ using UnityEditor;
 
 [CustomEditor(typeof(conduite_script02))]
 
-public class conduiteScriptEditor : Editor
+public class conduiteScriptEditorPelleteuse : Editor
 {
     conduite_script02 _target;
 
