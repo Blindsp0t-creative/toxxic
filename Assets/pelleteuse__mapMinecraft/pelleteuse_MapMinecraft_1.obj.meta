@@ -1,54 +1,54 @@
 fileFormatVersion: 2
 guid: 2f075785f4d44f6d9a34f66d2cd507ab
 ModelImporter:
-  serializedVersion: 22200
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Coal_OreMat
-    second: {fileID: 2100000, guid: 0734427a5909f534fa74e9cc8721809f, type: 2}
+    second: {fileID: 2100000, guid: 9bc91dfa812c5b64ebd818635541a9a5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DirtMat
-    second: {fileID: 2100000, guid: 546e1a84fd33f8f4c863057100ed5e28, type: 2}
+    second: {fileID: 2100000, guid: a5c34ed7b97b9f149b49c3fd6a162382, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Grass_BlockMat
-    second: {fileID: 2100000, guid: 100b6df59db7bc14ea3732f533d40f2d, type: 2}
+    second: {fileID: 2100000, guid: bf8b85345ee637c4d999654eee5e58c1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: GravelMat
-    second: {fileID: 2100000, guid: e3722f29b45f83d49af37518eb3ef0b0, type: 2}
+    second: {fileID: 2100000, guid: 6bf55accf07ecd84a8e4f6a159961485, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Infested_StoneMat
-    second: {fileID: 2100000, guid: 6af82b90819e3a24282ad63119434f73, type: 2}
+    second: {fileID: 2100000, guid: eff364f670c84144a8b6e6bd9b228127, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Iron_OreMat
-    second: {fileID: 2100000, guid: d479f7ab98d2f8a4f978a902222e9581, type: 2}
+    second: {fileID: 2100000, guid: d960b4f70b83e1f4f95ebcb989e261f6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Oak_LeavesMat
-    second: {fileID: 2100000, guid: de11f2b6897219a459a0296064e2ef59, type: 2}
+    second: {fileID: 2100000, guid: 5fff8a52d5336d14395e181c164489b3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Oak_LogMat
-    second: {fileID: 2100000, guid: 1c165960a92c13a43a343b3f6120a7dc, type: 2}
+    second: {fileID: 2100000, guid: e4df8c1b90a33024a904865c7abb2aca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: StoneMat
-    second: {fileID: 2100000, guid: e668df6184cb18a4a87fc129dc9d998a, type: 2}
+    second: {fileID: 2100000, guid: 32e22bf1aa778ee41b1c0be47a8ee78d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -61,8 +61,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -103,6 +101,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
