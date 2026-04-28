@@ -30,6 +30,7 @@ TagManager:
   - QDSUITextInputField
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
+  - Conduite
   layers:
   - Default
   - TransparentFX
