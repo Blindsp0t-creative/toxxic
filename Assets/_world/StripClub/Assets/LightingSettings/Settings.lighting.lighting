@@ -2,25 +2,32 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!850595691 &850595691
 LightingSettings:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  m_GIWorkflowMode: 1
+  serializedVersion: 10
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 0
   m_BounceScale: 1
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 0
-  m_LightmapMaxSize: 0
-  m_BakeResolution: 0
-  m_Padding: 0
+  m_UsingShadowmask: 0
+  m_BakeBackend: 1
+  m_LightmapMaxSize: 256
+  m_LightmapSizeFixed: 0
+  m_UseMipmapLimits: 1
+  m_BakeResolution: 0.0001
+  m_Padding: 2
   m_LightmapCompression: 0
+  m_LightmapPackingMode: 1
+  m_LightmapPackingMethod: 0
+  m_XAtlasPackingAttempts: 16384
+  m_XAtlasBruteForce: 0
+  m_XAtlasBlockAlign: 0
+  m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 0
   m_AOMaxDistance: 0
   m_CompAOExponent: 0
@@ -29,22 +36,20 @@ LightingSettings:
   m_MixedBakeMode: 0
   m_LightmapsBakeMode: 0
   m_FilterMode: 0
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
   m_ExportTrainingData: 0
-  m_TrainingDataDestination:
-  m_RealtimeResolution: 0
+  m_EnableWorkerProcessBaking: 1
+  m_TrainingDataDestination: 
+  m_RealtimeResolution: 0.0001
   m_ForceWhiteAlbedo: 0
   m_ForceUpdates: 0
-  m_FinalGather: 0
-  m_FinalGatherRayCount: 0
-  m_FinalGatherFiltering: 0
   m_PVRCulling: 0
-  m_PVRSampling: 0
-  m_PVRDirectSampleCount: 0
-  m_PVRSampleCount: 0
-  m_PVREnvironmentSampleCount: 0
-  m_PVREnvironmentReferencePointCount: 0
-  m_LightProbeSampleCountMultiplier: 0
+  m_PVRSampling: 1
+  m_PVRDirectSampleCount: 1
+  m_PVRSampleCount: 1
+  m_PVREnvironmentSampleCount: 1
+  m_PVREnvironmentReferencePointCount: 1
+  m_LightProbeSampleCountMultiplier: 8
   m_PVRBounces: 0
   m_PVRMinBounces: 0
   m_PVREnvironmentImportanceSampling: 0
@@ -61,6 +66,4 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0
   m_PVRFilteringAtrousPositionSigmaIndirect: 0
   m_PVRFilteringAtrousPositionSigmaAO: 0
-  m_PVRTiledBaking: 0
-  m_NumRaysToShootPerTexel: 0
   m_RespectSceneVisibilityWhenBakingGI: 0
