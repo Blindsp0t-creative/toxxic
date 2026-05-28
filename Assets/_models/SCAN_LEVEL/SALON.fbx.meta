@@ -3,52 +3,7 @@ guid: e2880ed5b77a2c440a8fa87239b600d1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PIKA
-    second: {fileID: 2100000, guid: 4990b9c5a7ca24945af1a5b2dde632e9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_1
-    second: {fileID: 2100000, guid: 9ba5f9777e92c034e9492ebd7c88043c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_2
-    second: {fileID: 2100000, guid: 85d33a146e976da4a862ba6b8403601f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_3
-    second: {fileID: 2100000, guid: 0c81889e7019c424da8dff86fa51a8b9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_4
-    second: {fileID: 2100000, guid: 35b68fdb46083664a9e5d1ef2378220f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_5
-    second: {fileID: 2100000, guid: dd7d4ab137459ef4cadc0a048ee39f13, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_6
-    second: {fileID: 2100000, guid: 53c7a194c9fffc84298b5b9192d651e8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_7
-    second: {fileID: 2100000, guid: 0a89dca5aa05f964182e3ea7c8bc19cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SCAN_SALON_9
-    second: {fileID: 2100000, guid: d8a6c818dff7396488538163c4b36c2d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -91,7 +46,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

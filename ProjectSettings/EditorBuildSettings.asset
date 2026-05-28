@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/_scenes/oldies/sceneMaster.unity
     guid: e6f7f934ab5943840a5509fa42fe80fc
   - enabled: 1
-    path: Assets/_scenes/new/stripClubNew.unity
+    path: Assets/_scenes/oldies/stripClubNew.unity
     guid: 153bee0be38e8d04baca8d89788537fa
   - enabled: 1
-    path: Assets/_scenes/new/pelleteuseNew.unity
+    path: Assets/_scenes/oldies/pelleteuseNew.unity
     guid: e7fea39066cd3b344b4166ff9aade451
   - enabled: 0
     path: Assets/_scenes/oldies/vr_testHDRP01.unity
