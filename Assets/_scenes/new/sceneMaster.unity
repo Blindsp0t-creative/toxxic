@@ -6590,7 +6590,7 @@ PrefabInstance:
     - target: {fileID: 6773956799630399736, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.416939
+      value: -25.970425
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800225935730, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
@@ -6630,7 +6630,7 @@ PrefabInstance:
     - target: {fileID: 6773956800457302902, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.20847
+      value: -17.985212
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800489933347, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
@@ -9291,7 +9291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 133.68079
+      value: 143.73383
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9299,11 +9299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 76.84039
+      value: 81.86691
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.20847
+      value: -17.985212
       objectReference: {fileID: 0}
     - target: {fileID: 722003804, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10631,7 +10631,7 @@ PrefabInstance:
     - target: {fileID: 5568758619435239319, guid: 46fdef3df9a5a354caf7692f85e5eff2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.87
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 5568758619435239319, guid: 46fdef3df9a5a354caf7692f85e5eff2,
         type: 3}
