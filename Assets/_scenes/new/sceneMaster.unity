@@ -6590,7 +6590,7 @@ PrefabInstance:
     - target: {fileID: 6773956799630399736, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.100445
+      value: -26.416939
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800225935730, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
@@ -6630,7 +6630,7 @@ PrefabInstance:
     - target: {fileID: 6773956800457302902, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.550222
+      value: -18.20847
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800489933347, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
@@ -9291,7 +9291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 145.35378
+      value: 133.68079
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9299,11 +9299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 82.67689
+      value: 76.84039
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.550222
+      value: -18.20847
       objectReference: {fileID: 0}
     - target: {fileID: 722003804, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9594,6 +9594,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1451078563}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1451078566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114311392354573010, guid: 024fe78707b0a9e4599b8093e621eaa7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1451078563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38fe44d6bfb49dbabd93aea7da287ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1472995162
 GameObject:
   m_ObjectHideFlags: 0
@@ -9752,13 +9764,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   receivePort: 14043
   useLZ4Compression: 1
-  receiverVerbose: 0
+  receiverVerbose: 1
   actorPrefab: {fileID: 0}
   characterPrefab: {fileID: 0}
   propPrefab: {fileID: 3055574581867789888, guid: 1b1f12af1c3d2fa4bb2cd58a1aa78db5,
     type: 3}
   uiManager: {fileID: 916375302}
-  CommandAPI: {fileID: 0}
+  CommandAPI: {fileID: 1451078566}
   AutoSendTrackerCommands: 0
   actorOverrides: []
   characterOverrides: []
@@ -10510,7 +10522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1714023356
 Transform:
   m_ObjectHideFlags: 0
