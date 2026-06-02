@@ -52,7 +52,7 @@ public class WalkingControllerModified : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rig = GetComponent<HeadBodyRig>();
-        headTarget = rig.head.VRTarget;
+        headTarget = rig.head.vrTarget;
         previousPosition = headTarget.position;
 
         rgTargetCUSTOM = vrTargetCUSTOM.GetComponent<Rigidbody>();
