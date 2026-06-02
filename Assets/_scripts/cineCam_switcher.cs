@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class cineCam_switcher : MonoBehaviour
 {
-    public GameObject[] _cams;
+    public GameObject[] _cams = new GameObject[10];
 
     [Range(0, 10)]
     public int _activeCam=0;
@@ -11,6 +11,7 @@ public class cineCam_switcher : MonoBehaviour
 
     void Start()
     {
+        //_cams = 
         disableAllCams();
         _cams[0].SetActive(true);
     }
