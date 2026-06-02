@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 [System.Serializable]
 public class VRMap
 {
@@ -16,7 +16,7 @@ public class VRMap
         rigTarget.rotation = VRTarget.rotation * Quaternion.Euler(rotationOffset);
     }
 }
-
+*/
 public class HeadBodyRig : MonoBehaviour
 {
     public VRMap head;
