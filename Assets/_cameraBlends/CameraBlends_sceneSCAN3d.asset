@@ -39,7 +39,7 @@ MonoBehaviour:
     m_To: Virtual Camera_3_planDeuxAvatars
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -50,7 +50,7 @@ MonoBehaviour:
     m_To: Virtual Camera_4_planSalon1
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 3
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -61,7 +61,7 @@ MonoBehaviour:
     m_To: Virtual Camera_5_planSalonFull
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_To: Virtual Camera_6_planTunnelDenis
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 8
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -82,8 +82,8 @@ MonoBehaviour:
   - m_From: Virtual Camera_6_planTunnelDenis
     m_To: Virtual Camera_7_planTunnelJen
     m_Blend:
-      m_Style: 1
-      m_Time: 2
+      m_Style: 0
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -93,7 +93,7 @@ MonoBehaviour:
   - m_From: Virtual Camera_7_planTunnelJen
     m_To: Virtual Camera_8_planTunnelDenis02
     m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
@@ -105,7 +105,7 @@ MonoBehaviour:
     m_To: Virtual Camera_9_planAmericainFaceCanap
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

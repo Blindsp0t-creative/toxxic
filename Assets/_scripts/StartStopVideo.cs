@@ -5,6 +5,11 @@ public class StartStopVideo : MonoBehaviour
 {
     public VideoPlayer _player;
 
+    private void Start()
+    {
+        _player.Stop();
+        _player.Pause();
+    }
     public void toggleVideo()
     {
         if (_player.isPlaying)

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
 
 public class CinemachineCameraSwitcher : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     [Range(0, 20)]
     public int currentIndex = 0;
 
+    public GameObject _avatarJen;
+
+    public GameObject[] _placements = new GameObject[20];
+
+    public float[] _durations = new float[20];
 
     private CinemachineVirtualCamera _vrCloseUpCamera;
     private List<CinemachineVirtualCamera> _allCameras = new List<CinemachineVirtualCamera>();
@@ -149,6 +155,50 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     {
         if (_allCameras.Count == 0) return;
         ActivateCamera((currentIndex + 1) % _allCameras.Count);
+
+        moveAvatar();
+    }
+
+    public void moveAvatar()
+    {
+
+        switch (currentIndex)
+        {
+            case 0:
+                //_avatarJen.transform.position = _placements[0].transform.position;
+                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[0].transform.position, _durations[0]));
+                break;
+            case 1:
+                //_avatarJen.transform.position = _placements[1].transform.position;
+                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[1].transform.position, _durations[1]));
+                break;
+            case 2:
+                //_avatarJen.transform.position = _placements[2].transform.position;
+                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[2].transform.position, _durations[2]));
+                break;
+            case 3:
+                //_avatarJen.transform.position = _placements[3].transform.position;
+                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[3].transform.position, _durations[3]));
+                break;
+                //case default:
+                //  break;
+        }
+    }
+
+
+
+    IEnumerator LerpPosition(Vector3 startPos, Vector3 endPos, float duration)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < duration) {
+            float t = elapsedTime / duration;
+            _avatarJen.transform.position = Vector3.Lerp(startPos, endPos, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = endPos;
     }
 
     /// <summary>Bouton "Previous" — aussi accessible via clic droit sur le composant</summary>
@@ -157,6 +207,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     {
         if (_allCameras.Count == 0) return;
         ActivateCamera((currentIndex - 1 + _allCameras.Count) % _allCameras.Count);
+
+        moveAvatar();
     }
 
     /// <summary>Nombre total de cameras disponibles</summary>

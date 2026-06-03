@@ -31,5 +31,6 @@ public class CinemachineCameraSwitcherEditor : Editor
         // Afficher le nom de la camera active
         EditorGUILayout.Space(4);
         EditorGUILayout.HelpBox($"Camera active : {switcher.CurrentCameraName}", MessageType.Info);
+
     }
 }
