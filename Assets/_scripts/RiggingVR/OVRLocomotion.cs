@@ -52,6 +52,7 @@ public class OVRLocomotion : MonoBehaviour
         _cc.Move(move * moveSpeed * Time.deltaTime);
     }
 
+    /*
     void HandleRotation()
     {
         Vector2 input = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
@@ -62,5 +63,33 @@ public class OVRLocomotion : MonoBehaviour
         Vector3 headPos = cameraRig.centerEyeAnchor.position;
         float angle = input.x * rotationSpeed * Time.deltaTime;
         transform.RotateAround(headPos, Vector3.up, angle);
+    }
+    */
+
+    void HandleRotation()
+    {
+        Vector2 input = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+        if (Mathf.Abs(input.x) < rotationDeadzone) return;
+
+        float angle = input.x * rotationSpeed * Time.deltaTime;
+
+        // Position de la tête dans l'espace monde
+        Vector3 headPos = cameraRig.centerEyeAnchor.position;
+
+        // Calculer le décalage entre la tête et le pivot de l'OVRCameraRig
+        Vector3 offset = transform.position - headPos;
+
+        // Faire pivoter ce décalage autour de Y
+        offset = Quaternion.Euler(0, angle, 0) * offset;
+
+        // Nouvelle position cible de l'OVRCameraRig
+        Vector3 targetPosition = headPos + offset;
+
+        // Déplacer via CharacterController (respecte les collisions)
+        Vector3 delta = targetPosition - transform.position;
+        _cc.Move(delta);
+
+        // Rotation pure du GameObject (pas de déplacement ici)
+        transform.Rotate(0, angle, 0, Space.World);
     }
 }
