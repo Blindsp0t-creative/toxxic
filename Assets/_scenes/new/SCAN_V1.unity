@@ -910,7 +910,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7016929999846736006, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
@@ -2329,7 +2329,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7016929999846736006, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
@@ -2532,8 +2532,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513343244}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09066245, y: -0.75131947, z: 0.10559105, w: 0.6450969}
-  m_LocalPosition: {x: 2.07, y: 1.283, z: -1.48}
+  m_LocalRotation: {x: 0.03937226, y: 2.2413939e-14, z: 1.4407988e-14, w: 0.99922466}
+  m_LocalPosition: {x: 0.78, y: 2.0237954, z: -4.9663076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2711,7 +2711,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -2844,7 +2844,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7016929999846736006, guid: 84da18b730220de4cbe83b03cfd79033,
         type: 3}
@@ -3595,7 +3595,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.3
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -5859,7 +5859,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f678c13347e7c4140ba3de3f05e34d43,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10018,7 +10018,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f678c13347e7c4140ba3de3f05e34d43,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12332,7 +12332,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746560326}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1746560330
 Camera:
   m_ObjectHideFlags: 0
@@ -13454,7 +13454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1913296359
 MonoBehaviour:
   m_ObjectHideFlags: 0

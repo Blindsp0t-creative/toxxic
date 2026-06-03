@@ -1,16 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class Set_VR_Avatar_height : MonoBehaviour
 {
     public float height = 1.9f;
 
-    void Update()
+    private void Start()
     {
-        this.transform.position = new Vector3(this.transform.localPosition.x, /*this.transform.localPosition.y +*/ height, this.transform.localPosition.z);        
+        StartCoroutine(setHeightAfterSeconds(1));
+        StartCoroutine(setHeightAfterSeconds(3));
+
     }
 
-    public void setHeight(float _height)
+
+    IEnumerator setHeightAfterSeconds(float _seconds)
     {
-        this.height = _height;
+        yield return new WaitForSeconds(_seconds);
+        this.transform.position = new Vector3(0,height,0);
     }
 }

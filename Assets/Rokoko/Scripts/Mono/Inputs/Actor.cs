@@ -263,6 +263,43 @@ namespace Rokoko.Inputs
                     if (shouldUpdatePosition && adjustHipHeightBasedOnStudioActor)
                         worldPosition = new Vector3(worldPosition.x, worldPosition.y - (actorFrame.dimensions.hipHeight - hipHeight), worldPosition.z);
 
+                    if(bone != HumanBodyBones.LeftToes && 
+                        bone != HumanBodyBones.RightToes && 
+                        bone != HumanBodyBones.LeftThumbProximal &&
+                        bone != HumanBodyBones.RightThumbProximal &&
+                        bone != HumanBodyBones.RightThumbIntermediate &&
+                        bone != HumanBodyBones.LeftThumbIntermediate &&
+                        bone != HumanBodyBones.RightThumbDistal &&
+                        bone != HumanBodyBones.LeftThumbDistal &&
+                        bone != HumanBodyBones.LeftIndexDistal &&
+                        bone != HumanBodyBones.RightIndexDistal &&
+                        bone != HumanBodyBones.LeftIndexProximal && 
+                        bone != HumanBodyBones.LeftIndexIntermediate && 
+                        bone != HumanBodyBones.LeftMiddleProximal && 
+                        bone != HumanBodyBones.LeftMiddleIntermediate && 
+                        bone != HumanBodyBones.LeftMiddleDistal && 
+                        bone != HumanBodyBones.LeftRingProximal && 
+                        bone != HumanBodyBones.LeftRingIntermediate && 
+                        bone != HumanBodyBones.LeftRingDistal && 
+                        bone != HumanBodyBones.LeftLittleProximal &&
+                        bone !=HumanBodyBones.LeftLittleIntermediate &&
+                        bone !=HumanBodyBones.LeftLittleDistal &&
+                        bone !=HumanBodyBones.RightThumbProximal &&
+                        bone != HumanBodyBones.RightThumbIntermediate &&
+                        bone !=HumanBodyBones.RightThumbDistal &&
+                        bone !=HumanBodyBones.RightIndexProximal &&
+                        bone !=HumanBodyBones.RightIndexIntermediate &&
+                        bone !=HumanBodyBones.RightIndexDistal  &&
+                        bone !=HumanBodyBones.RightMiddleProximal &&
+                        bone !=HumanBodyBones.RightMiddleIntermediate &&
+                        bone !=HumanBodyBones.RightMiddleDistal &&
+                        bone !=HumanBodyBones.RightRingProximal &&
+                        bone != HumanBodyBones.RightRingIntermediate &&
+                        bone != HumanBodyBones.RightRingDistal &&
+                        bone != HumanBodyBones.RightLittleProximal &&
+                        bone != HumanBodyBones.RightLittleIntermediate &&
+                        bone != HumanBodyBones.RightLittleDistal 
+                        ) // FIX TEMPORAIRE
                     UpdateBone(bone, worldPosition, worldRotation, shouldUpdatePosition, positionSpace, rotationSpace);
                 }
             }
