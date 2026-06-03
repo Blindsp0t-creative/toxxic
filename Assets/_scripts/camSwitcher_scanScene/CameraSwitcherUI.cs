@@ -17,7 +17,7 @@ public class CameraSwitcherUI : MonoBehaviour
         slider.minValue = 0;
         slider.maxValue = switcher.CameraCount - 1;
         slider.wholeNumbers = true;
-        slider.value = switcher.CurrentIndex;
+        slider.value = switcher.currentIndex;
 
         // Brancher les événements
         slider.onValueChanged.AddListener(OnSliderChanged);
@@ -36,14 +36,14 @@ public class CameraSwitcherUI : MonoBehaviour
     void OnNext()
     {
         switcher.NextCamera();
-        slider.value = switcher.CurrentIndex;  // resync slider
+        slider.value = switcher.currentIndex;  // resync slider
         UpdateLabel();
     }
 
     void OnPrevious()
     {
         switcher.PreviousCamera();
-        slider.value = switcher.CurrentIndex;  // resync slider
+        slider.value = switcher.currentIndex;  // resync slider
         UpdateLabel();
     }
 
