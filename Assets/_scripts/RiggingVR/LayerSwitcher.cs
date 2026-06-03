@@ -38,7 +38,15 @@ public class LayerSwitcher : MonoBehaviour
             Debug.LogWarning("LayerSwitcher : layer introuvable. Vérifie le nom dans Project Settings > Tags and Layers.");
             return;
         }
-        if (object1 != null) object1.layer = layer;
+        if (object1 != null)
+        {
+            object1.layer = layer;
+
+            foreach (Transform child in object1.transform)
+            {
+                child.gameObject.layer = layer;
+            }
+        }
         if (object2 != null) object2.layer = layer;
         if (object3 != null) object3.layer = layer;
     }
