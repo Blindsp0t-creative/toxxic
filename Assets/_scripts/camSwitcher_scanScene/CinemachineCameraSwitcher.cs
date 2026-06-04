@@ -15,8 +15,10 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     public int currentIndex = 0;
 
     public GameObject _avatarJen;
+    public GameObject _vrMarker;
 
-    public GameObject[] _placements = new GameObject[20];
+    public GameObject[] _placementsJen = new GameObject[20];
+    public GameObject[] _placementsDenis = new GameObject[20];
 
     public float[] _durations = new float[20];
 
@@ -157,48 +159,31 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         ActivateCamera((currentIndex + 1) % _allCameras.Count);
 
         moveAvatar();
+        moveVR_marker();
     }
 
     public void moveAvatar()
     {
-
-        switch (currentIndex)
-        {
-            case 0:
-                //_avatarJen.transform.position = _placements[0].transform.position;
-                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[0].transform.position, _durations[0]));
-                break;
-            case 1:
-                //_avatarJen.transform.position = _placements[1].transform.position;
-                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[1].transform.position, _durations[1]));
-                break;
-            case 2:
-                //_avatarJen.transform.position = _placements[2].transform.position;
-                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[2].transform.position, _durations[2]));
-                break;
-            case 3:
-                //_avatarJen.transform.position = _placements[3].transform.position;
-                StartCoroutine(LerpPosition(_avatarJen.transform.position, _placements[3].transform.position, _durations[3]));
-                break;
-                //case default:
-                //  break;
-        }
+        StartCoroutine(LerpPosition(_avatarJen, _avatarJen.transform.position, _placementsJen[currentIndex].transform.position, _durations[currentIndex]));
     }
 
+    public void moveVR_marker()
+    {
+        StartCoroutine(LerpPosition(_vrMarker, _vrMarker.transform.position, _placementsDenis[currentIndex].transform.position, _durations[currentIndex]));
+    }
 
-
-    IEnumerator LerpPosition(Vector3 startPos, Vector3 endPos, float duration)
+    IEnumerator LerpPosition(GameObject _object, Vector3 startPos, Vector3 endPos, float duration)
     {
         float elapsedTime = 0;
         while (elapsedTime < duration) {
             float t = elapsedTime / duration;
-            _avatarJen.transform.position = Vector3.Lerp(startPos, endPos, t);
+            _object.transform.position = Vector3.Lerp(startPos, endPos, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = endPos;
+        _object.transform.position = endPos;
     }
 
     /// <summary>Bouton "Previous" — aussi accessible via clic droit sur le composant</summary>
@@ -209,6 +194,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         ActivateCamera((currentIndex - 1 + _allCameras.Count) % _allCameras.Count);
 
         moveAvatar();
+        moveVR_marker();
     }
 
     /// <summary>Nombre total de cameras disponibles</summary>
