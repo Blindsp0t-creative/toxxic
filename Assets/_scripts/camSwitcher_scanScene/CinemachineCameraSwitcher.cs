@@ -4,6 +4,7 @@ using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class CinemachineCameraSwitcher : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
     public float[] _durations = new float[20];
 
+    public VideoPlayer _player;
+
     private CinemachineVirtualCamera _vrCloseUpCamera;
     private List<CinemachineVirtualCamera> _allCameras = new List<CinemachineVirtualCamera>();
 
@@ -38,6 +41,10 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         FindVRCloseUpCameraInAllScenes();
         RebuildCameraList();
         ActivateCamera(currentIndex);
+
+        //video player
+        _player.Stop();
+        _player.Pause();
     }
 
     void OnDestroy()
@@ -185,6 +192,23 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
         _object.transform.position = endPos;
     }
+
+
+    public void toggleVideo()
+    {
+        if (_player.isPlaying)
+        {
+            Debug.Log("is playing");
+            _player.Stop();
+            _player.Pause();
+        }
+        else if (_player.isPlaying == false)
+        {
+            _player.Play();
+        }
+    }
+
+
 
     /// <summary>Bouton "Previous" — aussi accessible via clic droit sur le composant</summary>
     [ContextMenu("Previous Camera")]

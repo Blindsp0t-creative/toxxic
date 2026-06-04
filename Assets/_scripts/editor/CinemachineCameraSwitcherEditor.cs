@@ -28,6 +28,13 @@ public class CinemachineCameraSwitcherEditor : Editor
 
         EditorGUILayout.EndHorizontal();
 
+
+        if (GUILayout.Button("Toggle Video", GUILayout.Height(30)))
+        {
+            switcher.toggleVideo();
+        }
+
+
         // Afficher le nom de la camera active
         EditorGUILayout.Space(4);
         EditorGUILayout.HelpBox($"Camera active : {switcher.CurrentCameraName}", MessageType.Info);
