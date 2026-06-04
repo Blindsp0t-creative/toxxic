@@ -71,7 +71,7 @@ MonoBehaviour:
   - m_From: Virtual Camera_4_planSalon1
     m_To: Virtual Camera_5_planSalonFull
     m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
