@@ -116,7 +116,7 @@ MonoBehaviour:
     m_To: Virtual Camera_9_planAmericainFaceCanap
     m_Blend:
       m_Style: 1
-      m_Time: 4
+      m_Time: 15
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -233,10 +233,10 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: 
-    m_To: 
+  - m_From: Virtual Camera_9_planAmericainFaceCanap
+    m_To: Virtual Camera_9.2_planTunnelDenis
     m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
@@ -244,10 +244,54 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: 
-    m_To: 
+  - m_From: Virtual Camera_9.3_planCanap
+    m_To: Virtual Camera_9.4_sideCanap
+    m_Blend:
+      m_Style: 0
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera_11_planMarioKart02
+    m_To: Virtual Camera_11.2_sideCanap
     m_Blend:
       m_Style: 1
+      m_Time: 6
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera_12_planDeuxDansLeCanap
+    m_To: Virtual Camera_12.2_suitDenis
+    m_Blend:
+      m_Style: 1
+      m_Time: 3
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera_4.3_planChien
+    m_To: Virtual Camera_4.4_contreChamp
+    m_Blend:
+      m_Style: 0
+      m_Time: 2
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: '**ANY CAMERA**'
+    m_To: POV_JEN_Camera
+    m_Blend:
+      m_Style: 0
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
