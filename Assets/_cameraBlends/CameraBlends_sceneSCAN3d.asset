@@ -181,7 +181,7 @@ MonoBehaviour:
   - m_From: Virtual Camera_14_planRomantique
     m_To: Virtual Camera_15_planCote
     m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 2
       m_CustomCurve:
         serializedVersion: 2
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_To: Virtual Camera_16_planArriereCanape
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 3
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
