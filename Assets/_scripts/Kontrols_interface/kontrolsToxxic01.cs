@@ -9,16 +9,20 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Section("GENERAL")]
     [Button("CALIBRATE", id: "calbibrate")]                         public void LOG_Calib() { Debug.Log("CALIB"); }
-    //[Button("BLACK OUT", id: "blackout")]                           public void LOG_BlackOut() { Debug.Log("BLACK OUT"); }
-    [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;// void LOG_BlackOut(bool b) { Debug.Log("BLACK OUT - Toggle"); }
+    [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;
 
+    [Slider("ElevationAvatarDenis", 0.0f, 2.0f, id: "elevationavatarDenis")] 
+    public float avatarElevationDenis;
+
+    [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")] 
+    public float avatarElevationJen;
 
     [Section("STRIP CLUB")]
     [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
     [Button("Next", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
     [Button("Previous", id: "stripclubP")]                          public void LOG_topPreviousStripClub() { Debug.Log("Previous - Strip Club Scene"); }
 
-    [Slider("ElevationAvatar", 0.0f, 2.0f, id: "elevationavatar")]  public float avatarElevation;
+
 
     [Section("PELLETEUSE")]
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]              public void LOG_loadScenePelleteuse() { Debug.Log("load Pelleteuse Scene"); }

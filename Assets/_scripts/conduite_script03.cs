@@ -120,6 +120,12 @@ public class conduite_script03 : MonoBehaviour
     {
         elevationAvatar = message.GetFloat(0);
     }
+
+    public void setAvatarElevation(float value)
+    {
+        elevationAvatar = value;
+    }
+
     IEnumerator avatarsReveal()
     {
         yield return new WaitForSeconds(2);

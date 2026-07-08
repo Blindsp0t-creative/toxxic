@@ -20,4 +20,15 @@ public class Set_VR_Avatar_height : MonoBehaviour
         this.transform.position = new Vector3(0,height,0);
         Debug.Log("-- coroutine height Avatar done --");
     }
+
+
+    public void setHeight(float value)
+    {
+        height = value;
+    }
+
+    public void Update()
+    {
+        transform.position = new Vector3(0, height, 0);
+    }
 }
