@@ -20,4 +20,86 @@ public class sceneLoader : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(sceneName);
     }
+
+
+
+    public void loadStripClub()
+    {
+        Scene sceneP = SceneManager.GetSceneByName("PELLETEUSE_V1");
+        if (sceneP.isLoaded)
+            SceneManager.UnloadSceneAsync("PELLETEUSE_V1");
+
+        Scene sceneR = SceneManager.GetSceneByName("SCAN_V1");
+        if (sceneR.isLoaded)
+            SceneManager.UnloadSceneAsync("SCAN_V1");
+
+
+        SceneManager.sceneLoaded += OnStripClubLoaded;
+        SceneManager.LoadScene("CLUB_V1", LoadSceneMode.Additive);
+
+        _debugObjects.SetActive(false);
+    }
+
+    public void loadPelleteuse()
+    {
+        Scene sceneS = SceneManager.GetSceneByName("CLUB_V1");
+        if (sceneS.isLoaded)
+            SceneManager.UnloadSceneAsync("CLUB_V1");
+
+        Scene sceneR = SceneManager.GetSceneByName("SCAN_V1");
+        if (sceneR.isLoaded)
+            SceneManager.UnloadSceneAsync("SCAN_V1");
+
+
+        SceneManager.sceneLoaded += OnPelleteuseLoaded;
+        SceneManager.LoadScene("PELLETEUSE_V1", LoadSceneMode.Additive);
+
+        _debugObjects.SetActive(false);
+    }
+
+    public void loadRainbowRoad()
+    {
+        Scene sceneS = SceneManager.GetSceneByName("CLUB_V1");
+        if (sceneS.isLoaded)
+            SceneManager.UnloadSceneAsync("CLUB_V1");
+
+        Scene sceneP = SceneManager.GetSceneByName("PELLETEUSE_V1");
+        if (sceneP.isLoaded)
+            SceneManager.UnloadSceneAsync("PELLETEUSE_V1");
+
+        SceneManager.sceneLoaded += OnPelleteuseLoaded;
+        SceneManager.LoadScene("SCAN_V1", LoadSceneMode.Additive);
+
+        _debugObjects.SetActive(false);
+    }
+
+    void OnStripClubLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= OnStripClubLoaded;
+
+        //sceneLoader t = (sceneLoader)target;
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
+        {
+            if (go.scene == scene)
+            {
+                go.GetComponent<conduite_script03>()._handler = _osc;
+                break;
+            }
+        }
+    }
+
+    void OnPelleteuseLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= OnPelleteuseLoaded;
+
+        //sceneLoader t = (sceneLoader)target;
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
+        {
+            if (go.scene == scene)
+            {
+                go.GetComponent<pelleteuse_conduite_script03>()._handler = _osc;
+                break;
+            }
+        }
+    }
 }

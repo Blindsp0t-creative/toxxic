@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.blindspot.kontrols": {
+      "version": "file:C:/Users/chamb/Documents/GitHub/Kontrols-main/Kontrols-main",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "jp.keijiro.rtmidi": "2.2.0"
+      }
+    },
     "com.meta.xr.mrutilitykit": {
       "version": "201.0.0",
       "depth": 1,
@@ -536,6 +544,13 @@
       "dependencies": {
         "com.unity.modules.screencapture": "1.0.0"
       },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.rtmidi": {
+      "version": "2.2.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://registry.npmjs.com"
     },
     "com.unity.modules.accessibility": {
