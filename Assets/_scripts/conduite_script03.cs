@@ -32,14 +32,6 @@ public class conduite_script03 : MonoBehaviour
     public Rokoko.CommandAPI.StudioCommandAPI rokoko;
     public GameObject canvasBlackOut;
 
-
-    public GameObject[] notesConduites;
-
-    // starting value for the Lerp
-    static float t = 0.0f;
-
-
-    public bool goDown;
     public float multiplierLerpTime;
     public OSC _handler;
 
@@ -75,8 +67,6 @@ public class conduite_script03 : MonoBehaviour
         _handler.SetAddressHandler("/osc/back", onMessageBack);
         _handler.SetAddressHandler("/osc/calib", onMessageCalib);
 
-        _handler.SetAddressHandler("/osc/up", onMessageUp);
-        _handler.SetAddressHandler("/osc/down", onMessageDown);
         _handler.SetAddressHandler("/osc/avatarheight", onMessageHeight);
 
     }
@@ -105,17 +95,6 @@ public class conduite_script03 : MonoBehaviour
             rokoko.CalibrateAll();
     }
 
-    public void onMessageUp(OscMessage message)
-    {
-        if (message.GetFloat(0) > 0.5)
-            goDown = false;
-    }
-
-    public void onMessageDown(OscMessage message)
-    {
-        if (message.GetFloat(0) > 0.5)
-            goDown = true;
-    }
     public void onMessageHeight(OscMessage message)
     {
         elevationAvatar = message.GetFloat(0);
@@ -326,10 +305,6 @@ public class conduite_script03 : MonoBehaviour
         //APPLY HEIGHT
         avatarPlaces.places[avatarPlaces.activePlace].transform.position = new Vector3(avatarPlaces.places[avatarPlaces.activePlace].transform.position.x, elevationAvatar, avatarPlaces.places[avatarPlaces.activePlace].transform.position.z);
 
-
-        //NOTES CONDUITE
-        setNoteConduite();
-
     }
 
     public void hideAvatarJen()
@@ -364,16 +339,6 @@ public class conduite_script03 : MonoBehaviour
         if (sceneNB - 1 > 0)
             sceneNB--;
     }
-
-    public void setNoteConduite()
-    {
-        for(int i=0; i<notesConduites.Length; i++)
-        {
-            notesConduites[i].SetActive(false);
-        }
-        notesConduites[sceneNB - 1].SetActive(true);
-    }
-
 
     public void blackOut(bool value)
     {
