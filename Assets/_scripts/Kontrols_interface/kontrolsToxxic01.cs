@@ -11,7 +11,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("CALIBRATE", id: "calbibrate")]                         public void LOG_Calib() { Debug.Log("CALIB"); }
     [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;
 
-    [Slider("ElevationAvatarDenis", 0.0f, 2.0f, id: "elevationavatarDenis")] 
+    [Slider("ElevationAvatarDenis", 0.5f, 3.0f, id: "elevationavatarDenis")] 
     public float avatarElevationDenis;
 
     [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")] 
