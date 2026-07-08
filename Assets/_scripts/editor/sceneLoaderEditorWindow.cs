@@ -10,35 +10,6 @@ public class sceneLoaderEditor : Editor
     {
         DrawDefaultInspector();
 
-        sceneLoader t = (sceneLoader)target;
-
-        EditorGUILayout.Space(10);
-
-        if (GUILayout.Button("stripClub", GUILayout.Height(40)))
-        {
-            Scene sceneP = SceneManager.GetSceneByName("pelleteuseNew");
-            if (sceneP.isLoaded)
-                SceneManager.UnloadSceneAsync("pelleteuseNew");
-
-            SceneManager.sceneLoaded += OnStripClubLoaded;
-            SceneManager.LoadScene("stripClubNew", LoadSceneMode.Additive);
-
-            t._debugObjects.SetActive(false);
-        }
-
-        EditorGUILayout.Space(5);
-
-        if (GUILayout.Button("pelleteuse", GUILayout.Height(40)))
-        {
-            Scene sceneS = SceneManager.GetSceneByName("stripClubNew");
-            if (sceneS.isLoaded)
-                SceneManager.UnloadSceneAsync("stripClubNew");
-
-            SceneManager.sceneLoaded += OnPelleteuseLoaded;
-            SceneManager.LoadScene("pelleteuseNew", LoadSceneMode.Additive);
-
-            t._debugObjects.SetActive(false);
-        }
     }
 
     void OnStripClubLoaded(Scene scene, LoadSceneMode mode)

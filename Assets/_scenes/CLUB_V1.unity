@@ -12950,7 +12950,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210692137}
-  - component: {fileID: 1210692136}
   - component: {fileID: 1210692138}
   m_Layer: 0
   m_Name: NDI_SPOUT
@@ -12959,24 +12958,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1210692136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1210692135}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d98e5bfcdff4847ad69efa861a8e7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ndiName: Toxxic_liveCam
-  _keepAlpha: 0
-  _captureMethod: 2
-  _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 8400000, guid: be13dc9da84ecab439d4e65755f76a50, type: 2}
-  _resources: {fileID: 11400000, guid: 69304b86950074db7ba8caba75214004, type: 2}
 --- !u!4 &1210692137
 Transform:
   m_ObjectHideFlags: 0
@@ -18811,18 +18792,6 @@ MonoBehaviour:
   sceneNB: 1
   rokoko: {fileID: 0}
   canvasBlackOut: {fileID: 1181227948}
-  notesConduites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  goDown: 0
   multiplierLerpTime: 0.4
   _handler: {fileID: 0}
   toto: 0

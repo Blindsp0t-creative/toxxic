@@ -7,7 +7,7 @@ public class Set_VR_Avatar_height : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start coroutine height Avatar");
+        //Debug.Log("start coroutine height Avatar");
         StartCoroutine(setHeightAfterSeconds(1));
         StartCoroutine(setHeightAfterSeconds(3));
 
@@ -18,7 +18,7 @@ public class Set_VR_Avatar_height : MonoBehaviour
     {
         yield return new WaitForSeconds(_seconds);
         this.transform.position = new Vector3(0,height,0);
-        Debug.Log("-- coroutine height Avatar done --");
+        //Debug.Log("-- coroutine height Avatar done --");
     }
 
 

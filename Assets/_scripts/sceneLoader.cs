@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class sceneLoader : MonoBehaviour
 {
     public OSC _osc;
-    public GameObject _debugObjects;
 
     public void LoadSceneAdditive(string sceneName)
     {
@@ -40,8 +39,6 @@ public class sceneLoader : MonoBehaviour
         {
             SceneManager.sceneLoaded += OnStripClubLoaded;
             SceneManager.LoadScene("CLUB_V1", LoadSceneMode.Additive);
-
-            _debugObjects.SetActive(false);
         }
 
 
@@ -64,8 +61,6 @@ public class sceneLoader : MonoBehaviour
         {
             SceneManager.sceneLoaded += OnPelleteuseLoaded;
             SceneManager.LoadScene("PELLETEUSE_V1", LoadSceneMode.Additive);
-
-            _debugObjects.SetActive(false);
         }
     }
 
@@ -87,8 +82,6 @@ public class sceneLoader : MonoBehaviour
         {
             SceneManager.sceneLoaded += OnPelleteuseLoaded;
             SceneManager.LoadScene("SCAN_V1", LoadSceneMode.Additive);
-
-            _debugObjects.SetActive(false);
         }
     }
 
@@ -96,7 +89,6 @@ public class sceneLoader : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnStripClubLoaded;
 
-        //sceneLoader t = (sceneLoader)target;
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
         {
             if (go.scene == scene)
@@ -111,7 +103,6 @@ public class sceneLoader : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnPelleteuseLoaded;
 
-        //sceneLoader t = (sceneLoader)target;
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
         {
             if (go.scene == scene)
