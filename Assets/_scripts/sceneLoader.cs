@@ -33,11 +33,18 @@ public class sceneLoader : MonoBehaviour
         if (sceneR.isLoaded)
             SceneManager.UnloadSceneAsync("SCAN_V1");
 
+        Scene current = SceneManager.GetSceneByName("CLUB_V1");
+        if(current.isLoaded)
+            return;
+        else
+        {
+            SceneManager.sceneLoaded += OnStripClubLoaded;
+            SceneManager.LoadScene("CLUB_V1", LoadSceneMode.Additive);
 
-        SceneManager.sceneLoaded += OnStripClubLoaded;
-        SceneManager.LoadScene("CLUB_V1", LoadSceneMode.Additive);
+            _debugObjects.SetActive(false);
+        }
 
-        _debugObjects.SetActive(false);
+
     }
 
     public void loadPelleteuse()
@@ -50,11 +57,16 @@ public class sceneLoader : MonoBehaviour
         if (sceneR.isLoaded)
             SceneManager.UnloadSceneAsync("SCAN_V1");
 
+        Scene current = SceneManager.GetSceneByName("PELLETEUSE_V1");
+        if (current.isLoaded)
+            return;
+        else
+        {
+            SceneManager.sceneLoaded += OnPelleteuseLoaded;
+            SceneManager.LoadScene("PELLETEUSE_V1", LoadSceneMode.Additive);
 
-        SceneManager.sceneLoaded += OnPelleteuseLoaded;
-        SceneManager.LoadScene("PELLETEUSE_V1", LoadSceneMode.Additive);
-
-        _debugObjects.SetActive(false);
+            _debugObjects.SetActive(false);
+        }
     }
 
     public void loadRainbowRoad()
@@ -67,10 +79,17 @@ public class sceneLoader : MonoBehaviour
         if (sceneP.isLoaded)
             SceneManager.UnloadSceneAsync("PELLETEUSE_V1");
 
-        SceneManager.sceneLoaded += OnPelleteuseLoaded;
-        SceneManager.LoadScene("SCAN_V1", LoadSceneMode.Additive);
 
-        _debugObjects.SetActive(false);
+        Scene current = SceneManager.GetSceneByName("SCAN_V1");
+        if (current.isLoaded)
+            return;
+        else
+        {
+            SceneManager.sceneLoaded += OnPelleteuseLoaded;
+            SceneManager.LoadScene("SCAN_V1", LoadSceneMode.Additive);
+
+            _debugObjects.SetActive(false);
+        }
     }
 
     void OnStripClubLoaded(Scene scene, LoadSceneMode mode)
