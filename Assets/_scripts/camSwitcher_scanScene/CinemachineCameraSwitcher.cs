@@ -31,6 +31,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     private const int PRIORITY_ACTIVE = 20;
     private const int PRIORITY_INACTIVE = 0;
 
+    public GameObject blackOutSphere;
+
     // ─────────────────────────────────────────────
     //  INIT
     // ─────────────────────────────────────────────
@@ -45,6 +47,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         //video player
         _player.Stop();
         _player.Pause();
+
+        blackOutSphere.SetActive(false);
     }
 
     void OnDestroy()
@@ -208,6 +212,18 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         }
     }
 
+
+    public void blackOut(bool value)
+    {
+        if (value == true)
+        {
+            blackOutSphere.SetActive(true);
+        }
+        else if (value == false)
+        {
+            blackOutSphere.SetActive(false);
+        }
+    }
 
 
     /// <summary>Bouton "Previous" — aussi accessible via clic droit sur le composant</summary>

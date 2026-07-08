@@ -191,5 +191,15 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         }
     }
 
-
+    public void blackOut(bool value)
+    {
+        if (value == true)
+        {
+            canvasBlackOut.SetActive(true);
+        }
+        else if (value == false)
+        {
+            canvasBlackOut.SetActive(false);
+        }
+    }
 }

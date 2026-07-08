@@ -7834,8 +7834,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632906617}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.36113632, y: 0, z: 0, w: 0.93251306}
-  m_LocalPosition: {x: 4.1750464, y: 15.357485, z: -0.068826556}
+  m_LocalRotation: {x: 0.03937226, y: 2.2413939e-14, z: 1.4407988e-14, w: 0.99922466}
+  m_LocalPosition: {x: 0.78, y: 2.0237954, z: -4.9663076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7890,11 +7890,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 5000
   field of view: 60.000004
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13020,7 +13020,7 @@ GameObject:
   - component: {fileID: 1040412587}
   - component: {fileID: 1040412586}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasBlackOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16330,20 +16330,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head:
-    VRTarget: {fileID: 1554467552}
-    rigTarget: {fileID: 666615137}
-    positionOffset: {x: 0, y: 0, z: -0.44}
-    rotationOffset: {x: 0, y: 270, z: -90}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   rightHand:
-    VRTarget: {fileID: 394922832}
-    rigTarget: {fileID: 1175661126}
-    positionOffset: {x: 0, y: -0.12, z: -0.54}
-    rotationOffset: {x: -90, y: 90, z: 0}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   leftHand:
-    VRTarget: {fileID: 1565460673}
-    rigTarget: {fileID: 702261323}
-    positionOffset: {x: -0.06, y: -0.12, z: -0.54}
-    rotationOffset: {x: -270, y: 90, z: 0}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   headConstraint: {fileID: 666615137}
   turnFactor: 1
   forwardAxis: 1
@@ -22956,20 +22956,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head:
-    VRTarget: {fileID: 669461077}
-    rigTarget: {fileID: 342713077}
-    positionOffset: {x: 0, y: 0, z: -0.44}
-    rotationOffset: {x: 0, y: 270, z: -90}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   rightHand:
-    VRTarget: {fileID: 375667625}
-    rigTarget: {fileID: 1726178029}
-    positionOffset: {x: 0, y: -0.12, z: -0.54}
-    rotationOffset: {x: -90, y: 90, z: 0}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   leftHand:
-    VRTarget: {fileID: 1486886269}
-    rigTarget: {fileID: 2036611649}
-    positionOffset: {x: -0.06, y: -0.12, z: -0.54}
-    rotationOffset: {x: -270, y: 90, z: 0}
+    vrTarget: {fileID: 0}
+    ikTarget: {fileID: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
   headConstraint: {fileID: 342713077}
   turnFactor: 1
   forwardAxis: 1

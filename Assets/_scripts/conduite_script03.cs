@@ -368,4 +368,16 @@ public class conduite_script03 : MonoBehaviour
         notesConduites[sceneNB - 1].SetActive(true);
     }
 
+
+    public void blackOut(bool value)
+    {
+        if (value == true)
+        {
+            canvasBlackOut.SetActive(true);
+        }
+        else if (value == false)
+        {
+            canvasBlackOut.SetActive(false);
+        }
+    }
 }

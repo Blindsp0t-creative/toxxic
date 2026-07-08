@@ -9,7 +9,9 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Section("GENERAL")]
     [Button("CALIBRATE", id: "calbibrate")]                         public void LOG_Calib() { Debug.Log("CALIB"); }
-    [Button("BLACK OUT", id: "blackout")]                           public void LOG_BlackOut() { Debug.Log("BLACK OUT"); }
+    //[Button("BLACK OUT", id: "blackout")]                           public void LOG_BlackOut() { Debug.Log("BLACK OUT"); }
+    [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;// void LOG_BlackOut(bool b) { Debug.Log("BLACK OUT - Toggle"); }
+
 
     [Section("STRIP CLUB")]
     [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
