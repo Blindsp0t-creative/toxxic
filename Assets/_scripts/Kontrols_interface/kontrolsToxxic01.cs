@@ -22,8 +22,6 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Next", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
     [Button("Previous", id: "stripclubP")]                          public void LOG_topPreviousStripClub() { Debug.Log("Previous - Strip Club Scene"); }
 
-
-
     [Section("PELLETEUSE")]
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]              public void LOG_loadScenePelleteuse() { Debug.Log("load Pelleteuse Scene"); }
     [Button("Next", id: "pelleteuseN")]                             public void LOG_topNextPelleteuse() { Debug.Log("Next - Pelleteuse Scene"); }
