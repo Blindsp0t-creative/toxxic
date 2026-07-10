@@ -5,6 +5,10 @@ public class sceneLoader : MonoBehaviour
 {
     public OSC _osc;
 
+    public GameObject avatarStripClub;
+    public GameObject avatarPelleteuse;
+    public GameObject avatarRainbowRoad;
+
     public void LoadSceneAdditive(string sceneName)
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
@@ -24,71 +28,49 @@ public class sceneLoader : MonoBehaviour
 
     public void loadStripClub()
     {
-        Scene sceneP = SceneManager.GetSceneByName("PELLETEUSE_V1");
-        if (sceneP.isLoaded)
-            SceneManager.UnloadSceneAsync("PELLETEUSE_V1");
 
-        Scene sceneR = SceneManager.GetSceneByName("SCAN_V1");
-        if (sceneR.isLoaded)
-            SceneManager.UnloadSceneAsync("SCAN_V1");
+        unloadToxxicScene("PELLETEUSE_V1");
+        unloadToxxicScene("SCAN_V1");
 
-        Scene current = SceneManager.GetSceneByName("CLUB_V1");
-        if(current.isLoaded)
-            return;
-        else
-        {
-            SceneManager.sceneLoaded += OnStripClubLoaded;
-            SceneManager.LoadScene("CLUB_V1", LoadSceneMode.Additive);
-        }
+        loadToxxicScene("CLUB_V1");
 
-
+        disableAvatars();
+        if(avatarStripClub != null )
+            avatarStripClub.SetActive(true);
     }
 
     public void loadPelleteuse()
     {
-        Scene sceneS = SceneManager.GetSceneByName("CLUB_V1");
-        if (sceneS.isLoaded)
-            SceneManager.UnloadSceneAsync("CLUB_V1");
 
-        Scene sceneR = SceneManager.GetSceneByName("SCAN_V1");
-        if (sceneR.isLoaded)
-            SceneManager.UnloadSceneAsync("SCAN_V1");
+        unloadToxxicScene("CLUB_V1");
+        unloadToxxicScene("SCAN_V1");
 
-        Scene current = SceneManager.GetSceneByName("PELLETEUSE_V1");
-        if (current.isLoaded)
-            return;
-        else
-        {
-            SceneManager.sceneLoaded += OnPelleteuseLoaded;
-            SceneManager.LoadScene("PELLETEUSE_V1", LoadSceneMode.Additive);
-        }
+        loadToxxicScene("PELLETEUSE_V1");
+
+        disableAvatars();
+        if(avatarPelleteuse != null )
+            avatarPelleteuse.SetActive(true);
+
     }
 
     public void loadRainbowRoad()
     {
-        Scene sceneS = SceneManager.GetSceneByName("CLUB_V1");
-        if (sceneS.isLoaded)
-            SceneManager.UnloadSceneAsync("CLUB_V1");
 
-        Scene sceneP = SceneManager.GetSceneByName("PELLETEUSE_V1");
-        if (sceneP.isLoaded)
-            SceneManager.UnloadSceneAsync("PELLETEUSE_V1");
+        unloadToxxicScene("CLUB_V1");
+        unloadToxxicScene("PELLETEUSE_V1");
 
+        loadToxxicScene("SCAN_V1");
 
-        Scene current = SceneManager.GetSceneByName("SCAN_V1");
-        if (current.isLoaded)
-            return;
-        else
-        {
-            SceneManager.sceneLoaded += OnPelleteuseLoaded;
-            SceneManager.LoadScene("SCAN_V1", LoadSceneMode.Additive);
-        }
+        disableAvatars();
+        if(avatarRainbowRoad != null )
+            avatarRainbowRoad.SetActive(true);
+
     }
 
     void OnStripClubLoaded(Scene scene, LoadSceneMode mode)
     {
         SceneManager.sceneLoaded -= OnStripClubLoaded;
-
+        /*
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
         {
             if (go.scene == scene)
@@ -97,12 +79,14 @@ public class sceneLoader : MonoBehaviour
                 break;
             }
         }
+        */
     }
 
     void OnPelleteuseLoaded(Scene scene, LoadSceneMode mode)
     {
         SceneManager.sceneLoaded -= OnPelleteuseLoaded;
 
+        /*
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("Conduite"))
         {
             if (go.scene == scene)
@@ -111,5 +95,38 @@ public class sceneLoader : MonoBehaviour
                 break;
             }
         }
+        */
     }
+
+    public void unloadToxxicScene(string _name)
+    {
+        Scene sceneP = SceneManager.GetSceneByName(_name);
+        if (sceneP.isLoaded)
+            SceneManager.UnloadSceneAsync(_name);
+    }
+
+    public void loadToxxicScene(string _name)
+    {
+        Scene current = SceneManager.GetSceneByName(_name);
+        if (current.isLoaded)
+            return;
+        else
+        {
+            SceneManager.sceneLoaded += OnStripClubLoaded;
+            SceneManager.LoadScene(_name, LoadSceneMode.Additive);
+        }
+    }
+
+    public void disableAvatars()
+    {
+        if(avatarStripClub != null)
+            avatarStripClub.SetActive(false);
+
+        if(avatarPelleteuse != null)
+            avatarPelleteuse.SetActive(false);
+
+        if(avatarRainbowRoad != null)
+            avatarRainbowRoad.SetActive(false);
+    }
+
 }

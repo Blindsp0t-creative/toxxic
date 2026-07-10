@@ -62,12 +62,14 @@ public class conduite_script03 : MonoBehaviour
         skinnedMRenders = new SkinnedMeshRenderer[25];
         skinnedMRenders = avatarPlaces.GetComponentsInChildren<SkinnedMeshRenderer>();
 
+        /*
         _handler.SetAllMessageHandler(allMessages);
         _handler.SetAddressHandler("/osc/next", onMessageNext);
         _handler.SetAddressHandler("/osc/back", onMessageBack);
         _handler.SetAddressHandler("/osc/calib", onMessageCalib);
 
         _handler.SetAddressHandler("/osc/avatarheight", onMessageHeight);
+        */
 
     }
     public void allMessages(OscMessage message)

@@ -54,10 +54,12 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
 
         //INIT pelleteuse_OSC
+        /*
         _handler.SetAllMessageHandler(allMessages);
         _handler.SetAddressHandler("/osc/next", onMessageNext);
         _handler.SetAddressHandler("/osc/back", onMessageBack);
         _handler.SetAddressHandler("/osc/calib", onMessageCalib);
+        */
     }
 
     IEnumerator avatarsReveal()

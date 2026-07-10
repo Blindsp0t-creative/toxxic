@@ -18666,9 +18666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1996877604}
-  - component: {fileID: 1996877603}
-  - component: {fileID: 1996877605}
-  - component: {fileID: 1996877606}
   - component: {fileID: 1996877607}
   m_Layer: 0
   m_Name: CONDUITE
@@ -18677,26 +18674,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1996877603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996877602}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f589d60ee97f327459fabfc26aa52225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camSelector: {fileID: 1471028869}
-  avatarPlaces: {fileID: 1440177226}
-  avatarsAudience: {fileID: 1806808569}
-  avatarsAudience2: {fileID: 114903397}
-  whiteLight: {fileID: 895657328}
-  redLight: {fileID: 1107652039}
-  sceneNB: 1
-  elevationAvatar: 0.65
 --- !u!4 &1996877604
 Transform:
   m_ObjectHideFlags: 0
@@ -18712,60 +18689,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1996877605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996877602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a448698032330294e90cc666cc295c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  osc: {fileID: 0}
-  parametres: {fileID: 11400000, guid: d508e73b6bf644e4eabab48f5d9d0c00, type: 2}
---- !u!114 &1996877606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996877602}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e7f6934997a6146b724c8ff9cfe1a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camSelector: {fileID: 1471028869}
-  avatarPlaces: {fileID: 1440177226}
-  avatarsAudience: {fileID: 1806808569}
-  avatarOrcDancing: {fileID: 84703607}
-  avatarsAudience2: {fileID: 114903397}
-  whiteLight: {fileID: 895657328}
-  redLight: {fileID: 1107652039}
-  lookAtTargets:
-  - {fileID: 2134081677}
-  - {fileID: 1087005275}
-  - {fileID: 669642115}
-  sceneNB: 1
-  rokoko: {fileID: 0}
-  canvasBlackOut: {fileID: 1181227948}
-  notesConduites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  goDown: 0
-  multiplierLerpTime: 0.4
-  toto: 0
 --- !u!114 &1996877607
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -84,7 +84,7 @@ public class oscAutoAssignComponents_openStage : MonoBehaviour
 
         //set osc listeners
         //osc.SetAllMessageHandler(handlerAll);
-        osc.SetAllMessageHandler(oscMessageHandler);
+        //osc.SetAllMessageHandler(oscMessageHandler);
     }
 
     public void handlerAll(OscMessage message)

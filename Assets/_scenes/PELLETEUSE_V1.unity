@@ -6062,7 +6062,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &492457763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7697,8 +7697,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632906617}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03937226, y: 2.2413939e-14, z: 1.4407988e-14, w: 0.99922466}
-  m_LocalPosition: {x: 0.78, y: 2.0237954, z: -4.9663076}
+  m_LocalRotation: {x: -0.36113632, y: 0, z: 0, w: 0.93251306}
+  m_LocalPosition: {x: 4.1750464, y: 15.357485, z: -0.068826556}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7753,11 +7753,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
+  near clip plane: 0.01
+  far clip plane: 1000
   field of view: 60.000004
   orthographic: 0
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
