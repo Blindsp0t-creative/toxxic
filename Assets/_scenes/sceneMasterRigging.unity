@@ -2327,7 +2327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 229359427}
   m_Layer: 0
-  m_Name: Left Hand VR Target
+  m_Name: Left Hand VR Target_Denis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2431,6 +2431,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &236721147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236721148}
+  m_Layer: 0
+  m_Name: Head Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &236721148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236721147}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.28392935, y: 0.64759874, z: -0.2839293, w: 0.6475988}
+  m_LocalPosition: {x: -0.0000005534545, y: 9.60594, z: 0.43568996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1124896959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &237225097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3020524223764113571, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -3945,6 +3976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvatarMiku_reRigged_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1f662856bf65fc4ebd521c53a106d3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
@@ -7096,7 +7132,7 @@ Transform:
   m_GameObject: {fileID: 567273757}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.86, y: 0.66000015, z: -3.8979604}
+  m_LocalPosition: {x: -5.86, y: 5.53, z: -3.8979604}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7518,6 +7554,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2081119579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &595771932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 595771933}
+  m_Layer: 0
+  m_Name: Left Hand VR Target_Venom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &595771933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595771932}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2073425459}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: -90}
 --- !u!1 &599431006
 GameObject:
   m_ObjectHideFlags: 0
@@ -9520,7 +9587,7 @@ Transform:
   m_GameObject: {fileID: 730849150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.35, y: 0.66, z: -3.8979604}
+  m_LocalPosition: {x: 6.35, y: 5.53, z: -3.8979604}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11244,6 +11311,7 @@ Transform:
   - {fileID: 617418573}
   - {fileID: 1253571117}
   - {fileID: 205158318}
+  - {fileID: 1124896959}
   m_Father: {fileID: 1332309504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842152120
@@ -15121,6 +15189,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 367797782}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1124896958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124896959}
+  - component: {fileID: 1124896960}
+  m_Layer: 0
+  m_Name: Head IK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1124896959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124896958}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 236721148}
+  m_Father: {fileID: 835200810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1124896960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124896958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8935e03361a14ec4b8edc872f76bc822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Animation.Rigging::UnityEngine.Animations.Rigging.MultiParentConstraint
+  m_Weight: 1
+  m_Data:
+    m_ConstrainedObject: {fileID: 1063234858}
+    m_SourceObjects:
+      m_Length: 1
+      m_Item0:
+        transform: {fileID: 236721148}
+        weight: 1
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_ConstrainedPositionAxes:
+      x: 1
+      y: 1
+      z: 1
+    m_ConstrainedRotationAxes:
+      x: 1
+      y: 1
+      z: 1
+    m_MaintainPositionOffset: 0
+    m_MaintainRotationOffset: 0
 --- !u!4 &1125071382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3217715338239712324, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -16189,6 +16341,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d952c175ec3c6554199fd744548ce50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1172661360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172661361}
+  m_Layer: 0
+  m_Name: Left Hand VR Target_Miku
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1172661361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172661360}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2073425459}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: -90}
 --- !u!4 &1176654101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3233480519925159869, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -16449,7 +16632,7 @@ MonoBehaviour:
   sideStepLength: 0.1
   stepHeight: 0.3
   footOffset: {x: 0, y: 0, z: 0}
-  footRotOffset: {x: 0, y: 0, z: 0}
+  footRotOffset: {x: 0, y: 90, z: -90}
   footYPosOffset: 0.1
   rayStartYOffset: 0
   rayLength: 1.5
@@ -17893,6 +18076,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2081119579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1332309505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332309500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933ae96d5faaa984baa041eef30e1c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IKTargetFollowVRRig
+  turnSmoothness: 0.1
+  head:
+    vrTarget: {fileID: 1959510961}
+    ikTarget: {fileID: 236721148}
+    trackingPositionOffset: {x: 0, y: 0, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
+  leftHand:
+    vrTarget: {fileID: 595771933}
+    ikTarget: {fileID: 1249891252}
+    trackingPositionOffset: {x: 0, y: 8, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
+  rightHand:
+    vrTarget: {fileID: 2029434815}
+    ikTarget: {fileID: 186007752}
+    trackingPositionOffset: {x: 0, y: 8, z: 0}
+    trackingRotationOffset: {x: 0, y: 0, z: 0}
+  headBodyPositionOffset: {x: 0, y: 4, z: 0}
+  headBodyYawOffset: 0
 --- !u!4 &1336416604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7643880390238090817, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -21040,7 +21253,7 @@ MonoBehaviour:
   sideStepLength: 0.1
   stepHeight: 0.3
   footOffset: {x: 0, y: 0, z: 0}
-  footRotOffset: {x: 0, y: 0, z: 0}
+  footRotOffset: {x: 0, y: 90, z: 90}
   footYPosOffset: 0.1
   rayStartYOffset: 0
   rayLength: 1.5
@@ -24606,6 +24819,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2081119579}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2029434814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029434815}
+  m_Layer: 0
+  m_Name: Right Hand VR Target_Venom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2029434815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029434814}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2073412151}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!4 &2035695097 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3243483274957817471, guid: 84da18b730220de4cbe83b03cfd79033,
@@ -25892,6 +26136,7 @@ Transform:
   - {fileID: 1234468546}
   - {fileID: 593605793}
   - {fileID: 636313476}
+  - {fileID: 2029434815}
   m_Father: {fileID: 2073407143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2073425459
@@ -25911,6 +26156,8 @@ Transform:
   - {fileID: 1412036121}
   - {fileID: 1681937024}
   - {fileID: 229359427}
+  - {fileID: 595771933}
+  - {fileID: 1172661361}
   m_Father: {fileID: 2073407143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2074653734
@@ -27482,17 +27729,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
         type: 3}
@@ -27600,6 +27847,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1332309501}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1332309505}
   m_SourcePrefab: {fileID: 100100000, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2, type: 3}
 --- !u!1 &2082021432
 GameObject:
