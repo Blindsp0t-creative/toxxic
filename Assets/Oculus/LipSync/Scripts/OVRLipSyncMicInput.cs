@@ -152,7 +152,7 @@ public class OVRLipSyncMicInput : MonoBehaviour
         }
 
         audioSource.volume = (micInputVolume / 100);
-
+        /*
         //Hold To Speak
         if (micControl == micActivation.HoldToSpeak)
         {
@@ -190,12 +190,12 @@ public class OVRLipSyncMicInput : MonoBehaviour
 
         //Constant Speak
         if (micControl == micActivation.ConstantSpeak)
-        {
+        {*/
             if (!Microphone.IsRecording(selectedDevice))
             {
                 StartMicrophone();
             }
-        }
+        //}
 
 
         //Mic Selected = False
