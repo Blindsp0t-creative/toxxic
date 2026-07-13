@@ -9178,6 +9178,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 0
+  clampFootRotation: 0
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:
@@ -17853,6 +17860,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 1
+  clampFootRotation: 1
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:
@@ -21057,6 +21071,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 0
+  clampFootRotation: 0
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:
@@ -21939,6 +21960,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 0
+  clampFootRotation: 0
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:
@@ -22307,6 +22335,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 0
+  clampFootRotation: 0
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:

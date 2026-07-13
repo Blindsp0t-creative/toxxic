@@ -28,7 +28,7 @@ public class blinkingEyes : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2.0f, 6.0f));
+            yield return new WaitForSeconds(Random.Range(2.0f, 5.0f));
 
             //animate blend shape here
             _skinnedMesh.SetBlendShapeWeight(eyeCloseBlendShapeIndex, Random.Range(minValue, maxValue));
