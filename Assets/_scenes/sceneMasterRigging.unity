@@ -358,7 +358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &37979244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OVRLocomotion
   cameraRig: {fileID: 2067750443}
-  moveSpeed: 1.5
+  moveSpeed: 1
   enableStrafe: 1
   rotationSpeed: 45
   rotationDeadzone: 0.2
@@ -9157,7 +9157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &786408760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13476,6 +13476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Set_VR_Avatar_height
   height: 0.9133858
+  smoothTime: 0
 --- !u!1 &1133309012
 GameObject:
   m_ObjectHideFlags: 0
