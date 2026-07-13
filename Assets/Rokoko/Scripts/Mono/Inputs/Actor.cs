@@ -262,7 +262,7 @@ namespace Rokoko.Inputs
                     // Offset Hip bone
                     if (shouldUpdatePosition && adjustHipHeightBasedOnStudioActor)
                         worldPosition = new Vector3(worldPosition.x, worldPosition.y - (actorFrame.dimensions.hipHeight - hipHeight), worldPosition.z);
-
+                    /*
                     if(bone != HumanBodyBones.LeftToes && 
                         bone != HumanBodyBones.RightToes && 
                         bone != HumanBodyBones.LeftThumbProximal &&
@@ -300,6 +300,7 @@ namespace Rokoko.Inputs
                         bone != HumanBodyBones.RightLittleIntermediate &&
                         bone != HumanBodyBones.RightLittleDistal 
                         ) // FIX TEMPORAIRE
+                    */
                     UpdateBone(bone, worldPosition, worldRotation, shouldUpdatePosition, positionSpace, rotationSpace);
                 }
             }
