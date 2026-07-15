@@ -10,6 +10,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Section("GENERAL")]
     [Button("CALIBRATE", id: "calbibrate")]                         public void LOG_Calib() { Debug.Log("CALIB"); }
     [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;
+    [Toggle("FOOT LOCK", id: "footRotation")]             public bool footRotationClamp;
 
     [Slider("ElevationAvatarDenis", 0.5f, 3.0f, id: "elevationavatarDenis")] 
     public float avatarElevationDenis;

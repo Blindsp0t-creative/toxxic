@@ -414,6 +414,19 @@ namespace Rokoko.Inputs
 
         #endregion
 
+        public void toggleFootCorrection(bool _val)
+        {
+            if (_val)
+            {
+                clampFootRotation = true;
+            }
+            else if (!_val)
+            {
+                clampFootRotation = false;
+            }
+        }   
+
+        
         /// <summary>
         /// Get the rotational difference between 2 humanoid T poses.
         /// </summary>
