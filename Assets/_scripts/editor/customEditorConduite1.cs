@@ -36,22 +36,6 @@ public class conduiteScriptEditor1 : Editor
 
         GUILayout.Space(50);
 
-
-
-        GUILayout.BeginHorizontal();
-            if (GUILayout.Button(" [ GO DOWN ] ", GUILayout.Width(100), GUILayout.Height(100)))
-        {
-                _target.goDown = true;
-            }
-            GUILayout.Space(100);
-            if (GUILayout.Button(" [ GO UP ] ", GUILayout.Width(100), GUILayout.Height(100)))
-        {
-                _target.goDown = false;
-            }
-        GUILayout.EndHorizontal();
-
-
-
         GUILayout.BeginHorizontal();
         GUILayout.Space(100);
         if (GUILayout.Button(" [ ** CALIBRATE ** ] ", GUILayout.Width(100), GUILayout.Height(100)))

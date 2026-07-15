@@ -25,6 +25,18 @@ namespace Rokoko.Inputs
             Self
         }
 
+        /// <summary>
+        /// Axe local autour duquel s'effectue le "twist" du pied (rotation autour de l'axe de la jambe).
+        /// Depend de l'orientation des bones du rig : a determiner via logFootLocalAngles.
+        /// </summary>
+        [System.Serializable]
+        public enum TwistAxis
+        {
+            X,
+            Y,
+            Z
+        }
+
         [HideInInspector] public string profileName = "DemoProfile";
 
         [HideInInspector] public BoneMappingEnum boneMapping;
@@ -40,6 +52,29 @@ namespace Rokoko.Inputs
         [Space(10)]
         [Tooltip("Calculate Model's height comparing to Actor's and position the Hips accordingly.\nGreat tool to align with the floor")]
         public bool adjustHipHeightBasedOnStudioActor = false;
+
+        [Header("Foot Rotation Clamping")]
+        [Tooltip("Limite la rotation des pieds par rapport a la jambe, pour masquer la derive du tracking Rokoko")]
+        public bool clampFootRotation = false;
+
+        [Tooltip("Axe local du twist (rotation autour de l'axe de la jambe). Utiliser logFootLocalAngles pour l'identifier sur votre rig.")]
+        public TwistAxis footTwistAxis = TwistAxis.Y;
+
+        [Tooltip("Limites du twist autour de l'axe de la jambe, en degres (min, max)")]
+        public Vector2 footTwistLimits = new Vector2(-25f, 25f);
+
+        [Tooltip("Limites de la flexion avant/arriere, en degres (min, max)")]
+        public Vector2 footPitchLimits = new Vector2(-40f, 30f);
+
+        [Tooltip("Limites de l'inversion/eversion laterale, en degres (min, max)")]
+        public Vector2 footRollLimits = new Vector2(-20f, 20f);
+
+        [Range(0f, 1f)]
+        [Tooltip("Lissage de la rotation du pied. 1 = pas de lissage (reactif), valeurs basses = plus doux mais plus de latence")]
+        public float footSmoothing = 1f;
+
+        [Tooltip("Affiche dans la console les angles locaux du pied (pitch/twist/roll) pour identifier l'axe de twist du rig")]
+        public bool logFootLocalAngles = false;
 
         [HideInInspector] public Face face = null;
 
@@ -61,7 +96,7 @@ namespace Rokoko.Inputs
 
         protected virtual void Awake()
         {
-            if(animator == null)
+            if (animator == null)
             {
                 Debug.LogError($"Actor {this.name} isn't configured", this.transform);
                 return;
@@ -190,7 +225,7 @@ namespace Rokoko.Inputs
 
             Transform head = GetBone(HumanBodyBones.Head);
             Transform foot = GetBone(HumanBodyBones.LeftFoot);
-            if (head == null || foot == null) 
+            if (head == null || foot == null)
                 return 1.8f;
 
             // Add space for head mesh
@@ -211,7 +246,7 @@ namespace Rokoko.Inputs
             Transform spine = GetBone(HumanBodyBones.Spine);
             Transform chest = GetBone(HumanBodyBones.Chest);
 
-            if(rightHand == null || leftHand == null || spine == null || chest == null)
+            if (rightHand == null || leftHand == null || spine == null || chest == null)
             {
                 Debug.LogError("Cant validate actor height. Bone is missing", this.transform);
                 return false;
@@ -297,22 +332,84 @@ namespace Rokoko.Inputs
                 }
             }
 
-            // Update Rotation
+            // Compute target rotation
+            Quaternion targetRotation;
+
             if (rotationSpace == RotationSpace.World)
             {
-                boneTransform.rotation = worldRotation;
+                targetRotation = worldRotation;
             }
             else if (rotationSpace == RotationSpace.Self)
             {
                 if (transform.parent != null)
-                    boneTransform.rotation = this.transform.parent.rotation * worldRotation;
+                    targetRotation = this.transform.parent.rotation * worldRotation;
                 else
-                    boneTransform.rotation = worldRotation;
+                    targetRotation = worldRotation;
             }
             else
             {
-                boneTransform.rotation = GetBone(HumanBodyBones.Hips).parent.rotation *  worldRotation * offsets[bone];
+                targetRotation = GetBone(HumanBodyBones.Hips).parent.rotation * worldRotation * offsets[bone];
             }
+
+            // Clamp foot rotation relative to the lower leg (masks Rokoko foot drift)
+            if (clampFootRotation && (bone == HumanBodyBones.LeftFoot || bone == HumanBodyBones.RightFoot))
+            {
+                HumanBodyBones legBone = (bone == HumanBodyBones.LeftFoot)
+                    ? HumanBodyBones.LeftLowerLeg
+                    : HumanBodyBones.RightLowerLeg;
+
+                Transform leg = GetBone(legBone);
+                if (leg != null)
+                    targetRotation = ClampFootRotation(targetRotation, leg.rotation, bone);
+            }
+
+            // Apply rotation (optionally smoothed)
+            if (footSmoothing < 1f && clampFootRotation && (bone == HumanBodyBones.LeftFoot || bone == HumanBodyBones.RightFoot))
+                boneTransform.rotation = Quaternion.Slerp(boneTransform.rotation, targetRotation, footSmoothing);
+            else
+                boneTransform.rotation = targetRotation;
+        }
+
+        /// <summary>
+        /// Bring the foot's world rotation into the lower leg's space, clamp each axis, then convert back to world.
+        /// </summary>
+        private Quaternion ClampFootRotation(Quaternion worldTarget, Quaternion legWorldRotation, HumanBodyBones bone)
+        {
+            // Foot rotation relative to the lower leg
+            Quaternion local = Quaternion.Inverse(legWorldRotation) * worldTarget;
+
+            // Signed angles in [-180, 180]
+            Vector3 e = local.eulerAngles;
+            e.x = Mathf.DeltaAngle(0f, e.x);
+            e.y = Mathf.DeltaAngle(0f, e.y);
+            e.z = Mathf.DeltaAngle(0f, e.z);
+
+            if (logFootLocalAngles)
+                Debug.Log($"[{bone}] local angles - X:{e.x:F1} Y:{e.y:F1} Z:{e.z:F1}", this.transform);
+
+            // Clamp: the twist axis gets the twist limits, the two others get pitch / roll limits
+            switch (footTwistAxis)
+            {
+                case TwistAxis.X:
+                    e.x = Mathf.Clamp(e.x, footTwistLimits.x, footTwistLimits.y);
+                    e.y = Mathf.Clamp(e.y, footPitchLimits.x, footPitchLimits.y);
+                    e.z = Mathf.Clamp(e.z, footRollLimits.x, footRollLimits.y);
+                    break;
+
+                case TwistAxis.Y:
+                    e.x = Mathf.Clamp(e.x, footPitchLimits.x, footPitchLimits.y);
+                    e.y = Mathf.Clamp(e.y, footTwistLimits.x, footTwistLimits.y);
+                    e.z = Mathf.Clamp(e.z, footRollLimits.x, footRollLimits.y);
+                    break;
+
+                case TwistAxis.Z:
+                    e.x = Mathf.Clamp(e.x, footPitchLimits.x, footPitchLimits.y);
+                    e.y = Mathf.Clamp(e.y, footRollLimits.x, footRollLimits.y);
+                    e.z = Mathf.Clamp(e.z, footTwistLimits.x, footTwistLimits.y);
+                    break;
+            }
+
+            return legWorldRotation * Quaternion.Euler(e);
         }
 
         #endregion

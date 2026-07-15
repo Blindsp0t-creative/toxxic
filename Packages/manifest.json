@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "com.meta.xr.sdk.all": "85.0.0",
+    "com.blindspot.kontrols": "file:C:/Users/chamb/Documents/GitHub/Kontrols-main/Kontrols-main",
+    "com.meta.xr.sdk.all": "201.0.0",
+    "com.meta.xr.sdk.avatars": "40.0.1",
+    "com.meta.xr.sdk.movement": "https://github.com/oculus-samples/Unity-Movement.git",
     "com.unity.2d.animation": "13.0.4",
     "com.unity.animation.rigging": "1.4.1",
     "com.unity.cinemachine": "2.10.5",
@@ -11,10 +14,12 @@
     "com.unity.timeline": "1.8.10",
     "com.unity.ugui": "2.0.0",
     "com.unity.visualscripting": "1.9.9",
+    "com.unity.xr.interaction.toolkit": "3.3.2",
     "com.unity.xr.management": "4.5.4",
     "com.unity.xr.openxr": "1.16.1",
     "jp.keijiro.klak.ndi": "2.1.3",
     "jp.keijiro.klak.spout": "2.0.3",
+    "jp.keijiro.rtmidi": "2.2.0",
     "com.unity.modules.accessibility": "1.0.0",
     "com.unity.modules.adaptiveperformance": "1.0.0",
     "com.unity.modules.ai": "1.0.0",

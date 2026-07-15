@@ -1,0 +1,279 @@
+{
+    "version": 1,
+    "window": "kontrolsToxxic01",
+    "exportedAt": "2026-07-08T16:30:19.9521345Z",
+    "values": [
+        {
+            "id": "blackout",
+            "value": 1.0
+        },
+        {
+            "id": "elevationavatarDenis",
+            "value": 0.0
+        },
+        {
+            "id": "elevationavatarJen",
+            "value": 1.2860000133514405
+        }
+    ],
+    "midi": [
+        {
+            "id": "blackout",
+            "channel": 0,
+            "cc": 71
+        },
+        {
+            "id": "stripclub",
+            "channel": 0,
+            "cc": 32
+        },
+        {
+            "id": "stripclubN",
+            "channel": 0,
+            "cc": 48
+        },
+        {
+            "id": "stripclubP",
+            "channel": 0,
+            "cc": 64
+        },
+        {
+            "id": "pelleteuse",
+            "channel": 0,
+            "cc": 33
+        },
+        {
+            "id": "pelleteuseN",
+            "channel": 0,
+            "cc": 49
+        },
+        {
+            "id": "pelleteuseP",
+            "channel": 0,
+            "cc": 65
+        },
+        {
+            "id": "rainbowroad",
+            "channel": 0,
+            "cc": 34
+        },
+        {
+            "id": "RainbowRoadN",
+            "channel": 0,
+            "cc": 50
+        },
+        {
+            "id": "RainbowRoadP",
+            "channel": 0,
+            "cc": 66
+        },
+        {
+            "id": "toggleVideoTV",
+            "channel": 0,
+            "cc": 70
+        }
+    ],
+    "osc": [],
+    "references": [
+        {
+            "id": "blackout",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-0a4b9701a910dad458d3ee8fe6843788-1996877602-0",
+                    "componentType": "conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "blackOut",
+                    "paramType": 3,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "componentType": "pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "blackOut",
+                    "paramType": 3,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "blackOut",
+                    "paramType": 3,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "elevationavatarDenis",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-159718-2073210209",
+                    "componentType": "Set_VR_Avatar_height, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "setHeight",
+                    "paramType": 1,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "elevationavatarJen",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-0a4b9701a910dad458d3ee8fe6843788-1996877602-0",
+                    "componentType": "conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "setAvatarElevation",
+                    "paramType": 1,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclub",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadStripClub",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubN",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-0a4b9701a910dad458d3ee8fe6843788-1996877602-0",
+                    "componentType": "conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonNEXT",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-0a4b9701a910dad458d3ee8fe6843788-1996877602-0",
+                    "componentType": "conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonBACK",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuse",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadPelleteuse",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuseN",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "componentType": "pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonNEXT",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuseP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "componentType": "pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonBACK",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "rainbowroad",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadRainbowRoad",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "RainbowRoadN",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "NextCamera",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "RainbowRoadP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "PreviousCamera",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "toggleVideoTV",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "toggleVideo",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        }
+    ]
+}

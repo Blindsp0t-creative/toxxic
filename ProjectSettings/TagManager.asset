@@ -31,6 +31,7 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - Conduite
+  - GROS_PLAN_VR
   layers:
   - Default
   - TransparentFX
@@ -39,16 +40,16 @@ TagManager:
   - Water
   - UI
   - 
+  - AVATAR
+  - testLayerCanap
+  - collidersJambes
+  - 
+  - collidersVR_player
+  - 
+  - VR_marker
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - ikLegLayer_specific
   - 
   - 
   - 

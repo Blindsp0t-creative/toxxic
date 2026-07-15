@@ -32,14 +32,6 @@ public class conduite_script03 : MonoBehaviour
     public Rokoko.CommandAPI.StudioCommandAPI rokoko;
     public GameObject canvasBlackOut;
 
-
-    public GameObject[] notesConduites;
-
-    // starting value for the Lerp
-    static float t = 0.0f;
-
-
-    public bool goDown;
     public float multiplierLerpTime;
     public OSC _handler;
 
@@ -70,14 +62,14 @@ public class conduite_script03 : MonoBehaviour
         skinnedMRenders = new SkinnedMeshRenderer[25];
         skinnedMRenders = avatarPlaces.GetComponentsInChildren<SkinnedMeshRenderer>();
 
+        /*
         _handler.SetAllMessageHandler(allMessages);
         _handler.SetAddressHandler("/osc/next", onMessageNext);
         _handler.SetAddressHandler("/osc/back", onMessageBack);
         _handler.SetAddressHandler("/osc/calib", onMessageCalib);
 
-        _handler.SetAddressHandler("/osc/up", onMessageUp);
-        _handler.SetAddressHandler("/osc/down", onMessageDown);
         _handler.SetAddressHandler("/osc/avatarheight", onMessageHeight);
+        */
 
     }
     public void allMessages(OscMessage message)
@@ -105,21 +97,16 @@ public class conduite_script03 : MonoBehaviour
             rokoko.CalibrateAll();
     }
 
-    public void onMessageUp(OscMessage message)
-    {
-        if (message.GetFloat(0) > 0.5)
-            goDown = false;
-    }
-
-    public void onMessageDown(OscMessage message)
-    {
-        if (message.GetFloat(0) > 0.5)
-            goDown = true;
-    }
     public void onMessageHeight(OscMessage message)
     {
         elevationAvatar = message.GetFloat(0);
     }
+
+    public void setAvatarElevation(float value)
+    {
+        elevationAvatar = value;
+    }
+
     IEnumerator avatarsReveal()
     {
         yield return new WaitForSeconds(2);
@@ -320,10 +307,6 @@ public class conduite_script03 : MonoBehaviour
         //APPLY HEIGHT
         avatarPlaces.places[avatarPlaces.activePlace].transform.position = new Vector3(avatarPlaces.places[avatarPlaces.activePlace].transform.position.x, elevationAvatar, avatarPlaces.places[avatarPlaces.activePlace].transform.position.z);
 
-
-        //NOTES CONDUITE
-        setNoteConduite();
-
     }
 
     public void hideAvatarJen()
@@ -359,13 +342,15 @@ public class conduite_script03 : MonoBehaviour
             sceneNB--;
     }
 
-    public void setNoteConduite()
+    public void blackOut(bool value)
     {
-        for(int i=0; i<notesConduites.Length; i++)
+        if (value == true)
         {
-            notesConduites[i].SetActive(false);
+            canvasBlackOut.SetActive(true);
         }
-        notesConduites[sceneNB - 1].SetActive(true);
+        else if (value == false)
+        {
+            canvasBlackOut.SetActive(false);
+        }
     }
-
 }
