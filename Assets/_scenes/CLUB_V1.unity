@@ -8858,7 +8858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457578870}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.060541894, y: 0.93820876, z: -0.21464996, w: -0.26462126}
+  m_LocalRotation: {x: -0.037437227, y: 0.95325357, z: -0.13273284, w: -0.26886463}
   m_LocalPosition: {x: 13.480415, y: 2.5069141, z: 3.7163715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8957,7 +8957,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a44cdfc85ed09b94d9d8f648ccb85abf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7445636
+      value: -2.405
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a44cdfc85ed09b94d9d8f648ccb85abf,
         type: 3}
@@ -9380,9 +9380,9 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 600000
-  m_InnerSpotPercent: 100
-  m_ShapeWidth: 0.5
-  m_ShapeHeight: 0.5
+  m_InnerSpotPercent: -1
+  m_ShapeWidth: -1
+  m_ShapeHeight: -1
   m_AspectRatio: 1
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
@@ -9498,7 +9498,7 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
-  m_Version: 11
+  m_Version: 14
   m_ObsoleteShadowResolutionTier: 1
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
@@ -9517,7 +9517,7 @@ Light:
   m_Intensity: 4194006
   m_Range: 10
   m_SpotAngle: 24.5
-  m_InnerSpotAngle: 7.7
+  m_InnerSpotAngle: 24.5
   m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
@@ -9565,7 +9565,7 @@ Light:
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_LightUnit: 1
+  m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
 --- !u!4 &482446049 stripped
@@ -15324,7 +15324,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 19ba505a5d7300e4e8dd59d5761b2395,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7595637
+      value: -2.316
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19ba505a5d7300e4e8dd59d5761b2395,
         type: 3}
@@ -17129,7 +17129,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e26684c12848af94fbd67e2eae748c3a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7575636
+      value: -2.729
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e26684c12848af94fbd67e2eae748c3a,
         type: 3}
@@ -19045,7 +19045,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2b5cd17a4cd5e30409af56af9820c4c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7485638
+      value: -2.307
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b5cd17a4cd5e30409af56af9820c4c3,
         type: 3}
@@ -20015,7 +20015,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2b5cd17a4cd5e30409af56af9820c4c3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7485638
+      value: -2.719
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2b5cd17a4cd5e30409af56af9820c4c3,
         type: 3}
@@ -20634,7 +20634,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3a10017d6e16c4d41a4cdbaf15db714a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7635636
+      value: -2.331
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3a10017d6e16c4d41a4cdbaf15db714a,
         type: 3}
@@ -21205,7 +21205,7 @@ Transform:
   m_GameObject: {fileID: 1806808569}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69.28982, y: 2.0065637, z: 13.875623}
+  m_LocalPosition: {x: 69.28982, y: 2.3, z: 13.875623}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22730,9 +22730,9 @@ MonoBehaviour:
   m_LightUnit: 0
   m_LuxAtDistance: 1
   m_Intensity: 1000000
-  m_InnerSpotPercent: 100
-  m_ShapeWidth: 0.5
-  m_ShapeHeight: 0.5
+  m_InnerSpotPercent: -1
+  m_ShapeWidth: -1
+  m_ShapeHeight: -1
   m_AspectRatio: 1
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
@@ -22848,7 +22848,7 @@ MonoBehaviour:
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0
   m_AreaLightEmissiveMeshLayer: -1
-  m_Version: 11
+  m_Version: 14
   m_ObsoleteShadowResolutionTier: 1
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
@@ -22867,7 +22867,7 @@ Light:
   m_Intensity: 481020.38
   m_Range: 3.21
   m_SpotAngle: 96
-  m_InnerSpotAngle: 21.80208
+  m_InnerSpotAngle: 96
   m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
@@ -22915,7 +22915,7 @@ Light:
   m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-  m_LightUnit: 1
+  m_LightUnit: 0
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
 --- !u!4 &1972577899 stripped
@@ -23576,7 +23576,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 00795ad1656552f429436d01a6ab6bff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7465637
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00795ad1656552f429436d01a6ab6bff,
         type: 3}
