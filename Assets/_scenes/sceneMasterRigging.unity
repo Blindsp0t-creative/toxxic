@@ -12841,7 +12841,7 @@ MonoBehaviour:
     ikTarget: {fileID: 353049394}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
-  headBodyPositionOffset: {x: 0, y: -0.66, z: 0}
+  headBodyPositionOffset: {x: 0, y: -1.85, z: -0.01}
   headBodyYawOffset: 0
 --- !u!95 &1075659088 stripped
 Animator:
