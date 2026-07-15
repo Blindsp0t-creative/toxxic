@@ -3258,6 +3258,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6435399192587130656, guid: b1f662856bf65fc4ebd521c53a106d3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
       propertyPath: m_Name
@@ -3346,6 +3351,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1075659090}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f662856bf65fc4ebd521c53a106d3b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075659091}
   m_SourcePrefab: {fileID: 100100000, guid: b1f662856bf65fc4ebd521c53a106d3b, type: 3}
 --- !u!137 &370815710 stripped
 SkinnedMeshRenderer:
@@ -11109,7 +11118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &937134390
 Transform:
   m_ObjectHideFlags: 0
@@ -12927,6 +12936,21 @@ MonoBehaviour:
   speedOpenEyes: 15
   minValue: 30
   maxValue: 100
+--- !u!114 &1075659091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075659082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fba4ae79454d34f814a7c391e2ad4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VRAnimatorController
+  speedThreshold: 0.1
+  smoothing: 0.503
+  vrRig: {fileID: 1959510960}
 --- !u!4 &1079842276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5613014143398103828, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -20998,7 +21022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1425004609
 Transform:
   m_ObjectHideFlags: 0
