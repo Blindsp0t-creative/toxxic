@@ -10565,7 +10565,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: be13dc9da84ecab439d4e65755f76a50, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: a629ce58512d85d46aaa47a484c5a0c8, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -15146,7 +15146,7 @@ MonoBehaviour:
   _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 8400000, guid: be13dc9da84ecab439d4e65755f76a50, type: 2}
+  _sourceTexture: {fileID: 8400000, guid: a629ce58512d85d46aaa47a484c5a0c8, type: 2}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
 --- !u!4 &1214300016 stripped
 Transform:

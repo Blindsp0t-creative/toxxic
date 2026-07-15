@@ -910,6 +910,13 @@ MonoBehaviour:
   positionSpace: 1
   rotationSpace: 0
   adjustHipHeightBasedOnStudioActor: 0
+  clampFootRotation: 0
+  footTwistAxis: 1
+  footTwistLimits: {x: -25, y: 25}
+  footPitchLimits: {x: -40, y: 30}
+  footRollLimits: {x: -20, y: 20}
+  footSmoothing: 1
+  logFootLocalAngles: 0
   face: {fileID: 0}
   debug: 0
   characterTPose:
@@ -7763,7 +7770,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 311
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 0466ae3ee9214b27ad4d85180865814a, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 911cc3bf42015fd4987ec8f92aca19fd, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -13891,7 +13898,7 @@ MonoBehaviour:
   _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
-  _sourceTexture: {fileID: 8400000, guid: 0466ae3ee9214b27ad4d85180865814a, type: 2}
+  _sourceTexture: {fileID: 8400000, guid: 911cc3bf42015fd4987ec8f92aca19fd, type: 2}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
 --- !u!4 &1216941995 stripped
 Transform:
