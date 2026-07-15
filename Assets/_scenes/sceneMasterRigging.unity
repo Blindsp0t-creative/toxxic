@@ -1871,7 +1871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229359427}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Left Hand VR Target_Denis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2022,7 +2022,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 239617794}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftHandOnControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2390,7 +2390,7 @@ CharacterController:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 786432
   m_LayerOverridePriority: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -2415,7 +2415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OVRLocomotion
   cameraRig: {fileID: 2067750443}
-  moveSpeed: 1
+  moveSpeed: 2
   enableStrafe: 1
   rotationSpeed: 45
   rotationDeadzone: 0.2
@@ -3258,6 +3258,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8043815012893562206, guid: b1f662856bf65fc4ebd521c53a106d3b,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 86bd8a6edad29264cbdd5464c3d21693, type: 2}
     - target: {fileID: -6435399192587130656, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
       propertyPath: m_Layer
@@ -3277,7 +3282,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: a437004600855403d942b14e1a1ce643, type: 2}
+      objectReference: {fileID: 2100000, guid: 585ce5e145fa76b44af74b55033ab33e, type: 2}
     - target: {fileID: 5866666021909216657, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
       propertyPath: m_Controller
@@ -3287,7 +3292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f26708a575f784d02a362d250e983c3f, type: 2}
+      objectReference: {fileID: 2100000, guid: e6f380594da54d64cac0f035a2917af5, type: 2}
     - target: {fileID: 6868716418057165105, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
       propertyPath: 'm_BlendShapeWeights.Array.data[0]'
@@ -6245,7 +6250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 593605793}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Right Hand VR Target_Denis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6282,7 +6287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 595771933}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Left Hand VR Target_Venom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6791,7 +6796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 636313476}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Right Hand VR Target_Miku
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7459,7 +7464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662906614}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightHandOnControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9400,7 +9405,7 @@ GameObject:
   - component: {fileID: 818051942}
   - component: {fileID: 818051941}
   - component: {fileID: 818051940}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9518,7 +9523,7 @@ GameObject:
   - component: {fileID: 822617912}
   - component: {fileID: 822617911}
   - component: {fileID: 822617910}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11177,7 +11182,7 @@ GameObject:
   - component: {fileID: 944832799}
   - component: {fileID: 944832801}
   - component: {fileID: 944832800}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightOVRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14151,7 +14156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1172661361}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Left Hand VR Target_Miku
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19407,7 +19412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234468546}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightControllerInHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20863,7 +20868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403745793}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftHandAnchorDetached
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20945,7 +20950,7 @@ GameObject:
   - component: {fileID: 1412036121}
   - component: {fileID: 1412036123}
   - component: {fileID: 1412036122}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftOVRHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21985,7 +21990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491413568}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightHandAnchorDetached
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23762,7 +23767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681937024}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftControllerInHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25653,7 +25658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959510961}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Head VR Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25905,7 +25910,7 @@ GameObject:
   - component: {fileID: 1997770392}
   - component: {fileID: 1997770391}
   - component: {fileID: 1997770390}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26063,7 +26068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2029434815}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Right Hand VR Target_Venom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26676,7 +26681,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2327
+    m_Bits: 264599
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -26697,7 +26702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073398187}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: TrackerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26714,7 +26719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073407143}
   - component: {fileID: 1127403090}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: TrackingSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27061,7 +27066,7 @@ GameObject:
   - component: {fileID: 542708992}
   - component: {fileID: 542708991}
   - component: {fileID: 542708990}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27080,7 +27085,7 @@ GameObject:
   - component: {fileID: 1913296360}
   - component: {fileID: 1913296359}
   - component: {fileID: 1913296358}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightHandAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27098,7 +27103,7 @@ GameObject:
   - component: {fileID: 2073343969}
   - component: {fileID: 20000010297645175}
   - component: {fileID: 364555753}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightEyeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27117,7 +27122,7 @@ GameObject:
   - component: {fileID: 2078881217}
   - component: {fileID: 2072885305}
   - component: {fileID: 279048612}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -27138,7 +27143,7 @@ GameObject:
   - component: {fileID: 114473266226022757}
   - component: {fileID: 335877549}
   - component: {fileID: 335877550}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: OVRCameraRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27156,7 +27161,7 @@ GameObject:
   - component: {fileID: 2073343975}
   - component: {fileID: 20000012602066925}
   - component: {fileID: 1650027474}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftEyeAnchor
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -29535,7 +29540,7 @@ GameObject:
   - component: {fileID: 4484590967043873}
   - component: {fileID: 2073210218}
   - component: {fileID: 2073210217}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: RightControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29553,7 +29558,7 @@ GameObject:
   - component: {fileID: 4593681620275353}
   - component: {fileID: 2073210216}
   - component: {fileID: 2073210215}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: LeftControllerAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29632,7 +29637,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 262583
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -29683,7 +29688,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 311
+    m_Bits: 262583
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
