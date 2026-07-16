@@ -43,7 +43,7 @@ Material:
   - TransparentBackface
   - RayTracingPrepass
   - MOTIONVECTORS
-  m_LockedProperties: 
+  m_LockedProperties: _CoatMask _CoatMaskMap
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
