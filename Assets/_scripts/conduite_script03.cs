@@ -19,7 +19,7 @@ public class conduite_script03 : MonoBehaviour
     public GameObject redLight;
 
 
-    public GameObject[] lookAtTargets; 
+    public GameObject[] lookAtTargets;
 
     [Range(1, 15)]
     public int sceneNB;
