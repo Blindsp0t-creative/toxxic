@@ -4665,7 +4665,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -6203,7 +6203,7 @@ PrefabInstance:
     - target: {fileID: 2939468949681255813, guid: cd3e88f3c69e8b847b5c478adf62b4da,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2939468949681255813, guid: cd3e88f3c69e8b847b5c478adf62b4da,
         type: 3}
@@ -8781,7 +8781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camSelector: {fileID: 2049249998}
   avatarPlaces: {fileID: 0}
-  photoQuad: {fileID: 1835061884}
+  photoQuad: {fileID: 1542990117}
   sceneNB: 1
   rokoko: {fileID: 0}
   canvasBlackOut: {fileID: 1040412585}
@@ -8794,6 +8794,7 @@ MonoBehaviour:
   vrRoot: {fileID: 756137730}
   cameraRigXR: {fileID: 1996273900}
   locomotorRoot: {fileID: 747268002}
+  cow: {fileID: 347553743}
   materialQuad: {fileID: 2100000, guid: 232be97a370840559ab6dd7b4fe7b32a, type: 2}
   _handler: {fileID: 0}
 --- !u!4 &605530142
@@ -15041,7 +15042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084758880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015378457, y: -0.60496813, z: 0.011687559, w: 0.79601544}
+  m_LocalRotation: {x: 0.04665817, y: 0.72998446, z: -0.05008584, w: 0.68002737}
   m_LocalPosition: {x: -9.889038, y: 2.4017763, z: -27.690197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15102,7 +15103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084758880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45318bbc795848678fd25fa6a5319271, type: 3}
   m_Name: 
@@ -21117,7 +21118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineTrackedDolly
   m_Path: {fileID: 533091927}
-  m_PathPosition: -1.2
+  m_PathPosition: 0.25
   m_PositionUnits: 2
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -22252,6 +22253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56a590bc345b42b367a1c73088cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1542990117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2939468949681255813, guid: cd3e88f3c69e8b847b5c478adf62b4da,
+    type: 3}
+  m_PrefabInstance: {fileID: 473628611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1545322553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 810450350365801491, guid: fb201b34921119e469e82d12fd963ae2,

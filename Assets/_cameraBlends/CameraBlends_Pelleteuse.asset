@@ -83,7 +83,7 @@ MonoBehaviour:
     m_To: Plan03_6_DollyDanse
     m_Blend:
       m_Style: 1
-      m_Time: 5
+      m_Time: 6
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

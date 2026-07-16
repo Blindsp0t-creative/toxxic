@@ -34,7 +34,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
     public OVRCameraRig cameraRigXR;
     public GameObject locomotorRoot;
 
-
+    public GameObject cow;
 
     public Material materialQuad;
 
@@ -50,6 +50,8 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         camSelector.activeCamera = 0;
         photoQuad.SetActive(false);
 
+        camSelector.cameras[7].GetComponent<pelleteuse_cinemachine_followTrack01>().enabled = false;
+
         //materialQuad.color = new Color(255,255,255, 255);
 
 
@@ -60,6 +62,8 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         _handler.SetAddressHandler("/osc/back", onMessageBack);
         _handler.SetAddressHandler("/osc/calib", onMessageCalib);
         */
+
+        cow.GetComponent<Rigidbody>().isKinematic = true; //disable physics
     }
 
     IEnumerator avatarsReveal()
@@ -100,32 +104,34 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         locomotor.HeightOffset = avatarHeight;
 
         
-        if (sceneNB == 1)
+        if (sceneNB == 1) //soleil
         {
             camSelector.activeCamera = 0;
         }
 
-        if (sceneNB == 2) 
+        if (sceneNB == 2) //accueil Miku
         {            
             camSelector.activeCamera = 1;
         }
 
-        if (sceneNB == 3) 
+        if (sceneNB == 3) //découverte pelleteuse
         {
             camSelector.activeCamera = 2;
         }
 
-        if (sceneNB == 4)
+        if (sceneNB == 4) //carresse vache
         {
             camSelector.activeCamera = 3;
+
         }
-        if (sceneNB == 5)
+        if (sceneNB == 5) //pelleteuse carresse
         {
             camSelector.activeCamera = 4;
+            cow.GetComponent<Rigidbody>().isKinematic = false; //enable physics
+
         }
 
-
-        if (sceneNB == 6) //photo
+        if (sceneNB == 6) //photo 
         {
             
             photoQuad.SetActive(true);
@@ -138,7 +144,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         {
 
             //DISPARITION EN FADE DU QUAD
-            StartCoroutine(hideQuad());
+            //StartCoroutine(hideQuad());
 
 
             camSelector.activeCamera = 6;
@@ -159,9 +165,15 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         }
 
 
-        if (sceneNB == 8)  //danse
+        if (sceneNB == 8)  //danse + dolly
         {
-            camSelector.activeCamera = 6;
+
+            //cache la photo
+            StartCoroutine(CachePhoto(4));
+
+            camSelector.cameras[7].GetComponent<pelleteuse_cinemachine_followTrack01>().enabled = true; 
+
+            camSelector.activeCamera = 7;
 
             AVATAR.GetComponent<RigBuilder>().enabled = false;
             LOCOMOTOR.SetActive(false);
@@ -172,7 +184,8 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
         if (sceneNB == 9)  //aurevoir
         {
-            canvasBlackOut.SetActive(true);
+            //canvasBlackOut.SetActive(true);
+            camSelector.activeCamera = 8;
         }
 
         if (sceneNB == 10) //noir
@@ -230,4 +243,13 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             canvasBlackOut.SetActive(false);
         }
     }
+
+    private IEnumerator CachePhoto(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        photoQuad.gameObject.SetActive(false);
+    }
+
+
+
 }

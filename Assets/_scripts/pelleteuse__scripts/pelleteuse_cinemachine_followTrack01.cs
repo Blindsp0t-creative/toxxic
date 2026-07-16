@@ -19,6 +19,8 @@ public class pelleteuse_cinemachine_followTrack01 : MonoBehaviour
     {
         vCam = GetComponent<CinemachineVirtualCamera>();
         trackedDolly = vCam.GetCinemachineComponent<CinemachineTrackedDolly>();
+
+        vCam.GetComponent <CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineTrackedDolly>().m_PathPosition = .25f;
     }
 
     void Update()
