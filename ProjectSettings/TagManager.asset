@@ -32,6 +32,7 @@ TagManager:
   - QDSUIToggleCheckboxRadio
   - Conduite
   - GROS_PLAN_VR
+  - VRRig
   layers:
   - Default
   - TransparentFX

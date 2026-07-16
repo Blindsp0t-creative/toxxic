@@ -43,6 +43,8 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
     private bool done = false;
 
+    GameObject rigFromMasterScene;
+
     void Start()
     {
         sceneNB = 1;
@@ -64,6 +66,13 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         */
 
         cow.GetComponent<Rigidbody>().isKinematic = true; //disable physics
+
+
+        //FIND VRRig from master scene 
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("VRRig");
+        rigFromMasterScene = gos[0];
+
     }
 
     IEnumerator avatarsReveal()
@@ -175,11 +184,12 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
             camSelector.activeCamera = 7;
 
-            AVATAR.GetComponent<RigBuilder>().enabled = false;
-            LOCOMOTOR.SetActive(false);
-            INTERACTION.SetActive(false);
+            //AVATAR.GetComponent<RigBuilder>().enabled = false;
+            //LOCOMOTOR.SetActive(false);
+            //INTERACTION.SetActive(false);
 
-            AVATAR.transform.position = pellePosition.transform.position;
+            ///AVATAR.transform.position = pellePosition.transform.position;
+            rigFromMasterScene.transform.position = pellePosition.transform.position;
         }
 
         if (sceneNB == 9)  //aurevoir
