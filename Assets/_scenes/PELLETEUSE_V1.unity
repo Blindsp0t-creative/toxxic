@@ -1595,6 +1595,118 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1357852021}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &114430803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114430804}
+  - component: {fileID: 114430807}
+  - component: {fileID: 114430806}
+  - component: {fileID: 114430805}
+  m_Layer: 19
+  m_Name: Cube (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114430804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114430803}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.48892313, y: 0.61111695, z: 0.36777797, w: -0.5022246}
+  m_LocalPosition: {x: -0.00137, y: 0.00899, z: 0.00425}
+  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 818947166}
+  m_LocalEulerAnglesHint: {x: -13.94, y: 0, z: 0}
+--- !u!65 &114430805
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114430803}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0.000000021141629, y: -0.45937222, z: 0.0000000067267667}
+--- !u!23 &114430806
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114430803}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 805bf2303dded7f43bf5ef928bbc37a2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &114430807
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114430803}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &117789032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4577233420328494233, guid: ea16c3c8c1688234fa81a4f39339bf1b,
@@ -9255,7 +9367,7 @@ MonoBehaviour:
   rokoko: {fileID: 0}
   canvasBlackOut: {fileID: 1040412585}
   avatarHeight: 2.6
-  pellePosition: {fileID: 613066818}
+  pellePosition: {fileID: 114430803}
   LOCOMOTOR: {fileID: 747268002}
   INTERACTION: {fileID: 756137730}
   AVATAR: {fileID: 1270496350}
@@ -27311,6 +27423,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 325118144}
+    - targetCorrespondingSourceObject: {fileID: -2271200929886701638, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 114430804}
     - targetCorrespondingSourceObject: {fileID: 5797318533703755203, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
         type: 3}
       insertIndex: -1
