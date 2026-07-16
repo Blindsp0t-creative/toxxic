@@ -2084,7 +2084,7 @@ GameObject:
   - component: {fileID: 170701154}
   - component: {fileID: 170701153}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5901,7 +5901,7 @@ GameObject:
   - component: {fileID: 460689317}
   - component: {fileID: 460689316}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7678,7 +7678,7 @@ GameObject:
   - component: {fileID: 533091928}
   - component: {fileID: 533091927}
   m_Layer: 0
-  m_Name: Dolly_Track_Danse
+  m_Name: _Dolly_Track_Danse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8398,6 +8398,7 @@ Transform:
   m_Children:
   - {fileID: 1248827622}
   - {fileID: 1033053992}
+  - {fileID: 1536441220}
   m_Father: {fileID: 2049249997}
   m_LocalEulerAnglesHint: {x: -3.15, y: 103.29, z: 0}
 --- !u!114 &562387718
@@ -14302,7 +14303,7 @@ GameObject:
   - component: {fileID: 1033053994}
   - component: {fileID: 1033053993}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21185,7 +21186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1454044849
 Transform:
   m_ObjectHideFlags: 0
@@ -21199,8 +21200,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1536441220}
-  - {fileID: 1987496713}
   - {fileID: 1249407279}
   - {fileID: 1971514998}
   m_Father: {fileID: 0}
@@ -22142,7 +22141,7 @@ GameObject:
   - component: {fileID: 1536441222}
   - component: {fileID: 1536441221}
   m_Layer: 13
-  m_Name: 02
+  m_Name: marqueurVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22156,13 +22155,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536441219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: 0.0424, z: 15.63}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.02408325, y: 0, z: 0, w: 0.99970996}
+  m_LocalPosition: {x: 0.839, y: -1.306, z: 5.295}
+  m_LocalScale: {x: 0.39, y: 0.39, z: 0.39}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1454044849}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 562387717}
+  m_LocalEulerAnglesHint: {x: 2.76, y: 0, z: 0}
 --- !u!65 &1536441221
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22690,6 +22689,7 @@ Transform:
   m_Children:
   - {fileID: 1864185730}
   - {fileID: 1882051140}
+  - {fileID: 1987496713}
   m_Father: {fileID: 2049249997}
   m_LocalEulerAnglesHint: {x: -5.8, y: 89.9, z: 0}
 --- !u!114 &1584461648
@@ -28738,7 +28738,7 @@ GameObject:
   - component: {fileID: 1882051142}
   - component: {fileID: 1882051141}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28852,7 +28852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882808575
 Transform:
   m_ObjectHideFlags: 0
@@ -28884,7 +28884,7 @@ GameObject:
   - component: {fileID: 1889453295}
   - component: {fileID: 1889453294}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30151,7 +30151,7 @@ GameObject:
   - component: {fileID: 1977797292}
   - component: {fileID: 1977797291}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30263,7 +30263,7 @@ GameObject:
   - component: {fileID: 1987496715}
   - component: {fileID: 1987496714}
   m_Layer: 13
-  m_Name: CubePlan2
+  m_Name: marqueurVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30277,12 +30277,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987496712}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.71861196, z: -0, w: 0.69541126}
-  m_LocalPosition: {x: -4.25, y: 0.3, z: -5.04}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalRotation: {x: -0.0007858481, y: -0.9985989, z: -0.05058691, w: -0.015512884}
+  m_LocalPosition: {x: -9.84, y: -2.4, z: 10.8}
+  m_LocalScale: {x: 0.19999999, y: 0.2, z: 0.19999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1454044849}
+  m_Father: {fileID: 1584461647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1987496714
 BoxCollider:
@@ -30902,7 +30902,7 @@ GameObject:
   - component: {fileID: 2045131778}
   - component: {fileID: 2045131777}
   m_Layer: 13
-  m_Name: Sphere
+  m_Name: SphereMarkeurCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

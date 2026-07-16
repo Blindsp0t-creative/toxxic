@@ -115,8 +115,17 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             camSelector.activeCamera = 2;
         }
 
+        if (sceneNB == 4)
+        {
+            camSelector.activeCamera = 3;
+        }
+        if (sceneNB == 5)
+        {
+            camSelector.activeCamera = 4;
+        }
 
-        if (sceneNB == 4) 
+
+        if (sceneNB == 6) //photo
         {
             
             photoQuad.SetActive(true);
@@ -125,7 +134,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             camSelector.activeCamera = 5;
         }
 
-        if (sceneNB == 5) 
+        if (sceneNB == 7)  //monte pelle
         {
 
             //DISPARITION EN FADE DU QUAD
@@ -149,7 +158,24 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
         }
 
-        if (sceneNB == 6) 
+
+        if (sceneNB == 8)  //danse
+        {
+            camSelector.activeCamera = 6;
+
+            AVATAR.GetComponent<RigBuilder>().enabled = false;
+            LOCOMOTOR.SetActive(false);
+            INTERACTION.SetActive(false);
+
+            AVATAR.transform.position = pellePosition.transform.position;
+        }
+
+        if (sceneNB == 9)  //aurevoir
+        {
+            canvasBlackOut.SetActive(true);
+        }
+
+        if (sceneNB == 10) //noir
         {
             canvasBlackOut.SetActive(true);
         }

@@ -29,6 +29,28 @@ public class pelleteuse_cameraSelector : MonoBehaviour
             }
             */
             cameras[activeCamera].GetComponent<Cinemachine.CinemachineVirtualCamera>().Priority = priority ++ ;
+            disableIndicators();
+            activateChildren(cameras[activeCamera]);
         }
+    }
+
+    public void activateChildren(GameObject _cam)
+    {
+        foreach (Transform child in _cam.transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    public void disableIndicators()
+    {
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            foreach (Transform child in cameras[i].transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+
     }
 }
