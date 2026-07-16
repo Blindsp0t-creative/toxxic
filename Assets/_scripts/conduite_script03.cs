@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -17,13 +18,13 @@ public class conduite_script03 : MonoBehaviour
     public GameObject whiteLight;
     public GameObject redLight;
 
-    
+
     public GameObject[] lookAtTargets;
 
-    [Range(1,10)]
+    [Range(1, 15)]
     public int sceneNB;
 
-    [Range(-1,1)]
+    [Range(-1, 1)]
     private float elevationAvatar;
 
     private bool otherAvatars = false;
@@ -33,12 +34,15 @@ public class conduite_script03 : MonoBehaviour
     public GameObject canvasBlackOut;
 
     public float multiplierLerpTime;
-    public OSC _handler;
 
-    [Header("---------COMMANDES / LIVE ---------")]
-    public bool toto;
+    public GameObject blackout;
+
+    [Header("---------SHOT INTRO NEW ---------")]
+    public cinemachine_followTrack01 dollyFollower;
+    public Animator _animPodium;
 
 
+    private bool done1, done2;
     void Start()
     {
 
@@ -62,14 +66,12 @@ public class conduite_script03 : MonoBehaviour
         skinnedMRenders = new SkinnedMeshRenderer[25];
         skinnedMRenders = avatarPlaces.GetComponentsInChildren<SkinnedMeshRenderer>();
 
-        /*
-        _handler.SetAllMessageHandler(allMessages);
-        _handler.SetAddressHandler("/osc/next", onMessageNext);
-        _handler.SetAddressHandler("/osc/back", onMessageBack);
-        _handler.SetAddressHandler("/osc/calib", onMessageCalib);
 
-        _handler.SetAddressHandler("/osc/avatarheight", onMessageHeight);
-        */
+        //new shot intro
+        dollyFollower.enabled = false;
+        _animPodium.speed = 0.0f;// Stop();
+
+        done1 = done2 = false;
 
     }
     public void allMessages(OscMessage message)
@@ -79,8 +81,8 @@ public class conduite_script03 : MonoBehaviour
 
     public void onMessageNext(OscMessage message)
     {
-        if(message.GetFloat(0)>0.5)
-        ButtonNEXT();
+        if (message.GetFloat(0) > 0.5)
+            ButtonNEXT();
 
         Debug.Log(message.address);
     }
@@ -117,201 +119,144 @@ public class conduite_script03 : MonoBehaviour
 
     void Update()
     {
-        if (sceneNB == 1)
+        if (sceneNB == 1) // en POV dans les loges 
         {
+            camSelector.activeCamera = 0; // VCAM_POV_newAvatar
+
             showAvatarJen();
+
+            avatarsAudience.SetActive(false);
+            avatarsAudience2.SetActive(false);
 
             whiteLight.SetActive(true);
             redLight.SetActive(false);
-            avatarsAudience2.SetActive(false);
 
-            camSelector.activeCamera = 0;
-            avatarPlaces.activePlace = 0;
-            avatarsAudience.SetActive(false);
+
+            avatarPlaces.activePlace = 4; //position plateforme
         }
 
-        if (sceneNB == 2) // top shot
+        if (sceneNB == 2) // montée plateforme
         {
-            showAvatarJen();
+            //on reste en POV 10s, puis camera plateforme
+            StartCoroutine(CloseUpPipeCamera(6));
+            StartCoroutine(DollyPipeCamera(10));
 
-            whiteLight.SetActive(true);
-            redLight.SetActive(false);
-            avatarsAudience2.SetActive(false);
+            avatarPlaces.activePlace = 4; //position plateforme (qui monte)
 
+            avatarsAudience.SetActive(true);
+            avatarOrcDancing.SetActive(true);
 
-            camSelector.activeCamera = 1;
-            avatarPlaces.activePlace = 0;
-            avatarsAudience.SetActive(false);
+            _animPodium.speed = 1.0f;
         }
 
         if (sceneNB == 3) // close shot fix
         {
-            showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-
-            camSelector.activeCamera = 2;
-            avatarPlaces.activePlace = 0;
-            //avatarsAudience.SetActive(true); // a appeler dans une coroutine avec 2 secondes de delai
-
-            if(otherAvatars == false)
-                StartCoroutine(avatarsReveal());
+            camSelector.activeCamera = 3;
         }
 
-        if (sceneNB == 4) //scene 5 
+        // A VIRER //
+        if (sceneNB == 4) //very close shot
         {
-            showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-            camSelector.activeCamera = 4;
-            avatarPlaces.activePlace = 0;
             avatarsAudience.SetActive(true);
+            camSelector.activeCamera = 4;
         }
 
-        if (sceneNB == 5) // scene 6
+        if (sceneNB == 5) //dolly 
+        {
+
+            camSelector.activeCamera = 5;
+            showAvatarJen();
+
+        }
+
+        if (sceneNB == 6) // camera public 1 (pour calib)
         {
 
             hideAvatarJen();
 
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-            camSelector.activeCamera = 5;
+            camSelector.activeCamera = 6;
             setCamPublicLookAt(lookAtTargets[0].transform);
 
-            avatarsAudience.SetActive(true);
         }
 
-        if (sceneNB == 6) // scene 4
+        if (sceneNB == 7) // equilibre
         {
             showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-            camSelector.activeCamera = 3;
-            avatarPlaces.activePlace = 0;
-            avatarsAudience.SetActive(true);
-        }
-
-        if(sceneNB == 7) // passage public
-        {
-            hideAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-            camSelector.activeCamera = 5;
-            setCamPublicLookAt(lookAtTargets[1].transform);
-
-            avatarPlaces.activePlace = 1;
-            avatarsAudience.SetActive(true);
-        }
-
-        if (sceneNB == 8) // scene 7
-        {
-            showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
 
             camSelector.activeCamera = 7;
-            avatarPlaces.activePlace = 1;
-            avatarsAudience.SetActive(true);
         }
 
-        if (sceneNB == 9) // scene 6
+        if (sceneNB == 8) // camera public 02
         {
             hideAvatarJen();
 
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-            avatarsAudience2.SetActive(false);
-
-            camSelector.activeCamera = 5;
-            setCamPublicLookAt(lookAtTargets[2].transform);
-
-            avatarPlaces.activePlace = 1;
-            avatarsAudience.SetActive(true);
-            avatarOrcDancing.SetActive(false);
-        }
-
-        if (sceneNB == 10) // scene 8
-        {
-            showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-
             camSelector.activeCamera = 8;
-            avatarPlaces.activePlace = 2;
-            avatarsAudience.SetActive(true);
-            avatarsAudience2.SetActive(true);
 
-            avatarOrcDancing.SetActive(false);
+            avatarPlaces.activePlace = 1; //place Winnie
+            avatarsAudience.SetActive(true);
         }
 
-        if (sceneNB == 11) // POV Final
+        if (sceneNB == 9) // camera public 03
         {
             showAvatarJen();
-
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
-
-            camSelector.activeCamera = 0;
-            avatarPlaces.activePlace = 2;
-            avatarsAudience.SetActive(true);
-            avatarsAudience2.SetActive(true);
-
-            avatarOrcDancing.SetActive(false);
+            camSelector.activeCamera = 9;
         }
 
-        if (sceneNB == 12) // Chute
+        if (sceneNB == 10) // danse Winnie
         {
             showAvatarJen();
+            camSelector.activeCamera = 10;
 
-            whiteLight.SetActive(false);
-            redLight.SetActive(true);
+        }
 
+        if (sceneNB == 11) // camera public 04
+        {
+            hideAvatarJen();
+            avatarPlaces.activePlace = 2;
+            camSelector.activeCamera = 11;
+
+        }
+
+        if (sceneNB == 12) //camera public 05
+        {
+            hideAvatarJen();
+
+            avatarOrcDancing.SetActive(false); //orc qui danse
+
+            avatarsAudience2.SetActive(false); //orc couché
+            camSelector.activeCamera = 12;
+
+        }
+
+        if (sceneNB == 13) // dolly Orc
+        {
+            showAvatarJen();
+            avatarsAudience2.SetActive(true); //orc couché
             camSelector.activeCamera = 13;
-            avatarPlaces.activePlace = 2;
-            avatarsAudience.SetActive(true);
-            avatarsAudience2.SetActive(true);
 
-            avatarOrcDancing.SetActive(false);
         }
 
-        // LERP UP AND DOWN
-        /*elevationAvatar = 0.0f * t + 0.65f * (1 - t);
-
-        if (goDown == true && t<=1.0f)
+        if (sceneNB == 14) // camera finale
         {
-            t += multiplierLerpTime;
+            camSelector.activeCamera = 14;
+            showAvatarJen();
         }
 
-        else if(goDown == false && t>= 0.0f)
+        if (sceneNB == 15) // black out
         {
-            t -= multiplierLerpTime;
+            blackout.SetActive(true);
         }
-        */
+
+
         //APPLY HEIGHT
-        avatarPlaces.places[avatarPlaces.activePlace].transform.position = new Vector3(avatarPlaces.places[avatarPlaces.activePlace].transform.position.x, elevationAvatar, avatarPlaces.places[avatarPlaces.activePlace].transform.position.z);
+        if (sceneNB != 1 && sceneNB != 2)
+            avatarPlaces.places[avatarPlaces.activePlace].transform.position = new Vector3(avatarPlaces.places[avatarPlaces.activePlace].transform.position.x, elevationAvatar, avatarPlaces.places[avatarPlaces.activePlace].transform.position.z);
 
     }
 
     public void hideAvatarJen()
     {
-        for(int i=0; i<skinnedMRenders.Length; i++)
+        for (int i = 0; i < skinnedMRenders.Length; i++)
         {
             skinnedMRenders[i].enabled = false;
         }
@@ -332,7 +277,7 @@ public class conduite_script03 : MonoBehaviour
 
     public void ButtonNEXT()
     {
-        if (sceneNB + 1 <= 12)
+        if (sceneNB + 1 <= 15)
             sceneNB++;
     }
 
@@ -351,6 +296,31 @@ public class conduite_script03 : MonoBehaviour
         else if (value == false)
         {
             canvasBlackOut.SetActive(false);
+        }
+    }
+
+    private IEnumerator DollyPipeCamera(float waitTime)
+    {
+        if(!done2)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Debug.Log("top camera dolly pipe");
+            camSelector.activeCamera = 2;
+
+            done2 = true;
+        }
+
+    }
+
+    private IEnumerator CloseUpPipeCamera(float waitTime)
+    {
+        if(!done1)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Debug.Log("top camera close up pipe");
+            camSelector.activeCamera = 1;
+
+            done1 = true;
         }
     }
 }

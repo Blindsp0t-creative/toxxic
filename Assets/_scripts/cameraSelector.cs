@@ -6,7 +6,7 @@ public class cameraSelector : MonoBehaviour
 {
     public GameObject[] cameras;
 
-    [Range(0, 11)]
+    [Range(0, 15)]
     public int activeCamera;
 
     private float time;
