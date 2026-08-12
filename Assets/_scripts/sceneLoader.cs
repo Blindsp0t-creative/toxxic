@@ -32,7 +32,7 @@ public class sceneLoader : MonoBehaviour
         unloadToxxicScene("PELLETEUSE_V1");
         unloadToxxicScene("SCAN_V1");
 
-        loadToxxicScene("CLUB_V1");
+        loadToxxicScene("CLUB_V2");
 
         disableAvatars();
         if(avatarStripClub != null )
@@ -42,7 +42,7 @@ public class sceneLoader : MonoBehaviour
     public void loadPelleteuse()
     {
 
-        unloadToxxicScene("CLUB_V1");
+        unloadToxxicScene("CLUB_V2");
         unloadToxxicScene("SCAN_V1");
 
         loadToxxicScene("PELLETEUSE_V1");
@@ -56,7 +56,7 @@ public class sceneLoader : MonoBehaviour
     public void loadRainbowRoad()
     {
 
-        unloadToxxicScene("CLUB_V1");
+        unloadToxxicScene("CLUB_V2");
         unloadToxxicScene("PELLETEUSE_V1");
 
         loadToxxicScene("SCAN_V1");

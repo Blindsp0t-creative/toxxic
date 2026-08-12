@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_scenes/CLUB_V1.unity
+    path: Assets/_scenes/CLUB_V1_BACK.unity
     guid: 0a4b9701a910dad458d3ee8fe6843788
   - enabled: 1
     path: Assets/_scenes/PELLETEUSE_V1.unity
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/sceneMasterRigging.unity
     guid: 438453ebea4c8854f9b50faa08dfe4e7
+  - enabled: 1
+    path: Assets/_scenes/CLUB_V2.unity
+    guid: ed8105072c2cf4b43a81493a286bac94
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8ea57daa848b28242ae5a7605eb542fb,
       type: 2}
