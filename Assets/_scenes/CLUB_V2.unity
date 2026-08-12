@@ -38194,7 +38194,7 @@ MonoBehaviour:
   - {fileID: 490636032}
   - {fileID: 761277091}
   - {fileID: 1226281546}
-  activePlace: 0
+  activePlace: 4
 --- !u!114 &1440177227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46604,7 +46604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1806808570
 Transform:
   m_ObjectHideFlags: 0
@@ -50417,7 +50417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camSelector: {fileID: 1471028869}
   avatarPlaces: {fileID: 1440177226}
-  avatarsAudience: {fileID: 0}
+  avatarsAudience: {fileID: 1806808569}
   avatarOrcDancing: {fileID: 84703607}
   avatarsAudience2: {fileID: 114903397}
   whiteLight: {fileID: 895657328}
