@@ -204,7 +204,7 @@ MonoBehaviour:
     m_To: Virtual Camera_17_planPreliminal
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -300,7 +300,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: Virtual Camera_4.4_contreChamp
-    m_To: Virtual Camera_5_planSalonFull
+    m_To: '**ANY CAMERA**'
     m_Blend:
       m_Style: 0
       m_Time: 2
@@ -326,6 +326,17 @@ MonoBehaviour:
     m_Blend:
       m_Style: 1
       m_Time: 4
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: Virtual Camera_17_planPreliminal
+    m_To: Virtual Camera_18_TravellingPorte
+    m_Blend:
+      m_Style: 1
+      m_Time: 12
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
