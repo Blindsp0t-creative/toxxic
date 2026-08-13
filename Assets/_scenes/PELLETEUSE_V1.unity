@@ -5503,8 +5503,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.7953021, b: 0.5377357, a: 1}
-  m_Intensity: 9746.056
+  m_Color: {r: 0.9547169, g: 0.87680215, b: 0.87058824, a: 1}
+  m_Intensity: 4879.34
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5547,7 +5547,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5862
+  m_ColorTemperature: 3950
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 8e-45, z: 1.7034298e+25, w: 1.6114932e-38}
   m_UseBoundingSphereOverride: 0
@@ -16233,7 +16233,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.93421924, b: 0.73899364, a: 1}
-  m_Intensity: 1989436.8
+  m_Intensity: 795774.7
   m_Range: 219.41
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22579,6 +22579,16 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f29a2bf9eeeab6f4f80cb3b6f6609669,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f29a2bf9eeeab6f4f80cb3b6f6609669,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f29a2bf9eeeab6f4f80cb3b6f6609669,
+        type: 3}
+      propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f29a2bf9eeeab6f4f80cb3b6f6609669,
