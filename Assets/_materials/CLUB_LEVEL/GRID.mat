@@ -238,7 +238,7 @@ Material:
     - _LinkDetailsWithBase: 1
     - _METALNESS: 0
     - _MaterialID: 1
-    - _Metallic: 0.824
+    - _Metallic: 1
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
@@ -264,7 +264,7 @@ Material:
     - _SPECULAR_ROTATION: 0
     - _SPECULAR_ROUGHNESS: 0.178
     - _SPECULAR_WEIGHT: 1
-    - _Smoothness: 0.845
+    - _Smoothness: 0.735
     - _SmoothnessRemapMax: 0.9999999
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
@@ -307,9 +307,9 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _BASE_COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _BaseColor: {r: 0.23270428, g: 0.23270428, b: 0.23270428, a: 1}
+    - _BaseColor: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 1}
     - _COAT_COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.23270425, g: 0.23270425, b: 0.23270425, a: 1}
+    - _Color: {r: 0.41132066, g: 0.41132066, b: 0.41132066, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 0}
