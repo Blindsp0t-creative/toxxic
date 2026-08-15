@@ -237,11 +237,11 @@ Material:
     - _LinkDetailsWithBase: 1
     - _METALNESS: 0
     - _MaterialID: 1
-    - _Metallic: 0.774
+    - _Metallic: 1
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 0
+    - _NormalScale: 1.68
     - _OPACITY: 1
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
@@ -263,7 +263,7 @@ Material:
     - _SPECULAR_ROTATION: 0
     - _SPECULAR_ROUGHNESS: 0.178
     - _SPECULAR_WEIGHT: 1
-    - _Smoothness: 0.555
+    - _Smoothness: 0.494
     - _SmoothnessRemapMax: 0.99999994
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1

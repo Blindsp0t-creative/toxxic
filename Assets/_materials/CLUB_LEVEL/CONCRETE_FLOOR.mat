@@ -242,7 +242,7 @@ Material:
     - _MetallicRemapMax: 0.26633173
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 0.29
+    - _NormalScale: 3.46
     - _OPACITY: 1
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
