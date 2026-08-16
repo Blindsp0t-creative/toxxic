@@ -20,6 +20,7 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Section("STRIP CLUB")]
     [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
+    [Button("Top Alarm", id: "toggleAlarm")] public void LOG_topAlarm() { Debug.Log("Top Alarm - Strip Club Scene"); }
     [Button("Next", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
     [Button("Previous", id: "stripclubP")]                          public void LOG_topPreviousStripClub() { Debug.Log("Previous - Strip Club Scene"); }
 

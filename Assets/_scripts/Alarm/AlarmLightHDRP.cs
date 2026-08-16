@@ -45,16 +45,21 @@ public class AlarmLightHDRP : MonoBehaviour
         SetIntensity(0f);
     }
 
+    public static event System.Action<bool> OnAlarmStateChanged;
     public void StartAlarm()
     {
         if (routine != null) return;
         routine = StartCoroutine(useSmoothPulse ? Pulse() : Blink());
+
+        OnAlarmStateChanged?.Invoke(true); //Notifie les objets écoutant
     }
 
     public void StopAlarm()
     {
         if (routine != null) { StopCoroutine(routine); routine = null; }
         SetIntensity(0f);
+
+        OnAlarmStateChanged?.Invoke(false); //Notifie les objets écoutant
     }
 
     private IEnumerator Blink()
