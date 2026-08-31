@@ -84,7 +84,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -247,7 +247,7 @@ ModelImporter:
     - name: pinky1_base.r
       parentName: hand.r
       position: {x: -0.2533808, y: 0.09223591, z: 0.0021504485}
-      rotation: {x: 0.012170968, y: 0.00061562844, z: 0.05048041, w: 0.99865067}
+      rotation: {x: 0.012170968, y: 0.0006156285, z: 0.05048041, w: 0.9986507}
       scale: {x: 0.9999999, y: 1, z: 0.9999999}
     - name: pinky1.r
       parentName: pinky1_base.r
@@ -312,7 +312,7 @@ ModelImporter:
     - name: index1_base.l
       parentName: hand.l
       position: {x: -0.02458106, y: 0.01143589, z: 0.0008811795}
-      rotation: {x: -0.053379033, y: 0.01236766, z: -0.55080587, w: 0.8328329}
+      rotation: {x: -0.053379018, y: 0.01236766, z: -0.55080587, w: 0.8328329}
       scale: {x: 0.9999998, y: 0.9999999, z: 0.9999999}
     - name: index1.l
       parentName: index1_base.l
@@ -463,7 +463,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
