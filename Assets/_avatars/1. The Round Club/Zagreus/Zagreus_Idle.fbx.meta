@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: cefb61ddce5ba4f57973f24e0adf3adb
 ModelImporter:
-  serializedVersion: 24300
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -34,7 +34,6 @@ ModelImporter:
     materialName: 0
     materialSearch: 1
     materialLocation: 1
-    searchTexturesGlobally: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -60,11 +59,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: 'root|Pose 01 '
-      takeName: 'root|Pose 01 '
+      name: mixamo.com (1)
+      takeName: mixamo.com
       internalID: 7023487950735079404
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 210
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -72,7 +71,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -129,7 +128,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -867,7 +866,8 @@ ModelImporter:
     - name: arm_twist.r
       parentName: arm_stretch.r
       position: {x: 0.00000042438506, y: 0.00000008463859, z: -0.0000000011920929}
-      rotation: {x: 0.000000029802315, y: -0.00000005960463, z: 0.00000017136331, w: 1}
+      rotation: {x: 0.000000029802315, y: -0.00000005960463, z: 0.00000017136331,
+        w: 1}
       scale: {x: 1.0000012, y: 1.0000027, z: 1.0000024}
     - name: forearm_stretch.r
       parentName: arm_stretch.r
@@ -1132,7 +1132,8 @@ ModelImporter:
     - name: thigh_twist.l
       parentName: thigh_stretch.l
       position: {x: -0.0000000047683715, y: -0.00000018537044, z: 0.000000019073486}
-      rotation: {x: -0.00000006705521, y: -0.00000014062968, z: 0.000000081956365, w: 1}
+      rotation: {x: -0.00000006705521, y: -0.00000014062968, z: 0.000000081956365,
+        w: 1}
       scale: {x: 1.0000004, y: 0.99999964, z: 0.9999993}
     - name: leg_stretch.l
       parentName: thigh_stretch.l
@@ -1152,7 +1153,8 @@ ModelImporter:
     - name: leg_twist.l
       parentName: leg_stretch.l
       position: {x: 0.000000014305114, y: 0.59439886, z: 0.00000013232231}
-      rotation: {x: -0.000000012215422, y: 0.000000058813434, z: -0.000000014896814, w: 1}
+      rotation: {x: -0.000000012215422, y: 0.000000058813434, z: -0.000000014896814,
+        w: 1}
       scale: {x: 1.0000007, y: 1.0000024, z: 1.000001}
     - name: thigh_stretch.r
       parentName: root.x
@@ -1162,7 +1164,8 @@ ModelImporter:
     - name: thigh_twist.r
       parentName: thigh_stretch.r
       position: {x: 0.000000023841856, y: -0.000000192523, z: -0.00000002503395}
-      rotation: {x: -0.0000000074505797, y: 0.00000017462297, z: -0.000000059604638, w: 1}
+      rotation: {x: -0.0000000074505797, y: 0.00000017462297, z: -0.000000059604638,
+        w: 1}
       scale: {x: 1, y: 0.9999995, z: 0.9999994}
     - name: leg_stretch.r
       parentName: thigh_stretch.r
@@ -1187,7 +1190,8 @@ ModelImporter:
     - name: c_kilt_master.x
       parentName: root.x
       position: {x: 8.474524e-10, y: 0.17242919, z: 0.0003659153}
-      rotation: {x: 0.000000059604627, y: -0.0000013825317, z: 0.0000000056799636, w: 1}
+      rotation: {x: 0.000000059604627, y: -0.0000013825317, z: 0.0000000056799636,
+        w: 1}
       scale: {x: 1, y: 1.0000001, z: 0.9999996}
     - name: c_kilt_01_01.l
       parentName: c_kilt_master.x
