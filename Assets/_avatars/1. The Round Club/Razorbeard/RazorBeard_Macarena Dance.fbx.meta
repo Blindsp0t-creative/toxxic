@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06946bcbbb03c4d0b85bc0319aefed8b
+guid: 5940fb231c145c143bcf25148986be32
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,28 +7,98 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 5_body_upper_0.1_0_0
-    second: {fileID: 2100000, guid: ff1a9016305884539aad0b1824091257, type: 2}
+      name: Feet
+    second: {fileID: 2100000, guid: c1e852fae532048b3858fa5db0d06e83, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 5_eyes_0.1_0_0
-    second: {fileID: 2100000, guid: b0741c9031a4b47eda5d857f6273bf0d, type: 2}
+      name: Hands
+    second: {fileID: 2100000, guid: d9a02ef62c9374bbb9bd30495c8998d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 5_head_0.1_0_0
-    second: {fileID: 2100000, guid: 6bd106b968f2f454998853a25df65ee8, type: 2}
+      name: beard
+    second: {fileID: 2100000, guid: 6122af9ac486a4cdfa1a665bb34d8ac9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 5_legs_0.1_0_0
-    second: {fileID: 2100000, guid: f3c209fe21e774072a8490ff284ac135, type: 2}
+      name: buckle
+    second: {fileID: 2100000, guid: 275a8c78271254931a81c1b751bb63a7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: 5_shoes_0.1_0_0
-    second: {fileID: 2100000, guid: aab96d9175cbf4081b040e8ab65ee1fb, type: 2}
+      name: connector
+    second: {fileID: 2100000, guid: 472e6da90bb924c3a8fb3ef0f421563c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: df64deeb3b9b24e30b19e28a56604450, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: 9f664341129024c299dc97a337bfa302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hat
+    second: {fileID: 2100000, guid: 8503adbac347042458299655965b2f4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iris
+    second: {fileID: 2100000, guid: 19ff8d19b07cb48df8d9e30435e57298, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_gouraud_11_006-material
+    second: {fileID: 2100000, guid: 2da1cf0b42aba4ad6a780784b159bb2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_gouraud_3_006-material
+    second: {fileID: 2100000, guid: 7b1eb877075bc4b47bfe939d4af2fdec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_gouraud_7_006-material
+    second: {fileID: 2100000, guid: b32649904ef96481e91401bf485fb606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_gouraud_8_006-material
+    second: {fileID: 2100000, guid: 7a87afa85869b407b8c3e4898c1c3b07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_gouraud_9_006-material
+    second: {fileID: 2100000, guid: bd7f4cb38f06e4ec4b391b1ef5933899, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pants
+    second: {fileID: 2100000, guid: c6f47464372934f6699dc03cc093e311, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pantsfront
+    second: {fileID: 2100000, guid: bd5396bf2552b445ab5b751fd8dab637, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pantside
+    second: {fileID: 2100000, guid: 91ecb29695d1c4a17bdd5e5c05734bef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pegleg
+    second: {fileID: 2100000, guid: c9b6cf47137b548e19e9d74b10e32535, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shirt
+    second: {fileID: 2100000, guid: dffe35884e8b74fe39a0e3d7b5c8bfd6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -56,11 +126,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Armature|mixamo.com|Layer0
-      takeName: Armature|Armature|mixamo.com|Layer0
-      internalID: -4791504522942941401
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 150
+      lastFrame: 247
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -87,7 +157,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.45
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -145,7 +215,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.45
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
