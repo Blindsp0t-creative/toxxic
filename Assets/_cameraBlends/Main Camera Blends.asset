@@ -13,8 +13,19 @@ MonoBehaviour:
   m_Name: Main Camera Blends
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: VCAM_POV_newAvatar
-    m_To: VCam_topShotINTRO
+  - m_From: VCam_DebutSilk2
+    m_To: VCam_RapprocheSilk2
+    m_Blend:
+      m_Style: 1
+      m_Time: 20
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: VCam_RapprocheSilk2
+    m_To: VCam_dollyMain
     m_Blend:
       m_Style: 1
       m_Time: 5
@@ -25,20 +36,9 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: '**ANY CAMERA**'
-    m_To: VCam_closeUP
+    m_To: VCam_DebutSilk2
     m_Blend:
-      m_Style: 1
-      m_Time: 5
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: VCam_closeUP
-    m_To: VCam_planFixeDebut
-    m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 10
       m_CustomCurve:
         serializedVersion: 2
