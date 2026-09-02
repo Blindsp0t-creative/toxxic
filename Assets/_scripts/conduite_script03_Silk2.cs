@@ -117,14 +117,14 @@ public class conduite_script03Silk2 : MonoBehaviour
         {
             camSelector.activeCamera = 0; // VCAM_POV_newAvatar
 
-            showAvatarJen();
+            /*showAvatarJen();
 
             avatarsAudience.SetActive(false);
             avatarsAudience2.SetActive(false);
 
             whiteLight.SetActive(true);
             redLight.SetActive(false);
-
+            */
 
             avatarPlaces.activePlace = 4; //position plateforme
         }
@@ -135,10 +135,10 @@ public class conduite_script03Silk2 : MonoBehaviour
             //on reste en POV 10s, puis camera plateforme
             /*StartCoroutine(CloseUpPipeCamera(6));
             StartCoroutine(DollyPipeCamera(10));
-
+            */
             avatarPlaces.activePlace = 4; //position plateforme (qui monte)
 
-            avatarsAudience.SetActive(true);
+           /* avatarsAudience.SetActive(true);
             avatarOrcDancing.SetActive(true);*/
 
             _animPodium.speed = 1.0f;
@@ -152,25 +152,25 @@ public class conduite_script03Silk2 : MonoBehaviour
         // A VIRER //
         if (sceneNB == 4) //very close shot
         {
-            avatarsAudience.SetActive(true);
-            camSelector.activeCamera = 4;
+            
+            camSelector.activeCamera = 3;
         }
 
         if (sceneNB == 5) //dolly 
         {
 
-            camSelector.activeCamera = 5;
-            showAvatarJen();
+            camSelector.activeCamera = 4;
+           
 
         }
 
         if (sceneNB == 6) // camera public 1 (pour calib)
         {
 
-            hideAvatarJen();
+           
 
-            camSelector.activeCamera = 6;
-            setCamPublicLookAt(lookAtTargets[0].transform);
+            camSelector.activeCamera = 5;
+            //setCamPublicLookAt(lookAtTargets[0].transform);
 
         }
 

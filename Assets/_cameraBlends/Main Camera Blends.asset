@@ -27,8 +27,8 @@ MonoBehaviour:
   - m_From: VCam_RapprocheSilk2
     m_To: VCam_dollyMain
     m_Blend:
-      m_Style: 1
-      m_Time: 5
+      m_Style: 6
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -46,8 +46,8 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: VCam_planFixeDebut
-    m_To: VCam_dollyNezDeScene
+  - m_From: VCam_dollyMain
+    m_To: VCam_dollyBardella2
     m_Blend:
       m_Style: 1
       m_Time: 5
@@ -58,7 +58,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: '**ANY CAMERA**'
-    m_To: VCam_public01
+    m_To: VCam_dollyPublic01
     m_Blend:
       m_Style: 0
       m_Time: 2
@@ -69,76 +69,10 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: '**ANY CAMERA**'
-    m_To: VCam_public02_Yamato
+    m_To: VCam_dollyElevate
     m_Blend:
       m_Style: 0
       m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: '**ANY CAMERA**'
-    m_To: VCam_public03_AgentSmith
-    m_Blend:
-      m_Style: 0
-      m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: '**ANY CAMERA**'
-    m_To: VCam_public04_SaladFingers
-    m_Blend:
-      m_Style: 0
-      m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: '**ANY CAMERA**'
-    m_To: VCam_public05_CJ_Malenia
-    m_Blend:
-      m_Style: 0
-      m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: VCam_parcoursPublic
-    m_To: VCam_danse01
-    m_Blend:
-      m_Style: 1
-      m_Time: 1
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: '**ANY CAMERA**'
-    m_To: VCam_danse02
-    m_Blend:
-      m_Style: 1
-      m_Time: 2
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: VCam_closeUpPipe
-    m_To: VCam_dollyPipeCamera
-    m_Blend:
-      m_Style: 1
-      m_Time: 6
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
