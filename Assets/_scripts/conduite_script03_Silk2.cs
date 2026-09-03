@@ -17,11 +17,12 @@ public class conduite_script03Silk2 : MonoBehaviour
 
     public GameObject whiteLight;
     public GameObject redLight;
+    public MasterController masterController; // à glisser dans l'inspecteur
 
 
     public GameObject[] lookAtTargets;
 
-    [Range(1, 15)]
+    [Range(1, 7)]
     public int sceneNB;
 
     [Range(-1, 1)]
@@ -129,7 +130,7 @@ public class conduite_script03Silk2 : MonoBehaviour
             avatarPlaces.activePlace = 4; //position plateforme
         }
 
-        if (sceneNB == 2) // montée plateforme
+        if (sceneNB == 2) // montée plateforme rapprochement
         {
             camSelector.activeCamera = 1;
             //on reste en POV 10s, puis camera plateforme
@@ -140,6 +141,7 @@ public class conduite_script03Silk2 : MonoBehaviour
 
             /* avatarsAudience.SetActive(true);
              avatarOrcDancing.SetActive(true);*/
+            masterController.PasserEnGlitch();
             fader.IsOn = true;
             _animPodium.speed = 1.0f;
         }
@@ -147,16 +149,17 @@ public class conduite_script03Silk2 : MonoBehaviour
         if (sceneNB == 3) // close shot fix
         {
             camSelector.activeCamera = 2;
+        
         }
 
         // A VIRER //
-        if (sceneNB == 4) //very close shot
+        if (sceneNB == 4) //dollyMain
         {
             
             camSelector.activeCamera = 3;
         }
 
-        if (sceneNB == 5) //dolly 
+        if (sceneNB == 5) //dollyPublic
         {
 
             camSelector.activeCamera = 4;
@@ -164,7 +167,7 @@ public class conduite_script03Silk2 : MonoBehaviour
 
         }
 
-        if (sceneNB == 6) // camera public 1 (pour calib)
+        if (sceneNB == 6) // dolly Elevate
         {
 
            
@@ -174,21 +177,21 @@ public class conduite_script03Silk2 : MonoBehaviour
 
         }
 
-        if (sceneNB == 7) // equilibre
+        if (sceneNB == 7) // dolly Bardella 2
         {
-            showAvatarJen();
+           // showAvatarJen();
 
-            camSelector.activeCamera = 7;
+            camSelector.activeCamera = 6;
         }
 
         if (sceneNB == 8) // camera public 02
         {
-            hideAvatarJen();
+            //hideAvatarJen();
 
-            camSelector.activeCamera = 8;
-
+            camSelector.activeCamera = 7;
+            /*
             avatarPlaces.activePlace = 1; //place Winnie
-            avatarsAudience.SetActive(true);
+            avatarsAudience.SetActive(true);*/
         }
 
         if (sceneNB == 9) // camera public 03
@@ -299,6 +302,11 @@ public class conduite_script03Silk2 : MonoBehaviour
     {
         sceneNB = 6;
     }
+    public void ReversePOV()
+    {
+        sceneNB = 7;
+    }
+
     public void blackOut(bool value)
     {
         if (value == true)

@@ -286,7 +286,27 @@ public class conduite_script03_Silk1: MonoBehaviour
         if (sceneNB - 1 > 0)
             sceneNB--;
     }
+    public void DollyMain()
+    {
+        sceneNB = 3;
+    }
 
+    public void DollyPublic()
+    {
+        sceneNB = 4;
+    }
+    public void DollyMain2()
+    {
+        sceneNB = 5;
+    }
+    public void DollyPublic2()
+    {
+        sceneNB = 6;
+    }
+    public void ReversePOV()
+    {
+        sceneNB = 7;
+    }
     public void blackOut(bool value)
     {
         if (value == true)

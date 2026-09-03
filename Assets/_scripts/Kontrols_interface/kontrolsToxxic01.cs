@@ -27,6 +27,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Dolly Public", id: "stripclubDP")] public void LOG_topDollyPublicStripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Main 2", id: "stripclubDM2")] public void LOG_topDollyMain2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Public 2", id: "stripclubDP2")] public void LOG_topDollyPublic2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    [Button("Reverse POV", id: "stripclubReversePOV")] public void LOG_topReversePOV2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
 
 
     [Section("BARDELLAX")]
@@ -36,7 +37,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Dolly Public", id: "bardeDP")] public void LOG_topDollyPublicBarde() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Haute", id: "bardeDH")] public void LOG_DollyHauteBarde() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Main 2", id: "bardeDM2")] public void LOG_topDollyMain2Barde() { Debug.Log("Previous - Strip Club Scene"); }
-
+    [Button("Reverse POV 2", id: "bardeReversePOV")] public void LOG_topReversePOV() { Debug.Log("Previous - Strip Club Scene"); }
 
     [Section("PELLETEUSE")]
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]              public void LOG_loadScenePelleteuse() { Debug.Log("load Pelleteuse Scene"); }
