@@ -149,19 +149,20 @@ public class conduite_script03_Silk1: MonoBehaviour
             _animPodium.speed = 1.0f;
         }
 
-        if (sceneNB == 3) // close shot fix
+        if (sceneNB == 3) // dollyMain
         {
             camSelector.activeCamera = 3;
         }
 
         // A VIRER //
-        if (sceneNB == 4) //very close shot
+        if (sceneNB == 4) //publicDolly
         {
             avatarsAudience.SetActive(true);
+            //setCamPublicLookAt(lookAtTargets[0].transform);
             camSelector.activeCamera = 4;
         }
 
-        if (sceneNB == 5) //dolly 
+        if (sceneNB == 5) //dolly Elevate
         {
 
             camSelector.activeCamera = 5;
@@ -169,31 +170,30 @@ public class conduite_script03_Silk1: MonoBehaviour
 
         }
 
-        if (sceneNB == 6) // camera public 1 (pour calib)
+        if (sceneNB == 6) // dolly Zoom
         {
 
-            hideAvatarJen();
+            //hideAvatarJen();
 
-            camSelector.activeCamera = 6;
-            setCamPublicLookAt(lookAtTargets[0].transform);
+            camSelector.activeCamera = 7;
+            //setCamPublicLookAt(lookAtTargets[0].transform);
 
         }
 
         if (sceneNB == 7) // equilibre
         {
-            showAvatarJen();
+            //showAvatarJen();
 
-            camSelector.activeCamera = 7;
+            camSelector.activeCamera = 6;
         }
 
-        if (sceneNB == 8) // camera public 02
+        if (sceneNB == 8) // reversePOV
+                          //hideAvatarJen();
         {
-            hideAvatarJen();
-
             camSelector.activeCamera = 8;
 
-            avatarPlaces.activePlace = 1; //place Winnie
-            avatarsAudience.SetActive(true);
+            //avatarPlaces.activePlace = 1; //place Winnie
+            //avatarsAudience.SetActive(true);
         }
 
         if (sceneNB == 9) // camera public 03
@@ -305,8 +305,13 @@ public class conduite_script03_Silk1: MonoBehaviour
     }
     public void ReversePOV()
     {
+        sceneNB = 8;
+    }
+    public void Zoom()
+    {
         sceneNB = 7;
     }
+
     public void blackOut(bool value)
     {
         if (value == true)

@@ -28,7 +28,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Dolly Main 2", id: "stripclubDM2")] public void LOG_topDollyMain2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Public 2", id: "stripclubDP2")] public void LOG_topDollyPublic2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Reverse POV", id: "stripclubReversePOV")] public void LOG_topReversePOV2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
-
+    [Button("Zoom", id: "stripclubZoom")] public void LOG_topZoomStripClub() { Debug.Log("Previous - Strip Club Scene"); }
 
     [Section("BARDELLAX")]
     [Button("Next", id: "bardeN")] public void LOG_topNextBarde() { Debug.Log("Next - Strip Club Scene"); }
