@@ -17,6 +17,8 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")] 
     public float avatarElevationJen;
+    [Slider("ElevationAvatarJenBarde", -1.0f, 2.0f, id: "elevationavatarJenBarde")]
+    public float avatarElevationJenBarde;
 
     [Section("STRIP CLUB")]
     [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
