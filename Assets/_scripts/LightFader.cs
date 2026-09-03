@@ -4,28 +4,38 @@ using VLB;
 
 public class LightFader : MonoBehaviour
 {
-    [SerializeField] private VolumetricLightBeamHD beam;
+    [SerializeField] private VolumetricLightBeamHD[] beams;
     [SerializeField] private float fadeDuration = 0.5f;
 
-    private Color baseColor;
+    private Color[] baseColors;
     private Coroutine routine;
+    private bool isOn = false;
+
+    public bool IsOn
+    {
+        get => isOn;
+        set
+        {
+            if (isOn == value) return;
+            isOn = value;
+            if (routine != null) StopCoroutine(routine);
+            routine = StartCoroutine(Fade(isOn ? 1f : 0f));
+        }
+    }
 
     void Awake()
     {
-        if (beam == null) beam = GetComponent<VolumetricLightBeamHD>();
-        baseColor = beam.colorFlat;
-        SetAlpha(0f);
-    }
+        baseColors = new Color[beams.Length];
+        for (int i = 0; i < beams.Length; i++)
+            baseColors[i] = beams[i].colorFlat;
 
-    public void SetLight(bool on)
-    {
-        if (routine != null) StopCoroutine(routine);
-        routine = StartCoroutine(Fade(on ? 1f : 0f));
+        SetAlpha(0f);
     }
 
     private IEnumerator Fade(float target)
     {
-        float start = beam.colorFlat.a / baseColor.a;
+        // ratio actuel lu sur le premier beam
+        float start = beams[0].colorFlat.a / baseColors[0].a;
         float t = 0f;
 
         while (t < fadeDuration)
@@ -41,9 +51,11 @@ public class LightFader : MonoBehaviour
 
     private void SetAlpha(float ratio)
     {
-        Color c = baseColor;
-        c.a = baseColor.a * ratio;
-        beam.colorFlat = c;
-       // beam.SetPropertyChanged();
+        for (int i = 0; i < beams.Length; i++)
+        {
+            Color c = baseColors[i];
+            c.a = baseColors[i].a * ratio;
+            beams[i].colorFlat = c;
+        }
     }
 }

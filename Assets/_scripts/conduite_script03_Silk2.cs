@@ -7,7 +7,7 @@ using UnityEngine;
 public class conduite_script03Silk2 : MonoBehaviour
 {
     [Header("---------REFERENCES ---------")]
-
+    [SerializeField] private LightFader fader;   // à glisser dans l'inspecteur
     public cameraSelector camSelector;
     public placeTrendmillAvatar avatarPlaces;
     public GameObject avatarsAudience;
@@ -138,9 +138,9 @@ public class conduite_script03Silk2 : MonoBehaviour
             */
             avatarPlaces.activePlace = 4; //position plateforme (qui monte)
 
-           /* avatarsAudience.SetActive(true);
-            avatarOrcDancing.SetActive(true);*/
-
+            /* avatarsAudience.SetActive(true);
+             avatarOrcDancing.SetActive(true);*/
+            fader.IsOn = true;
             _animPodium.speed = 1.0f;
         }
 
