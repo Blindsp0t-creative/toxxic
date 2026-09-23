@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7951264134525895494
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor::UnityEditor.Rendering.HighDefinition.AssetVersion
+  version: 13
+  hdPluginSubTargetMaterialVersions:
+    m_Keys: []
+    m_Values: 
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VoluSmokeSlice_Material
+  m_Shader: {fileID: -6465566751694194690, guid: 8f17fa8c88be7fd4d991332593c6c45d,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _ALPHATEST_ON
+  - _ENABLE_FOG_ON_TRANSPARENT
+  - _ENVIRONMENTREFLECTIONS_OFF
+  - _SIX_WAY_COLOR_ABSORPTION
+  - _SPECULARHIGHLIGHTS_OFF
+  - _SURFACE_TYPE_TRANSPARENT
+  - _TEMPORAL_MODE_FLOW_MAP_TIME
+  m_InvalidKeywords:
+  - _EMISSION
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    MotionVector: User
+    RenderType: Transparent
+  disabledShaderPasses:
+  - TransparentDepthPrepass
+  - TransparentBackface
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FlowMapTime_f86b26a814a3464a969fc12d09b7654c_PhaseOffsetMask_835282005_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowTex:
+        m_Texture: {fileID: 2800000, guid: 1f56710bd2a5ac74195089f8129c30eb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LBF_texture:
+        m_Texture: {fileID: 2800000, guid: 53ea0543dcdf65b49aa2a78dc7033d0b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise_Texture:
+        m_Texture: {fileID: 2800000, guid: 2fe31a8312ab8524ebd8601be367f0c8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RTB_texture:
+        m_Texture: {fileID: 2800000, guid: ec4fe569ef547944fa9565b043590b68, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _: 0.77
+    - _AddPrecomputedVelocity: 0
+    - _Add_Frame: 0
+    - _Albedo_Contrast: 0.5
+    - _AlphaCutoffEnable: 1
+    - _AlphaDstBlend: 10
+    - _AlphaSrcBlend: 1
+    - _Alpha_Noise: 1
+    - _Ambient: 0.72
+    - _BlendMode: 0
+    - _Color_Absorption: 0.699
+    - _Color_as_Emession: 0
+    - _ConservativeDepthOffsetEnable: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _Decay_Mask: 1
+    - _Decay_Power: 1
+    - _DepthOffsetEnable: 0
+    - _Depth_Choise: 0
+    - _Depth_Contrast: 2.33
+    - _Depth_Density: 1
+    - _Depth_Sharpness: 1
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedGIMode: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 10
+    - _DstBlend2: 10
+    - _ENVIRONMENTREFLECTIONS_OFF: 1
+    - _Emission_Power: 0
+    - _EnableBlendModePreserveSpecularLighting: 0
+    - _EnableFogOnTransparent: 1
+    - _FLow_Speed: 0.05
+    - _Flow_Strenght: -0.001
+    - _Gradient_Intensity: 1
+    - _Gradient_Offset: 0.83
+    - _Grow: 0.15
+    - _Light_Remap: 0.19
+    - _Main_Alpha: 4
+    - _Noise_FlowMap_Strenght: 0.94
+    - _Noise_Power: 1
+    - _Noise_Smoothstep_A: 0.137
+    - _Noise_Smoothstep_B: 0.631
+    - _Offset_Flow: 0.64
+    - _OpaqueCullMode: 2
+    - _PerPixelSorting: 0
+    - _Phase_Offset: 0.5
+    - _Power_Light_Remap: 0.82
+    - _ReceiveShadows: 1
+    - _RenderQueueType: 5
+    - _Rotate_Noise: 0
+    - _SPECULARHIGHLIGHTS_OFF: 1
+    - _Soft_Edge_Strenght: 0.71
+    - _Speed: 0.16
+    - _Sprite_Animation_Speed: 0.1
+    - _Sprite_Sheet_Height: 8
+    - _Sprite_Sheet_Width: 8
+    - _SrcBlend: 1
+    - _SurfaceType: 1
+    - _TEMPORAL_MODE: 1
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentDepthPostpassEnable: 1
+    - _TransparentDepthPrepassEnable: 0
+    - _TransparentSortPriority: 0
+    - _TransparentWritingMotionVec: 0
+    - _TransparentZWrite: 0
+    - _UseColorAbsorption: 1
+    - _UseShadowThreshold: 0
+    - _Use_FlowMap: 1
+    - _Use_Gradient: 0
+    - _Use_Mesh_Vertex_Color: 0
+    - _Use_Soft_Edge: 1
+    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 0
+    m_Colors:
+    - _Albedo_Color: {r: 2.4264188, g: 2.4264188, b: 2.4264188, a: 0}
+    - _Decay_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlowMap_Tilling: {r: 1, g: 1, b: 0, a: 0}
+    - _Flowmap_Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _MinY_MaxY: {r: -3.42, g: 0.8, b: 0, a: 0}
+    - _Scale_Noise: {r: 13.19, g: 1.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

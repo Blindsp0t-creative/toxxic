@@ -16356,7 +16356,7 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 0.36862746, b: 0.69411767, a: 1}
-  m_Intensity: 3211120.8
+  m_Intensity: 9633362
   m_Range: 16.02
   m_SpotAngle: 179
   m_InnerSpotAngle: 32.34423
@@ -16819,7 +16819,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: a629ce58512d85d46aaa47a484c5a0c8, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -19763,7 +19763,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 0.64705884, g: 0.8156863, b: 0.8666667, a: 1}
-  m_Intensity: 151197.19
+  m_Intensity: 651739.5
   m_Range: 14.78
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -29044,7 +29044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 140.0076
+      value: 136.57732
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -29052,11 +29052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 80.0038
+      value: 78.28866
       objectReference: {fileID: 0}
     - target: {fileID: 46967294, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.203571
+      value: -18.164948
       objectReference: {fileID: 0}
     - target: {fileID: 722003804, guid: 024fe78707b0a9e4599b8093e621eaa7, type: 3}
       propertyPath: m_SizeDelta.x
@@ -34752,7 +34752,7 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 0.36862746, b: 0.69411767, a: 1}
-  m_Intensity: 3211120.8
+  m_Intensity: 9633362
   m_Range: 16.02
   m_SpotAngle: 179
   m_InnerSpotAngle: 32.34423
@@ -39092,7 +39092,7 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 0.36862746, b: 0.69411767, a: 1}
-  m_Intensity: 3211120.8
+  m_Intensity: 9633362
   m_Range: 16.02
   m_SpotAngle: 179
   m_InnerSpotAngle: 32.34423
@@ -40330,7 +40330,7 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 0.3679244, b: 0.6943381, a: 1}
-  m_Intensity: 3211120.8
+  m_Intensity: 9633362
   m_Range: 16.02
   m_SpotAngle: 179
   m_InnerSpotAngle: 32.34423
@@ -53987,7 +53987,7 @@ PrefabInstance:
     - target: {fileID: 6773956799630399736, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.40714
+      value: -26.329897
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800225935730, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
@@ -54027,7 +54027,7 @@ PrefabInstance:
     - target: {fileID: 6773956800457302902, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -18.203571
+      value: -18.164948
       objectReference: {fileID: 0}
     - target: {fileID: 6773956800489933347, guid: bc90cf8ecd1a41c42bd2bc08d5539e38,
         type: 3}

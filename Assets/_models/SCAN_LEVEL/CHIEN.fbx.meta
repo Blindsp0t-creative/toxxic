@@ -9,6 +9,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: CHIEN
     second: {fileID: 2100000, guid: a9f7d19657a15b64f852de501def1061, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: 981eee4e40212fe0746968d665088aad
+    second: {fileID: 2800000, guid: 2a7d992140db38149946681f3688b478, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackCoffinDogCut
+    second: {fileID: 2800000, guid: 9debab5de2469164da600db7585e6aa5, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
