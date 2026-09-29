@@ -21053,7 +21053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8bf74db04e3274c8a7f1ececc6e9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::blinkingEyes
-  _skinnedMesh: {fileID: 0}
+  _skinnedMesh: {fileID: 1979439635}
   eyeCloseBlendShapeIndex: 0
   speedOpenEyes: 3
   minValue: 0
@@ -21142,6 +21142,12 @@ MonoBehaviour:
     - {x: -0.61423856, y: -0.4009367, z: -0.40093574, w: 0.5488277}
     - {x: 0.04547146, y: 1.5072889e-14, z: 5.024296e-15, w: 0.99896586}
   isValidTpose: 0
+--- !u!137 &1979439635 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 388970701472360919, guid: 623a40a10a04a624282a3f46db78f9b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1979439630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1981347709
 GameObject:
   m_ObjectHideFlags: 0
