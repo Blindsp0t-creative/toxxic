@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Affiche8
+  m_Name: Affiche Backroom
   m_Shader: {fileID: -6465566751694194690, guid: 215a12ba84340614fb599409037c81ee,
     type: 3}
   m_Parent: {fileID: 0}
@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: d8e10cd1a7c640d4695bebc9bb80a5eb, type: 3}
+        m_Texture: {fileID: 2800000, guid: aa7440dd274bd1d4aa54c69003591455, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
@@ -151,7 +151,7 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
-    - _AlphaClip: 0.14
+    - _AlphaClip: 0.36
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 1
     - _AlphaCutoffPostpass: 0.5
