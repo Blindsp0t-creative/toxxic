@@ -3,7 +3,17 @@ guid: e2880ed5b77a2c440a8fa87239b600d1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCAN_SALON_1
+    second: {fileID: 2100000, guid: 9ba5f9777e92c034e9492ebd7c88043c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SCAN_SALON_9_2
+    second: {fileID: 2100000, guid: d8a6c818dff7396488538163c4b36c2d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
