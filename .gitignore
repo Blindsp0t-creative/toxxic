@@ -112,3 +112,9 @@ Assets/Samples
 Assets/StreamingAssets/RuntimeActionBindings.json
 Assets/_medias/Toxxic - Mario Kart.mp4
 Assets/_scenes/new.zip
+
+# Fichiers > 100 Mio : rejetes par GitHub, conserves en local uniquement
+Assets/_avatars/1. The Round Club/Onyx New/Onyx_New_Unity.fbx
+Assets/_avatars/3. Rainbow Road/DENIS/DENIS_RETOPOLOGY_RIG.fbx
+Assets/VertexField/VoluSmoke FX/Textures/VoluSmoke tex/B/B_RTB.tif
+Assets/VertexField/VoluSmoke FX/Textures/VoluSmoke tex/G/G_LBF.tif
