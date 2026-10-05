@@ -312,6 +312,16 @@ public class conduite_script03_Silk1: MonoBehaviour
         sceneNB = 7;
     }
 
+    public void MonteePlateforme()
+    {
+        sceneNB = 2;
+    }
+
+    public void DollySol()
+    {
+        sceneNB = 13;
+    }
+
     public void blackOut(bool value)
     {
         if (value == true)

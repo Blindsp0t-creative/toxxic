@@ -24,16 +24,32 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Section("STRIP CLUB")]
     [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
-    [Button("Top Alarm", id: "toggleAlarm")] public void LOG_topAlarm() { Debug.Log("Top Alarm - Strip Club Scene"); }
-    [Button("Next", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
+    [Button("Top Plateforme", id: "toggleAlarm")] public void LOG_topAlarm() { Debug.Log("Top Alarm - Strip Club Scene"); }
+    
+    //[Button("Top Montée", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
+    /*
     [Button("Previous", id: "stripclubP")]                          public void LOG_topPreviousStripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    */
+
+    [Button("Zoom", id: "stripclubZoom")] public void LOG_topZoomStripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Main", id: "stripclubDM")] public void LOG_topDollyMainStripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    [Button("Reverse POV", id: "stripclubReversePOV")] public void LOG_topReversePOV2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    [Button("DollySol", id: "dollySol")] public void DollySol() { Debug.Log("Camera 13 : DollySol"); }
     [Button("Dolly Public", id: "stripclubDP")] public void LOG_topDollyPublicStripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    [Button("Reverse POV2", id: "stripclubReversePOV2")] public void LOG_topReversePOV2StripClub2() { Debug.Log("Previous - Strip Club Scene"); }
+    [Button("DollySol2", id: "dollySol2")] public void DollySol2() { Debug.Log("Camera 13 : DollySol"); }
+
+
+    //DOLLY LAP DANCE 
+    //DOLLY PUBLIC 
+    //CAMERA ORC
+    //CONTRE PLONGEE - disparait 
+
     [Button("Dolly Main 2", id: "stripclubDM2")] public void LOG_topDollyMain2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Public 2", id: "stripclubDP2")] public void LOG_topDollyPublic2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Reverse POV", id: "stripclubReversePOV")] public void LOG_topReversePOV2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Zoom", id: "stripclubZoom")] public void LOG_topZoomStripClub() { Debug.Log("Previous - Strip Club Scene"); }
 
+
+    /*
     [Section("BARDELLAX")]
     [Button("Next", id: "bardeN")] public void LOG_topNextBarde() { Debug.Log("Next - Strip Club Scene"); }
     [Button("Previous", id: "bardeP")] public void LOG_topPreviousBarde() { Debug.Log("Previous - Strip Club Scene"); }
@@ -42,7 +58,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Dolly Haute", id: "bardeDH")] public void LOG_DollyHauteBarde() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Dolly Main 2", id: "bardeDM2")] public void LOG_topDollyMain2Barde() { Debug.Log("Previous - Strip Club Scene"); }
     [Button("Reverse POV 2", id: "bardeReversePOV")] public void LOG_topReversePOV() { Debug.Log("Previous - Strip Club Scene"); }
-
+    */
     [Section("PELLETEUSE")]
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]              public void LOG_loadScenePelleteuse() { Debug.Log("load Pelleteuse Scene"); }
     [Button("Next", id: "pelleteuseN")]                             public void LOG_topNextPelleteuse() { Debug.Log("Next - Pelleteuse Scene"); }

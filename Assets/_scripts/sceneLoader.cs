@@ -9,6 +9,10 @@ public class sceneLoader : MonoBehaviour
     public GameObject avatarPelleteuse;
     public GameObject avatarRainbowRoad;
 
+    public string sceneStripClub = "";
+    public string scenePeleteuse = "";
+    public string sceneRainbow = "";
+
     public void LoadSceneAdditive(string sceneName)
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
@@ -29,10 +33,10 @@ public class sceneLoader : MonoBehaviour
     public void loadStripClub()
     {
 
-        unloadToxxicScene("PELLETEUSE_V1");
-        unloadToxxicScene("SCAN_V1");
+        unloadToxxicScene(scenePeleteuse);
+        unloadToxxicScene(sceneRainbow);
 
-        loadToxxicScene("CLUB_V2");
+        loadToxxicScene(sceneStripClub);
 
         disableAvatars();
         if(avatarStripClub != null )
@@ -42,10 +46,10 @@ public class sceneLoader : MonoBehaviour
     public void loadPelleteuse()
     {
 
-        unloadToxxicScene("CLUB_V2");
-        unloadToxxicScene("SCAN_V1");
+        unloadToxxicScene(sceneStripClub);
+        unloadToxxicScene(sceneRainbow);
 
-        loadToxxicScene("PELLETEUSE_V1");
+        loadToxxicScene(scenePeleteuse);
 
         disableAvatars();
         if(avatarPelleteuse != null )
@@ -56,10 +60,10 @@ public class sceneLoader : MonoBehaviour
     public void loadRainbowRoad()
     {
 
-        unloadToxxicScene("CLUB_V2");
-        unloadToxxicScene("PELLETEUSE_V1");
+        unloadToxxicScene(sceneStripClub);
+        unloadToxxicScene(scenePeleteuse);
 
-        loadToxxicScene("SCAN_V1");
+        loadToxxicScene(sceneRainbow);
 
         disableAvatars();
         if(avatarRainbowRoad != null )
