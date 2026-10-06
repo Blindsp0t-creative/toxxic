@@ -1241,6 +1241,23 @@ MonoBehaviour:
   headBodyYawOffset: 0
   handTrackingScale: 1
   handTrackingScaleAxis: {x: 2.2, y: 2.2, z: 2.2}
+--- !u!114 &124505473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124505462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8bf74db04e3274c8a7f1ececc6e9ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::blinkingEyes
+  _skinnedMesh: {fileID: 1752460025}
+  eyeCloseBlendShapeIndex: 19
+  speedOpenEyes: 15
+  minValue: 30
+  maxValue: 100
 --- !u!114 &124969771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5397,7 +5414,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: b1f662856bf65fc4ebd521c53a106d3b,
         type: 3}
@@ -16436,6 +16453,7 @@ GameObject:
   - component: {fileID: 1040408611}
   - component: {fileID: 1040408610}
   - component: {fileID: 1040408609}
+  - component: {fileID: 1040408614}
   m_Layer: 0
   m_Name: InputType_Microphone
   m_TagString: Untagged
@@ -16470,7 +16488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b97b38f2f1fd24185315141a6c6a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skinnedMeshRenderer: {fileID: 370815710}
+  skinnedMeshRenderer: {fileID: 1752460025}
   visemeToBlendTargets: ffffffffffffffff0500000005000000070000000700000006000000050000000700000008000000090000000700000005000000080000000b000000
   enableVisemeTestKeys: 1
   visemeTestKeys: 600000000900000071000000770000006500000072000000740000007900000075000000690000006f000000700000005b0000005d0000005c000000
@@ -16542,7 +16560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040408607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d5ed157083b494e85013bad8fd5e12, type: 3}
   m_Name: 
@@ -16652,6 +16670,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1040408614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040408607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d698b4524c3e44fa7090b13b2b8f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToxxicLipSyncMicInput
+  audioSource: {fileID: 0}
+  keepRecordingWhenUnfocused: 1
+  enableMicSelectionGUI: 1
+  micSelectionGUIKey: 109
+  micInputVolume: 100
+  micFrequency: 44100
+  micControl: 2
+  micActivationKey: 32
+  selectedDevice: 
 --- !u!4 &1047657971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4697179440831416144, guid: 87fb5d29fa1b54c4db84ea29dc0fdae2,
@@ -16737,10 +16776,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6435399192587130656, guid: 860e81ef7a01b7b4b977f641ff193efd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}
       propertyPath: m_Name
       value: MikuV2Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860e81ef7a01b7b4b977f641ff193efd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6868716418057165105, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}
@@ -16863,6 +16912,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 124505472}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 860e81ef7a01b7b4b977f641ff193efd,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 124505473}
   m_SourcePrefab: {fileID: 100100000, guid: 860e81ef7a01b7b4b977f641ff193efd, type: 3}
 --- !u!4 &1052815201 stripped
 Transform:
