@@ -7,7 +7,7 @@ using UnityEngine;
 public class Set_VR_Avatar_height : MonoBehaviour
 {
     [Header("Hauteur des yeux (m)")]
-    [Range(0.5f, 2.5f)]
+    [Range(-4.5f, 4.5f)]
     public float height = 1.9f;
 
     [Tooltip("0 = instantané. Sinon, lissage en secondes.")]

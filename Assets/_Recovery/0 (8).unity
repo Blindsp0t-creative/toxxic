@@ -14898,7 +14898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolumePerSceneData
   serializedBakingSet: {fileID: 11400000, guid: f3a99f73a75f40f47ab365d0459289c9,
     type: 2}
-  sceneGUID: 07868ae05e9d552468b3c4ec269e4eb8
+  sceneGUID: c32bb2af9c011eb4aa9e7899581d2f7c
   obsoleteAsset: {fileID: 0}
   obsoleteCellSharedDataAsset: {fileID: 0}
   obsoleteCellSupportDataAsset: {fileID: 0}

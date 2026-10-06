@@ -30,7 +30,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Toggle("FOOT LOCK", id: "footRotation")]
     public bool footRotationClamp;
 
-    [Slider("ElevationAvatarDenis", 0.5f, 3.0f, id: "elevationavatarDenis")]
+    [Slider("ElevationAvatarDenis", 0.5f, 4.5f, id: "elevationavatarDenis")]
     public float avatarElevationDenis;
 
     [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")]
