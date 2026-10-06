@@ -38,8 +38,8 @@ MonoBehaviour:
   - m_From: Plan03_DecouvertePelleteuse
     m_To: Plan03_2_CaresseVache
     m_Blend:
-      m_Style: 0
-      m_Time: 2
+      m_Style: 1
+      m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

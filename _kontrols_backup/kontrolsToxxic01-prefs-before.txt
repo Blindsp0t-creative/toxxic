@@ -1,0 +1,114 @@
+﻿Kontrols_kontrolsToxxic01_profileDir_h2798681633	=	C:\Users\chamb\Documents\GitHub\toxxic
+Kontrols_kontrolsToxxic01_ref_bardeDH_0_h2582408520	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyHaute|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeDH_count_h1712086331	=	1
+Kontrols_kontrolsToxxic01_ref_bardeDM_0_h2582403405	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyMain|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeDM_count_h4235612414	=	1
+Kontrols_kontrolsToxxic01_ref_bardeDM2_0_h3614888447	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyMain2|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeDM2_count_h1957513612	=	1
+Kontrols_kontrolsToxxic01_ref_bardeDP_0_h2582433104	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyPublic|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeDP_count_h764656931	=	1
+Kontrols_kontrolsToxxic01_ref_bardeN_0_h3201853162	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonNEXT|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeN_count_h2912548313	=	1
+Kontrols_kontrolsToxxic01_ref_bardeP_0_h3201879924	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonBACK|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeP_count_h262012743	=	1
+Kontrols_kontrolsToxxic01_ref_bardeReversePOV_0_h1000663181	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ReversePOV|0|0||0
+Kontrols_kontrolsToxxic01_ref_bardeReversePOV_count_h3820552382	=	1
+Kontrols_kontrolsToxxic01_ref_blackout_0_h1007026845	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1181227948-0|||0|0||0
+Kontrols_kontrolsToxxic01_ref_blackout_count_h32905902	=	1
+Kontrols_kontrolsToxxic01_ref_calbibrate_0_h1287585585	=	GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-1762426621747123-0|Rokoko.CommandAPI.StudioCommandAPI, Rokoko, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|CalibrateAll|0|0||0
+Kontrols_kontrolsToxxic01_ref_calbibrate_count_h2301237058	=	1
+Kontrols_kontrolsToxxic01_ref_dissolveEVGAvatar_0_h246714412	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132147862038463-0|CharacterDissolveController, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|SetDissolve|1|0||0
+Kontrols_kontrolsToxxic01_ref_dissolveEVGAvatar_count_h2136817567	=	1
+Kontrols_kontrolsToxxic01_ref_dollySol_0_h3296535254	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollySol|0|0||0
+Kontrols_kontrolsToxxic01_ref_dollySol_count_h733680293	=	1
+Kontrols_kontrolsToxxic01_ref_elevationavatarDenis_0_h3575881303	=	GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2073084551-0|Set_VR_Avatar_height, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|SetHeight|1|0||0
+Kontrols_kontrolsToxxic01_ref_elevationavatarDenis_count_h3661837796	=	1
+Kontrols_kontrolsToxxic01_ref_elevationavatarJen_0_h2316400547	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|setAvatarElevation|1|0||0
+Kontrols_kontrolsToxxic01_ref_elevationavatarJen_1_h2316400546	=	|||0|0||0
+Kontrols_kontrolsToxxic01_ref_elevationavatarJen_count_h2763886288	=	2
+Kontrols_kontrolsToxxic01_ref_elevationavatarJenBarde_0_h88007315	=	GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0|conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|setAvatarElevation|1|0||0
+Kontrols_kontrolsToxxic01_ref_elevationavatarJenBarde_count_h2070592160	=	1
+Kontrols_kontrolsToxxic01_ref_footRotation_0_h1202736722	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830|Rokoko.Inputs.Actor, Rokoko, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|toggleFootCorrection|3|0||0
+Kontrols_kontrolsToxxic01_ref_footRotation_count_h592698913	=	1
+Kontrols_kontrolsToxxic01_ref_pelleteuse_0_h3184357014	=	GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0|sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|loadPelleteuse|0|0||0
+Kontrols_kontrolsToxxic01_ref_pelleteuse_count_h2962177765	=	1
+Kontrols_kontrolsToxxic01_ref_pelleteuseN_0_h2004582840	=	GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0|pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonNEXT|0|0||0
+Kontrols_kontrolsToxxic01_ref_pelleteuseN_count_h3957051659	=	1
+Kontrols_kontrolsToxxic01_ref_pelleteuseP_0_h2004572710	=	GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0|pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonBACK|0|0||0
+Kontrols_kontrolsToxxic01_ref_pelleteuseP_count_h571820693	=	1
+Kontrols_kontrolsToxxic01_ref_rainbowroad_0_h3104952386	=	GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0|sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|loadRainbowRoad|0|0||0
+Kontrols_kontrolsToxxic01_ref_rainbowroad_count_h2395430961	=	1
+Kontrols_kontrolsToxxic01_ref_RainbowRoadN_0_h3250456108	=	GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0|CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|NextCamera|0|0||0
+Kontrols_kontrolsToxxic01_ref_RainbowRoadN_count_h3862017439	=	1
+Kontrols_kontrolsToxxic01_ref_RainbowRoadP_0_h3250486962	=	GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0|CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|PreviousCamera|0|0||0
+Kontrols_kontrolsToxxic01_ref_RainbowRoadP_count_h1760661249	=	1
+Kontrols_kontrolsToxxic01_ref_stripclub_0_h2092301824	=	GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0|sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|loadStripClub|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclub_count_h3380121203	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubDM_0_h2183958985	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyMain|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubDM_count_h47884666	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubDM2_0_h3351132923	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyMain2|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubDM2_count_h2621248136	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubDP_0_h2183980500	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyPublic2|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubDP_count_h4050662823	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubDP2_0_h3351783686	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|DollyPublic2|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubDP2_count_h1468283253	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubN_0_h326467566	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonNEXT|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubN_count_h3445599965	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubP_0_h326502512	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ButtonBACK|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubP_count_h1911265347	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubReversePOV_0_h3927834889	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|ReversePOV|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubReversePOV_count_h3787864378	=	1
+Kontrols_kontrolsToxxic01_ref_stripclubZoom_0_h3497259991	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Zoom|0|0||0
+Kontrols_kontrolsToxxic01_ref_stripclubZoom_count_h146951012	=	1
+Kontrols_kontrolsToxxic01_ref_toggleAlarm_0_h3597832245	=	GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0|conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|MonteePlateforme|0|0||0
+Kontrols_kontrolsToxxic01_ref_toggleAlarm_count_h4102178886	=	1
+Kontrols_kontrolsToxxic01_ref_toggleVideoTV_0_h3899767669	=	GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0|CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|toggleVideo|0|0||0
+Kontrols_kontrolsToxxic01_ref_toggleVideoTV_count_h4082414086	=	1
+Kontrols_kontrolsToxxic01_tempo_bar_h817174552	=	1
+Kontrols_kontrolsToxxic01_tempo_beatband_h756056466	=	
+Kontrols_kontrolsToxxic01_tempo_beatlock_h755851824	=	0
+Kontrols_kontrolsToxxic01_tempo_bpb_h817175289	=	4
+Kontrols_kontrolsToxxic01_tempo_bpm_h817175286	=	4638144666238189568
+Kontrols_kontrolsToxxic01_tempo_osc_h817171734	=	/tempo
+Kontrols_kontrolsToxxic01_tempo_q_h2027943416	=	0
+Kontrols_kontrolsToxxic01_tempo_qgrid_h858227232	=	3
+Kontrols_kontrolsToxxic01_tempo_src_h817192491	=	0
+Kontrols_kontrolsToxxic01_val_blackout_h1549849176	=	0
+Kontrols_kontrolsToxxic01_val_dissolveEVGAvatar_h1561740137	=	4607182418800017408
+Kontrols_kontrolsToxxic01_val_elevationavatar_h1560855143	=	4606813123553263616
+Kontrols_kontrolsToxxic01_val_elevationavatarDenis_h907238546	=	4616752568008179712
+Kontrols_kontrolsToxxic01_val_elevationavatarJen_h178325926	=	4610196639196381184
+Kontrols_kontrolsToxxic01_val_elevationavatarJenBarde_h1414360982	=	4603849755032813568
+Kontrols_kontrolsToxxic01_val_footRotation_h3720577559	=	4607182418800017408
+kontrolsToxxic01h_h1520259297	=	4648298876237774848
+kontrolsToxxic01w_h1520259326	=	4646321514633756672
+kontrolsToxxic01x_h1520259313	=	4653411165609656320
+kontrolsToxxic01y_h1520259312	=	4643281584563159040
+kontrolsToxxic01z_h1520259315	=	0
+MidiHub_CC_kontrolsToxxic01_bardeDH_h1082619708	=	68
+MidiHub_CC_kontrolsToxxic01_bardeDM_h1082619705	=	36
+MidiHub_CC_kontrolsToxxic01_bardeDM2_h1366711915	=	37
+MidiHub_CC_kontrolsToxxic01_bardeDP_h1082619684	=	52
+MidiHub_CC_kontrolsToxxic01_bardeN_h553408766	=	44
+MidiHub_CC_kontrolsToxxic01_bardeP_h553408736	=	43
+MidiHub_CC_kontrolsToxxic01_bardeReversePOV_h2482474425	=	53
+MidiHub_CC_kontrolsToxxic01_blackout_h456523977	=	45
+MidiHub_CC_kontrolsToxxic01_dissolveEVGAvatar_h3051969368	=	1
+MidiHub_CC_kontrolsToxxic01_elevationavatarDenis_h1595687363	=	7
+MidiHub_CC_kontrolsToxxic01_elevationavatarJen_h2671529399	=	0
+MidiHub_CC_kontrolsToxxic01_elevationavatarJenBarde_h3506607975	=	4
+MidiHub_CC_kontrolsToxxic01_pelleteuse_h2937631042	=	33
+MidiHub_CC_kontrolsToxxic01_pelleteuseP_h2452543954	=	65
+MidiHub_CC_kontrolsToxxic01_rainbowroad_h3160202230	=	34
+MidiHub_CC_kontrolsToxxic01_RainbowRoadN_h2454191864	=	50
+MidiHub_CC_kontrolsToxxic01_RainbowRoadP_h2454191846	=	66
+MidiHub_CC_kontrolsToxxic01_stripclubDM_h3288799421	=	32
+MidiHub_CC_kontrolsToxxic01_stripclubDM2_h1156198511	=	48
+MidiHub_CC_kontrolsToxxic01_stripclubDP_h3288799392	=	33
+MidiHub_CC_kontrolsToxxic01_stripclubDP2_h1156197522	=	65
+MidiHub_CC_kontrolsToxxic01_stripclubN_h2182068986	=	44
+MidiHub_CC_kontrolsToxxic01_stripclubP_h2182068964	=	43
+MidiHub_CC_kontrolsToxxic01_stripclubReversePOV_h1283526461	=	49
+MidiHub_CC_kontrolsToxxic01_stripclubZoom_h3794813475	=	64
+MidiHub_CC_kontrolsToxxic01_toggleAlarm_h919701697	=	41
+MidiHub_CC_kontrolsToxxic01_toggleVideoTV_h1966594753	=	70

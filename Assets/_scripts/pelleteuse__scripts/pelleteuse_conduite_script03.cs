@@ -81,6 +81,11 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
     }
     
+    public void showPhoto()
+    {
+        photoQuad.SetActive(true);
+    }
+
     public void allMessages(OscMessage message)
     {
         Debug.Log(message.address);

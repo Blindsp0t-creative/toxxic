@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,9 @@ public class sceneLoader : MonoBehaviour
     public string sceneStripClub = "";
     public string scenePeleteuse = "";
     public string sceneRainbow = "";
+
+    [Tooltip("Si la scene demandee est deja chargee : la decharger puis la recharger (repart a zero). Sinon le bouton ne fait rien.")]
+    public bool reloadIfAlreadyLoaded = true;
 
     public void LoadSceneAdditive(string sceneName)
     {
@@ -111,14 +115,38 @@ public class sceneLoader : MonoBehaviour
 
     public void loadToxxicScene(string _name)
     {
-        Scene current = SceneManager.GetSceneByName(_name);
-        if (current.isLoaded)
+        if (string.IsNullOrEmpty(_name))
             return;
-        else
+
+        Scene current = SceneManager.GetSceneByName(_name);
+
+        if (current.isLoaded)
         {
-            SceneManager.sceneLoaded += OnStripClubLoaded;
-            SceneManager.LoadScene(_name, LoadSceneMode.Additive);
+            // deja chargee : soit on ne fait rien (ancien comportement),
+            // soit on la recharge pour repartir d'un etat propre.
+            if (!reloadIfAlreadyLoaded)
+                return;
+
+            StartCoroutine(reloadToxxicScene(_name));
+            return;
         }
+
+        SceneManager.sceneLoaded += OnStripClubLoaded;
+        SceneManager.LoadScene(_name, LoadSceneMode.Additive);
+    }
+
+    // Decharge puis recharge la scene additive. L'unload est asynchrone :
+    // on attend sa fin, sinon le LoadScene tombe sur une scene en cours
+    // de destruction et on finit avec deux instances.
+    private IEnumerator reloadToxxicScene(string _name)
+    {
+        AsyncOperation unload = SceneManager.UnloadSceneAsync(_name);
+
+        while (unload != null && !unload.isDone)
+            yield return null;
+
+        SceneManager.sceneLoaded += OnStripClubLoaded;
+        SceneManager.LoadScene(_name, LoadSceneMode.Additive);
     }
 
     public void disableAvatars()

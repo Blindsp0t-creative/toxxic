@@ -41,8 +41,19 @@ public class conduite_script03_Silk1: MonoBehaviour
     public cinemachine_followTrack01 dollyFollower;
     public Animator _animPodium;
 
+    [Tooltip("Nom de l'etat de l'Animator du podium (controller Elevator)")]
+    public string podiumStateName = "podiumAnim";
 
-    private bool done1, done2;
+    [Tooltip("Remet la camera en POV au depart de la montee")]
+    public bool resetCameraOnMontee = true;
+
+    [Tooltip("Alarme relancee a chaque top plateforme (laisser vide pour ne pas y toucher)")]
+    public declencheurAlarm alarm;
+
+    // sceneNB "reellement entree" : permet de ne declencher la sequence
+    // qu'une fois par entree dans l'etat, au lieu de chaque frame.
+    private int currentScene = -1;
+    private Coroutine coCloseUp, coDolly;
     void Start()
     {
 
@@ -71,7 +82,8 @@ public class conduite_script03_Silk1: MonoBehaviour
         dollyFollower.enabled = false;
         _animPodium.speed = 0.0f;// Stop();
 
-        done1 = done2 = false;
+        ResetPodium();
+        currentScene = sceneNB;
 
     }
     public void allMessages(OscMessage message)
@@ -119,6 +131,16 @@ public class conduite_script03_Silk1: MonoBehaviour
 
     void Update()
     {
+        // detection d'entree dans un etat : tout ce qui doit partir "de zero"
+        // se declenche ici, et une seule fois.
+        if (sceneNB != currentScene)
+        {
+            currentScene = sceneNB;
+
+            if (sceneNB == 2)
+                StartMonteePlateforme();
+        }
+
         if (sceneNB == 1) // en POV dans les loges 
         {
             camSelector.activeCamera = 0; // VCAM_POV_newAvatar
@@ -137,9 +159,8 @@ public class conduite_script03_Silk1: MonoBehaviour
 
         if (sceneNB == 2) // montée plateforme
         {
-            //on reste en POV 10s, puis camera plateforme
-            StartCoroutine(CloseUpPipeCamera(6));
-            StartCoroutine(DollyPipeCamera(10));
+            // le declenchement (cameras + anim a zero) est fait par
+            // StartMonteePlateforme(), ici on ne fait qu'entretenir l'etat
 
             avatarPlaces.activePlace = 4; //position plateforme (qui monte)
 
@@ -314,7 +335,48 @@ public class conduite_script03_Silk1: MonoBehaviour
 
     public void MonteePlateforme()
     {
+        // -1 force la re-entree dans l'etat, meme si on y est deja :
+        // le bouton rejoue donc la sequence a la demande.
+        currentScene = -1;
         sceneNB = 2;
+    }
+
+    // Declenche (ou rejoue) la montee de plateforme depuis le debut.
+    private void StartMonteePlateforme()
+    {
+        // 1. on coupe les tops cameras de la sequence precedente
+        if (coCloseUp != null) { StopCoroutine(coCloseUp); coCloseUp = null; }
+        if (coDolly != null) { StopCoroutine(coDolly); coDolly = null; }
+
+        // 2. anim du podium remise a la frame 0, a l'arret
+        ResetPodium();
+
+        // 3. on repart en POV
+        if (resetCameraOnMontee)
+            camSelector.activeCamera = 0;
+
+        // 4. re-arme les tops cameras et relance l'alarme
+        if (Application.isPlaying)
+        {
+            coCloseUp = StartCoroutine(CloseUpPipeCamera(6));
+            coDolly = StartCoroutine(DollyPipeCamera(10));
+
+            if (alarm != null)
+                alarm.RestartAll();
+        }
+
+        // 5. la montee repart (Update maintient speed = 1 tant que sceneNB == 2)
+        _animPodium.speed = 1.0f;
+    }
+
+    // Replace l'Animator du podium sur la premiere frame de son clip.
+    private void ResetPodium()
+    {
+        _animPodium.speed = 0.0f;
+        _animPodium.Play(podiumStateName, 0, 0.0f);
+
+        if (Application.isPlaying)
+            _animPodium.Update(0.0f); // force l'evaluation immediate de la frame 0
     }
 
     public void DollySol()
@@ -336,26 +398,19 @@ public class conduite_script03_Silk1: MonoBehaviour
 
     private IEnumerator DollyPipeCamera(float waitTime)
     {
-        if(!done2)
-        {
-            yield return new WaitForSeconds(waitTime);
-            Debug.Log("top camera dolly pipe");
-            camSelector.activeCamera = 2;
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("top camera dolly pipe");
+        camSelector.activeCamera = 2;
 
-            done2 = true;
-        }
-
+        coDolly = null;
     }
 
     private IEnumerator CloseUpPipeCamera(float waitTime)
     {
-        if(!done1)
-        {
-            yield return new WaitForSeconds(waitTime);
-            Debug.Log("top camera close up pipe");
-            camSelector.activeCamera = 1;
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("top camera close up pipe");
+        camSelector.activeCamera = 1;
 
-            done1 = true;
-        }
+        coCloseUp = null;
     }
 }

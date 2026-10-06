@@ -1237,7 +1237,7 @@ MonoBehaviour:
     ikTarget: {fileID: 706171390}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
     trackingRotationOffset: {x: 0, y: 0, z: 0}
-  headBodyPositionOffset: {x: 0, y: -2.72, z: 0}
+  headBodyPositionOffset: {x: 0, y: -3.9, z: 0}
   headBodyYawOffset: 0
   handTrackingScale: 1
   handTrackingScaleAxis: {x: 2.2, y: 2.2, z: 2.2}
@@ -16714,17 +16714,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 4.288
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 4.288
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 4.288
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 860e81ef7a01b7b4b977f641ff193efd,
         type: 3}

@@ -38,4 +38,26 @@ public class declencheurAlarm : MonoBehaviour
         previousState = alarmOn;
         SetAllAlarms(alarmOn);
     }
+
+    // Force l'etat, sans dependre de l'etat precedent (contrairement a ToggleAll).
+    public void SetAll(bool state)
+    {
+        alarmOn = state;
+        previousState = state;
+        SetAllAlarms(state);
+    }
+
+    public void StartAll() => SetAll(true);
+
+    public void StopAll() => SetAll(false);
+
+    // Relance l'alarme depuis zero : AlarmLightHDRP.StartAlarm() sort
+    // immediatement si sa coroutine tourne deja, donc il faut couper avant
+    // pour que le clignotement reparte en phase et que l'evenement
+    // OnAlarmStateChanged soit renvoye aux alarmDependantObject.
+    public void RestartAll()
+    {
+        SetAll(false);
+        SetAll(true);
+    }
 }
