@@ -1,78 +1,154 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using Kontrols;
+
+// Migre vers l'API Kontrols 0.4.0+ : tout controle vit sur un champ, les
+// boutons sont des System.Action. Les ids sont inchanges, donc les mappings
+// MIDI, les adresses OSC et les bindings du tab References sont conserves.
+//
+// Layout : 3 colonnes. GENERAL | STRIP CLUB | PELLETEUSE + RAINBOW ROAD.
+// La section BARDELLAX, commentee de longue date, a ete retiree (voir git).
 
 public class kontrolsToxxic01 : KontrolsWindow
 {
     [MenuItem("Tools/ToxxicKontrols")]
     static void Open() => GetWindow<kontrolsToxxic01>("ToxxicKontrols");
 
-    [Section("GENERAL")]
-    [Button("CALIBRATE", id: "calbibrate")]                         public void LOG_Calib() { Debug.Log("CALIB"); }
-    [Toggle("BLACK OUT", id: "blackout")]                           public bool blackOut;
-    [Toggle("FOOT LOCK", id: "footRotation")]             public bool footRotationClamp;
+    // ── Colonne 1 — GENERAL ──────────────────────────────────────────
 
-    [Slider("ElevationAvatarDenis", 0.5f, 3.0f, id: "elevationavatarDenis")] 
+    [Tab("TOXXIC")]
+    [Column]
+    [Section("GENERAL")]
+    [Button("CALIBRATE", id: "calbibrate")]
+    public Action calibrate;
+
+    [Toggle("BLACK OUT", id: "blackout")]
+    public bool blackOut;
+
+    [SameLine]
+    [Toggle("FOOT LOCK", id: "footRotation")]
+    public bool footRotationClamp;
+
+    [Slider("ElevationAvatarDenis", 0.5f, 3.0f, id: "elevationavatarDenis")]
     public float avatarElevationDenis;
 
-    [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")] 
+    [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")]
     public float avatarElevationJen;
+
     [Slider("ElevationAvatarJenBarde", -1.0f, 2.0f, id: "elevationavatarJenBarde")]
     public float avatarElevationJenBarde;
+
     [Slider("Dissolve EVG Avatar", 0.0f, 1.0f, id: "dissolveEVGAvatar")]
     public float dissolveAvatarStripClub;
 
+    // ── Colonne 2 — STRIP CLUB ───────────────────────────────────────
+
+    [Column(1.4f)]
     [Section("STRIP CLUB")]
-    [Button("Top Scene StripClub", id: "stripclub")]                public void LOG_loadSceneStripClub() { Debug.Log("load Strip Club Scene"); }
-    [Button("Top Plateforme", id: "toggleAlarm")] public void LOG_topAlarm() { Debug.Log("Top Alarm - Strip Club Scene"); }
-    
-    //[Button("Top Mont�e", id: "stripclubN")]                              public void LOG_topNexttripClub() { Debug.Log("Next - Strip Club Scene"); }
-    /*
-    [Button("Previous", id: "stripclubP")]                          public void LOG_topPreviousStripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    */
+    [Button("Top Scene StripClub", id: "stripclub")]
+    public Action topSceneStripClub;
 
-    [Button("Zoom", id: "stripclubZoom")] public void LOG_topZoomStripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Main", id: "stripclubDM")] public void LOG_topDollyMainStripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Reverse POV", id: "stripclubReversePOV")] public void LOG_topReversePOV2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("DollySol", id: "dollySol")] public void DollySol() { Debug.Log("Camera 13 : DollySol"); }
-    [Button("Dolly Public", id: "stripclubDP")] public void LOG_topDollyPublicStripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Reverse POV2", id: "stripclubReversePOV2")] public void LOG_topReversePOV2StripClub2() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("DollySol2", id: "dollySol2")] public void DollySol2() { Debug.Log("Camera 13 : DollySol"); }
+    [Button("Top Plateforme", id: "toggleAlarm")]
+    public Action topPlateforme;
 
+    [Button("Zoom", id: "stripclubZoom")]
+    public Action camZoom;
 
-    //DOLLY LAP DANCE 
-    //DOLLY PUBLIC 
-    //CAMERA ORC
-    //CONTRE PLONGEE - disparait 
+    [Button("Dolly Main", id: "stripclubDM")]
+    public Action camDollyMain;
 
-    [Button("Dolly Main 2", id: "stripclubDM2")] public void LOG_topDollyMain2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Public 2", id: "stripclubDP2")] public void LOG_topDollyPublic2StripClub() { Debug.Log("Previous - Strip Club Scene"); }
+    //[SameLine]
+    [Button("Dolly Main 2", id: "stripclubDM2")]
+    public Action camDollyMain2;
 
+    [Button("Dolly Public", id: "stripclubDP")]
+    public Action camDollyPublic;
 
-    /*
-    [Section("BARDELLAX")]
-    [Button("Next", id: "bardeN")] public void LOG_topNextBarde() { Debug.Log("Next - Strip Club Scene"); }
-    [Button("Previous", id: "bardeP")] public void LOG_topPreviousBarde() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Main", id: "bardeDM")] public void LOG_topDollyMainBarde() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Public", id: "bardeDP")] public void LOG_topDollyPublicBarde() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Haute", id: "bardeDH")] public void LOG_DollyHauteBarde() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Dolly Main 2", id: "bardeDM2")] public void LOG_topDollyMain2Barde() { Debug.Log("Previous - Strip Club Scene"); }
-    [Button("Reverse POV 2", id: "bardeReversePOV")] public void LOG_topReversePOV() { Debug.Log("Previous - Strip Club Scene"); }
-    */
+    //[SameLine]
+    [Button("Dolly Public 2", id: "stripclubDP2")]
+    public Action camDollyPublic2;
+
+    [Button("DollySol", id: "dollySol")]
+    public Action camDollySol;
+
+    //[SameLine]
+    [Button("DollySol2", id: "dollySol2")]
+    public Action camDollySol2;
+
+    [Button("Reverse POV", id: "stripclubReversePOV")]
+    public Action camReversePOV;
+
+    //[SameLine]
+    [Button("Reverse POV2", id: "stripclubReversePOV2")]
+    public Action camReversePOV2;
+
+    // ── Colonne 3 — PELLETEUSE + RAINBOW ROAD ────────────────────────
+
+    [Column]
     [Section("PELLETEUSE")]
-    [Button("Top Scene Pelleteuse", id: "pelleteuse")]              public void LOG_loadScenePelleteuse() { Debug.Log("load Pelleteuse Scene"); }
-    [Button("Next", id: "pelleteuseN")]                             public void LOG_topNextPelleteuse() { Debug.Log("Next - Pelleteuse Scene"); }
-    [Button("Previous", id: "pelleteuseP")]                         public void LOG_topPreviousPelleteuse() { Debug.Log("Previous - Pelleteuse Scene"); }
-    [Button("Top Photo", id: "togglePhoto")]                        public void LOG_topPhotoPelleteuse() { Debug.Log("Top Photo - Pelleteuse Scene"); }
+    [Button("Top Scene Pelleteuse", id: "pelleteuse")]
+    public Action topScenePelleteuse;
+
+    [Button("Next", id: "pelleteuseN")]
+    public Action pelleteuseNext;
+
+    [SameLine]
+    [Button("Previous", id: "pelleteuseP")]
+    public Action pelleteusePrevious;
+
+    [Button("Top Photo", id: "togglePhoto")]
+    public Action topPhoto;
 
     [Section("RAINBOW ROAD")]
-    [Button("Top Scene RainbowRoad", id: "rainbowroad")]            public void LOG_loadSceneRainbow() { Debug.Log("load Rainbow Road Scene"); }
-    [Button("Next", id: "RainbowRoadN")]                            public void LOG_topNextRainbowRoad() { Debug.Log("Next - RainbowRoad Scene"); }
-    [Button("Previous", id: "RainbowRoadP")]                        public void LOG_topPreviousRainbowRoad() { Debug.Log("Previous - RainbowRoad Scene"); }
-    [Button("Top Video TV", id: "toggleVideoTV")]                   public void LOG_topTvRainbowRoad() { Debug.Log("Top TV - RainbowRoad Scene"); }
+    [Button("Top Scene RainbowRoad", id: "rainbowroad")]
+    public Action topSceneRainbowRoad;
 
+    [Button("Next", id: "RainbowRoadN")]
+    public Action rainbowRoadNext;
 
+    [SameLine]
+    [Button("Previous", id: "RainbowRoadP")]
+    public Action rainbowRoadPrevious;
 
-    
+    [Button("Top Video TV", id: "toggleVideoTV")]
+    public Action topVideoTV;
 
+    // ── Handlers ─────────────────────────────────────────────────────
+    //
+    // Unity ne serialise pas les delegates : ils sont reassignes a chaque
+    // domain reload, d'ou OnEnable plutot qu'un initialiseur de champ.
+    // Le vrai travail passe par le tab References — ces handlers ne sont
+    // que la trace console, et les bindings tirent meme si le champ est null.
+
+    protected override void OnEnable()
+    {
+        calibrate             = () => Debug.Log("CALIB");
+
+        topSceneStripClub     = () => Debug.Log("load Strip Club Scene");
+        topPlateforme         = () => Debug.Log("Top Plateforme - Strip Club Scene");
+        camZoom               = () => Debug.Log("Camera : Zoom");
+        camDollyMain          = () => Debug.Log("Camera : Dolly Main");
+        camDollyMain2         = () => Debug.Log("Camera : Dolly Main 2");
+        camDollyPublic        = () => Debug.Log("Camera : Dolly Public");
+        camDollyPublic2       = () => Debug.Log("Camera : Dolly Public 2");
+        camDollySol           = () => Debug.Log("Camera : DollySol");
+        camDollySol2          = () => Debug.Log("Camera : DollySol2");
+        camReversePOV         = () => Debug.Log("Camera : Reverse POV");
+        camReversePOV2        = () => Debug.Log("Camera : Reverse POV2");
+
+        topScenePelleteuse    = () => Debug.Log("load Pelleteuse Scene");
+        pelleteuseNext        = () => Debug.Log("Next - Pelleteuse Scene");
+        pelleteusePrevious    = () => Debug.Log("Previous - Pelleteuse Scene");
+        topPhoto              = () => Debug.Log("Top Photo - Pelleteuse Scene");
+
+        topSceneRainbowRoad   = () => Debug.Log("load Rainbow Road Scene");
+        rainbowRoadNext       = () => Debug.Log("Next - RainbowRoad Scene");
+        rainbowRoadPrevious   = () => Debug.Log("Previous - RainbowRoad Scene");
+        topVideoTV            = () => Debug.Log("Top TV - RainbowRoad Scene");
+
+        // Indispensable : la base construit le modele, charge les valeurs,
+        // les mappings MIDI/OSC et les references, puis s'abonne aux hubs.
+        base.OnEnable();
+    }
 }

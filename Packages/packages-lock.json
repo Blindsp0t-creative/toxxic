@@ -1,11 +1,19 @@
 {
   "dependencies": {
     "com.blindspot.kontrols": {
-      "version": "file:C:/Users/chamb/Documents/GitHub/Kontrols-main/Kontrols-main",
+      "version": "file:C:/Users/chamb/Documents/GitHub/NewVersions/Kontrols-0.5.1/Kontrols-0.5.1",
       "depth": 0,
       "source": "local",
       "dependencies": {
         "jp.keijiro.rtmidi": "2.2.0"
+      }
+    },
+    "com.blindspot.presets": {
+      "version": "file:C:/Users/chamb/Documents/GitHub/NewVersions/Presets-0.3.0/Presets-0.3.0",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.blindspot.kontrols": "0.4.5"
       }
     },
     "com.meta.xr.mrutilitykit": {

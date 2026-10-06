@@ -1,0 +1,466 @@
+{
+    "version": 1,
+    "window": "kontrolsToxxic01",
+    "exportedAt": "2026-10-06T08:37:49.5264451Z",
+    "values": [
+        {
+            "id": "blackout",
+            "value": 0.0
+        },
+        {
+            "id": "footRotation",
+            "value": 1.0
+        },
+        {
+            "id": "elevationavatarDenis",
+            "value": 2.4089999198913576
+        },
+        {
+            "id": "elevationavatarJen",
+            "value": 1.6710000038146973
+        },
+        {
+            "id": "elevationavatarJenBarde",
+            "value": 0.6299999952316284
+        },
+        {
+            "id": "dissolveEVGAvatar",
+            "value": 1.0
+        }
+    ],
+    "midi": [
+        {
+            "id": "blackout",
+            "channel": 0,
+            "cc": 45
+        },
+        {
+            "id": "elevationavatarDenis",
+            "channel": 0,
+            "cc": 7
+        },
+        {
+            "id": "elevationavatarJen",
+            "channel": 0,
+            "cc": 0
+        },
+        {
+            "id": "elevationavatarJenBarde",
+            "channel": 0,
+            "cc": 4
+        },
+        {
+            "id": "dissolveEVGAvatar",
+            "channel": 0,
+            "cc": 1
+        },
+        {
+            "id": "toggleAlarm",
+            "channel": 0,
+            "cc": 41
+        },
+        {
+            "id": "stripclubZoom",
+            "channel": 0,
+            "cc": 64
+        },
+        {
+            "id": "stripclubDM",
+            "channel": 0,
+            "cc": 32
+        },
+        {
+            "id": "stripclubReversePOV",
+            "channel": 0,
+            "cc": 49
+        },
+        {
+            "id": "stripclubDP",
+            "channel": 0,
+            "cc": 33
+        },
+        {
+            "id": "stripclubDM2",
+            "channel": 0,
+            "cc": 48
+        },
+        {
+            "id": "stripclubDP2",
+            "channel": 0,
+            "cc": 65
+        },
+        {
+            "id": "pelleteuse",
+            "channel": 0,
+            "cc": 33
+        },
+        {
+            "id": "pelleteuseP",
+            "channel": 0,
+            "cc": 65
+        },
+        {
+            "id": "rainbowroad",
+            "channel": 0,
+            "cc": 34
+        },
+        {
+            "id": "RainbowRoadN",
+            "channel": 0,
+            "cc": 50
+        },
+        {
+            "id": "RainbowRoadP",
+            "channel": 0,
+            "cc": 66
+        },
+        {
+            "id": "toggleVideoTV",
+            "channel": 0,
+            "cc": 70
+        }
+    ],
+    "osc": [],
+    "references": [
+        {
+            "id": "blackout",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1181227948-0",
+                    "componentType": "",
+                    "methodName": "",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "footRotation",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "componentType": "Rokoko.Inputs.Actor, Rokoko, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "toggleFootCorrection",
+                    "paramType": 3,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "elevationavatarDenis",
+            "bindings": [
+                {
+                    "goId": "",
+                    "componentType": "",
+                    "methodName": "",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "elevationavatarJen",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "setAvatarElevation",
+                    "paramType": 1,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                },
+                {
+                    "goId": "",
+                    "componentType": "",
+                    "methodName": "",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "elevationavatarJenBarde",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-b8f31689ef3bcf84491e3bfea7e6c7d8-1996877602-0",
+                    "componentType": "conduite_script03Silk2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "setAvatarElevation",
+                    "paramType": 1,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "dissolveEVGAvatar",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132147862038463-0",
+                    "componentType": "CharacterDissolveController, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "SetDissolve",
+                    "paramType": 1,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "calbibrate",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-1762426621747123-0",
+                    "componentType": "Rokoko.CommandAPI.StudioCommandAPI, Rokoko, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "CalibrateAll",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclub",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadStripClub",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "toggleAlarm",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1737886515-0",
+                    "componentType": "declencheurAlarm, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ToggleAll",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "MonteePlateforme",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubZoom",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "Zoom",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubDM",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "DollyMain",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubReversePOV",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ReversePOV",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "dollySol",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "DollySol",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubDP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "DollyPublic2",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubDM2",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "DollyMain2",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "stripclubDP2",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "componentType": "conduite_script03_Silk1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "DollyPublic2",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuse",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadPelleteuse",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuseN",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "componentType": "pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonNEXT",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "pelleteuseP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "componentType": "pelleteuse_conduite_script03, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "ButtonBACK",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "rainbowroad",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-438453ebea4c8854f9b50faa08dfe4e7-2064230383-0",
+                    "componentType": "sceneLoader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "loadRainbowRoad",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "RainbowRoadN",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "NextCamera",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "RainbowRoadP",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "PreviousCamera",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        },
+        {
+            "id": "toggleVideoTV",
+            "bindings": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "componentType": "CinemachineCameraSwitcher, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+                    "methodName": "toggleVideo",
+                    "paramType": 0,
+                    "kind": 0,
+                    "propertyName": "",
+                    "vfxMode": 0
+                }
+            ]
+        }
+    ]
+}
