@@ -159,7 +159,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: spine_01.x
+    - boneName: spine_03.x
       humanName: Spine
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -167,7 +167,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: spine_02.x
+    - boneName: spine_04.x
       humanName: Chest
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -511,7 +511,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: spine_04.x
+    - boneName: spine_05.x
       humanName: UpperChest
       limit:
         min: {x: 0, y: 0, z: 0}

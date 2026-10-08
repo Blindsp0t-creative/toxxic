@@ -742,6 +742,10 @@
                         },
                         {
                             "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
                             "value": 0.0
                         }
                     ],
