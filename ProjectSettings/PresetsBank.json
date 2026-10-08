@@ -57,8 +57,10 @@
                         "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
                         "typeName": "placeTrendmillAvatar",
                         "enabled": true,
-                        "whole": true,
-                        "propPaths": []
+                        "whole": false,
+                        "propPaths": [
+                            "activePlace"
+                        ]
                     },
                     {
                         "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029292-0",
@@ -135,6 +137,37 @@
                         ]
                     }
                 ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                "name": "CONDUITE",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877604-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877607-0",
+                        "typeName": "conduite_script03",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                        "typeName": "conduite_script03_Silk1",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "sceneNB"
+                        ]
+                    }
+                ]
             }
         ],
         "sceneSwitchEnabled": true,
@@ -143,39 +176,375 @@
     "slots": [
         {
             "id": "519bbecc253649b497940122cc600bcb",
-            "name": "--- 0",
-            "empty": true,
+            "name": "Strip Club_0",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
+                            "typeName": "placeTrendmillAvatar",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "activePlace",
+                                    "type": 0,
+                                    "value": "4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "sceneNB",
+                                    "type": 0,
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "399ae20734214f54932e13a78d5dd3a8",
-            "name": "--- 1",
-            "empty": true,
+            "name": "Plateforme+Alarme",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
+                            "typeName": "placeTrendmillAvatar",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "activePlace",
+                                    "type": 0,
+                                    "value": "4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "sceneNB",
+                                    "type": 0,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "08b6f8357aeb4ef3b8a2ab1d853a0691",
-            "name": "--- 2",
-            "empty": true,
+            "name": "Zoom",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
+                            "typeName": "placeTrendmillAvatar",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "activePlace",
+                                    "type": 0,
+                                    "value": "4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "sceneNB",
+                                    "type": 0,
+                                    "value": "7"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "9913a65f7a9d4953b1bb75271f848dae",
@@ -215,14 +584,83 @@
         },
         {
             "id": "a870541e514e41a39afd7e29a70c82eb",
-            "name": "--- 6",
-            "empty": true,
+            "name": "Pelleteuse_0",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
             "gos": []
         },
         {
