@@ -114,6 +114,12 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Video TV", id: "toggleVideoTV")]
     public Action topVideoTV;
 
+    [Toggle("Disco Ball", id: "dicoBall")]
+    public bool showDiscoBall;
+
+    [Toggle("Avatar Jen", id: "avatarJenVisibility")]
+    public bool avatarJenVisibility;
+
     // ── Handlers ─────────────────────────────────────────────────────
     //
     // Unity ne serialise pas les delegates : ils sont reassignes a chaque

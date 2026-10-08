@@ -68,6 +68,49 @@
                         "propPaths": []
                     }
                 ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924766-0",
+                "name": "DiscoLight_A",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924771-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924770-0",
+                        "typeName": "UnityEngine.Light",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924769-0",
+                        "typeName": "UnityEngine.Rendering.HighDefinition.HDAdditionalLightData",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924768-0",
+                        "typeName": "DiscoColor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924767-0",
+                        "typeName": "DiscoLight",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
             }
         ],
         "sceneSwitchEnabled": false,
