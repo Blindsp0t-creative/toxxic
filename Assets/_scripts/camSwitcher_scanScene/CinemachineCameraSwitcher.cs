@@ -12,7 +12,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     public List<CinemachineVirtualCamera> manualCameras = new List<CinemachineVirtualCamera>();
 
     [Header("Contrôles (Inspector)")]
-    [Range(0, 20)]
+    [Range(0, 30)]
     public int currentIndex = 0;
 
     public GameObject _avatarJen;
@@ -27,6 +27,12 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
     private CinemachineVirtualCamera _vrCloseUpCamera;
     private List<CinemachineVirtualCamera> _allCameras = new List<CinemachineVirtualCamera>();
+
+    // Dernier index reellement applique aux Priority Cinemachine. Sert au
+    // poll de Update() : un preset (ou un script tiers) ecrit currentIndex
+    // directement dans le champ serialise, sans passer par ActivateCamera —
+    // sans ce suivi la camera ne changerait pas au rappel du preset.
+    private int _appliedIndex = -1;
 
     private const int PRIORITY_ACTIVE = 20;
     private const int PRIORITY_INACTIVE = 0;
@@ -54,6 +60,12 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void Update()
+    {
+        if (currentIndex != _appliedIndex)
+            ActivateCamera(currentIndex);
     }
 
     // ─────────────────────────────────────────────
@@ -130,7 +142,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         if (_vrCloseUpCamera != null && !_allCameras.Contains(_vrCloseUpCamera))
             _allCameras.Add(_vrCloseUpCamera);
 
-        currentIndex = Mathf.Clamp(currentIndex, 0, Mathf.Max(0, _allCameras.Count - 1));
+        currentIndex  = Mathf.Clamp(currentIndex, 0, Mathf.Max(0, _allCameras.Count - 1));
+        _appliedIndex = -1;   // la liste a change : forcer une re-application
     }
 
     // ─────────────────────────────────────────────
@@ -141,7 +154,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     {
         if (_allCameras.Count == 0) return;
 
-        currentIndex = Mathf.Clamp(index, 0, _allCameras.Count - 1);
+        currentIndex  = Mathf.Clamp(index, 0, _allCameras.Count - 1);
+        _appliedIndex = currentIndex;
 
         for (int i = 0; i < _allCameras.Count; i++)
         {
@@ -149,7 +163,10 @@ public class CinemachineCameraSwitcher : MonoBehaviour
             _allCameras[i].Priority = (i == currentIndex) ? PRIORITY_ACTIVE : PRIORITY_INACTIVE;
         }
 
-        Debug.Log($"[CameraSwitcher] Camera active : [{currentIndex}] {_allCameras[currentIndex].name}");
+        // Le slot peut etre vide (aucune vcam assignee) : on log sans deferencer,
+        // sinon l'exception coupe Start() avant _player.Stop() / blackOutSphere.
+        var active = _allCameras[currentIndex];
+        Debug.Log($"[CameraSwitcher] Camera active : [{currentIndex}] {(active != null ? active.name : "<slot vide>")}");
     }
 
     // ─────────────────────────────────────────────

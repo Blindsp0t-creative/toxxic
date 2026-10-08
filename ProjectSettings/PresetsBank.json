@@ -121,22 +121,24 @@
                     {
                         "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416896-0",
                         "typeName": "UnityEngine.Transform",
-                        "enabled": false,
+                        "enabled": true,
                         "whole": true,
                         "propPaths": []
                     },
                     {
                         "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416897-0",
                         "typeName": "CinemachineCameraSwitcher",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "currentIndex"
+                        ]
                     }
                 ]
             }
         ],
-        "sceneSwitchEnabled": false,
-        "masterSceneName": ""
+        "sceneSwitchEnabled": true,
+        "masterSceneName": "00_MASTER_"
     },
     "slots": [
         {
@@ -267,7 +269,7 @@
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
+            "contentSceneName": "03_RAINBOW",
             "kontrols": [
                 {
                     "windowType": "kontrolsToxxic01",
@@ -282,7 +284,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 0.8385826349258423
+                            "value": 1.600000023841858
                         },
                         {
                             "id": "elevationavatarJen",
@@ -341,6 +343,34 @@
                     "captureActive": true,
                     "active": false,
                     "comps": []
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "name": "CONDUITE_Rainbow",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416896-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"m_LocalPosition\":{\"x\":-1.6590700149536133,\"y\":-0.02800000086426735,\"z\":-4.498600006103516},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        },
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416897-0",
+                            "typeName": "CinemachineCameraSwitcher",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "currentIndex",
+                                    "type": 0,
+                                    "value": "0"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -352,7 +382,7 @@
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
+            "contentSceneName": "03_RAINBOW",
             "kontrols": [
                 {
                     "windowType": "kontrolsToxxic01",
@@ -367,7 +397,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 0.8385826349258423
+                            "value": 1.600000023841858
                         },
                         {
                             "id": "elevationavatarJen",
@@ -387,7 +417,7 @@
                         },
                         {
                             "id": "avatarJenVisibility",
-                            "value": 0.0
+                            "value": 1.0
                         }
                     ],
                     "modulation": {
@@ -426,6 +456,34 @@
                     "captureActive": true,
                     "active": false,
                     "comps": []
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "name": "CONDUITE_Rainbow",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416896-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"m_LocalPosition\":{\"x\":-1.6590700149536133,\"y\":-0.02800000086426735,\"z\":-4.498600006103516},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        },
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416897-0",
+                            "typeName": "CinemachineCameraSwitcher",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "currentIndex",
+                                    "type": 0,
+                                    "value": "1"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

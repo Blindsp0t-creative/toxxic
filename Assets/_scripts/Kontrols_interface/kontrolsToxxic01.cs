@@ -122,6 +122,9 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Toggle("Avatar Jen", id: "avatarJenVisibility")]
     public bool avatarJenVisibility;
 
+    [Toggle("Mirror Jen Visibility", id: "JenMirrorVisibility")]
+    public bool jenMirrorVisibility;
+
     // ── Handlers ─────────────────────────────────────────────────────
     //
     // Unity ne serialise pas les delegates : ils sont reassignes a chaque
