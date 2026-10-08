@@ -24,6 +24,27 @@ public class conduite_script03_Silk1: MonoBehaviour
     [Range(1, 15)]
     public int sceneNB;
 
+    [Header("--------- OVERRIDES PRESETS ---------")]
+    [Tooltip("-1 = la camera suit sceneNB. >= 0 : fige cet index de camera, " +
+             "independamment de l'etat dramaturgique. Permet d'ajouter une camera " +
+             "sans toucher a la machine a etats : il suffit de l'ajouter a " +
+             "cameraSelector.cameras et de capturer un preset qui pointe dessus.")]
+    public int cameraOverride = -1;
+
+    [Tooltip("Ancre de l'avatar Rokoko. Le placement ne vient plus de la machine " +
+             "a etats mais de cette ancre, dont la pose est capturee par le preset. " +
+             "Sert ici uniquement a appliquer la hauteur du slider d'elevation.")]
+    public PresetAnchor rokokoAnchor;
+
+    [Tooltip("Le AnchorFollower pose sur l'avatar Rokoko. Sert a l'accrocher a la " +
+             "plateforme pendant la montee.")]
+    public AnchorFollower rokokoFollower;
+
+    [Tooltip("Objet solidaire de la plateforme auquel l'avatar s'accroche pendant " +
+             "l'etat 2. C'est l'ancien places[4] de placeTrendmillAvatar : un " +
+             "marqueur enfant de l'Elevator, donc il monte avec lui.")]
+    public Transform plateformeAttach;
+
     [Range(-1, 1)]
     private float elevationAvatar;
 
@@ -64,7 +85,6 @@ public class conduite_script03_Silk1: MonoBehaviour
 
 
         camSelector.activeCamera = 0;
-        avatarPlaces.activePlace = 0;
         avatarsAudience.SetActive(false);
         avatarsAudience2.SetActive(false);
         avatarOrcDancing.SetActive(true);
@@ -141,6 +161,10 @@ public class conduite_script03_Silk1: MonoBehaviour
                 StartMonteePlateforme();
         }
 
+        // Par defaut l'avatar est libre : c'est son ancre, donc le preset, qui le
+        // place. Seul l'etat 2 le rattache ci-dessous a la plateforme.
+        if (rokokoFollower != null) rokokoFollower.attachTo = null;
+
         if (sceneNB == 1) // en POV dans les loges 
         {
             camSelector.activeCamera = 0; // VCAM_POV_newAvatar
@@ -154,7 +178,6 @@ public class conduite_script03_Silk1: MonoBehaviour
             redLight.SetActive(false);
 
 
-            avatarPlaces.activePlace = 4; //position plateforme
         }
 
         if (sceneNB == 2) // mont�e plateforme
@@ -162,10 +185,14 @@ public class conduite_script03_Silk1: MonoBehaviour
             // le declenchement (cameras + anim a zero) est fait par
             // StartMonteePlateforme(), ici on ne fait qu'entretenir l'etat
 
-            avatarPlaces.activePlace = 4; //position plateforme (qui monte)
 
             avatarsAudience.SetActive(true);
             avatarOrcDancing.SetActive(true);
+
+            // L'avatar devient solidaire de la plateforme : il monte avec elle.
+            // Rattache a chaque frame plutot qu'une fois a l'entree dans l'etat,
+            // pour resister a un rappel de preset pendant la montee.
+            if (rokokoFollower != null) rokokoFollower.attachTo = plateformeAttach;
 
             _animPodium.speed = 1.0f;
         }
@@ -233,7 +260,6 @@ public class conduite_script03_Silk1: MonoBehaviour
         if (sceneNB == 11) // camera public 04
         {
             hideAvatarJen();
-            avatarPlaces.activePlace = 2;
             camSelector.activeCamera = 11;
 
         }
@@ -268,10 +294,17 @@ public class conduite_script03_Silk1: MonoBehaviour
             blackout.SetActive(true);
         }
 
+        // Override camera : applique apres la chaine d'etats, qui vient de
+        // reecrire activeCamera depuis sceneNB. -1 = pas d'override.
+        if (cameraOverride >= 0) camSelector.activeCamera = cameraOverride;
+
 
         //APPLY HEIGHT
-        if (sceneNB != 1 && sceneNB != 2)
-            avatarPlaces.places[avatarPlaces.activePlace].transform.position = new Vector3(avatarPlaces.places[avatarPlaces.activePlace].transform.position.x, elevationAvatar, avatarPlaces.places[avatarPlaces.activePlace].transform.position.z);
+        // La hauteur du slider pilote l'altitude de l'ancre ; l'avatar la suit via
+        // son AnchorFollower. Comme avant, elle ecrase le Y pose a la main : c'est
+        // le slider qui fait foi sur cet axe, hors etats 1 et 2.
+        if (sceneNB != 1 && sceneNB != 2 && rokokoAnchor != null)
+            rokokoAnchor.position.y = elevationAvatar;
 
     }
 
@@ -296,41 +329,51 @@ public class conduite_script03_Silk1: MonoBehaviour
         camSelector.cameras[5].GetComponent<Cinemachine.CinemachineVirtualCamera>().LookAt = subject;
     }
 
+    // Toute entree manuelle dans un etat — bouton de la surface Kontrols, OSC,
+    // menu contextuel — passe par ici, et relache les overrides de preset.
+    // Sans ca, une fois un preset rappele la camera resterait figee et les tops
+    // auraient l'air morts.
+    void SetScene(int n)
+    {
+        sceneNB        = n;
+        cameraOverride = -1;
+    }
+
     public void ButtonNEXT()
     {
         if (sceneNB + 1 <= 15)
-            sceneNB++;
+            SetScene(sceneNB + 1);
     }
 
     public void ButtonBACK()
     {
         if (sceneNB - 1 > 0)
-            sceneNB--;
+            SetScene(sceneNB - 1);
     }
     public void DollyMain()
     {
-        sceneNB = 3;
+        SetScene(3);
     }
 
     public void DollyPublic()
     {
-        sceneNB = 4;
+        SetScene(4);
     }
     public void DollyMain2()
     {
-        sceneNB = 5;
+        SetScene(5);
     }
     public void DollyPublic2()
     {
-        sceneNB = 6;
+        SetScene(6);
     }
     public void ReversePOV()
     {
-        sceneNB = 8;
+        SetScene(8);
     }
     public void Zoom()
     {
-        sceneNB = 7;
+        SetScene(7);
     }
 
     public void MonteePlateforme()
@@ -338,7 +381,7 @@ public class conduite_script03_Silk1: MonoBehaviour
         // -1 force la re-entree dans l'etat, meme si on y est deja :
         // le bouton rejoue donc la sequence a la demande.
         currentScene = -1;
-        sceneNB = 2;
+        SetScene(2);
     }
 
     // Declenche (ou rejoue) la montee de plateforme depuis le debut.
@@ -381,7 +424,7 @@ public class conduite_script03_Silk1: MonoBehaviour
 
     public void DollySol()
     {
-        sceneNB = 13;
+        SetScene(13);
     }
 
     public void blackOut(bool value)

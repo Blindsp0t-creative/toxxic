@@ -15,6 +15,12 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     [Range(0, 30)]
     public int currentIndex = 0;
 
+    [Header("OBSOLETE — placements pilotes par les presets")]
+    [Tooltip("Le placement de Jen et du marqueur VR ne vient plus d'un tableau " +
+             "indexe par la camera, mais d'une ancre (PresetAnchor) suivie par un " +
+             "AnchorFollower pose sur chaque cible, dont la pose est capturee par " +
+             "le preset. Ces champs sont conserves le temps de la transition et ne " +
+             "sont plus lus par ce script.")]
     public GameObject _avatarJen;
     public GameObject _vrMarker;
 
@@ -48,7 +54,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         FindVRCloseUpCameraInAllScenes();
         RebuildCameraList();
-        ActivateCamera(currentIndex);
+        ActivateCamera(currentIndex, animate: false);
 
         //video player
         _player.Stop();
@@ -65,7 +71,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     void Update()
     {
         if (currentIndex != _appliedIndex)
-            ActivateCamera(currentIndex);
+            ActivateCamera(currentIndex, animate: true);
     }
 
     // ─────────────────────────────────────────────
@@ -90,7 +96,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
                 _vrCloseUpCamera = cam;
                 Debug.Log($"[CameraSwitcher] Camera VR trouvée dans la scène '{scene.name}' : {cam.name}");
                 RebuildCameraList();
-                ActivateCamera(currentIndex);
+                ActivateCamera(currentIndex, animate: false);
                 yield break;
             }
         }
@@ -150,12 +156,19 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     //  ACTIVATION
     // ─────────────────────────────────────────────
 
-    void ActivateCamera(int index)
+    // animate : false pour un etat initial (Start, scene additive fraichement
+    // chargee) ou l'on veut l'etat final tout de suite ; true pour un top, un
+    // bouton ou un rappel de preset, ou l'on veut la transition.
+    void ActivateCamera(int index, bool animate)
     {
         if (_allCameras.Count == 0) return;
 
         currentIndex  = Mathf.Clamp(index, 0, _allCameras.Count - 1);
         _appliedIndex = currentIndex;
+
+        // Le placement de Jen et du marqueur VR ne suit plus la camera : il vient
+        // des ancres, capturees par le preset. Un preset peut donc associer
+        // n'importe quelle pose a n'importe quelle camera.
 
         for (int i = 0; i < _allCameras.Count; i++)
         {
@@ -176,7 +189,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     /// <summary>Appelé par le Slider UI. Valeur : 0 → (count-1)</summary>
     public void OnSliderChanged(float value)
     {
-        ActivateCamera(Mathf.RoundToInt(value));
+        ActivateCamera(Mathf.RoundToInt(value), animate: true);
     }
 
     /// <summary>Bouton "Next" — aussi accessible via clic droit sur le composant</summary>
@@ -184,34 +197,23 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     public void NextCamera()
     {
         if (_allCameras.Count == 0) return;
-        ActivateCamera((currentIndex + 1) % _allCameras.Count);
-
-        moveAvatar();
-        moveVR_marker();
+        ActivateCamera((currentIndex + 1) % _allCameras.Count, animate: true);
     }
 
-    public void moveAvatar()
+    // Conservees parce qu'un UnityEvent de scene peut encore les referencer :
+    // les supprimer casserait le binding en silence. Le placement est desormais
+    // gere par AnchorFollower, pose sur Jen et sur le marqueur.
+    public void moveAvatar()    => WarnPlacementMoved();
+    public void moveVR_marker() => WarnPlacementMoved();
+
+    bool _placementWarned;
+    void WarnPlacementMoved()
     {
-        StartCoroutine(LerpPosition(_avatarJen, _avatarJen.transform.position, _placementsJen[currentIndex].transform.position, _durations[currentIndex]));
-    }
-
-    public void moveVR_marker()
-    {
-        StartCoroutine(LerpPosition(_vrMarker, _vrMarker.transform.position, _placementsDenis[currentIndex].transform.position, _durations[currentIndex]));
-    }
-
-    IEnumerator LerpPosition(GameObject _object, Vector3 startPos, Vector3 endPos, float duration)
-    {
-        float elapsedTime = 0;
-        while (elapsedTime < duration) {
-            float t = elapsedTime / duration;
-            _object.transform.position = Vector3.Lerp(startPos, endPos, t);
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        _object.transform.position = endPos;
+        if (_placementWarned) return;
+        _placementWarned = true;
+        Debug.LogWarning("[CameraSwitcher] moveAvatar/moveVR_marker ne font plus rien : " +
+                         "le placement est pilote par les ancres (PresetAnchor + AnchorFollower). " +
+                         "Retire cet appel du UnityEvent qui le declenche.");
     }
 
 
@@ -248,10 +250,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     public void PreviousCamera()
     {
         if (_allCameras.Count == 0) return;
-        ActivateCamera((currentIndex - 1 + _allCameras.Count) % _allCameras.Count);
-
-        moveAvatar();
-        moveVR_marker();
+        ActivateCamera((currentIndex - 1 + _allCameras.Count) % _allCameras.Count, animate: true);
     }
 
     /// <summary>Nombre total de cameras disponibles</summary>

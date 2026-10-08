@@ -42,6 +42,14 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Slider("Dissolve EVG Avatar", 0.0f, 1.0f, id: "dissolveEVGAvatar")]
     public float dissolveAvatarStripClub;
 
+    [Section("PRESETS")]
+    [Button("PREV PRESET", id: "presetPrev")]
+    public Action presetPrevious;
+
+    [SameLine]
+    [Button("NEXT PRESET", id: "presetNext")]
+    public Action presetNext;
+
     // ── Colonne 2 — STRIP CLUB ───────────────────────────────────────
 
     [Column(1.4f)]
@@ -101,6 +109,9 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Photo", id: "togglePhoto")]
     public Action topPhoto;
 
+    [Toggle("accrochePelle", id: "accrochePelleteuse")]
+    public bool accPelleteuse;
+
     [Section("RAINBOW ROAD")]
     [Button("Top Scene RainbowRoad", id: "rainbowroad")]
     public Action topSceneRainbowRoad;
@@ -134,6 +145,17 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     protected override void OnEnable()
     {
+        // Ces deux-la font le vrai travail, contrairement aux autres handlers :
+        // ils appellent directement l'API du Preset Bank, sans binding dans
+        // l'onglet References — un preset est un objet de l'editeur, pas de la
+        // scene. La fenetre Presets doit etre ouverte, comme pour un rappel MIDI.
+        //
+        // 'global::' est indispensable : 'using UnityEditor' met UnityEditor.Presets
+        // (le systeme de Presets d'Unity) dans la portee, et 'Presets.PresetsWindow'
+        // s'y resoudrait en premier.
+        presetPrevious        = global::Presets.PresetsWindow.RecallPrevious;
+        presetNext            = global::Presets.PresetsWindow.RecallNext;
+
         calibrate             = () => Debug.Log("CALIB");
 
         topSceneStripClub     = () => Debug.Log("load Strip Club Scene");

@@ -6,72 +6,6 @@
         "quantizeGrid": 3,
         "goTargets": [
             {
-                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
-                "name": "Onyx_New_Unity",
-                "enabled": true,
-                "captureActive": true,
-                "components": [
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-9766822690554734571-1928878830",
-                        "typeName": "UnityEngine.Transform",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-5866666021909216657-1928878830",
-                        "typeName": "UnityEngine.Animator",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029288-0",
-                        "typeName": "Rokoko.Inputs.Actor",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029287-0",
-                        "typeName": "DynamicBone",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029286-0",
-                        "typeName": "DynamicBone",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029291-0",
-                        "typeName": "blinkingEyes",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
-                        "typeName": "placeTrendmillAvatar",
-                        "enabled": true,
-                        "whole": false,
-                        "propPaths": [
-                            "activePlace"
-                        ]
-                    },
-                    {
-                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029292-0",
-                        "typeName": "CharacterDissolveController",
-                        "enabled": false,
-                        "whole": true,
-                        "propPaths": []
-                    }
-                ]
-            },
-            {
                 "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924766-0",
                 "name": "DiscoLight_A",
                 "enabled": true,
@@ -140,7 +74,7 @@
             },
             {
                 "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
-                "name": "CONDUITE",
+                "name": "CONDUITE_stripClub",
                 "enabled": true,
                 "captureActive": true,
                 "components": [
@@ -164,8 +98,356 @@
                         "enabled": true,
                         "whole": false,
                         "propPaths": [
-                            "sceneNB"
+                            "plateformeAttach",
+                            "cameraOverride"
                         ]
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                "name": "---CONDUITE pelleteuse---",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530142-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                        "typeName": "pelleteuse_conduite_script03",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "cameraOverride"
+                        ]
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                "name": "ANCHOR_VR",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "m_LocalRotation",
+                            "m_LocalPosition"
+                        ]
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572109-0",
+                        "typeName": "PresetAnchor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                "name": "ANCHOR_Rokoko",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "m_LocalPosition"
+                        ]
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794698-0",
+                        "typeName": "PresetAnchor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                "name": "Onyx_New_Unity",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-9766822690554734571-1928878830",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-5866666021909216657-1928878830",
+                        "typeName": "UnityEngine.Animator",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029288-0",
+                        "typeName": "Rokoko.Inputs.Actor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029287-0",
+                        "typeName": "DynamicBone",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029286-0",
+                        "typeName": "DynamicBone",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029291-0",
+                        "typeName": "blinkingEyes",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
+                        "typeName": "placeTrendmillAvatar",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029292-0",
+                        "typeName": "CharacterDissolveController",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                        "typeName": "AnchorFollower",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "transitionDuration"
+                        ]
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                "name": "ANCHOR_VR",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "m_LocalPosition",
+                            "m_LocalRotation"
+                        ]
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762743-0",
+                        "typeName": "PresetAnchor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                "name": "MarkerVR_new",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950564-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950567-0",
+                        "typeName": "UnityEngine.MeshFilter",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950566-0",
+                        "typeName": "UnityEngine.MeshRenderer",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950565-0",
+                        "typeName": "UnityEngine.BoxCollider",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                        "typeName": "AnchorFollower",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "transitionDuration"
+                        ]
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                "name": "ANCHOR_Rokoko",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "m_LocalRotation",
+                            "m_LocalPosition"
+                        ]
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397532-0",
+                        "typeName": "PresetAnchor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                "name": "ANCHOR_VR",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "m_LocalRotation",
+                            "m_LocalPosition"
+                        ]
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750748-0",
+                        "typeName": "PresetAnchor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-919132149155446097-1979439630",
+                "name": "JEN_Avatar",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-9766822690554734571-1979439630",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-5866666021909216657-1979439630",
+                        "typeName": "UnityEngine.Animator",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1979439634-0",
+                        "typeName": "Rokoko.Inputs.Actor",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1979439633-0",
+                        "typeName": "blinkingEyes",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1979439636-0",
+                        "typeName": "AnchorFollower",
+                        "enabled": true,
+                        "whole": false,
+                        "propPaths": [
+                            "transitionDuration"
+                        ]
+                    }
+                ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                "name": "newPlaceAvatar1",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": true,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281550-0",
+                        "typeName": "UnityEngine.MeshFilter",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281549-0",
+                        "typeName": "UnityEngine.MeshRenderer",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281548-0",
+                        "typeName": "UnityEngine.BoxCollider",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
                     }
                 ]
             }
@@ -212,6 +494,10 @@
                             "value": 0.0
                         },
                         {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
                             "id": "dicoBall",
                             "value": 0.0
                         },
@@ -255,42 +541,153 @@
             ],
             "gos": [
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
-                    "name": "Onyx_New_Unity",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE_stripClub",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": []
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
-                            "typeName": "placeTrendmillAvatar",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
                             "whole": false,
                             "json": "",
                             "props": [
                                 {
-                                    "path": "activePlace",
-                                    "type": 0,
-                                    "value": "4"
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
-                    "name": "CONDUITE",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
-                            "typeName": "conduite_script03_Silk1",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
                             "whole": false,
                             "json": "",
                             "props": [
                                 {
-                                    "path": "sceneNB",
-                                    "type": 0,
-                                    "value": "1"
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,-10.42,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,-10.42,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
                                 }
                             ]
                         }
@@ -336,6 +733,10 @@
                             "value": 0.0
                         },
                         {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
                             "id": "dicoBall",
                             "value": 0.0
                         },
@@ -379,29 +780,8 @@
             ],
             "gos": [
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
-                    "name": "Onyx_New_Unity",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
-                            "typeName": "placeTrendmillAvatar",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "activePlace",
-                                    "type": 0,
-                                    "value": "4"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
-                    "name": "CONDUITE",
+                    "name": "CONDUITE_stripClub",
                     "captureActive": true,
                     "active": true,
                     "comps": [
@@ -412,11 +792,177 @@
                             "json": "",
                             "props": [
                                 {
-                                    "path": "sceneNB",
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
                                     "type": 0,
+                                    "value": "-1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,-10.42,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
                                     "value": "2"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,-10.42,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.7071068286895752,\"y\":0.0,\"z\":0.0,\"w\":0.7071068286895752},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
                         }
                     ]
                 }
@@ -460,6 +1006,10 @@
                             "value": 0.0
                         },
                         {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
                             "id": "dicoBall",
                             "value": 0.0
                         },
@@ -503,29 +1053,8 @@
             ],
             "gos": [
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
-                    "name": "Onyx_New_Unity",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029282-0",
-                            "typeName": "placeTrendmillAvatar",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "activePlace",
-                                    "type": 0,
-                                    "value": "4"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
-                    "name": "CONDUITE",
+                    "name": "CONDUITE_stripClub",
                     "captureActive": true,
                     "active": true,
                     "comps": [
@@ -536,11 +1065,177 @@
                             "json": "",
                             "props": [
                                 {
-                                    "path": "sceneNB",
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
                                     "type": 0,
-                                    "value": "7"
+                                    "value": "6"
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.7071068286895752,\"y\":0.0,\"z\":0.0,\"w\":0.7071068286895752},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
                         }
                     ]
                 }
@@ -548,49 +1243,13 @@
         },
         {
             "id": "9913a65f7a9d4953b1bb75271f848dae",
-            "name": "--- 3",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "4036f04cad07403ab22c0a24a01e697e",
-            "name": "--- 4",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "984194c8c9d94cbba3e505d832b80690",
-            "name": "--- 5",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "a870541e514e41a39afd7e29a70c82eb",
-            "name": "Pelleteuse_0",
+            "name": "DollyMain",
             "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "02_PELLETEUSE",
+            "contentSceneName": "01_STRIP_CLUB",
             "kontrols": [
                 {
                     "windowType": "kontrolsToxxic01",
@@ -617,6 +1276,10 @@
                         },
                         {
                             "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
                             "value": 0.0
                         },
                         {
@@ -661,11 +1324,745 @@
                     }
                 }
             ],
-            "gos": []
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE_stripClub",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.7071068286895752,\"y\":0.0,\"z\":0.0,\"w\":0.7071068286895752},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4036f04cad07403ab22c0a24a01e697e",
+            "name": "ReversePOV",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE_stripClub",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.7071068286895752,\"y\":0.0,\"z\":0.0,\"w\":0.7071068286895752},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "984194c8c9d94cbba3e505d832b80690",
+            "name": "DollySol",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE_stripClub",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "13"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "name": "ANCHOR_Rokoko",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "67.6,0.65,14.3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.7071068286895752,\"y\":0.0,\"z\":0.0,\"w\":0.7071068286895752},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "d09ce9ad973f484d92b1bb97b2932189",
-            "name": "--- 7",
+            "name": "--- 6",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -677,7 +2074,7 @@
         },
         {
             "id": "79d4160e3cf941a9bc8d9afba8b6ac51",
-            "name": "--- 8",
+            "name": "--- 7",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -689,7 +2086,138 @@
         },
         {
             "id": "a716c3e2caf74b98af9b6fdb4799ce9f",
+            "name": "--- 8",
+            "empty": true,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "",
+            "kontrols": [],
+            "gos": []
+        },
+        {
+            "id": "756b951b9918487fbb9ea9f5bc496cc2",
             "name": "--- 9",
+            "empty": true,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "",
+            "kontrols": [],
+            "gos": []
+        },
+        {
+            "id": "a870541e514e41a39afd7e29a70c82eb",
+            "name": "Pelleteuse_0",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "-1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7dc379d2e3614292b182cc3751b6cf05",
+            "name": "--- 11",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -734,7 +2262,7 @@
                         },
                         {
                             "id": "dissolveEVGAvatar",
-                            "value": 1.0
+                            "value": 0.0
                         },
                         {
                             "id": "dicoBall",
@@ -746,7 +2274,7 @@
                         },
                         {
                             "id": "JenMirrorVisibility",
-                            "value": 0.0
+                            "value": 1.0
                         }
                     ],
                     "modulation": {
@@ -851,7 +2379,7 @@
                         },
                         {
                             "id": "dissolveEVGAvatar",
-                            "value": 1.0
+                            "value": 0.0
                         },
                         {
                             "id": "dicoBall",
@@ -859,6 +2387,10 @@
                         },
                         {
                             "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
                             "value": 1.0
                         }
                     ],
@@ -931,39 +2463,120 @@
         },
         {
             "id": "8e3878b39a884d9192e94d9ca234b323",
-            "name": "--- 12",
-            "empty": true,
+            "name": "PlanMirroir_2",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "756b951b9918487fbb9ea9f5bc496cc2",
-            "name": "--- 13",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "7dc379d2e3614292b182cc3751b6cf05",
-            "name": "--- 14",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "contentSceneName": "03_RAINBOW",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 1.600000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924766-0",
+                    "name": "DiscoLight_A",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                    "name": "CONDUITE_Rainbow",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416896-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"m_LocalPosition\":{\"x\":-1.6590700149536133,\"y\":-0.02800000086426735,\"z\":-4.498600006103516},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
+                        },
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416897-0",
+                            "typeName": "CinemachineCameraSwitcher",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "currentIndex",
+                                    "type": 0,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "id": "4963ff3aa2254469bd772ae7420c69ad",
