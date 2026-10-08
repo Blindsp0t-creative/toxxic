@@ -38990,9 +38990,9 @@ MonoBehaviour:
   avatarStripClub: {fileID: 506404295}
   avatarPelleteuse: {fileID: 124505462}
   avatarRainbowRoad: {fileID: 1764076212}
-  sceneStripClub: CLUB_V3
-  scenePeleteuse: PELLETEUSE_V1
-  sceneRainbow: SCAN_V1
+  sceneStripClub: 01_STRIP_CLUB
+  scenePeleteuse: 02_PELLETEUSE
+  sceneRainbow: 03_RAINBOW
   reloadIfAlreadyLoaded: 1
 --- !u!114 &2067750433
 MonoBehaviour:

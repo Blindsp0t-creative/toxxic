@@ -90,12 +90,13 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]
     public Action topScenePelleteuse;
 
+
+    [Button("Previous", id: "pelleteuseP")]
+    public Action pelleteusePrevious;
+    [SameLine]
     [Button("Next", id: "pelleteuseN")]
     public Action pelleteuseNext;
 
-    [SameLine]
-    [Button("Previous", id: "pelleteuseP")]
-    public Action pelleteusePrevious;
 
     [Button("Top Photo", id: "togglePhoto")]
     public Action topPhoto;
@@ -104,12 +105,13 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Scene RainbowRoad", id: "rainbowroad")]
     public Action topSceneRainbowRoad;
 
+
+    [Button("Previous", id: "RainbowRoadP")]
+    public Action rainbowRoadPrevious;
+    [SameLine]
     [Button("Next", id: "RainbowRoadN")]
     public Action rainbowRoadNext;
 
-    [SameLine]
-    [Button("Previous", id: "RainbowRoadP")]
-    public Action rainbowRoadPrevious;
 
     [Button("Top Video TV", id: "toggleVideoTV")]
     public Action topVideoTV;

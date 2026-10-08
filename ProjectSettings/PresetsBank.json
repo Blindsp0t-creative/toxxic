@@ -111,6 +111,28 @@
                         "propPaths": []
                     }
                 ]
+            },
+            {
+                "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416894-0",
+                "name": "CONDUITE_Rainbow",
+                "enabled": true,
+                "captureActive": true,
+                "components": [
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416896-0",
+                        "typeName": "UnityEngine.Transform",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    },
+                    {
+                        "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1285416897-0",
+                        "typeName": "CinemachineCameraSwitcher",
+                        "enabled": false,
+                        "whole": true,
+                        "propPaths": []
+                    }
+                ]
             }
         ],
         "sceneSwitchEnabled": false,
@@ -239,27 +261,173 @@
         },
         {
             "id": "2ef22adc2481432ba107c9fcdbd9c9ad",
-            "name": "--- 10",
-            "empty": true,
+            "name": "RainBow_0",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
             "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.8385826349258423
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924766-0",
+                    "name": "DiscoLight_A",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
+                }
+            ]
         },
         {
             "id": "1e6a647caccd4cc78cd4f87047ec3690",
-            "name": "--- 11",
-            "empty": true,
+            "name": "RainBow_1",
+            "empty": false,
             "oscAddr": "",
             "midiNote": -1,
             "midiChannel": 255,
             "midiIsCC": false,
             "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.8385826349258423
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-305924766-0",
+                    "name": "DiscoLight_A",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
+                }
+            ]
         },
         {
             "id": "8e3878b39a884d9192e94d9ca234b323",
