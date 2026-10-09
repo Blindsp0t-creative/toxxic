@@ -5018,7 +5018,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -5202,7 +5202,7 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
+                                    "value": "0.4573965,-0.539248049,0.539248049,0.4573965"
                                 },
                                 {
                                     "path": "m_LocalPosition",
@@ -5285,7 +5285,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -5401,7 +5401,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-5.119,0.059,-3.065"
+                                    "value": "-63.2,-369.58,70.2"
                                 }
                             ]
                         }
@@ -5443,7 +5443,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-5.119,0.059,-3.065"
+                                    "value": "-63.2,-369.58,70.2"
                                 },
                                 {
                                     "path": "m_LocalRotation",
@@ -5500,7 +5500,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-5.119,0.059,-3.065"
+                                    "value": "-63.2,-369.58,70.2"
                                 }
                             ]
                         }
@@ -5552,7 +5552,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -5819,7 +5819,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -6086,7 +6086,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -6353,7 +6353,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -6589,7 +6589,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "4"
+                                    "value": "0.10000000149011612"
                                 }
                             ]
                         }
@@ -6620,7 +6620,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -6804,7 +6804,7 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
+                                    "value": "0.6702719,-0.225245789,0.225245789,0.6702719"
                                 },
                                 {
                                     "path": "m_LocalPosition",
@@ -6887,7 +6887,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -7154,7 +7154,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -7688,7 +7688,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -7872,7 +7872,7 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
+                                    "value": "0.6323178,0.316503137,-0.316503137,0.6323178"
                                 },
                                 {
                                     "path": "m_LocalPosition",
@@ -7955,7 +7955,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -8222,7 +8222,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -8359,7 +8359,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -8406,12 +8406,12 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.5679719,0.421198219,-0.421198219,0.5679719"
+                                    "value": "0.701684654,0.08739946,-0.08739946,0.701684654"
                                 },
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -8489,7 +8489,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -8626,7 +8626,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -8673,12 +8673,12 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.5679719,0.421198219,-0.421198219,0.5679719"
+                                    "value": "0.701684654,0.08739946,-0.08739946,0.701684654"
                                 },
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -8756,7 +8756,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -8893,7 +8893,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -8940,12 +8940,12 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.5679719,0.421198219,-0.421198219,0.5679719"
+                                    "value": "0.701684654,0.08739946,-0.08739946,0.701684654"
                                 },
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -9290,7 +9290,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -9427,7 +9427,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -9474,12 +9474,12 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.5679719,0.421198219,-0.421198219,0.5679719"
+                                    "value": "0.701684654,0.08739946,-0.08739946,0.701684654"
                                 },
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -9557,7 +9557,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -9694,7 +9694,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -9741,12 +9741,12 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.5679719,0.421198219,-0.421198219,0.5679719"
+                                    "value": "0.701684654,0.08739946,-0.08739946,0.701684654"
                                 },
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-3.22,0,-1.72"
+                                    "value": "-3.5,0,-1.482"
                                 }
                             ]
                         }
@@ -9824,7 +9824,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -10091,7 +10091,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -10358,7 +10358,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -10625,7 +10625,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -10892,7 +10892,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -11159,7 +11159,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -11426,7 +11426,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -11542,7 +11542,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-0.556,0,-1.151"
+                                    "value": "-0.192,0.092,-1.16"
                                 }
                             ]
                         }
@@ -11584,7 +11584,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-0.556,0,-1.151"
+                                    "value": "-0.192,0.092,-1.16"
                                 },
                                 {
                                     "path": "m_LocalRotation",
@@ -11641,7 +11641,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-0.556,0,-1.151"
+                                    "value": "-0.192,0.092,-1.16"
                                 }
                             ]
                         }
@@ -11693,7 +11693,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
@@ -11830,7 +11830,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-2.561,0,-2.292"
+                                    "value": "-2.904,0,-1.598"
                                 }
                             ]
                         }
@@ -11882,7 +11882,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "-2.561,0,-2.292"
+                                    "value": "-2.904,0,-1.598"
                                 }
                             ]
                         }
@@ -11960,7 +11960,7 @@
                         },
                         {
                             "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
+                            "value": 1.0
                         },
                         {
                             "id": "elevationavatarJen",
