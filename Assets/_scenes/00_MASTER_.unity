@@ -18326,7 +18326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94bf696c1035f44cba7e24a87be739c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Set_VR_Avatar_height
-  height: 4.5
+  height: 1.6
   smoothTime: 0
 --- !u!1 &1129883820
 GameObject:
