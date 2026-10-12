@@ -4306,7 +4306,7 @@
         },
         {
             "id": "a870541e514e41a39afd7e29a70c82eb",
-            "name": "Pelleteuse_0",
+            "name": "Pelleteuse_0_soleil",
             "empty": false,
             "oscAddr": "",
             "midiNote": -1,
@@ -4512,7 +4512,7 @@
         },
         {
             "id": "7dc379d2e3614292b182cc3751b6cf05",
-            "name": "Pelleteuse_1",
+            "name": "Pelleteuse_1_johan",
             "empty": false,
             "oscAddr": "",
             "midiNote": -1,
@@ -4717,8 +4717,2516 @@
             ]
         },
         {
+            "id": "8f39e85a94ab4c158703e3937bf2b809",
+            "name": "Pelleteuse_2_devoilementPelle",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "20ec5e7e83c844a197f79608c7c077c1",
+            "name": "Pelleteuse_3_carresseVache",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3c3b6d1d327e4d77a6ce119dfa9493d6",
+            "name": "Pelleteuse_4_ejectVache",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fa014fde52624532a08cdfb567ddaffb",
+            "name": "Pelleteuse_5_PhotoChantier",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7ec15e69b50b4ea582028acebcb2b5d5",
+            "name": "Pelleteuse_6_zoomMikku",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "10"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "d84e37577d774083926b5b78120595a5",
+            "name": "Pelleteuse_7_CheesePhoto",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "d88074f6de0b4480916d06f82d90a270",
+            "name": "Pelleteuse_8_zoomMikku2",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "11"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "493b72c21ee54bd2ac1160983aa9ebf1",
+            "name": "Pelleteuse_9_planChenille",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8b09f22da0d8442d981ac94f961b7a5a",
+            "name": "Pelleteuse_10_accrochePelle",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "11"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3c6862f281434c7fac0b70a8fe1d9a17",
+            "name": "Pelleteuse_11_danse",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "f19b04f95bfb44b28b2ac473a34746ac",
+            "name": "Pelleteuse_12_poseSol",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "4963ff3aa2254469bd772ae7420c69ad",
-            "name": "--- 18",
+            "name": "Pelleteuse_13_cowboy",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "02_PELLETEUSE",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarDenis",
+                            "value": 0.3100000023841858
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 2.0
+                        },
+                        {
+                            "id": "elevationavatarJenBarde",
+                            "value": 0.6299999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 1.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530137-0",
+                    "name": "---CONDUITE pelleteuse---",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-605530138-0",
+                            "typeName": "pelleteuse_conduite_script03",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "12"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950563-0",
+                    "name": "MarkerVR_new",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1012950568-0",
+                            "typeName": "AnchorFollower",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "0,0,0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8be270c783f6471bb5f499864172b3ea",
+            "name": "--- 30",
+            "empty": true,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "",
+            "kontrols": [],
+            "gos": []
+        },
+        {
+            "id": "ff7608f695ab47ffaabb4b169fbf4ddb",
+            "name": "--- 31",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -11669,30 +14177,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "id": "8f39e85a94ab4c158703e3937bf2b809",
-            "name": "--- 45",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
-            "id": "3c3b6d1d327e4d77a6ce119dfa9493d6",
-            "name": "--- 46",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
         }
     ]
 }

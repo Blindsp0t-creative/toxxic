@@ -106,8 +106,14 @@ public class kontrolsToxxic01 : KontrolsWindow
     public Action pelleteuseNext;
 
 
-    [Button("Top Photo", id: "togglePhoto")]
-    public Action topPhoto;
+    //[Button("Top Photo", id: "togglePhoto")]
+    //public Action topPhoto;
+
+    [Toggle("PhysiqueVache", id: "physiqueVache")]
+    public bool ejectVache;
+
+    [Toggle("Photo", id: "togglePhoto")]
+    public bool photoChantier;
 
     [Toggle("accrochePelle", id: "accrochePelleteuse")]
     public bool accPelleteuse;
@@ -173,7 +179,7 @@ public class kontrolsToxxic01 : KontrolsWindow
         topScenePelleteuse    = () => Debug.Log("load Pelleteuse Scene");
         pelleteuseNext        = () => Debug.Log("Next - Pelleteuse Scene");
         pelleteusePrevious    = () => Debug.Log("Previous - Pelleteuse Scene");
-        topPhoto              = () => Debug.Log("Top Photo - Pelleteuse Scene");
+        //topPhoto              = () => Debug.Log("Top Photo - Pelleteuse Scene");
 
         topSceneRainbowRoad   = () => Debug.Log("load Rainbow Road Scene");
         rainbowRoadNext       = () => Debug.Log("Next - RainbowRoad Scene");

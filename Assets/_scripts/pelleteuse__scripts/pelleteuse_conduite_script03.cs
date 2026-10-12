@@ -14,7 +14,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
     public GameObject photoQuad;
     //public GameObject[] lookAtTargets;
 
-    [Range(1,10)]
+    [Range(1, 10)]
     public int sceneNB;
 
     [Header("--------- OVERRIDES PRESETS ---------")]
@@ -85,7 +85,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         camSelector.activeCamera = 0;
         photoQuad.SetActive(false);
 
-        camSelector.cameras[7].GetComponent<pelleteuse_cinemachine_followTrack01>().enabled = false;
+        //camSelector.cameras[7].GetComponent<pelleteuse_cinemachine_followTrack01>().enabled = false;
 
         //materialQuad.color = new Color(255,255,255, 255);
 
@@ -114,9 +114,16 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
     }
 
-    public void showPhoto()
+    public void showPhoto(bool val)
     {
-        photoQuad.SetActive(true);
+        if (val == true)
+        {
+            photoQuad.SetActive(true);
+        }
+        else
+        {
+            photoQuad.SetActive(false);
+        }
     }
 
     public void allMessages(OscMessage message)
@@ -205,7 +212,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             // Remplace le placement en dur d'avant (RigBuilder coupe, position
             // recopiee a chaque frame) : un seul chemin de code pour l'accroche,
             // et le toggle 'accrochePelle' peut decrocher derriere.
-            if (entreeDansEtat) AccrochePelleteuse(true);
+            //if (entreeDansEtat) AccrochePelleteuse(true);
         }
 
 
@@ -224,7 +231,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             //INTERACTION.SetActive(false);
 
             ///AVATAR.transform.position = pellePosition.transform.position;
-            rigFromMasterScene.transform.position = pellePosition.transform.position;
+            //rigFromMasterScene.transform.position = pellePosition.transform.position;
         }
 
         if (sceneNB == 9)  //aurevoir
@@ -254,7 +261,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
     // rappele la camera resterait figee et les tops auraient l'air morts.
     void SetScene(int n)
     {
-        sceneNB        = n;
+        sceneNB = n;
         cameraOverride = -1;
     }
 
@@ -351,10 +358,10 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             }
 
             // Memorise avant de couper, pour restituer a l'identique au lachage.
-            _locomotorEtait   = LOCOMOTOR   != null && LOCOMOTOR.activeSelf;
+            _locomotorEtait = LOCOMOTOR != null && LOCOMOTOR.activeSelf;
             _interactionEtait = INTERACTION != null && INTERACTION.activeSelf;
 
-            if (LOCOMOTOR   != null) LOCOMOTOR.SetActive(false);
+            if (LOCOMOTOR != null) LOCOMOTOR.SetActive(false);
             if (INTERACTION != null) INTERACTION.SetActive(false);
 
             _accrochee = true;
@@ -367,7 +374,7 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         {
             _accrochee = false;
 
-            if (LOCOMOTOR   != null) LOCOMOTOR.SetActive(_locomotorEtait);
+            if (LOCOMOTOR != null) LOCOMOTOR.SetActive(_locomotorEtait);
             if (INTERACTION != null) INTERACTION.SetActive(_interactionEtait);
 
             // Rien a repositionner : le rig est deja au point de lachage.
@@ -437,4 +444,16 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         return rigFromMasterScene;
     }
 
+
+    public void activateCowPhysics(bool _val)
+    {
+        if (_val)
+        {
+            cow.GetComponent<Rigidbody>().isKinematic = false; //enable physics
+        }
+        else
+        {
+            cow.GetComponent<Rigidbody>().isKinematic = true; //disable physics
+        }
+    }
 }
