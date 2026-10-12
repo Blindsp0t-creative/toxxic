@@ -18328,6 +18328,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Set_VR_Avatar_height
   height: 1.6
   smoothTime: 0
+  calibrateOnStart: 1
+  calibrationTimeout: 15
+  assumedEyeHeight: 1.7
+  minValidEyeHeight: 0.5
 --- !u!1 &1129883820
 GameObject:
   m_ObjectHideFlags: 0
@@ -39142,7 +39146,7 @@ MonoBehaviour:
   requestRecordAudioPermissionOnStartup: 0
   requestPassthroughCameraAccessPermissionOnStartup: 0
   _localDimming: 1
-  _trackingOriginType: 0
+  _trackingOriginType: 2
   usePositionTracking: 1
   useRotationTracking: 1
   useIPDInPositionTracking: 1
