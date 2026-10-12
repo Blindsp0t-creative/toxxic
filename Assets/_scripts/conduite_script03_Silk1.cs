@@ -45,8 +45,12 @@ public class conduite_script03_Silk1: MonoBehaviour
              "marqueur enfant de l'Elevator, donc il monte avec lui.")]
     public Transform plateformeAttach;
 
-    [Range(-1, 1)]
-    private float elevationAvatar;
+    [Header("--------- ELEVATION AVATAR ---------")]
+    [Tooltip("Hauteur de l'avatar sur l'axe Y, en metres, dans le repere de son " +
+             "ancre. Pilotee par le slider Kontrols (setAvatarElevation) ou par " +
+             "OSC (onMessageHeight). Affichee ici pour verifier d'un coup d'oeil " +
+             "que la valeur arrive bien.")]
+    public float elevationAvatar = 0.65f;
 
     private bool otherAvatars = false;
     private SkinnedMeshRenderer[] skinnedMRenders;
@@ -67,6 +71,12 @@ public class conduite_script03_Silk1: MonoBehaviour
 
     [Tooltip("Remet la camera en POV au depart de la montee")]
     public bool resetCameraOnMontee = true;
+
+    [Tooltip("Relache l'avatar de la plateforme des que l'animation du podium est " +
+             "arrivee en haut, pour que le slider d'elevation reprenne la main " +
+             "sans avoir a quitter l'etat 2. Decocher pour revenir au relachement " +
+             "a la main : un bouton camera, ou un bouton branche sur FinMontee().")]
+    public bool finMonteeAuto = true;
 
     [Tooltip("Alarme relancee a chaque top plateforme (laisser vide pour ne pas y toucher)")]
     public declencheurAlarm alarm;
@@ -96,6 +106,10 @@ public class conduite_script03_Silk1: MonoBehaviour
     // sceneNB "reellement entree" : permet de ne declencher la sequence
     // qu'une fois par entree dans l'etat, au lieu de chaque frame.
     private int currentScene = -1;
+
+    // Pose a true par FinMontee() : empeche l'etat 2 de reaccrocher l'avatar a
+    // la plateforme a la frame suivante. Remis a false a chaque nouvelle montee.
+    private bool monteeRelachee;
     private Coroutine coCloseUp, coDolly;
     void Start()
     {
@@ -215,10 +229,17 @@ public class conduite_script03_Silk1: MonoBehaviour
             avatarsAudience.SetActive(true);
             avatarOrcDancing.SetActive(true);
 
+            // Arrivee en haut : on rend l'avatar a son ancre. Teste avant le
+            // rattachement ci-dessous, sinon on le raccrocherait pour une frame.
+            if (finMonteeAuto && !monteeRelachee && PodiumArrive())
+                FinMontee();
+
             // L'avatar devient solidaire de la plateforme : il monte avec elle.
             // Rattache a chaque frame plutot qu'une fois a l'entree dans l'etat,
-            // pour resister a un rappel de preset pendant la montee.
-            if (rokokoFollower != null) rokokoFollower.attachTo = plateformeAttach;
+            // pour resister a un rappel de preset pendant la montee. FinMontee()
+            // coupe ce rattachement sans avoir a quitter l'etat 2.
+            if (rokokoFollower != null && !monteeRelachee)
+                rokokoFollower.attachTo = plateformeAttach;
 
             _animPodium.speed = 1.0f;
         }
@@ -327,9 +348,28 @@ public class conduite_script03_Silk1: MonoBehaviour
 
         //APPLY HEIGHT
         // La hauteur du slider pilote l'altitude de l'ancre ; l'avatar la suit via
-        // son AnchorFollower. Comme avant, elle ecrase le Y pose a la main : c'est
-        // le slider qui fait foi sur cet axe, hors etats 1 et 2.
-        if (sceneNB != 1 && sceneNB != 2 && rokokoAnchor != null)
+        // son AnchorFollower, et elle ecrase le Y rappele par un preset : c'est le
+        // slider qui fait foi sur cet axe. Les presets de plateau capturent
+        // d'ailleurs tous Y = 0.65, la valeur de depart.
+        //
+        // Deux exceptions, ou c'est la plateforme qui donne la hauteur et ou
+        // l'ancre doit garder la valeur du preset :
+        //
+        //   • etat 1 : l'avatar attend en bas de la cage. "Strip Club_0" et
+        //     "Plateforme+Alarme" posent l'ancre a Y = -10.42 ; y ecrire le slider
+        //     le ferait remonter au niveau du plateau, donc hors de la plateforme.
+        //   • avatar accroche a la plateforme (etat 2, avant FinMontee) : c'est
+        //     elle qui le porte, et l'ancre doit rester intacte pour pouvoir
+        //     rejouer la montee.
+        //
+        // Le second test ne porte plus sur "sceneNB != 2" mais sur l'accrochage
+        // lui-meme : des que FinMontee() a rendu l'avatar a son ancre, le slider
+        // reprend la main, meme si la conduite reste en etat 2 parce qu'un rappel
+        // de preset ne pilote que cameraOverride.
+        bool avatarPorteParPlateforme =
+            rokokoFollower != null && rokokoFollower.attachTo != null;
+
+        if (rokokoAnchor != null && sceneNB != 1 && !avatarPorteParPlateforme)
             rokokoAnchor.position.y = elevationAvatar;
 
 
@@ -485,9 +525,74 @@ public class conduite_script03_Silk1: MonoBehaviour
         SetScene(2);
     }
 
+    // Relache l'avatar de la plateforme sans rien deplacer : l'ancre recupere la
+    // pose courante de l'avatar, donc le passage du suivi direct au suivi d'ancre
+    // est invisible, et le slider d'elevation reprend la main.
+    //
+    // Appelee toute seule a l'arrivee de la plateforme si 'finMonteeAuto' est
+    // coche. Reste publique pour etre branchee sur un bouton Kontrols, ou appelee
+    // a la main si on a decoche l'automatique.
+    //
+    // Volontairement sans SetScene() : changer sceneNB relacherait cameraOverride
+    // et couperait sur la camera de l'etat, en plein show.
+    public void FinMontee()
+    {
+        monteeRelachee = true;
+
+        if (rokokoFollower == null) return;
+
+        if (rokokoAnchor != null)
+        {
+            Transform avatar = rokokoFollower.transform;
+            Transform parent = rokokoAnchor.transform.parent;
+
+            rokokoAnchor.position = parent != null
+                ? parent.InverseTransformPoint(avatar.position)
+                : avatar.position;
+
+            if (rokokoFollower.followRotation)
+                rokokoAnchor.euler = (parent != null
+                    ? Quaternion.Inverse(parent.rotation) * avatar.rotation
+                    : avatar.rotation).eulerAngles;
+
+            // Le slider repart de la hauteur reelle, sinon le premier mouvement
+            // de fader ferait retomber l'avatar d'un coup.
+            elevationAvatar = rokokoAnchor.position.y;
+        }
+
+        rokokoFollower.attachTo = null;
+        Debug.Log("fin de montee : avatar rendu a son ancre, elevation = " + elevationAvatar);
+    }
+
+    // La plateforme est-elle arrivee en haut ?
+    //
+    // podiumAnim ne boucle pas (m_LoopTime = 0, duree 17.3 s, un seul etat sans
+    // transition dans le controller Elevator) : normalizedTime monte de 0 a 1 sur
+    // la duree du clip puis continue au-dela, la pose restant clampee sur la
+    // derniere frame. Le test est donc vrai une fois pour toutes a l'arrivee, et
+    // il n'y a pas le risque d'un clip en boucle qui repasserait par 1 en pleine
+    // montee. A revoir si podiumAnim devient bouclante.
+    private bool PodiumArrive()
+    {
+        // Jamais en edit mode : FinMontee() reecrit la pose de l'ancre, ce qui
+        // ecraserait un placement en cours dans la Scene view.
+        if (!Application.isPlaying) return false;
+        if (_animPodium == null) return false;
+
+        // Montee a l'arret (ResetPodium vient de passer speed a 0, ou la montee
+        // est en pause) : rien a conclure de la position dans le clip.
+        if (_animPodium.speed <= 0f) return false;
+
+        var st = _animPodium.GetCurrentAnimatorStateInfo(0);
+        return st.IsName(podiumStateName) && st.normalizedTime >= 1f;
+    }
+
     // Declenche (ou rejoue) la montee de plateforme depuis le debut.
     private void StartMonteePlateforme()
     {
+        // Une nouvelle montee reprend la main sur l'avatar.
+        monteeRelachee = false;
+
         // 1. on coupe les tops cameras de la sequence precedente
         if (coCloseUp != null) { StopCoroutine(coCloseUp); coCloseUp = null; }
         if (coDolly != null) { StopCoroutine(coDolly); coDolly = null; }

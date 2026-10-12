@@ -1021,6 +1021,18 @@
                             "value": 0.0
                         },
                         {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
+                        },
+                        {
                             "id": "accrochePelleteuse",
                             "value": 0.0
                         },
@@ -1134,7 +1146,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.99,2,15.75"
                                 }
                             ]
                         }
@@ -1207,7 +1219,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.99,2,15.75"
                                 }
                             ]
                         }
@@ -1253,6 +1265,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -1292,6 +1311,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -1407,7 +1438,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "69.01,2,15.69"
                                 }
                             ]
                         }
@@ -1480,7 +1511,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "69.01,2,15.69"
                                 }
                             ]
                         }
@@ -1526,6 +1557,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -1565,6 +1603,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -1680,7 +1730,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.94,2,15.65"
                                 }
                             ]
                         }
@@ -1753,7 +1803,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.94,2,15.65"
                                 }
                             ]
                         }
@@ -1799,6 +1849,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -1838,6 +1895,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -1953,7 +2022,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "69.04,2,15.73"
                                 }
                             ]
                         }
@@ -2026,7 +2095,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "69.04,2,15.73"
                                 }
                             ]
                         }
@@ -2072,6 +2141,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -2111,6 +2187,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -2226,7 +2314,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "0,0,0"
+                                    "value": "68.45,2,14.94"
                                 }
                             ]
                         }
@@ -2299,7 +2387,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "0,0,0"
+                                    "value": "68.45,2,14.94"
                                 }
                             ]
                         }
@@ -2345,6 +2433,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -2384,6 +2479,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -2499,7 +2606,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.31,2,14.93"
                                 }
                             ]
                         }
@@ -2572,7 +2679,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.31,2,14.93"
                                 }
                             ]
                         }
@@ -2618,6 +2725,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -2657,6 +2771,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -2772,7 +2898,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.37,2,15.01"
                                 }
                             ]
                         }
@@ -2845,7 +2971,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.37,2,15.01"
                                 }
                             ]
                         }
@@ -2891,6 +3017,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -2930,6 +3063,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -3045,7 +3190,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.35,2,14.93"
                                 }
                             ]
                         }
@@ -3118,7 +3263,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.35,2,14.93"
                                 }
                             ]
                         }
@@ -3164,6 +3309,13 @@
                             "props": []
                         }
                     ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -3202,6 +3354,10 @@
                         },
                         {
                             "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
                             "value": 0.0
                         },
                         {
@@ -3326,7 +3482,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "66.99,2,16.5"
                                 }
                             ]
                         }
@@ -3399,7 +3555,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "66.99,2,16.5"
                                 }
                             ]
                         }
@@ -3491,6 +3647,18 @@
                         {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -3606,7 +3774,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.06,2,15.27"
                                 }
                             ]
                         }
@@ -3679,7 +3847,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "68.06,2,15.27"
                                 }
                             ]
                         }
