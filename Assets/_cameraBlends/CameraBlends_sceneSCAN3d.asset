@@ -200,10 +200,10 @@ MonoBehaviour:
         m_PreInfinity: 0
         m_PostInfinity: 0
         m_RotationOrder: 0
-  - m_From: Virtual Camera_16_planArriereCanape
+  - m_From: '**ANY CAMERA**'
     m_To: Virtual Camera_17_planPreliminal
     m_Blend:
-      m_Style: 1
+      m_Style: 0
       m_Time: 4
       m_CustomCurve:
         serializedVersion: 2
