@@ -71,6 +71,28 @@ public class conduite_script03_Silk1: MonoBehaviour
     [Tooltip("Alarme relancee a chaque top plateforme (laisser vide pour ne pas y toucher)")]
     public declencheurAlarm alarm;
 
+    [Header("--------- PHYSIQUE AVATAR COUCHE ---------")]
+    [Tooltip("Le LaunchableBody de 'Laying BreathlessAvatar'. C'est la voie " +
+             "normale : il gere le kinematic, le retour a la pose de depart et " +
+             "le desarmement apres l'atterrissage.")]
+    public LaunchableBody layingBody;
+
+    [Tooltip("Repli pour un avatar sans LaunchableBody : on bascule juste son " +
+             "isKinematic. Ignore si layingBody est renseigne.")]
+    public Rigidbody layingRigidbody;
+
+    [Tooltip("LE parametre a assigner a un bouton ou un toggle Kontrols. " +
+             "Coche = physique armee, l'avatar couche peut se faire jeter en " +
+             "l'air par les pieds. Decoche = kinematic, il ne bouge plus. " +
+             "Se remet a false tout seul quand le corps est retombe et que " +
+             "LaunchableBody se desarme.")]
+    public bool physiqueLayingAvatar = false;
+
+    // Derniere valeur reellement appliquee : le basculement est declenche sur
+    // le front, pas a chaque frame, sinon on reecrirait l'auto-desarmement de
+    // LaunchableBody juste apres l'atterrissage.
+    private bool physiqueLayingApplied = false;
+
     // sceneNB "reellement entree" : permet de ne declencher la sequence
     // qu'une fois par entree dans l'etat, au lieu de chaque frame.
     private int currentScene = -1;
@@ -104,6 +126,10 @@ public class conduite_script03_Silk1: MonoBehaviour
 
         ResetPodium();
         currentScene = sceneNB;
+
+        // Etat connu au demarrage : la physique de l'avatar couche est fermee
+        // jusqu'au top, quelle que soit la case laissee cochee dans la scene.
+        SetPhysiqueLaying(physiqueLayingAvatar);
 
     }
     public void allMessages(OscMessage message)
@@ -180,7 +206,7 @@ public class conduite_script03_Silk1: MonoBehaviour
 
         }
 
-        if (sceneNB == 2) // montée plateforme
+        if (sceneNB == 2) // montï¿½e plateforme
         {
             // le declenchement (cameras + anim a zero) est fait par
             // StartMonteePlateforme(), ici on ne fait qu'entretenir l'etat
@@ -270,7 +296,7 @@ public class conduite_script03_Silk1: MonoBehaviour
 
             avatarOrcDancing.SetActive(false); //orc qui danse
 
-            avatarsAudience2.SetActive(false); //orc couché
+            avatarsAudience2.SetActive(false); //orc couchï¿½
             camSelector.activeCamera = 12;
 
         }
@@ -278,7 +304,7 @@ public class conduite_script03_Silk1: MonoBehaviour
         if (sceneNB == 13) // dolly Orc
         {
             showAvatarJen();
-            avatarsAudience2.SetActive(true); //orc couché
+            avatarsAudience2.SetActive(true); //orc couchï¿½
             camSelector.activeCamera = 13;
 
         }
@@ -306,6 +332,81 @@ public class conduite_script03_Silk1: MonoBehaviour
         if (sceneNB != 1 && sceneNB != 2 && rokokoAnchor != null)
             rokokoAnchor.position.y = elevationAvatar;
 
+
+        //PHYSIQUE AVATAR COUCHE
+        ApplyPhysiqueLaying();
+
+    }
+
+    // Bascule la physique de l'avatar couche sur le front de la case a cocher,
+    // et resynchronise la case quand c'est LaunchableBody qui se desarme tout
+    // seul apres l'atterrissage â€” comme ca le bouton Kontrols reflete l'etat
+    // reel au lieu de rester allume.
+    private void ApplyPhysiqueLaying()
+    {
+        if (layingBody != null)
+        {
+            if (physiqueLayingAvatar == physiqueLayingApplied
+                && layingBody.Armed != physiqueLayingAvatar)
+            {
+                physiqueLayingAvatar  = layingBody.Armed;
+                physiqueLayingApplied = physiqueLayingAvatar;
+                return;
+            }
+        }
+
+        if (physiqueLayingAvatar != physiqueLayingApplied)
+            SetPhysiqueLaying(physiqueLayingAvatar);
+    }
+
+    // Le point d'entree : un toggle Kontrols (paramType bool) se branche ici,
+    // comme blackOut. Les deux boutons ON/OFF et le toggle ci-dessous passent
+    // tous par la.
+    public void SetPhysiqueLaying(bool value)
+    {
+        physiqueLayingAvatar  = value;
+        physiqueLayingApplied = value;
+
+        if (layingBody != null)
+        {
+            layingBody.SetPhysics(value);
+            return;
+        }
+
+        if (layingRigidbody != null)
+        {
+            layingRigidbody.isKinematic = !value;
+            if (value) layingRigidbody.WakeUp();
+        }
+    }
+
+    public void PhysiqueLayingON()
+    {
+        SetPhysiqueLaying(true);
+    }
+
+    public void PhysiqueLayingOFF()
+    {
+        SetPhysiqueLaying(false);
+    }
+
+    public void TogglePhysiqueLaying()
+    {
+        SetPhysiqueLaying(!physiqueLayingAvatar);
+    }
+
+    // Replace l'avatar couche dans sa pose de depart, pour rejouer la vanne
+    // sans relancer la scene. Desarme aussi la physique si 'disarmAfterReset'
+    // est coche sur le LaunchableBody â€” la case se resynchronise a la frame
+    // suivante.
+    public void ResetLayingAvatar()
+    {
+        if (layingBody != null) layingBody.ResetToRest();
+    }
+
+    public void onMessagePhysiqueLaying(OscMessage message)
+    {
+        SetPhysiqueLaying(message.GetFloat(0) > 0.5f);
     }
 
     public void hideAvatarJen()

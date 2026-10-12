@@ -91,6 +91,9 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Reverse POV2", id: "stripclubReversePOV2")]
     public Action camReversePOV2;
 
+    [Toggle("physique ORC", id:"EjectOrc")]
+    public bool ejectOrc;
+
     // ── Colonne 3 — PELLETEUSE + RAINBOW ROAD ────────────────────────
 
     [Column]
