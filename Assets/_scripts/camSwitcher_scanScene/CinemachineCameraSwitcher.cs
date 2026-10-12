@@ -31,6 +31,16 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
     public VideoPlayer _player;
 
+    [Tooltip("Volume de la piste audio de la video. N'agit qu'en mode de sortie " +
+             "Direct, le seul ou le VideoPlayer gere lui-meme le volume.")]
+    [Range(0f, 1f)]
+    public float _videoVolume = 1f;
+
+    [Tooltip("Au stop, revenir a la premiere image pour que le top suivant " +
+             "reparte du debut — c'est le comportement de l'ancien Stop(). " +
+             "Decoche pour reprendre la lecture la ou elle s'est arretee.")]
+    public bool _videoRewindOnStop = true;
+
     private CinemachineVirtualCamera _vrCloseUpCamera;
     private List<CinemachineVirtualCamera> _allCameras = new List<CinemachineVirtualCamera>();
 
@@ -57,8 +67,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         ActivateCamera(currentIndex, animate: false);
 
         //video player
-        _player.Stop();
-        _player.Pause();
+        SetupVideo();
 
         blackOutSphere.SetActive(false);
     }
@@ -66,6 +75,12 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        if (_player != null)
+        {
+            _player.prepareCompleted -= OnVideoPrepared;
+            _player.loopPointReached -= OnVideoEnded;
+        }
     }
 
     void Update()
@@ -177,7 +192,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         }
 
         // Le slot peut etre vide (aucune vcam assignee) : on log sans deferencer,
-        // sinon l'exception coupe Start() avant _player.Stop() / blackOutSphere.
+        // sinon l'exception coupe Start() avant SetupVideo() / blackOutSphere.
         var active = _allCameras[currentIndex];
         Debug.Log($"[CameraSwitcher] Camera active : [{currentIndex}] {(active != null ? active.name : "<slot vide>")}");
     }
@@ -217,18 +232,151 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     }
 
 
+    // ─────────────────────────────────────────────
+    //  VIDEO
+    // ─────────────────────────────────────────────
+    //
+    // Le son de la video manquait un lancement sur deux. Cause : l'ancien
+    // toggleVideo enchainait Stop() puis Play(). Stop() remet le player a
+    // l'etat non prepare et libere le fournisseur d'echantillons audio ; le
+    // Play() suivant relance une preparation asynchrone et, waitForFirstFrame
+    // etant a false, l'image part des que le decodeur est pret — parfois avant
+    // que la piste audio soit rearmee. Unity exige que audioOutputMode,
+    // controlledAudioTrackCount et EnableAudioTrack soient en place AVANT la
+    // fin de la preparation : reglees apres, elles sont ignorees jusqu'a la
+    // preparation suivante.
+    //
+    // Donc : on prepare une fois au Start en armant l'audio avant le Prepare,
+    // et le top ne fait plus que Play / Pause. Le decodeur et la piste audio
+    // restent vivants, la course disparait.
+
+    // Un top peut arriver pendant la preparation, ou isPlaying est encore
+    // false : ce drapeau evite d'empiler deux preparations.
+    private bool _videoPlayPending;
+
+    void SetupVideo()
+    {
+        if (_player == null)
+        {
+            Debug.LogWarning("[CameraSwitcher] _player non assigne : pas de video.");
+            return;
+        }
+
+        ArmVideoAudio();
+
+        // Un rechargement additif de la scene rejoue Start() : on se desabonne
+        // avant de se reabonner pour ne pas empiler les handlers.
+        _player.prepareCompleted -= OnVideoPrepared;
+        _player.prepareCompleted += OnVideoPrepared;
+        _player.loopPointReached -= OnVideoEnded;
+        _player.loopPointReached += OnVideoEnded;
+
+        _videoPlayPending = false;
+        _player.Prepare();
+    }
+
+    // A appeler avant chaque Prepare(), jamais apres.
+    void ArmVideoAudio()
+    {
+        // audioTrackCount n'est fiable qu'une fois le player prepare ; le clip,
+        // lui, porte l'info depuis l'import.
+        ushort tracks = _player.clip != null ? _player.clip.audioTrackCount : (ushort)0;
+        if (tracks == 0)
+        {
+            Debug.LogWarning("[CameraSwitcher] Le clip video '" +
+                             (_player.clip != null ? _player.clip.name : "<aucun>") +
+                             "' n'a aucune piste audio : la video sera muette.");
+            return;
+        }
+
+        _player.controlledAudioTrackCount = 1;   // avant tout acces a la piste 0
+        _player.EnableAudioTrack(0, true);
+
+        switch (_player.audioOutputMode)
+        {
+            case VideoAudioOutputMode.Direct:
+                _player.SetDirectAudioMute(0, false);
+                _player.SetDirectAudioVolume(0, _videoVolume);
+                break;
+
+            case VideoAudioOutputMode.AudioSource:
+                if (_player.GetTargetAudioSource(0) == null)
+                    Debug.LogWarning("[CameraSwitcher] audioOutputMode = AudioSource " +
+                                     "mais aucun AudioSource n'est assigne sur le " +
+                                     "VideoPlayer : la video sera muette.");
+                break;
+
+            case VideoAudioOutputMode.None:
+                Debug.LogWarning("[CameraSwitcher] audioOutputMode = None sur le " +
+                                 "VideoPlayer : la video sera muette.");
+                break;
+        }
+    }
+
+    void OnVideoPrepared(VideoPlayer source)
+    {
+        // La preparation du Start ne doit pas lancer la lecture : seule celle
+        // declenchee par un top (donc avec _videoPlayPending) enchaine un Play.
+        if (!_videoPlayPending) return;
+
+        _videoPlayPending = false;
+        source.Play();
+        Debug.Log("[CameraSwitcher] Video : play (apres preparation)");
+    }
+
+    // Sans looping, le player s'arrete sur la derniere image en restant pret :
+    // un Play() y repartirait de la fin et se terminerait aussitot. On rembobine
+    // pour que le top suivant reparte du debut.
+    void OnVideoEnded(VideoPlayer source)
+    {
+        if (_videoRewindOnStop)
+            source.frame = 0;
+    }
+
+    /// <summary>
+    /// Top video. Cible du bouton "Top Video TV" de la KontrolSurface
+    /// (binding Kontrols id "toggleVideoTV" → cette methode : ne pas renommer).
+    /// </summary>
     public void toggleVideo()
     {
+        if (_player == null)
+        {
+            Debug.LogWarning("[CameraSwitcher] _player non assigne : top video ignore.");
+            return;
+        }
+
         if (_player.isPlaying)
         {
-            Debug.Log("is playing");
-            _player.Stop();
+            // Pause et pas Stop : garde le decodeur et la piste audio en vie.
+            // Le rembobinage reproduit le comportement visible du Stop (le top
+            // suivant repart du debut) sans la re-preparation qui coutait le son.
             _player.Pause();
+            if (_videoRewindOnStop)
+                _player.frame = 0;
+
+            Debug.Log("[CameraSwitcher] Video : stop");
+            return;
         }
-        else if (_player.isPlaying == false)
+
+        if (_videoPlayPending)
+        {
+            Debug.Log("[CameraSwitcher] Video : preparation en cours, top ignore.");
+            return;
+        }
+
+        if (_player.isPrepared)
         {
             _player.Play();
+            Debug.Log("[CameraSwitcher] Video : play");
+            return;
         }
+
+        // Pas encore pret : top tres tot apres le chargement, ou clip change
+        // entre-temps. OnVideoPrepared enchainera le Play.
+        _videoPlayPending = true;
+        ArmVideoAudio();
+        _player.Prepare();
+        Debug.Log("[CameraSwitcher] Video : preparation...");
     }
 
 

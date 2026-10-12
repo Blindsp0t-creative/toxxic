@@ -29,16 +29,16 @@ public class kontrolsToxxic01 : KontrolsWindow
     [SameLine]
     [Toggle("FOOT LOCK", id: "footRotation")]
     public bool footRotationClamp;
-
+    /*
     [Slider("ElevationAvatarDenis", -0.5f, 4.5f, id: "elevationavatarDenis")]
     public float avatarElevationDenis;
-
+    */
     [Slider("ElevationAvatarJen", 0.0f, 2.0f, id: "elevationavatarJen")]
     public float avatarElevationJen;
-
+    /*
     [Slider("ElevationAvatarJenBarde", -1.0f, 2.0f, id: "elevationavatarJenBarde")]
     public float avatarElevationJenBarde;
-
+    */
     [Slider("Dissolve EVG Avatar", 0.0f, 1.0f, id: "dissolveEVGAvatar")]
     public float dissolveAvatarStripClub;
 

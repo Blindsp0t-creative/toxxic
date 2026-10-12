@@ -5819,8 +5819,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513343244}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.026539596, y: -0.67006236, z: 0.023984581, w: -0.7414424}
-  m_LocalPosition: {x: -5.355, y: 1.534, z: -2.53}
+  m_LocalRotation: {x: 0.033853274, y: 0.7421931, z: -0.037597865, w: 0.66827375}
+  m_LocalPosition: {x: -5.91, y: 1.53, z: -0.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5999,7 +5999,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 43.2
+  field of view: 38.82
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -13454,7 +13454,7 @@ VideoPlayer:
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
-  - 1
+  - 0.1
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -14075,6 +14075,8 @@ MonoBehaviour:
   - 5
   - 5
   _player: {fileID: 1214498553}
+  _videoVolume: 1
+  _videoRewindOnStop: 1
   blackOutSphere: {fileID: 159011488}
 --- !u!1 &1290278222
 GameObject:
@@ -20674,7 +20676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840133659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6543d6df6470f1428b0ca22d1ef7725, type: 3}
   m_Name: 
