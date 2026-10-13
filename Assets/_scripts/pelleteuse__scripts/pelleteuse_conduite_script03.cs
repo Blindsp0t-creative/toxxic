@@ -66,6 +66,26 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
              "du rig : la correction est un delta applique a la racine du rig.")]
     public Transform accrocheReference;
 
+    [Tooltip("L'offset tourne avec le godet. Le vecteur reste exprime en axes " +
+             "MONDE au moment du top (+Y = vers le haut, facile a regler), puis " +
+             "il suit la pelle : le performeur garde la meme place a l'interieur " +
+             "du godet quand celui-ci bascule. Decocher pour un offset monde fige.")]
+    public bool accrocheOffsetSuitLeGodet = true;
+
+    // Rotation du godet au moment de l'accroche. Sert de repere pour faire
+    // tourner accrocheOffset avec la pelle sans toucher a la valeur reglee.
+    private Quaternion _rotGodetAccroche = Quaternion.identity;
+
+    // La vraie locomotion du rig de 00_MASTER_ : OVRLocomotion pilote un
+    // CharacterController pose sur l'OVRCameraRig lui-meme. Rien a voir avec
+    // LOCOMOTOR / INTERACTION, qui pointent sur le groupe "VR (1)" desactive de
+    // 02_PELLETEUSE et ne coupent donc rien en pratique.
+    // Qualifie : le 'using Oculus.Interaction.Locomotion' en tete de fichier
+    // amene un autre CharacterController, et les deux noms entrent en collision.
+    private OVRLocomotion                   _ovrLoco;
+    private UnityEngine.CharacterController _ccRig;
+    private bool _ovrLocoEtait, _ccEtait;
+
     // Accroche en cours. Lu par LateUpdate, ecrit par AccrochePelleteuse seule.
     private bool _accrochee;
 
@@ -350,7 +370,8 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
                 return;
             }
 
-            if (VrRig() == null)
+            GameObject rig = VrRig();
+            if (rig == null)
             {
                 Debug.LogWarning("[AccrochePelleteuse] aucun objet tague 'VRRig' : 00_MASTER_ n'est " +
                                  "probablement pas chargee. Accroche ignoree.");
@@ -364,6 +385,29 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             if (LOCOMOTOR != null) LOCOMOTOR.SetActive(false);
             if (INTERACTION != null) INTERACTION.SetActive(false);
 
+            // LA cause des vibrations. La vraie locomotion du show n'est pas
+            // LOCOMOTOR / INTERACTION — ces deux-la pointent sur le groupe
+            // "VR (1)" de 02_PELLETEUSE, qui est desactive — mais OVRLocomotion
+            // et son CharacterController, poses sur l'OVRCameraRig de
+            // 00_MASTER_. OVRLocomotion appelle _cc.Move() a chaque Update,
+            // gravite comprise, et la physique resout la penetration dans les
+            // colliders de la pelleteuse ; notre LateUpdate reecrit derriere.
+            // Deux ecritures par frame qui se contredisent = tremblement. Un
+            // CharacterController desactive ne fait plus ni gravite ni
+            // depenetration : l'ecriture directe redevient souveraine.
+            _ovrLoco = rig.GetComponent<OVRLocomotion>();
+            _ccRig   = rig.GetComponent<UnityEngine.CharacterController>();
+
+            _ovrLocoEtait = _ovrLoco != null && _ovrLoco.enabled;
+            _ccEtait      = _ccRig   != null && _ccRig.enabled;
+
+            if (_ovrLoco != null) _ovrLoco.enabled = false;
+            if (_ccRig   != null) _ccRig.enabled   = false;
+
+            // Rotation du godet au moment du top. accrocheOffset est tune en
+            // axes monde a cet instant, et tourne ensuite avec la pelle.
+            _rotGodetAccroche = pellePosition.transform.rotation;
+
             _accrochee = true;
 
             // Pose immediate : sans ca le performeur resterait une frame en
@@ -376,6 +420,12 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
 
             if (LOCOMOTOR != null) LOCOMOTOR.SetActive(_locomotorEtait);
             if (INTERACTION != null) INTERACTION.SetActive(_interactionEtait);
+
+            // Dans l'ordre inverse de l'accroche : le CharacterController se
+            // re-enregistre a la position courante, donc au point de lachage,
+            // puis OVRLocomotion reprend la main par-dessus.
+            if (_ccRig   != null) _ccRig.enabled   = _ccEtait;
+            if (_ovrLoco != null) _ovrLoco.enabled = _ovrLocoEtait;
 
             // Rien a repositionner : le rig est deja au point de lachage.
         }
@@ -395,7 +445,14 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         GameObject rig = VrRig();
         if (rig == null) return;
 
-        Vector3 cible = pellePosition.transform.position + accrocheOffset;
+        // L'offset est regle en axes monde au moment du top, puis emmene par la
+        // rotation du godet : le performeur reste au meme endroit a l'interieur
+        // de la pelle quand elle bascule, au lieu de glisser dessous.
+        Vector3 offset = accrocheOffset;
+        if (accrocheOffsetSuitLeGodet)
+            offset = (pellePosition.transform.rotation * Quaternion.Inverse(_rotGodetAccroche)) * offset;
+
+        Vector3 cible = pellePosition.transform.position + offset;
 
         // On ne teleporte PAS la racine du rig sur la cible. Cette racine n'est
         // que l'origine de l'espace de tracking : la tete du performeur est

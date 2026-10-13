@@ -10783,7 +10783,7 @@ MonoBehaviour:
   cow: {fileID: 347553743}
   materialQuad: {fileID: 2100000, guid: 232be97a370840559ab6dd7b4fe7b32a, type: 2}
   _handler: {fileID: 0}
-  accrocheOffset: {x: 0, y: 0, z: 0}
+  accrocheOffset: {x: 0, y: 1.7, z: 0}
   accrocheReference: {fileID: 0}
 --- !u!4 &605530142
 Transform:
