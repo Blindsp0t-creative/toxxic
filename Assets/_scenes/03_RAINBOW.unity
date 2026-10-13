@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_BakeOnSceneLoad: 1
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9d31fb71ca72b524694559fcafde3460,
+  m_LightingDataAsset: {fileID: 112000000, guid: 9fdf1f83b3e087749abe97ec38944d12,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a98ecf571307d7c449244995c805e61a,
     type: 2}
@@ -1995,25 +1995,25 @@ MonoBehaviour:
   lowestSubdivLevelOverride: 0
   highestSubdivLevelOverride: 3
   overridesSubdivLevels: 0
-  mightNeedRebaking: 1
+  mightNeedRebaking: 0
   cachedTransform:
     e00: 1
     e01: 0
     e02: 0
-    e03: 0.64000034
+    e03: 2.5940704
     e10: 0
     e11: 1
     e12: 0
-    e13: -1.4789549
+    e13: -1.4570984
     e20: 0
     e21: 0
     e22: 1
-    e23: 3.5699997
+    e23: 2.420556
     e30: 0
     e31: 0
     e32: 0
     e33: 1
-  cachedHashCode: 1462707615
+  cachedHashCode: 604413577
   fillEmptySpaces: 0
   version: 2
   globalVolume: 0
@@ -8308,7 +8308,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.4895e-41, y: 1e-45, z: 0, w: 3e-45}
+  m_BoundingSphereOverride: {x: 7.29e-43, y: 3.8743998e+35, z: 7.29e-43, w: 1.102044e-39}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -9356,7 +9356,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.387776e-39, y: 3.489801e-39, z: 1.102027e-39, w: 1.102044e-39}
+  m_BoundingSphereOverride: {x: 7.3e-43, y: 3.8743998e+35, z: 7.29e-43, w: 9.18417e-40}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -12200,7 +12200,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 3.59e-43}
+  m_BoundingSphereOverride: {x: 9.642859e-39, y: 9.642876e-39, z: 1.0744916e-38, w: 7.622446e-39}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -13110,7 +13110,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9.1835e-41, y: 5.877474e-37, z: 1.2994723e-38, w: NaN}
+  m_BoundingSphereOverride: {x: 1.3555853e-19, y: 4.1528323e+21, z: 2.7953567e+20,
+    w: 1.0077427e+27}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -14786,8 +14787,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.2325413e+25, y: 6.7331075e+22, z: 7.0366718e+22,
-    w: 836230.25}
+  m_BoundingSphereOverride: {x: 7.3e-43, y: 1.06e-43, z: 0, w: 4.3e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -15023,7 +15023,7 @@ MonoBehaviour:
     camera:
       camera: 0
   m_ProxyVolume: {fileID: 0}
-  m_BakedTexture: {fileID: 8900000, guid: 3df704217d28a27489e6ac6f0fd6168d, type: 3}
+  m_BakedTexture: {fileID: 8900000, guid: f92f79514d13e8243b37286eb7a30b79, type: 3}
   m_CustomTexture: {fileID: 0}
   m_BakedRenderData:
     m_WorldToCameraRHS:
@@ -15105,35 +15105,35 @@ MonoBehaviour:
     m_Aspect: 0
   m_HasValidSHForNormalization: 1
   m_SHForNormalization:
-    'sh[ 0]': 72288.305
-    'sh[ 1]': 34637.453
-    'sh[ 2]': -18056.705
-    'sh[ 3]': -7060.647
-    'sh[ 4]': 4689.115
-    'sh[ 5]': -10252.077
-    'sh[ 6]': 1234.2294
-    'sh[ 7]': 4693.1113
-    'sh[ 8]': 785.1161
-    'sh[ 9]': 59435.703
-    'sh[10]': 30812.076
-    'sh[11]': -15472.5205
-    'sh[12]': -5354.2026
-    'sh[13]': 3761.0496
-    'sh[14]': -8794.656
-    'sh[15]': 1070.9169
-    'sh[16]': 3787.6643
-    'sh[17]': 537.9722
-    'sh[18]': 33685.18
-    'sh[19]': 18287.486
-    'sh[20]': -8944.296
-    'sh[21]': -2791.3804
-    'sh[22]': 2356.4236
-    'sh[23]': -5149.2393
-    'sh[24]': 582.55365
-    'sh[25]': 1839.9437
-    'sh[26]': 183.04901
-  m_SHValidForCapturePosition: {x: -0.437, y: 1.369, z: -2.31}
-  m_SHValidForSourcePosition: {x: -0.437, y: 1.369, z: -2.31}
+    'sh[ 0]': 74440.31
+    'sh[ 1]': 33033.6
+    'sh[ 2]': -21318.291
+    'sh[ 3]': 4063.2512
+    'sh[ 4]': 9413.528
+    'sh[ 5]': -6180.359
+    'sh[ 6]': 1804.5669
+    'sh[ 7]': -450.63858
+    'sh[ 8]': -138.55702
+    'sh[ 9]': 60885.293
+    'sh[10]': 29832.889
+    'sh[11]': -17590.64
+    'sh[12]': 4118.427
+    'sh[13]': 7729.9077
+    'sh[14]': -5459.368
+    'sh[15]': 1494.162
+    'sh[16]': -678.9349
+    'sh[17]': -116.21746
+    'sh[18]': 34419.58
+    'sh[19]': 17838.594
+    'sh[20]': -10068.773
+    'sh[21]': 2536.7432
+    'sh[22]': 4691.2905
+    'sh[23]': -3117.9766
+    'sh[24]': 764.8109
+    'sh[25]': -500.74887
+    'sh[26]': -109.975426
+  m_SHValidForCapturePosition: {x: -3.119953, y: 1.369, z: -1.257691}
+  m_SHValidForSourcePosition: {x: -3.119953, y: 1.369, z: -1.257691}
   m_HDProbeVersion: 9
   m_ObsoleteInfiniteProjection: 1
   m_ObsoleteInfluenceVolume:
@@ -18135,7 +18135,7 @@ MonoBehaviour:
     camera:
       camera: 0
   m_ProxyVolume: {fileID: 0}
-  m_BakedTexture: {fileID: 8900000, guid: e7e18e6d1f5c77d4fa9684a3305447fb, type: 3}
+  m_BakedTexture: {fileID: 8900000, guid: 3845cbde62129624ba94da6f72bd38b9, type: 3}
   m_CustomTexture: {fileID: 0}
   m_BakedRenderData:
     m_WorldToCameraRHS:
@@ -18217,35 +18217,35 @@ MonoBehaviour:
     m_Aspect: 0
   m_HasValidSHForNormalization: 1
   m_SHForNormalization:
-    'sh[ 0]': 115039.664
-    'sh[ 1]': 58149.176
-    'sh[ 2]': 64850.496
-    'sh[ 3]': 2478.6572
-    'sh[ 4]': -373.40317
-    'sh[ 5]': 18124.264
-    'sh[ 6]': 1951.67
-    'sh[ 7]': -943.4946
-    'sh[ 8]': -3098.2705
-    'sh[ 9]': 94910.64
-    'sh[10]': 50347.594
-    'sh[11]': 54275.305
-    'sh[12]': 1793.3047
-    'sh[13]': -227.54948
-    'sh[14]': 15613.74
-    'sh[15]': 1651.748
-    'sh[16]': -781.68066
-    'sh[17]': -2749.351
-    'sh[18]': 53156.824
-    'sh[19]': 29493.24
-    'sh[20]': 31021.436
-    'sh[21]': 761.6704
-    'sh[22]': -171.25237
-    'sh[23]': 9100.535
-    'sh[24]': 930.85565
-    'sh[25]': -537.1319
-    'sh[26]': -1713.4023
-  m_SHValidForCapturePosition: {x: -2.46, y: 1.352, z: -5.357}
-  m_SHValidForSourcePosition: {x: -2.46, y: 1.352, z: -5.357}
+    'sh[ 0]': 113989.87
+    'sh[ 1]': 57445.543
+    'sh[ 2]': 54074.754
+    'sh[ 3]': -32751.12
+    'sh[ 4]': -10057.892
+    'sh[ 5]': 14780.08
+    'sh[ 6]': 314.17032
+    'sh[ 7]': -8781.6
+    'sh[ 8]': -1358.0436
+    'sh[ 9]': 93852.77
+    'sh[10]': 49556.332
+    'sh[11]': 45287.13
+    'sh[12]': -27562.967
+    'sh[13]': -8552.899
+    'sh[14]': 12720.368
+    'sh[15]': 245.47041
+    'sh[16]': -7505.437
+    'sh[17]': -1289.0577
+    'sh[18]': 52549.426
+    'sh[19]': 29078.252
+    'sh[20]': 25856.43
+    'sh[21]': -16041.962
+    'sh[22]': -5033.8276
+    'sh[23]': 7396.2
+    'sh[24]': 91.52363
+    'sh[25]': -4395.4336
+    'sh[26]': -855.3118
+  m_SHValidForCapturePosition: {x: -3.126029, y: 1.352, z: -4.915108}
+  m_SHValidForSourcePosition: {x: -3.126029, y: 1.352, z: -4.915108}
   m_HDProbeVersion: 9
   m_ObsoleteInfiniteProjection: 1
   m_ObsoleteInfluenceVolume:
@@ -21338,7 +21338,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 51532.26, y: 12.8330765, z: 869782500, w: 4.9556334e+28}
+  m_BoundingSphereOverride: {x: 3.9927185e+24, y: 3.9508418e+30, z: 2.483467e+27,
+    w: 7.190131e+28}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0

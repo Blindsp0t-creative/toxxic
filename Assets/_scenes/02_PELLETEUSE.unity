@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_BakeOnSceneLoad: 1
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e2fc4a6fe2eb2514280d60020d618054,
+  m_LightingDataAsset: {fileID: 112000000, guid: a91016d9db8f3634e87070b6af382791,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: c1b63639fd9da7c4299767d37dfe5094,
     type: 2}
@@ -3427,8 +3427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cded085d155cde949b60f67a11dbc3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.ProbeVolume
-  mode: 1
-  size: {x: 768.9331, y: 852.75, z: 933.056}
+  mode: 2
+  size: {x: 331.62405, y: 79.81086, z: 377.06842}
   overrideRendererFilters: 0
   minRendererVolumeSize: 0.1
   objectLayerMask:
@@ -3442,20 +3442,20 @@ MonoBehaviour:
     e00: 1
     e01: 0
     e02: 0
-    e03: -5.908142
+    e03: 10.458298
     e10: 0
     e11: 1
     e12: 0
-    e13: 59.28009
+    e13: -18.095676
     e20: 0
     e21: 0
     e22: 1
-    e23: -13.611511
+    e23: -4.661499
     e30: 0
     e31: 0
     e32: 0
     e33: 1
-  cachedHashCode: -751006642
+  cachedHashCode: -1949209643
   fillEmptySpaces: 0
   version: 2
   globalVolume: 0
@@ -3468,7 +3468,7 @@ Transform:
   m_GameObject: {fileID: 204858522}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 96.2894, y: 163.8457, z: 186.56094}
+  m_LocalPosition: {x: -10.458298, y: 18.095676, z: 4.661499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10783,8 +10783,9 @@ MonoBehaviour:
   cow: {fileID: 347553743}
   materialQuad: {fileID: 2100000, guid: 232be97a370840559ab6dd7b4fe7b32a, type: 2}
   _handler: {fileID: 0}
-  accrocheOffset: {x: 0, y: 1.7, z: 0}
+  accrocheOffset: {x: -0.51, y: 1.82, z: -1.05}
   accrocheReference: {fileID: 0}
+  accrocheOffsetSuitLeGodet: 1
 --- !u!4 &605530142
 Transform:
   m_ObjectHideFlags: 0
@@ -19061,8 +19062,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0972774e+27, y: 1.8169361e+31, z: 1.7657412e+22,
-    w: 5.8290645e-10}
+  m_BoundingSphereOverride: {x: 6e-45, y: 2.2e-44, z: 0, w: 1.1848e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -20748,7 +20748,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: NaN, y: 2.65628e+20, z: 4.1991665e+12, w: 3.0990291e+32}
+  m_BoundingSphereOverride: {x: 4.9027e-41, y: 1.8e-44, z: 0, w: 3.6e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -23364,7 +23364,7 @@ MonoBehaviour:
     camera:
       camera: 0
   m_ProxyVolume: {fileID: 0}
-  m_BakedTexture: {fileID: 8900000, guid: f49bcb9e108b89642bd31478c5b82eee, type: 3}
+  m_BakedTexture: {fileID: 8900000, guid: 3542cd3fe0a90d34186d5105989775e0, type: 3}
   m_CustomTexture: {fileID: 0}
   m_BakedRenderData:
     m_WorldToCameraRHS:
@@ -23446,33 +23446,33 @@ MonoBehaviour:
     m_Aspect: 0
   m_HasValidSHForNormalization: 1
   m_SHForNormalization:
-    'sh[ 0]': 23764.992
-    'sh[ 1]': 24650.799
-    'sh[ 2]': -263.47232
-    'sh[ 3]': -13.743929
-    'sh[ 4]': -1.7443036
-    'sh[ 5]': -96.79552
-    'sh[ 6]': -902.4522
-    'sh[ 7]': 2.9218478
-    'sh[ 8]': -2743.044
-    'sh[ 9]': 20418.885
-    'sh[10]': 20856.473
-    'sh[11]': -154.42703
-    'sh[12]': -24.516966
-    'sh[13]': 3.665572
-    'sh[14]': -53.644733
-    'sh[15]': -776.3719
-    'sh[16]': -0.6960248
-    'sh[17]': -2351.3633
-    'sh[18]': 11791.881
-    'sh[19]': 12447.352
-    'sh[20]': -65.38991
-    'sh[21]': -2.2382185
-    'sh[22]': -0.89105856
-    'sh[23]': -24.497164
-    'sh[24]': -454.9894
-    'sh[25]': 0.5896534
-    'sh[26]': -1373.4
+    'sh[ 0]': 9819.325
+    'sh[ 1]': 10056.445
+    'sh[ 2]': -267.81436
+    'sh[ 3]': -12.601165
+    'sh[ 4]': -2.36891
+    'sh[ 5]': -97.1013
+    'sh[ 6]': -361.12854
+    'sh[ 7]': 2.552493
+    'sh[ 8]': -1118.6755
+    'sh[ 9]': 8394.184
+    'sh[10]': 8422.019
+    'sh[11]': -152.27704
+    'sh[12]': -13.505619
+    'sh[13]': 0.82957953
+    'sh[14]': -54.827568
+    'sh[15]': -310.5803
+    'sh[16]': 1.6169698
+    'sh[17]': -953.3889
+    'sh[18]': 4781.7017
+    'sh[19]': 5037.07
+    'sh[20]': -67.20404
+    'sh[21]': -2.049019
+    'sh[22]': -0.95717055
+    'sh[23]': -24.32688
+    'sh[24]': -181.99123
+    'sh[25]': 0.5836516
+    'sh[26]': -554.5018
   m_SHValidForCapturePosition: {x: 0, y: 13.52, z: 0}
   m_SHValidForSourcePosition: {x: 0, y: 13.52, z: 0}
   m_HDProbeVersion: 9

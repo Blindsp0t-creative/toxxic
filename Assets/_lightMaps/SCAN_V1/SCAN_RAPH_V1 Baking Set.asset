@@ -17,7 +17,7 @@ MonoBehaviour:
   settings:
     m_Version: 1
     dilationSettings:
-      enableDilation: 0
+      enableDilation: 1
       dilationDistance: 1
       dilationValidityThreshold: 0.25
       dilationIterations: 1
@@ -41,11 +41,11 @@ MonoBehaviour:
     m_Values:
     - position: {x: -1, y: -1, z: -1}
       index: 0
-      probeCount: 1536
+      probeCount: 1600
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 24
+      bricksCount: 25
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: -27, z: -27}
         minSubdiv: 0
@@ -55,11 +55,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: -1, z: 0}
       index: 9
-      probeCount: 832
+      probeCount: 1024
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 13
+      bricksCount: 16
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: -27, z: 0}
         minSubdiv: 0
@@ -69,11 +69,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: 0, z: -1}
       index: 3
-      probeCount: 1408
+      probeCount: 1600
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 22
+      bricksCount: 25
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: 0, z: -27}
         minSubdiv: 0
@@ -83,11 +83,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: 0, z: 0}
       index: 12
-      probeCount: 576
+      probeCount: 960
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 9
+      bricksCount: 15
       indirectionEntryInfo:
       - positionInBricks: {x: -27, y: 0, z: 0}
         minSubdiv: 0
@@ -97,11 +97,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: -1, z: -1}
       index: 1
-      probeCount: 1408
+      probeCount: 1088
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 22
+      bricksCount: 17
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: -27, z: -27}
         minSubdiv: 0
@@ -111,11 +111,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: -1, z: 0}
       index: 10
-      probeCount: 576
+      probeCount: 640
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 9
+      bricksCount: 10
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: -27, z: 0}
         minSubdiv: 0
@@ -125,11 +125,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: 0, z: -1}
       index: 4
-      probeCount: 1536
+      probeCount: 1088
       minSubdiv: 0
       indexChunkCount: 91
       shChunkCount: 1
-      bricksCount: 24
+      bricksCount: 17
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: 0, z: -27}
         minSubdiv: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -1358776736
+    - sceneHash: -669334576
       cellDataAsset:
         m_AssetGUID: afb75ac1fa901bd4499e0ba6f2ea403c
         m_StreamableAssetPath: APVStreamingAssets\1f1ed8ad4753f664dbe631e96f0bc757\afb75ac1fa901bd4499e0ba6f2ea403c.bytes
@@ -263,20 +263,20 @@ MonoBehaviour:
       m_Keys: 0000000009000000030000000c000000010000000a000000040000000d000000
       m_Values:
       - offset: 0
-        elementCount: 24
-      - offset: 384
-        elementCount: 13
-      - offset: 592
-        elementCount: 22
-      - offset: 944
-        elementCount: 9
-      - offset: 1088
-        elementCount: 22
-      - offset: 1440
-        elementCount: 9
-      - offset: 1584
-        elementCount: 24
-      - offset: 1968
+        elementCount: 25
+      - offset: 400
+        elementCount: 16
+      - offset: 656
+        elementCount: 25
+      - offset: 1056
+        elementCount: 15
+      - offset: 1296
+        elementCount: 17
+      - offset: 1568
+        elementCount: 10
+      - offset: 1728
+        elementCount: 17
+      - offset: 2000
         elementCount: 5
     m_Asset: {fileID: 4900000, guid: c31ae4d7d439feb42935491f87b28356, type: 3}
   cellSupportDataAsset:

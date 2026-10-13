@@ -1,1 +1,11 @@
+# Donnees d'Adaptive Probe Volumes.
+# Regle conservee comme filet de securite : ces fichiers sont desormais
+# ignores (voir .gitignore), mais s'ils revenaient un jour dans l'index
+# il vaut mieux qu'ils passent par LFS que par git brut.
 *.bytes filter=lfs diff=lfs merge=lfs -text
+
+# NOTE : les regles *.exr et Lightmap-*.png ont ete retirees volontairement.
+# Les sorties de bake ne sont plus versionnees du tout (option A), donc les
+# envoyer en LFS n'aurait fait que consommer le quota GitHub sans benefice.
+# Les .exr tiers (Poiyomi, VoluSmoke, Stage equipment...) restent en git
+# brut, comme ils l'ont toujours ete.

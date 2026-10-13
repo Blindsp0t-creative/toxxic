@@ -121,3 +121,42 @@ Assets/VertexField/VoluSmoke FX/Textures/VoluSmoke tex/G/G_LBF.tif
 Assets/_medias/MarioKart_Short.mp4
 Assets/_avatars/3. Rainbow Road/DENIS/DENIS_Export.fbx
 _patches/2026-10-13-editor-focus-lag
+
+# ============================================================================
+# Sorties de bake lighting (regenerables via Lighting > Generate Lighting)
+#
+# Volontairement hors git : ~280 Mo par passe de bake, et les donnees APV de
+# Pelleteuse avaient a elles seules consomme ~1 Go du quota LFS GitHub.
+# Seuls les REGLAGES restent versionnes : "* Baking Set.asset", les .lighting,
+# les SKY_SETTINGS. Une machine qui clone recupere la config et rebake.
+#
+# IMPORTANT : ces regles sont en FIN de fichier a dessein. Elles doivent
+# passer APRES la negation "!/[Aa]ssets/**/*.meta" plus haut, qui reinclut
+# tous les .meta de force. En gitignore, la derniere regle qui correspond
+# l'emporte : c'est ce qui permet d'exclure aussi les .meta associes.
+# ============================================================================
+
+# Lightmaps et sondes de reflexion bakees (+ leurs .meta)
+Assets/_scenes/**/Lightmap-*
+Assets/_scenes/**/ReflectionProbe-*
+Assets/_lightMaps/**/Lightmap-*
+Assets/_lightMaps/**/ReflectionProbe-*
+
+# Donnees de lighting par scene (+ .meta)
+Assets/_scenes/**/LightingData.asset*
+Assets/_lightMaps/**/LightingData.asset*
+
+# Donnees de cellules des Adaptive Probe Volumes (+ .meta)
+# Cible uniquement les .bytes : le "* Baking Set.asset" voisin, qui porte
+# les reglages, reste versionne.
+Assets/_scenes/**/*Baking Set*.bytes*
+Assets/_lightMaps/**/*Baking Set*.bytes*
+
+# .meta des dossiers de bake dont TOUT le contenu est ignore. Sans ca, un
+# clone neuf aurait un .meta orphelin sans dossier associe, et Unity rale.
+# Les trois dossiers Assets/_scenes/<scene>/ ne contiennent que des sorties
+# de bake ; les reglages (Baking Set.asset) vivent tous dans _lightMaps/.
+# A mettre a jour si une scene est renommee ou ajoutee.
+Assets/_scenes/01_STRIP_CLUB.meta
+Assets/_scenes/02_PELLETEUSE.meta
+Assets/_scenes/03_RAINBOW.meta
