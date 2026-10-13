@@ -18219,7 +18219,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 20000
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.3221373e-35}
+  m_BoundingSphereOverride: {x: 7.144697e+31, y: 4.0962855e+12, z: 5.1764462e-20,
+    w: 6.42954e-40}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -19792,7 +19793,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: NaN, y: 6.6754487e-34, z: 7.3e-43, w: 6.6752247e-34}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -22488,33 +22489,33 @@ MonoBehaviour:
     m_Aspect: 0
   m_HasValidSHForNormalization: 1
   m_SHForNormalization:
-    'sh[ 0]': 9377.778
-    'sh[ 1]': 9674.567
-    'sh[ 2]': 1.3169581
-    'sh[ 3]': -3.2028658
-    'sh[ 4]': 1.0246209
-    'sh[ 5]': 0.07654171
-    'sh[ 6]': -361.04288
-    'sh[ 7]': 0.16096476
-    'sh[ 8]': -1084.2351
-    'sh[ 9]': 8143.7446
+    'sh[ 0]': 9377.721
+    'sh[ 1]': 9674.566
+    'sh[ 2]': 1.2777802
+    'sh[ 3]': -3.1905267
+    'sh[ 4]': 1.0281585
+    'sh[ 5]': 0.07264167
+    'sh[ 6]': -361.0457
+    'sh[ 7]': 0.17152295
+    'sh[ 8]': -1084.2378
+    'sh[ 9]': 8143.6997
     'sh[10]': 8205.446
-    'sh[11]': 0.35413894
-    'sh[12]': -8.175604
-    'sh[13]': 2.7541385
-    'sh[14]': 0.28446865
-    'sh[15]': -310.53223
-    'sh[16]': 0.26067248
-    'sh[17]': -933.84894
-    'sh[18]': 4671.1626
-    'sh[19]': 4941.5376
-    'sh[20]': 0.13901979
-    'sh[21]': 0.3026579
-    'sh[22]': -0.10802773
-    'sh[23]': -0.010684496
-    'sh[24]': -181.97072
-    'sh[25]': -0.014766131
-    'sh[26]': -545.8824
+    'sh[11]': 0.325024
+    'sh[12]': -8.167668
+    'sh[13]': 2.7577631
+    'sh[14]': 0.2803171
+    'sh[15]': -310.5344
+    'sh[16]': 0.27098688
+    'sh[17]': -933.8506
+    'sh[18]': 4671.136
+    'sh[19]': 4941.533
+    'sh[20]': 0.11257182
+    'sh[21]': 0.31569543
+    'sh[22]': -0.10675001
+    'sh[23]': -0.013056161
+    'sh[24]': -181.97255
+    'sh[25]': -0.008162929
+    'sh[26]': -545.8832
   m_SHValidForCapturePosition: {x: 0, y: 13.52, z: 0}
   m_SHValidForSourcePosition: {x: 0, y: 13.52, z: 0}
   m_HDProbeVersion: 9

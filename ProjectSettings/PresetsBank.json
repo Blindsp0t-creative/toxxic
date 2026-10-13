@@ -8120,20 +8120,24 @@
                             "value": 1.0
                         },
                         {
-                            "id": "elevationavatarDenis",
-                            "value": 1.0
-                        },
-                        {
                             "id": "elevationavatarJen",
                             "value": 2.0
                         },
                         {
-                            "id": "elevationavatarJenBarde",
-                            "value": 0.6299999952316284
-                        },
-                        {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -8218,79 +8222,6 @@
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.264,0.169,-2.749"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
-                    "name": "ANCHOR_Rokoko",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.42,0,-2.1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.264,0.169,-2.749"
-                                },
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
                     "name": "ANCHOR_Rokoko",
                     "captureActive": true,
@@ -8305,7 +8236,7 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
+                                    "value": "0.269058,-0.6539173,0.6539173,0.269058"
                                 },
                                 {
                                     "path": "m_LocalPosition",

@@ -34881,6 +34881,12 @@ MonoBehaviour:
   - {fileID: 1764076243}
   - {fileID: 1764076241}
   - {fileID: 1764076239}
+--- !u!137 &1764076282 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 39990427460380830, guid: 5f4fac3907ced2840bed426fed78d059,
+    type: 3}
+  m_PrefabInstance: {fileID: 1764076211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1764076284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34925,8 +34931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8bf74db04e3274c8a7f1ececc6e9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::blinkingEyes
-  _skinnedMesh: {fileID: 1752460025}
-  eyeCloseBlendShapeIndex: 19
+  _skinnedMesh: {fileID: 1764076282}
+  eyeCloseBlendShapeIndex: 0
   speedOpenEyes: 15
   minValue: 30
   maxValue: 100

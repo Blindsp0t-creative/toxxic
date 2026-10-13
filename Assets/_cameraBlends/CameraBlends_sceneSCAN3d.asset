@@ -336,7 +336,7 @@ MonoBehaviour:
     m_To: Virtual Camera_18_TravellingPorte
     m_Blend:
       m_Style: 1
-      m_Time: 30
+      m_Time: 45
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
