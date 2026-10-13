@@ -493,20 +493,24 @@
                             "value": 1.0
                         },
                         {
-                            "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
-                        },
-                        {
                             "id": "elevationavatarJen",
                             "value": 2.0
                         },
                         {
-                            "id": "elevationavatarJenBarde",
-                            "value": 0.6299999952316284
-                        },
-                        {
                             "id": "dissolveEVGAvatar",
                             "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
                         },
                         {
                             "id": "accrochePelleteuse",
@@ -560,7 +564,26 @@
                     "name": "CONDUITE_stripClub",
                     "captureActive": true,
                     "active": true,
-                    "comps": []
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
+                                },
+                                {
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "-1"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
@@ -631,82 +654,26 @@
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
-                    "name": "ANCHOR_VR",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
                             "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
-                                },
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                }
-                            ]
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":0.0,\"y\":0.0,\"z\":0.0,\"w\":1.0},\"m_LocalPosition\":{\"x\":0.03999989107251167,\"y\":23.275249481201173,\"z\":-0.023000000044703485},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":0.0,\"y\":0.0,\"z\":0.0}}}",
+                            "props": []
                         }
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
-                    "name": "ANCHOR_Rokoko",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
                     "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "67.6,-10.42,14.3"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
-                                }
-                            ]
-                        }
-                    ]
+                    "active": false,
+                    "comps": []
                 }
             ]
         },
@@ -3925,304 +3892,8 @@
                             "value": 1.0
                         },
                         {
-                            "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
-                        },
-                        {
                             "id": "elevationavatarJen",
-                            "value": 2.0
-                        },
-                        {
-                            "id": "elevationavatarJenBarde",
-                            "value": 0.6299999952316284
-                        },
-                        {
-                            "id": "dissolveEVGAvatar",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "physiqueVache",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "togglePhoto",
-                            "value": 1.0
-                        },
-                        {
-                            "id": "accrochePelleteuse",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "dicoBall",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "avatarJenVisibility",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "JenMirrorVisibility",
-                            "value": 0.0
-                        }
-                    ],
-                    "modulation": {
-                        "present": true,
-                        "lfoDefs": [
-                            {
-                                "index": 0,
-                                "wave": 0,
-                                "freq": 0.25,
-                                "phase": 0.0,
-                                "sync": 0
-                            },
-                            {
-                                "index": 1,
-                                "wave": 0,
-                                "freq": 0.25,
-                                "phase": 0.0,
-                                "sync": 0
-                            },
-                            {
-                                "index": 2,
-                                "wave": 0,
-                                "freq": 0.25,
-                                "phase": 0.0,
-                                "sync": 0
-                            }
-                        ],
-                        "lfoRoutes": []
-                    }
-                }
-            ],
-            "gos": [
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
-                    "name": "CONDUITE_stripClub",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
-                            "typeName": "conduite_script03_Silk1",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "plateformeAttach",
-                                    "type": 5,
-                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
-                                },
-                                {
-                                    "path": "cameraOverride",
-                                    "type": 0,
-                                    "value": "11"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
-                    "name": "ANCHOR_Rokoko",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "67.6,0.65,14.3"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
-                    "name": "Onyx_New_Unity",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
-                            "typeName": "AnchorFollower",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "transitionDuration",
-                                    "type": 2,
-                                    "value": "2"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
-                                },
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
-                    "name": "ANCHOR_Rokoko",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "67.6,0.65,14.3"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
-                    "name": "newPlaceAvatar1",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": true,
-                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":-0.1722617894411087,\"y\":0.6858031153678894,\"z\":-0.6858031153678894,\"w\":-0.1722617894411087},\"m_LocalPosition\":{\"x\":-0.1469999998807907,\"y\":23.299999237060548,\"z\":-0.375},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":208.1999969482422,\"z\":0.0}}}",
-                            "props": []
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
-                    "name": "AVATARS_2",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": []
-                }
-            ]
-        },
-        {
-            "id": "fe2d36f449684d44b1a8ba490eb89e3e",
-            "name": "ORC_coupDePied",
-            "empty": false,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "01_STRIP_CLUB",
-            "kontrols": [
-                {
-                    "windowType": "kontrolsToxxic01",
-                    "values": [
-                        {
-                            "id": "blackout",
-                            "value": 0.0
-                        },
-                        {
-                            "id": "footRotation",
-                            "value": 1.0
-                        },
-                        {
-                            "id": "elevationavatarDenis",
-                            "value": 1.600000023841858
-                        },
-                        {
-                            "id": "elevationavatarJen",
-                            "value": 2.0
-                        },
-                        {
-                            "id": "elevationavatarJenBarde",
-                            "value": 0.6299999952316284
+                            "value": 0.8799999952316284
                         },
                         {
                             "id": "dissolveEVGAvatar",
@@ -4354,7 +4025,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "67.6,0.88,14.3"
                                 }
                             ]
                         }
@@ -4382,78 +4053,206 @@
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
-                    "name": "ANCHOR_VR",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281546-0",
+                    "name": "newPlaceAvatar1",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0",
                             "typeName": "UnityEngine.Transform",
+                            "whole": true,
+                            "json": "{\"Transform\":{\"serializedVersion\":\"2\",\"m_LocalRotation\":{\"x\":-0.1722617894411087,\"y\":0.6858031153678894,\"z\":-0.6858031153678894,\"w\":-0.1722617894411087},\"m_LocalPosition\":{\"x\":-0.1469999998807907,\"y\":23.299999237060548,\"z\":-0.375},\"m_LocalScale\":{\"x\":1.0,\"y\":1.0,\"z\":1.0},\"m_ConstrainProportionsScale\":false,\"m_LocalEulerAnglesHint\":{\"x\":90.0,\"y\":208.1999969482422,\"z\":0.0}}}",
+                            "props": []
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-114903397-0",
+                    "name": "AVATARS_2",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": []
+                }
+            ]
+        },
+        {
+            "id": "fe2d36f449684d44b1a8ba490eb89e3e",
+            "name": "ORC_coupDePied",
+            "empty": false,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "01_STRIP_CLUB",
+            "kontrols": [
+                {
+                    "windowType": "kontrolsToxxic01",
+                    "values": [
+                        {
+                            "id": "blackout",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "footRotation",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "elevationavatarJen",
+                            "value": 0.8799999952316284
+                        },
+                        {
+                            "id": "dissolveEVGAvatar",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "EjectOrc",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "physiqueVache",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "togglePhoto",
+                            "value": 1.0
+                        },
+                        {
+                            "id": "accrochePelleteuse",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "dicoBall",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "avatarJenVisibility",
+                            "value": 0.0
+                        },
+                        {
+                            "id": "JenMirrorVisibility",
+                            "value": 0.0
+                        }
+                    ],
+                    "modulation": {
+                        "present": true,
+                        "lfoDefs": [
+                            {
+                                "index": 0,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 1,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            },
+                            {
+                                "index": 2,
+                                "wave": 0,
+                                "freq": 0.25,
+                                "phase": 0.0,
+                                "sync": 0
+                            }
+                        ],
+                        "lfoRoutes": []
+                    }
+                }
+            ],
+            "gos": [
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877602-0",
+                    "name": "CONDUITE_stripClub",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1996877608-0",
+                            "typeName": "conduite_script03_Silk1",
                             "whole": false,
                             "json": "",
                             "props": [
                                 {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
+                                    "path": "plateformeAttach",
+                                    "type": 5,
+                                    "value": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1226281547-0"
                                 },
                                 {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
+                                    "path": "cameraOverride",
+                                    "type": 0,
+                                    "value": "11"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
+                    "name": "ANCHOR_VR",
+                    "captureActive": true,
+                    "active": true,
+                    "comps": [
+                        {
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
+                            "typeName": "UnityEngine.Transform",
+                            "whole": false,
+                            "json": "",
+                            "props": [
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0,0,0,1"
+                                },
+                                {
+                                    "path": "m_LocalPosition",
+                                    "type": 9,
+                                    "value": "63.4,0,15.42"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
                     "name": "ANCHOR_Rokoko",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397533-0",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
                             "typeName": "UnityEngine.Transform",
                             "whole": false,
                             "json": "",
                             "props": [
                                 {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0.7071068,0,0,0.7071068"
-                                },
-                                {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.6,0.65,14.3"
+                                    "value": "67.6,0.88,14.3"
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750747-0",
-                    "name": "ANCHOR_VR",
+                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-919132149155446097-1928878830",
+                    "name": "Onyx_New_Unity",
                     "captureActive": true,
                     "active": true,
                     "comps": [
                         {
-                            "compId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-807750749-0",
-                            "typeName": "UnityEngine.Transform",
+                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1619029293-0",
+                            "typeName": "AnchorFollower",
                             "whole": false,
                             "json": "",
                             "props": [
                                 {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "63.4,0,15.42"
+                                    "path": "transitionDuration",
+                                    "type": 2,
+                                    "value": "2"
                                 }
                             ]
                         }

@@ -262,6 +262,13 @@ public class CinemachineCameraSwitcher : MonoBehaviour
             return;
         }
 
+        // L'ancien Start() faisait Stop(), qui avait pour effet de bord de
+        // vider la RenderTexture — d'ou le quad noir avant le premier top.
+        // Sans Stop(), la RT garde son contenu non initialise (quad blanc) :
+        // on l'efface nous-memes, ce qui est de toute facon plus deterministe
+        // que de dependre d'un effet de bord.
+        clearVideoTexture();
+
         ArmVideoAudio();
 
         // Un rechargement additif de la scene rejoue Start() : on se desabonne
@@ -273,6 +280,26 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
         _videoPlayPending = false;
         _player.Prepare();
+    }
+
+    /// <summary>
+    /// Remet a noir opaque la RenderTexture affichee par le quad de la TV.
+    /// Utilisable aussi depuis un UnityEvent ou un binding Kontrols si tu veux
+    /// un noir franc au stop plutot que la premiere image du clip.
+    /// </summary>
+    [ContextMenu("Clear Video Texture")]
+    public void clearVideoTexture()
+    {
+        if (_player == null) return;
+
+        var rt = _player.targetTexture;
+        if (rt == null) return;   // renderMode != RenderTexture : rien a effacer
+
+        // RenderTexture.active cree la RT si elle ne l'est pas encore.
+        var previous = RenderTexture.active;
+        RenderTexture.active = rt;
+        GL.Clear(true, true, Color.black);   // alpha a 1 : la RT a un canal alpha
+        RenderTexture.active = previous;
     }
 
     // A appeler avant chaque Prepare(), jamais apres.
