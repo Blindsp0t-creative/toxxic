@@ -31,10 +31,17 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
     public VideoPlayer _player;
 
-    [Tooltip("Volume de la piste audio de la video. N'agit qu'en mode de sortie " +
-             "Direct, le seul ou le VideoPlayer gere lui-meme le volume.")]
+    [Tooltip("Volume de la piste audio de la video. Applique aux deux modes de " +
+             "sortie : volume direct du VideoPlayer en Direct, volume de " +
+             "l'AudioSource cible en mode AudioSource.")]
     [Range(0f, 1f)]
     public float _videoVolume = 1f;
+
+    [Tooltip("AudioSource cible quand le VideoPlayer est en mode de sortie " +
+             "AudioSource. Laisse vide : une AudioSource est cherchee sur le " +
+             "GameObject du VideoPlayer, et creee si besoin. Elle est forcee en " +
+             "stereo plate (2D, sans spatialisation) a chaque preparation.")]
+    public AudioSource _videoAudioSource;
 
     [Tooltip("Au stop, revenir a la premiere image pour que le top suivant " +
              "reparte du debut — c'est le comportement de l'ancien Stop(). " +
@@ -80,6 +87,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         {
             _player.prepareCompleted -= OnVideoPrepared;
             _player.loopPointReached -= OnVideoEnded;
+            _player.seekCompleted    -= OnVideoSeeked;
+            _player.errorReceived    -= OnVideoError;
         }
     }
 
@@ -251,8 +260,15 @@ public class CinemachineCameraSwitcher : MonoBehaviour
     // restent vivants, la course disparait.
 
     // Un top peut arriver pendant la preparation, ou isPlaying est encore
-    // false : ce drapeau evite d'empiler deux preparations.
+    // false : ce drapeau evite d'empiler deux preparations. Il sert aussi de
+    // "play differe" : OnVideoPrepared et OnVideoSeeked le consomment.
     private bool _videoPlayPending;
+
+    // Un seek est asynchrone (d'ou l'existence de l'event seekCompleted).
+    // Le rembobinage du stop en declenche un : si le top suivant appelle
+    // Play() pendant que le seek est encore en vol, on retombe exactement sur
+    // la course qui coutait le son. On attend donc seekCompleted.
+    private bool _videoSeekPending;
 
     void SetupVideo()
     {
@@ -277,9 +293,26 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         _player.prepareCompleted += OnVideoPrepared;
         _player.loopPointReached -= OnVideoEnded;
         _player.loopPointReached += OnVideoEnded;
+        _player.seekCompleted -= OnVideoSeeked;
+        _player.seekCompleted += OnVideoSeeked;
+        _player.errorReceived -= OnVideoError;
+        _player.errorReceived += OnVideoError;
 
         _videoPlayPending = false;
+        _videoSeekPending = false;
         _player.Prepare();
+    }
+
+    // Rembobinage au debut. Ne declenche un seek que s'il y a vraiment lieu :
+    // reecrire frame = 0 alors qu'on y est deja peut ne pas emettre
+    // seekCompleted, et _videoSeekPending resterait bloque.
+    void RewindVideo()
+    {
+        if (!_videoRewindOnStop) return;
+        if (_player.frame <= 0) return;
+
+        _videoSeekPending = true;
+        _player.frame = 0;
     }
 
     /// <summary>
@@ -302,6 +335,67 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         RenderTexture.active = previous;
     }
 
+    // L'AudioSource assignee dans l'inspector si elle existe, sinon celle du
+    // GameObject du VideoPlayer, sinon une neuve posee dessus. Mieux vaut
+    // l'assigner dans la scene : une AudioSource creee au runtime n'est pas
+    // visible en edition, donc invisible au debug.
+    AudioSource ResolveVideoAudioSource()
+    {
+        if (_videoAudioSource != null) return _videoAudioSource;
+
+        var go = _player.gameObject;
+        _videoAudioSource = go.GetComponent<AudioSource>();
+
+        if (_videoAudioSource == null)
+        {
+            _videoAudioSource = go.AddComponent<AudioSource>();
+            Debug.LogWarning("[CameraSwitcher] Aucune AudioSource pour la video : " +
+                             "une AudioSource a ete creee au runtime sur '" + go.name +
+                             "'. Ajoute-la dans la scene et assigne _videoAudioSource " +
+                             "pour un comportement reproductible.");
+        }
+
+        return _videoAudioSource;
+    }
+
+    // Stereo plate, plein volume, aucune spatialisation.
+    //
+    // spatialBlend = 0 est le reglage decisif : une source 2D laisse passer les
+    // canaux du clip tels quels. Des qu'une source est mixee en 3D, Unity la
+    // replie pour la panoramiser — on y perdrait la stereo du clip.
+    //
+    // spatialize = false coupe en plus le plugin spatializer, ici Meta XR Audio
+    // (voir AudioManager.asset), qui ne doit pas toucher le son de la TV.
+    void ConfigureFlatStereo(AudioSource src)
+    {
+        src.spatialBlend          = 0f;      // 100 % 2D
+        src.spatialize            = false;   // pas de plugin spatializer
+        src.spatializePostEffects = false;
+
+        // Seule facon de reintroduire du 3D malgre spatialBlend = 0 : une courbe
+        // Spatial Blend pilotee par la distance, posee dans l'inspector (section
+        // 3D Sound Settings). On l'aplatit a 0 pour que le scalaire ci-dessus
+        // soit la seule verite.
+        src.SetCustomCurve(AudioSourceCurveType.SpatialBlend,
+                           AnimationCurve.Constant(0f, 1f, 0f));
+        src.panStereo             = 0f;      // centre, stereo du clip preservee
+        src.dopplerLevel          = 0f;
+        src.reverbZoneMix         = 0f;
+        src.bypassEffects         = true;
+        src.bypassListenerEffects = true;    // ignore les effets de l'AudioListener
+        src.bypassReverbZones     = true;
+
+        src.volume      = _videoVolume;
+        src.mute        = false;
+        src.priority    = 0;                 // 0 = priorite maximale, jamais evincee
+        src.playOnAwake = false;             // c'est le VideoPlayer qui pilote
+
+        // Groupe de mixage : null = Master, sans effet intermediaire. Si tu veux
+        // router la TV dans un groupe dedie, assigne-le ici plutot qu'a la main
+        // dans l'inspector, sinon la ligne du dessus ne garantit plus rien.
+        src.outputAudioMixerGroup = null;
+    }
+
     // A appeler avant chaque Prepare(), jamais apres.
     void ArmVideoAudio()
     {
@@ -319,6 +413,14 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         _player.controlledAudioTrackCount = 1;   // avant tout acces a la piste 0
         _player.EnableAudioTrack(0, true);
 
+        // Aucun reglage de sortie ne fabriquera de la stereo a partir d'une
+        // piste mono : autant le savoir tout de suite.
+        ushort channels = _player.clip.GetAudioChannelCount(0);
+        if (channels < 2)
+            Debug.LogWarning("[CameraSwitcher] La piste audio de '" + _player.clip.name +
+                             "' n'a que " + channels + " canal/canaux : la sortie ne " +
+                             "sera pas stereo, quel que soit le mode de sortie.");
+
         switch (_player.audioOutputMode)
         {
             case VideoAudioOutputMode.Direct:
@@ -327,10 +429,19 @@ public class CinemachineCameraSwitcher : MonoBehaviour
                 break;
 
             case VideoAudioOutputMode.AudioSource:
-                if (_player.GetTargetAudioSource(0) == null)
+                var src = ResolveVideoAudioSource();
+                if (src == null)
+                {
                     Debug.LogWarning("[CameraSwitcher] audioOutputMode = AudioSource " +
-                                     "mais aucun AudioSource n'est assigne sur le " +
-                                     "VideoPlayer : la video sera muette.");
+                                     "mais aucune AudioSource n'a pu etre resolue : " +
+                                     "la video sera muette.");
+                    break;
+                }
+
+                ConfigureFlatStereo(src);
+
+                // Comme EnableAudioTrack, a poser avant la fin de la preparation.
+                _player.SetTargetAudioSource(0, src);
                 break;
 
             case VideoAudioOutputMode.None:
@@ -342,6 +453,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
     void OnVideoPrepared(VideoPlayer source)
     {
+        _videoSeekPending = false;   // une preparation annule tout seek en vol
+
         // La preparation du Start ne doit pas lancer la lecture : seule celle
         // declenchee par un top (donc avec _videoPlayPending) enchaine un Play.
         if (!_videoPlayPending) return;
@@ -351,13 +464,34 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         Debug.Log("[CameraSwitcher] Video : play (apres preparation)");
     }
 
+    // Le seek du rembobinage est termine : image et audio sont recales. Si un
+    // top attendait, c'est maintenant qu'on lance la lecture.
+    void OnVideoSeeked(VideoPlayer source)
+    {
+        _videoSeekPending = false;
+
+        if (!_videoPlayPending) return;
+
+        _videoPlayPending = false;
+        source.Play();
+        Debug.Log("[CameraSwitcher] Video : play (apres rembobinage)");
+    }
+
+    // Sans ce reset, un echec de preparation laisserait _videoPlayPending a
+    // true et le bouton serait mort pour le reste de la session.
+    void OnVideoError(VideoPlayer source, string message)
+    {
+        _videoPlayPending = false;
+        _videoSeekPending = false;
+        Debug.LogError("[CameraSwitcher] Erreur VideoPlayer : " + message);
+    }
+
     // Sans looping, le player s'arrete sur la derniere image en restant pret :
     // un Play() y repartirait de la fin et se terminerait aussitot. On rembobine
     // pour que le top suivant reparte du debut.
     void OnVideoEnded(VideoPlayer source)
     {
-        if (_videoRewindOnStop)
-            source.frame = 0;
+        RewindVideo();
     }
 
     /// <summary>
@@ -378,8 +512,8 @@ public class CinemachineCameraSwitcher : MonoBehaviour
             // Le rembobinage reproduit le comportement visible du Stop (le top
             // suivant repart du debut) sans la re-preparation qui coutait le son.
             _player.Pause();
-            if (_videoRewindOnStop)
-                _player.frame = 0;
+            _videoPlayPending = false;
+            RewindVideo();
 
             Debug.Log("[CameraSwitcher] Video : stop");
             return;
@@ -387,7 +521,16 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
         if (_videoPlayPending)
         {
-            Debug.Log("[CameraSwitcher] Video : preparation en cours, top ignore.");
+            Debug.Log("[CameraSwitcher] Video : demarrage deja en cours, top ignore.");
+            return;
+        }
+
+        // Rembobinage encore en vol : on ne joue pas par-dessus un seek, c'est
+        // OnVideoSeeked qui lancera la lecture.
+        if (_videoSeekPending)
+        {
+            _videoPlayPending = true;
+            Debug.Log("[CameraSwitcher] Video : rembobinage en cours, play differe.");
             return;
         }
 

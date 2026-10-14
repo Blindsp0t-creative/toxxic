@@ -4,9 +4,11 @@
 
 - ## Mise 
   - madMapper en "entrée public"
+  
 - ## Meditation 
   - madMapper / debut voix "s = "meditation"
   - Reveil => madMapper = "fin mediation"
+  
 - ## Infra 1
   - **Lance Unity + Calib pieds Denis**
   - bois de l'eau => notif Camille
@@ -44,7 +46,6 @@
   - position => Pelleteuse
 
 - ## PELLETEUSE 
-
   - soleil
   - arrivée Johan / accueil mikku
   - "approche toi plus pres " =>  devoilement pelleteuse 
@@ -64,7 +65,7 @@
   - Yoga : s'assied = france travail
   - Ring Light => Video reveal
   - la meuse 'lié au paysage' => Notif Camille
-  - mes deux neurones => Notif John
+  - "Que j'ignore encore" => Notif John
   - 
 
 - ## Looners 

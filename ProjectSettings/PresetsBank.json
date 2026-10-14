@@ -1050,6 +1050,11 @@
                                     "path": "m_LocalPosition",
                                     "type": 9,
                                     "value": "68.99,0.8,15.75"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
                                 }
                             ]
                         }
@@ -1070,7 +1075,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -1256,6 +1261,11 @@
                                     "path": "m_LocalPosition",
                                     "type": 9,
                                     "value": "69.01,1.2,15.69"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
                                 }
                             ]
                         }
@@ -1276,7 +1286,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -1462,6 +1472,11 @@
                                     "path": "m_LocalPosition",
                                     "type": 9,
                                     "value": "68.94,1.2,15.65"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
                                 }
                             ]
                         }
@@ -1482,7 +1497,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -1668,6 +1683,11 @@
                                     "path": "m_LocalPosition",
                                     "type": 9,
                                     "value": "69.04,0.8,15.73"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "0.7071068,0,0,0.7071068"
                                 }
                             ]
                         }
@@ -1688,7 +1708,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -1899,7 +1919,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -2110,7 +2130,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -2532,7 +2552,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -2743,7 +2763,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -2954,7 +2974,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }
@@ -3346,6 +3366,11 @@
                                     "path": "m_LocalPosition",
                                     "type": 9,
                                     "value": "67.6,1.2,14.3"
+                                },
+                                {
+                                    "path": "m_LocalRotation",
+                                    "type": 17,
+                                    "value": "-0.17226173,0.6858031,-0.6858031,-0.17226173"
                                 }
                             ]
                         }
@@ -3366,7 +3391,7 @@
                                 {
                                     "path": "transitionDuration",
                                     "type": 2,
-                                    "value": "2"
+                                    "value": "1"
                                 }
                             ]
                         }

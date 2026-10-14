@@ -59,7 +59,7 @@ public class kontrolsToxxic01 : KontrolsWindow
 
     [Button("Top Plateforme", id: "toggleAlarm")]
     public Action topPlateforme;
-
+    /*
     [Button("Zoom", id: "stripclubZoom")]
     public Action camZoom;
 
@@ -90,7 +90,7 @@ public class kontrolsToxxic01 : KontrolsWindow
     //[SameLine]
     [Button("Reverse POV2", id: "stripclubReversePOV2")]
     public Action camReversePOV2;
-
+    */
     [Toggle("physique ORC", id:"EjectOrc")]
     public bool ejectOrc;
 
@@ -101,13 +101,13 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Scene Pelleteuse", id: "pelleteuse")]
     public Action topScenePelleteuse;
 
-
+    /*
     [Button("Previous", id: "pelleteuseP")]
     public Action pelleteusePrevious;
     [SameLine]
     [Button("Next", id: "pelleteuseN")]
     public Action pelleteuseNext;
-
+    */
 
     //[Button("Top Photo", id: "togglePhoto")]
     //public Action topPhoto;
@@ -125,13 +125,13 @@ public class kontrolsToxxic01 : KontrolsWindow
     [Button("Top Scene RainbowRoad", id: "rainbowroad")]
     public Action topSceneRainbowRoad;
 
-
+    /*
     [Button("Previous", id: "RainbowRoadP")]
     public Action rainbowRoadPrevious;
     [SameLine]
     [Button("Next", id: "RainbowRoadN")]
     public Action rainbowRoadNext;
-
+    */
 
     [Button("Top Video TV", id: "toggleVideoTV")]
     public Action topVideoTV;
@@ -169,6 +169,7 @@ public class kontrolsToxxic01 : KontrolsWindow
 
         topSceneStripClub     = () => Debug.Log("load Strip Club Scene");
         topPlateforme         = () => Debug.Log("Top Plateforme - Strip Club Scene");
+        /*
         camZoom               = () => Debug.Log("Camera : Zoom");
         camDollyMain          = () => Debug.Log("Camera : Dolly Main");
         camDollyMain2         = () => Debug.Log("Camera : Dolly Main 2");
@@ -178,15 +179,19 @@ public class kontrolsToxxic01 : KontrolsWindow
         camDollySol2          = () => Debug.Log("Camera : DollySol2");
         camReversePOV         = () => Debug.Log("Camera : Reverse POV");
         camReversePOV2        = () => Debug.Log("Camera : Reverse POV2");
-
+        */
         topScenePelleteuse    = () => Debug.Log("load Pelleteuse Scene");
+        /*
         pelleteuseNext        = () => Debug.Log("Next - Pelleteuse Scene");
         pelleteusePrevious    = () => Debug.Log("Previous - Pelleteuse Scene");
+        */
         //topPhoto              = () => Debug.Log("Top Photo - Pelleteuse Scene");
 
         topSceneRainbowRoad   = () => Debug.Log("load Rainbow Road Scene");
+        /*
         rainbowRoadNext       = () => Debug.Log("Next - RainbowRoad Scene");
         rainbowRoadPrevious   = () => Debug.Log("Previous - RainbowRoad Scene");
+        */
         topVideoTV            = () => Debug.Log("Top TV - RainbowRoad Scene");
 
         // Indispensable : la base construit le modele, charge les valeurs,

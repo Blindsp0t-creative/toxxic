@@ -10539,8 +10539,9 @@ MonoBehaviour:
   cow: {fileID: 347553743}
   materialQuad: {fileID: 2100000, guid: 232be97a370840559ab6dd7b4fe7b32a, type: 2}
   _handler: {fileID: 0}
-  accrocheOffset: {x: -0.51, y: 1.82, z: -1.05}
+  accrocheOffset: {x: -0.68, y: 1.13, z: 0}
   accrocheReference: {fileID: 0}
+  accrocheReferenceNom: MikuV2Test
   accrocheOffsetSuitLeGodet: 1
 --- !u!4 &605530142
 Transform:
@@ -23929,9 +23930,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404773556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17615768, y: -0.6827857, z: -0.0793212, w: 0.70461357}
-  m_LocalPosition: {x: -0.00515, y: 0.0246, z: -0.01449}
-  m_LocalScale: {x: 0.009384615, y: 0.009384615, z: 0.0093846135}
+  m_LocalRotation: {x: 0.068231694, y: -0.8470901, z: -0.5087646, w: -0.13762726}
+  m_LocalPosition: {x: 0.015788287, y: 0.008317947, z: 0.017364113}
+  m_LocalScale: {x: 0.009384615, y: 0.009384615, z: 0.009384613}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1759509578}
@@ -31003,7 +31004,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5392390209365313541, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
+    - targetCorrespondingSourceObject: {fileID: 3780944662418328221, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1404773557}
@@ -31047,7 +31048,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a19bb9a3721c40ccac2d90a0d0658bcf, type: 3}
 --- !u!4 &1759509578 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5392390209365313541, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
+  m_CorrespondingSourceObject: {fileID: 3780944662418328221, guid: a19bb9a3721c40ccac2d90a0d0658bcf,
     type: 3}
   m_PrefabInstance: {fileID: 1759509577}
   m_PrefabAsset: {fileID: 0}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Oculus.Interaction.Locomotion;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 
 [ExecuteInEditMode]
 public class pelleteuse_conduite_script03 : MonoBehaviour
@@ -59,12 +60,20 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
              "ou de le reculer dans le godet sans toucher a la scene.")]
     public Vector3 accrocheOffset;
 
-    [Tooltip("Le point du rig VR qui doit se retrouver exactement sur 'Cube (4)'. " +
-             "Vide = CenterEyeAnchor, la tete du performeur. Pour poser ses PIEDS " +
-             "sur le godet, glisser ici la racine de l'avatar, ou laisser la tete " +
-             "et monter accrocheOffset.y d'environ sa taille. Doit etre un enfant " +
-             "du rig : la correction est un delta applique a la racine du rig.")]
+    [Tooltip("Le point qui doit se retrouver exactement sur 'Cube (4)'. Vide = " +
+             "CenterEyeAnchor, la tete du performeur. Pour poser les PIEDS de " +
+             "l'avatar sur le godet, viser sa racine. S'il vit dans 00_MASTER_, " +
+             "l'Inspector refusera le glisser-deposer : passer par " +
+             "accrocheReferenceNom juste en dessous.")]
     public Transform accrocheReference;
+
+    [Tooltip("Nom du GameObject a prendre comme accrocheReference, resolu au " +
+             "demarrage. Unity interdit les references inter-scenes dans " +
+             "l'Inspector : c'est le seul moyen de viser un objet de 00_MASTER_ " +
+             "depuis 02_PELLETEUSE chargee en additif. Accepte un chemin complet " +
+             "facon '/Racine/Enfant' si le nom seul n'est pas unique. Ignore si " +
+             "accrocheReference est deja renseigne.")]
+    public string accrocheReferenceNom;
 
     [Tooltip("L'offset tourne avec le godet. Le vecteur reste exprime en axes " +
              "MONDE au moment du top (+Y = vers le haut, facile a regler), puis " +
@@ -75,6 +84,22 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
     // Rotation du godet au moment de l'accroche. Sert de repere pour faire
     // tourner accrocheOffset avec la pelle sans toucher a la valeur reglee.
     private Quaternion _rotGodetAccroche = Quaternion.identity;
+
+    // Ecart entre la reference et la tete du rig, releve au moment de l'accroche.
+    //
+    // Pourquoi ne pas simplement lire reference.position a chaque frame : une
+    // reference EXTERIEURE au rig (l'avatar de 00_MASTER_) ne suit pas le rig
+    // dans la meme phase que nous. HeadBodyRig la repositionne dans FixedUpdate,
+    // qui ne tourne pas a toutes les frames. Les frames sans FixedUpdate, on
+    // relirait une position perimee et on redeplacerait le rig du meme delta :
+    // depassement, puis correction en sens inverse — ca retremble.
+    //
+    // On passe donc par la tete, qui est enfant du rig et donc toujours
+    // coherente avec lui, et on y ajoute cet ecart fige. Valide tant que la
+    // reference garde un decalage constant par rapport a la tete, ce qui est
+    // exactement ce que garantit HeadBodyRig.
+    private Vector3 _ecartRefTete;
+    private bool    _refHorsDuRig;
 
     // La vraie locomotion du rig de 00_MASTER_ : OVRLocomotion pilote un
     // CharacterController pose sur l'OVRCameraRig lui-meme. Rien a voir avec
@@ -126,6 +151,69 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         gos = GameObject.FindGameObjectsWithTag("VRRig");
         rigFromMasterScene = gos[0];
 
+        ResoudreAccrocheReference();
+    }
+
+    /// <summary>
+    /// Resout accrocheReference par son nom. Unity interdit les references
+    /// inter-scenes dans l'Inspector : un objet de 00_MASTER_ ne peut pas etre
+    /// glisse dans un champ de 02_PELLETEUSE, qui est chargee en additif. Meme
+    /// contournement que pour rigFromMasterScene juste au-dessus, au nom plutot
+    /// qu'au tag pour ne pas avoir a taguer l'avatar.
+    ///
+    /// Rappele a l'accroche : au premier Start la scene visee n'est pas
+    /// forcement encore chargee.
+    /// </summary>
+    void ResoudreAccrocheReference()
+    {
+        if (accrocheReference != null) return;
+        if (string.IsNullOrEmpty(accrocheReferenceNom)) return;
+
+        Transform t = TrouverParNom(accrocheReferenceNom);
+
+        if (t == null)
+        {
+            Debug.LogWarning($"[AccrochePelleteuse] '{accrocheReferenceNom}' introuvable dans les " +
+                             "scenes chargees. Verifier l'orthographe exacte, et que 00_MASTER_ " +
+                             "est bien la.");
+            return;
+        }
+
+        accrocheReference = t;
+        Debug.Log($"[AccrochePelleteuse] accrocheReference resolue sur '{t.name}'.");
+    }
+
+    /// <summary>
+    /// Cherche un Transform par nom dans toutes les scenes chargees, objets
+    /// DESACTIVES compris.
+    ///
+    /// GameObject.Find seul ne suffit pas : dans 00_MASTER_ les avatars sont
+    /// sauves inactifs et allumes par la conduite au moment voulu. Au Start de
+    /// cette scene-ci ils sont donc invisibles pour Find(), qui ignore les
+    /// objets inactifs.
+    /// </summary>
+    Transform TrouverParNom(string nom)
+    {
+        // D'abord Find : le plus rapide, et lui seul gere la forme chemin
+        // "/Racine/Enfant" qui leve les homonymies.
+        GameObject direct = GameObject.Find(nom);
+        if (direct != null) return direct.transform;
+
+        // Sinon parcours complet. On ne garde que le dernier segment : un chemin
+        // ne sert qu'a Find, la recherche large compare sur le nom seul.
+        string cible = nom.Substring(nom.LastIndexOf('/') + 1);
+
+        for (int s = 0; s < SceneManager.sceneCount; s++)
+        {
+            UnityEngine.SceneManagement.Scene scene = SceneManager.GetSceneAt(s);
+            if (!scene.isLoaded) continue;
+
+            foreach (GameObject racine in scene.GetRootGameObjects())
+                foreach (Transform t in racine.GetComponentsInChildren<Transform>(true))
+                    if (t.name == cible) return t;
+        }
+
+        return null;
     }
 
     IEnumerator avatarsReveal()
@@ -408,6 +496,22 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
             // axes monde a cet instant, et tourne ensuite avec la pelle.
             _rotGodetAccroche = pellePosition.transform.rotation;
 
+            // La reference de 00_MASTER_ n'a pas pu etre glissee dans
+            // l'Inspector : derniere chance de la resoudre par son nom.
+            ResoudreAccrocheReference();
+
+            // Une reference hors du rig ne suit pas le rig dans notre phase :
+            // on releve son ecart a la tete une fois pour toutes, et on
+            // travaillera ensuite sur la tete. Voir _ecartRefTete.
+            Transform tete = TeteDuRig(rig);
+            _refHorsDuRig = accrocheReference != null
+                         && tete != null
+                         && !accrocheReference.IsChildOf(rig.transform);
+
+            _ecartRefTete = _refHorsDuRig
+                ? accrocheReference.position - tete.position
+                : Vector3.zero;
+
             _accrochee = true;
 
             // Pose immediate : sans ca le performeur resterait une frame en
@@ -459,17 +563,21 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
         // decalee a l'interieur, de son deplacement physique dans la piece. Poser
         // la racine sur le godet laisse donc l'avatar translate de ce decalage —
         // c'est exactement le bug observe. On deplace le rig du delta qui amene
-        // la reference sur la cible ; comme la reference est un enfant du rig,
-        // elle atterrit pile dessus.
-        Transform reference = AccrocheReference(rig);
+        // le point suivi sur la cible.
+        //
+        // Le point suivi est toujours pris DANS le rig : soit la reference elle
+        // meme quand elle en fait partie, soit la tete corrigee de _ecartRefTete
+        // quand la reference est exterieure. Lire une position exterieure a
+        // chaque frame rouvrirait la boucle de retard decrite sur _ecartRefTete.
+        Transform suivi = _refHorsDuRig ? TeteDuRig(rig) : AccrocheReference(rig);
 
-        if (reference == null)
+        if (suivi == null)
         {
             rig.transform.position = cible;   // dernier recours, sans correction
             return;
         }
 
-        rig.transform.position += cible - reference.position;
+        rig.transform.position += cible - (suivi.position + _ecartRefTete);
     }
 
     // Le point du rig a amener sur le godet. Par defaut la tete : c'est le seul
@@ -479,6 +587,13 @@ public class pelleteuse_conduite_script03 : MonoBehaviour
     {
         if (accrocheReference != null) return accrocheReference;
 
+        return TeteDuRig(rig);
+    }
+
+    // CenterEyeAnchor, le seul point du rig dont la position est garantie
+    // coherente avec la racine dans toutes les phases.
+    Transform TeteDuRig(GameObject rig)
+    {
         OVRCameraRig ovr = rig.GetComponent<OVRCameraRig>();
         if (ovr != null && ovr.centerEyeAnchor != null) return ovr.centerEyeAnchor;
 
