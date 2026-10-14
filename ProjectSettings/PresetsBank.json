@@ -477,9 +477,9 @@
             "name": "Strip Club_0",
             "empty": false,
             "oscAddr": "",
-            "midiNote": 32,
-            "midiChannel": 0,
-            "midiIsCC": true,
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
             "contentSceneName": "01_STRIP_CLUB",
             "kontrols": [
                 {

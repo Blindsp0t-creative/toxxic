@@ -110,11 +110,11 @@
   
 - ## TOP REVE 	
   - Fin du reve : apparition PNJ
-  - Tombée de la baignoire => FADE OUT fin video (fader 6)
+  - Tombée de la baignoire => FADE OUT fin video (cue fadeout)
   -
-  - Fin limace, pont => laser shoes (fader 8)
-  - Retour pied au sol => coupe lasers (fader 8)
-  - Remonte pied => laser shoes (fader 8)
-  - Retour a genoux => coupe lasers (fader 8)
+  - Fin limace, pont => laser shoes (touche L)
+  - Retour pied au sol => coupe lasers (touche L)
+  - Remonte pied => laser shoes (touche L)
+  - Retour a genoux => coupe lasers (touche L)
   - 
-  - TADA & 2 => LEDS chaussures s'allument (fader 7)
+  - TADA & 2 => LEDS chaussures s'allument (touche M)
