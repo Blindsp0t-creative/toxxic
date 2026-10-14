@@ -3,7 +3,8 @@ using UnityEngine;
 public class discoBallController : MonoBehaviour
 {
     public GameObject discoBallGO;
-    
+    public GameObject directionnalLight;
+
     void Start()
     {
         if (discoBallGO != null)
@@ -14,6 +15,9 @@ public class discoBallController : MonoBehaviour
 
     public void toggleDiscoBall(bool _active)
     {
-        discoBallGO.SetActive(_active);
+        if (discoBallGO != null)
+            discoBallGO.SetActive(_active);
+        if(directionnalLight != null)
+            directionnalLight.SetActive(!_active);
     }
 }

@@ -8077,6 +8077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::discoBallController
   discoBallGO: {fileID: 305924766}
+  directionnalLight: {fileID: 1574863928}
 --- !u!1 &681760991
 GameObject:
   m_ObjectHideFlags: 0
