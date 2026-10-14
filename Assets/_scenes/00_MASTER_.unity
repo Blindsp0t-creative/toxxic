@@ -7468,17 +7468,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 03815a4c5869787479ac5c45f2a70ef7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.381
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03815a4c5869787479ac5c45f2a70ef7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.052
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03815a4c5869787479ac5c45f2a70ef7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.942
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03815a4c5869787479ac5c45f2a70ef7,
         type: 3}
@@ -18375,7 +18375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94bf696c1035f44cba7e24a87be739c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Set_VR_Avatar_height
-  height: 0.41
+  height: 3.34
   smoothTime: 0
   calibrateOnStart: 1
   calibrationTimeout: 15

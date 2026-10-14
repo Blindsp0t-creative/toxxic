@@ -32,7 +32,7 @@
 | mains au sol / equilibre | dollySol2 |
 | vers monticule - pointe Winnie du doigt | dollyPublic |
 | charley  | dollyLapDDance  |
-| reak sur le son (kick 4/4) | Cut Public => CALIB|
+| reak sur le son (kick 4/4) | Cut Public => <span style="color:red">CALIB</span> + notif carré rouge/vert|
 | Saut sur le lit | Camera ORC |
 | Se releve | coup de pied orc |
 | contreplongée + slider disparait + madMapper | finParticules |
@@ -42,7 +42,7 @@
   - **Calib pieds Denis**
   - Glisse sur la rampe: 3s => notif Camille
   - Micro vers battle station => notif Johan
-  - CALIB
+  - <span style="color:red">CALIB</span> + notif carré rouge/vert
   - position => Pelleteuse
 
 - ## PELLETEUSE 
@@ -64,9 +64,10 @@
 - ## Infra 3
   - Yoga : s'assied = france travail
   - Ring Light => Video reveal
+
+- ## Video Reveal
   - la meuse 'lié au paysage' => Notif Camille
   - "Que j'ignore encore" => Notif John
-  - 
 
 - ## Looners 
   - Pète le ballon => postLooner
@@ -77,7 +78,7 @@
   - baignoire + eau => notif Camille 2
   - Fin du vocal => notif Mingus
 
-    Calib + carré rouge/vert
+    <span style="color:red">CALIB</span> + notif carré rouge/vert
 
 - ## RAINBOW
   - POV
@@ -91,7 +92,6 @@
   - "Denis reparle" => Denis 
   - "Je te montre" => chien
   - Salon
-  - supprimer preset Jen contreChamp
   - Tunnel Denis sur l'IA
   - "on s'assoit" - deplacement Jen => Canap
   - S'assoit => next '2 dans le canap'
@@ -111,3 +111,6 @@
   - ## TOP REVE 
 
 	
+  - PNJ
+  - LEDs Chaussures 
+  - Laser Chaussures 
