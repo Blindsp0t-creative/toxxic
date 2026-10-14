@@ -75,7 +75,7 @@
 - ## Infra 4
   - **Calib pieds Denis**
   - chien en ballons => Notif Camille 1
-  - baignoire + eau => notif Camille 2
+  - baignoire + eau + 7s => notif Camille 2
   - Fin du vocal => notif Mingus
 
     <span style="color:red">CALIB</span> + notif carré rouge/vert
@@ -106,11 +106,15 @@
   - chiwawa
   - chiwawa2 
   - lasso / bisou => top Jen disparait 
-  - desactive denis + 2s / top porte
+  - desactive denis + Jen enleve la combi / top porte
   
-  - ## TOP REVE 
-
-	
-  - PNJ
-  - LEDs Chaussures 
-  - Laser Chaussures 
+- ## TOP REVE 	
+  - Fin du reve : apparition PNJ
+  - Tombée de la baignoire => FADE OUT fin video (fader 6)
+  -
+  - Fin limace, pont => laser shoes (fader 8)
+  - Retour pied au sol => coupe lasers (fader 8)
+  - Remonte pied => laser shoes (fader 8)
+  - Retour a genoux => coupe lasers (fader 8)
+  - 
+  - TADA & 2 => LEDS chaussures s'allument (fader 7)

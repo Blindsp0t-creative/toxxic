@@ -61,7 +61,7 @@ MonoBehaviour:
     m_To: Plan03_4_Photo
     m_Blend:
       m_Style: 1
-      m_Time: 4
+      m_Time: 6
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

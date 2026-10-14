@@ -3422,7 +3422,7 @@
             ]
         },
         {
-            "id": "15312b520b22497ab2c783ca06b10e7c",
+            "id": "4fdec075062344ada6a88f9bd9202bd9",
             "name": "--- 14",
             "empty": true,
             "oscAddr": "",
@@ -3434,20 +3434,8 @@
             "gos": []
         },
         {
-            "id": "4fdec075062344ada6a88f9bd9202bd9",
-            "name": "--- 15",
-            "empty": true,
-            "oscAddr": "",
-            "midiNote": -1,
-            "midiChannel": 255,
-            "midiIsCC": false,
-            "contentSceneName": "",
-            "kontrols": [],
-            "gos": []
-        },
-        {
             "id": "8bf8083663244ce6afdaf98c6932b2e7",
-            "name": "--- 16",
+            "name": "--- 15",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -6475,7 +6463,7 @@
         },
         {
             "id": "8be270c783f6471bb5f499864172b3ea",
-            "name": "--- 31",
+            "name": "--- 30",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -6487,7 +6475,7 @@
         },
         {
             "id": "ff7608f695ab47ffaabb4b169fbf4ddb",
-            "name": "--- 32",
+            "name": "--- 31",
             "empty": true,
             "oscAddr": "",
             "midiNote": -1,
@@ -8343,16 +8331,8 @@
                             "value": 1.0
                         },
                         {
-                            "id": "elevationavatarDenis",
-                            "value": 1.0
-                        },
-                        {
                             "id": "elevationavatarJen",
                             "value": 2.0
-                        },
-                        {
-                            "id": "elevationavatarJenBarde",
-                            "value": 0.6299999952316284
                         },
                         {
                             "id": "dissolveEVGAvatar",
@@ -8453,79 +8433,6 @@
                     ]
                 },
                 {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572108-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-43572110-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                },
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.264,0.169,-2.749"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794697-0",
-                    "name": "ANCHOR_Rokoko",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-2806e3da8641e5a48b2143a5c6e0d624-1446794699-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.42,0,-2.1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "goId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762742-0",
-                    "name": "ANCHOR_VR",
-                    "captureActive": true,
-                    "active": true,
-                    "comps": [
-                        {
-                            "compId": "GlobalObjectId_V1-2-07868ae05e9d552468b3c4ec269e4eb8-1339762744-0",
-                            "typeName": "UnityEngine.Transform",
-                            "whole": false,
-                            "json": "",
-                            "props": [
-                                {
-                                    "path": "m_LocalPosition",
-                                    "type": 9,
-                                    "value": "-5.264,0.169,-2.749"
-                                },
-                                {
-                                    "path": "m_LocalRotation",
-                                    "type": 17,
-                                    "value": "0,0,0,1"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
                     "goId": "GlobalObjectId_V1-2-9591106ee92e68b45895ca74f3f5982d-1668397531-0",
                     "name": "ANCHOR_Rokoko",
                     "captureActive": true,
@@ -8540,7 +8447,7 @@
                                 {
                                     "path": "m_LocalRotation",
                                     "type": 17,
-                                    "value": "0.269058,-0.6539173,0.6539173,0.269058"
+                                    "value": "0.464601934,-0.5330526,0.5330526,0.464601934"
                                 },
                                 {
                                     "path": "m_LocalPosition",
@@ -12890,6 +12797,18 @@
         },
         {
             "id": "b60d63e8c21f49e4912a9c3aac40e5f2",
+            "name": "--- 56",
+            "empty": true,
+            "oscAddr": "",
+            "midiNote": -1,
+            "midiChannel": 255,
+            "midiIsCC": false,
+            "contentSceneName": "",
+            "kontrols": [],
+            "gos": []
+        },
+        {
+            "id": "15312b520b22497ab2c783ca06b10e7c",
             "name": "--- 57",
             "empty": true,
             "oscAddr": "",

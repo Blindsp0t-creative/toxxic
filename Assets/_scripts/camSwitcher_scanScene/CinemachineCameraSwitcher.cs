@@ -451,6 +451,15 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         }
     }
 
+    // Point de passage unique de tous les departs de lecture : un seul endroit
+    // a instrumenter quand le son ne part pas.
+    void PlayVideo(string origine)
+    {
+        _player.Play();
+        Debug.Log("[CameraSwitcher] Video : play (" + origine + ")");
+        StartCoroutine(CheckVideoAudioStarted(origine));
+    }
+
     void OnVideoPrepared(VideoPlayer source)
     {
         _videoSeekPending = false;   // une preparation annule tout seek en vol
@@ -460,8 +469,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         if (!_videoPlayPending) return;
 
         _videoPlayPending = false;
-        source.Play();
-        Debug.Log("[CameraSwitcher] Video : play (apres preparation)");
+        PlayVideo("apres preparation");
     }
 
     // Le seek du rembobinage est termine : image et audio sont recales. Si un
@@ -473,8 +481,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         if (!_videoPlayPending) return;
 
         _videoPlayPending = false;
-        source.Play();
-        Debug.Log("[CameraSwitcher] Video : play (apres rembobinage)");
+        PlayVideo("apres rembobinage");
     }
 
     // Sans ce reset, un echec de preparation laisserait _videoPlayPending a
@@ -536,8 +543,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
 
         if (_player.isPrepared)
         {
-            _player.Play();
-            Debug.Log("[CameraSwitcher] Video : play");
+            PlayVideo("deja pret");
             return;
         }
 
@@ -549,6 +555,119 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         Debug.Log("[CameraSwitcher] Video : preparation...");
     }
 
+
+    // ─────────────────────────────────────────────
+    //  DIAGNOSTIC AUDIO
+    // ─────────────────────────────────────────────
+    //
+    // Le symptome "le son ne part pas" est apparu sur trois chaines audio
+    // differentes (Direct, Direct apres correction de la preparation, puis
+    // AudioSource). Ce n'est donc probablement pas le VideoPlayer. Plutot que
+    // de continuer a corriger a l'aveugle, on mesure : ce dump dit si le flux
+    // arrive au mix, et si non, a quel etage ca coince.
+
+    /// <summary>Clic droit sur le composant pour dumper l'etat audio a chaud.</summary>
+    [ContextMenu("Dump Video Audio State")]
+    public void dumpVideoAudioState()
+    {
+        DumpVideoAudioState("manuel");
+    }
+
+    IEnumerator CheckVideoAudioStarted(string origine)
+    {
+        // Laisse le temps au decodeur de remplir les premiers buffers.
+        yield return new WaitForSeconds(0.5f);
+        DumpVideoAudioState("0.5 s apres le play [" + origine + "]");
+    }
+
+    void DumpVideoAudioState(string quand)
+    {
+        if (_player == null)
+        {
+            Debug.LogWarning("[CameraSwitcher] Dump audio : _player non assigne.");
+            return;
+        }
+
+        var sb = new System.Text.StringBuilder();
+        sb.AppendLine("[CameraSwitcher] ETAT AUDIO VIDEO — " + quand);
+
+        sb.AppendLine("  VideoPlayer : isPlaying=" + _player.isPlaying +
+                      " isPrepared=" + _player.isPrepared +
+                      " frame=" + _player.frame +
+                      " seekPending=" + _videoSeekPending +
+                      " playPending=" + _videoPlayPending);
+
+        bool piste0 = _player.controlledAudioTrackCount > 0 && _player.IsAudioTrackEnabled(0);
+        sb.AppendLine("  sortie VideoPlayer : mode=" + _player.audioOutputMode +
+                      " pistesControlees=" + _player.controlledAudioTrackCount +
+                      " piste0Active=" + piste0 +
+                      " pistesDuClip=" + (_player.clip != null ? _player.clip.audioTrackCount : 0));
+
+        if (_player.audioOutputMode == VideoAudioOutputMode.AudioSource)
+        {
+            var src = _player.controlledAudioTrackCount > 0 ? _player.GetTargetAudioSource(0) : null;
+            if (src == null)
+            {
+                sb.AppendLine("  AudioSource cible : NULL  <<<< le son ne peut pas sortir");
+            }
+            else
+            {
+                sb.AppendLine("  AudioSource cible : '" + src.gameObject.name +
+                              "' actifDansHierarchie=" + src.gameObject.activeInHierarchy +
+                              " composantActif=" + src.enabled +
+                              " isPlaying=" + src.isPlaying +
+                              " volume=" + src.volume +
+                              " mute=" + src.mute +
+                              " spatialBlend=" + src.spatialBlend +
+                              " groupeMixage=" + (src.outputAudioMixerGroup != null
+                                                  ? src.outputAudioMixerGroup.name : "Master"));
+            }
+        }
+        else if (_player.audioOutputMode == VideoAudioOutputMode.Direct)
+        {
+            sb.AppendLine("  sortie Direct : volume=" + _player.GetDirectAudioVolume(0) +
+                          " mute=" + _player.GetDirectAudioMute(0) +
+                          "  (ne passe pas par l'AudioListener)");
+        }
+
+        // Combien d'AudioListener reellement actifs, toutes scenes additives
+        // confondues : zero = silence total, deux = Unity en choisit un.
+        int listenersActifs = 0;
+        foreach (var l in FindObjectsByType<AudioListener>(FindObjectsInactive.Include,
+                                                           FindObjectsSortMode.None))
+            if (l.enabled && l.gameObject.activeInHierarchy) listenersActifs++;
+
+        var cfg = AudioSettings.GetConfiguration();
+        sb.AppendLine("  systeme audio : speakerMode=" + cfg.speakerMode +
+                      " sampleRate=" + cfg.sampleRate +
+                      " dspBuffer=" + cfg.dspBufferSize +
+                      " spatializer='" + AudioSettings.GetSpatializerPluginName() + "'");
+        sb.AppendLine("  AudioListener : actifs=" + listenersActifs +
+                      " volume=" + AudioListener.volume +
+                      " pause=" + AudioListener.pause);
+
+        // Micro : ToxxicLipSyncMicInput (00_MASTER_, ConstantSpeak) rappelle
+        // Microphone.Start() a chaque frame tant que le micro ne tourne pas, en
+        // bloquant le thread principal jusqu'a 1 s. Savoir si le micro tournait
+        // au moment du top tranche cette piste.
+        int micsOuverts = 0;
+        foreach (var dev in Microphone.devices)
+            if (Microphone.IsRecording(dev)) micsOuverts++;
+        sb.AppendLine("  micros : peripheriques=" + Microphone.devices.Length +
+                      " enregistrement=" + micsOuverts);
+
+        // Niveau reellement present dans le mix. Ne voit que ce qui passe par
+        // l'AudioListener, donc valable en mode AudioSource, pas en Direct.
+        var samples = new float[256];
+        AudioListener.GetOutputData(samples, 0);
+        float crete = 0f;
+        for (int i = 0; i < samples.Length; i++)
+            crete = Mathf.Max(crete, Mathf.Abs(samples[i]));
+        sb.AppendLine("  niveau crete sortie = " + crete.ToString("F4") +
+                      (crete <= 0.0001f ? "   <<<< RIEN n'arrive au mix" : ""));
+
+        Debug.Log(sb.ToString());
+    }
 
     public void blackOut(bool value)
     {
