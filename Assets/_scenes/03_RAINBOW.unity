@@ -20775,7 +20775,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840133660}
-  - component: {fileID: 1840133661}
   m_Layer: 0
   m_Name: VideoTV
   m_TagString: Untagged
@@ -20801,19 +20800,6 @@ Transform:
   - {fileID: 1532180597}
   m_Father: {fileID: 2019859948}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1840133661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840133659}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6543d6df6470f1428b0ca22d1ef7725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StartStopVideo
-  _player: {fileID: 1214498553}
 --- !u!1 &1840739054
 GameObject:
   m_ObjectHideFlags: 0

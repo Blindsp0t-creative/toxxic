@@ -6,7 +6,7 @@
   - madMapper en "entrée public"
   
 - ## Meditation 
-  - madMapper / debut voix "s = "meditation"
+  - madMapper / debut voix +10s = "meditation"
   - Reveil => madMapper = "fin mediation"
   
 - ## Infra 1
@@ -15,7 +15,7 @@
   - Combi bandeau => notif Mouchti1 
   - Gants branchés = "notif mouchti 2"
   - Batterie = Rokoko check + 
-  - CALIB + Quad vert/rouge
+  - CALIB + Notif vert/rouge
   - EVG
 
 - ## EVG
@@ -32,7 +32,7 @@
 | mains au sol / equilibre | dollySol2 |
 | vers monticule - pointe Winnie du doigt | dollyPublic |
 | charley  | dollyLapDDance  |
-| reak sur le son (kick 4/4) | Cut Public => <span style="color:red">CALIB</span> + notif carré rouge/vert|
+| reak sur le son (kick 4/4) | Cut Public => <span style="color:red">CALIB</span> |
 | Saut sur le lit | Camera ORC |
 | Se releve | coup de pied orc |
 | contreplongée + slider disparait + madMapper | finParticules |
@@ -70,7 +70,6 @@
   - vous m'apprenez rien, "dites moi "  => Notif John
 
 - ## Looners 
-  - Pète le ballon => postLooner
 
 - ## Infra 4
   - **Calib pieds Denis**
@@ -78,7 +77,7 @@
   - baignoire + eau + 7s => notif Camille 2
   - Fin du vocal => notif Mingus
 
-    <span style="color:red">CALIB</span> + notif carré rouge/vert
+    <span style="color:red">CALIB</span> + notif rouge/vert
 
 - ## RAINBOW
   - POV
