@@ -1,0 +1,510 @@
+Subject: [PATCH 2/3] Detect MIDI ports lost to a USB drop and reopen them by name
+
+A controller that drops off the USB bus (unplugged, USB reset, power dip)
+raises no error : its WinMM handle just goes silent, for good. Windows lists
+the device again once it is back, but as a new device that only a new open
+reaches. MidiHub never noticed :
+
+ - IsConnected was `_ports.Count > 0` : a count of managed objects, never
+   checked against what Windows lists, so the status stayed green over a dead
+   port ;
+ - PollNewPorts returned as soon as `portCount <= _ports.Count`. A controller
+   coming back leaves the count unchanged, so it was never reopened, and only
+   restarting the editor brought it back ;
+ - PollNewPorts also assumed new ports appear at the end of the list
+   (`for i = _ports.Count ..`). Windows renumbers on every arrival : a device
+   plugged in at a lower index made it reopen a device already open, under its
+   new suffixed name, and never open the new one ;
+ - an open that RtMidi refused (reported only through the ok flag) still went
+   into _ports, shown as connected.
+
+In this project the controllers dropped off the bus 17 times in ten days
+(Kernel-PnP event 1010), and every RtMidi crash in the Application log came
+after one of them : silent port, then a Reconnect / play-mode reload that
+closed it (see patch 1).
+
+TryOpenPorts and PollNewPorts are replaced by a single watchdog on
+EditorApplication.update, paced on real time (the old 3 s timer counted
+editor ticks). Twice a second it lists the inputs Windows offers and :
+
+ - closes, through the quarantine-aware SafeDispose, every open port that is
+   no longer listed, and reports it lost (warning in the console,
+   MidiHub.LostPortNames, a HelpBox in the MIDI Map tab) ;
+ - opens every listed port that is not open : first open, after a Reconnect,
+   or a lost one coming back. A refused open is not kept ; it is logged once
+   and retried every 2 s.
+
+Ports are keyed by name without the " <index>" suffix RtMidi appends on WinMM,
+so a renumbered device is recognised ; a second identical device gets " #2".
+Each In is kept with the Out matched to it, and both are closed together.
+The probe interval goes to 2 s while no input is listed at all, because RtMidi
+prints a warning on every probe in that state.
+
+Reconnect now only closes everything and clears the lost list ; the watchdog
+reopens on the next tick.
+
+KontrolsWindow resends its feedback when the number of open ports grows, so
+motorised knobs match the window after a comeback -- and after a domain
+reload, where the SendAllFeedback in OnEnable runs before any port is open.
+It does so at most once per 5 s : if moving every motor at once is what knocks
+a bus-powered controller off USB, an unthrottled resync would loop.
+
+New public API : MidiHub.LostPortNames, MidiHub.HasOutput. PortNames now holds
+the keys (e.g. "Roto-Control" instead of "Roto-Control 0").
+
+Known limit : a drop shorter than the 0.5 s period (gone and back between two
+probes) is not seen ; Reconnect, now safe, remains the manual fallback.
+
+Depends on patch 1 : without it, closing a lost port crashes the editor.
+---
+--- a/Editor/MidiHub.cs
++++ b/Editor/MidiHub.cs
+@@ -11,12 +11,19 @@
+ [InitializeOnLoad]
+ public static class MidiHub
+ {
+-    // --- Ports MIDI In ---
+-    private static readonly List<MidiIn>  _ports    = new List<MidiIn>();
+-    private static readonly List<string>  _portNames = new List<string>();
++    // --- Open controllers : a MIDI In, plus the MIDI Out matched to it by name
++    //     if any (feedback for motorised knobs) ---
++    private sealed class Device
++    {
++        public string  Key;   // identity that survives renumbering, see ListInputs
++        public MidiIn  In;
++        public MidiOut Out;   // null when no Out port matched
++    }
++    private static readonly List<Device> _devices   = new List<Device>();
++    private static readonly List<string> _portNames = new List<string>();   // keys of _devices
+ 
+-    // --- Ports MIDI Out (feedback knobs motorisés) ---
+-    private static readonly List<MidiOut> _outPorts = new List<MidiOut>();
++    /// <summary>Keys of controllers that disappeared while open, until they come back.</summary>
++    private static readonly List<string> _lostNames = new List<string>();
+ 
+     /// <summary>True once the "no MIDI Out" warning has been logged; reset when a port opens.</summary>
+     private static bool _warnedNoOut;
+@@ -56,116 +63,169 @@
+     private static bool _learnWantsCC = false;
+ 
+     // --- �tat connexion ---
+-    public static bool IsConnected => _ports.Count > 0;
++    public static bool IsConnected => _devices.Count > 0;
+     public static List<string> PortNames => _portNames;
+     public static string PortName => _portNames.Count > 0
+         ? string.Join(", ", _portNames) : "";
+ 
++    /// <summary>Controllers that dropped while open (unplugged, USB reset) and
++    /// are being waited for : each reopens on its own as soon as Windows lists
++    /// it again.</summary>
++    public static IReadOnlyList<string> LostPortNames => _lostNames;
++
++    /// <summary>True when at least one MIDI Out port is open.</summary>
++    public static bool HasOutput => _devices.Exists(d => d.Out != null);
++
+     // -------------------------------------------------------
+ 
+     static MidiHub()
+     {
+-        EditorApplication.update += TryOpenPorts;
++        EditorApplication.update += Watchdog;
++        EditorApplication.update += ProcessQueue;
+         AssemblyReloadEvents.beforeAssemblyReload += Cleanup;
+     }
+ 
+-    static void TryOpenPorts()
+-    {
+-        var probe = MidiIn.Create();
+-        if (probe == null || !probe.IsOk) return;
++    // -------------------------------------------------------
++    // Port watchdog
++    //
++    // A port whose device drops off the USB bus (unplugged, USB reset, power
++    // dip) raises no error : its handle just goes silent, for good. Even once
++    // the device is back, Windows lists it as a new device that only a new
++    // open reaches. So the inputs Windows lists are compared with the open
++    // ports twice a second : an open port no longer listed is lost (closed and
++    // reported), a listed port not open is opened - at startup, after a
++    // Reconnect, or when a lost one comes back.
++    //
++    // Ports are matched by name, never by index : indices shift whenever a
++    // device comes or goes.
++    // -------------------------------------------------------
+ 
+-        int portCount = probe.PortCount;
+-        probe.Dispose();
++    const double WatchPeriod      = 0.5;   // s
++    const double WatchPeriodEmpty = 2.0;   // s, while no input is listed : RtMidi prints a warning per probe then
++    const double OpenRetryPeriod  = 2.0;   // s, before retrying a port that refused to open
+ 
+-        if (portCount == 0) return;
++    private static double _nextWatch;
++    private static readonly Dictionary<string, double> _openRetryAt = new Dictionary<string, double>();
+ 
+-        // Ouvre tous les ports pas encore ouverts
+-        bool anyNew = false;
+-        for (int i = 0; i < portCount; i++)
+-        {
+-            // V�rifie si ce port est d�j� ouvert
+-            var check = MidiIn.Create();
+-            string name = check?.GetPortName(i) ?? $"Port {i}";
+-            check?.Dispose();
++    static void Watchdog()
++    {
++        double now = EditorApplication.timeSinceStartup;
++        if (now < _nextWatch) return;
++
++        var listed = ListInputs();
++        _nextWatch = now + (listed != null && listed.Count > 0 ? WatchPeriod : WatchPeriodEmpty);
++        if (listed == null) return;            // probe failed : change nothing, look again later
+ 
+-            if (_portNames.Contains(name)) continue;
++        bool changed = false;
+ 
+-            MidiIn port = MidiIn.Create();
+-            if (port == null || !port.IsOk) continue;
++        // Lost : open, but no longer listed.
++        for (int d = _devices.Count - 1; d >= 0; d--)
++        {
++            var dev = _devices[d];
++            if (listed.Exists(p => p.key == dev.Key)) continue;
+ 
+-            port.MessageReceived = OnMessageReceived;
+-            port.OpenPort(i, name);
++            CloseDevice(dev);
++            _devices.RemoveAt(d);
++            if (!_lostNames.Contains(dev.Key)) _lostNames.Add(dev.Key);
++            Debug.LogWarning($"[MidiHub] Lost : {dev.Key} - it reopens automatically when it is back.");
++            changed = true;
++        }
+ 
+-            _ports.Add(port);
+-            _portNames.Add(name);
+-            anyNew = true;
++        // New, or back : listed, but not open.
++        foreach (var p in listed)
++        {
++            if (_devices.Exists(dev => dev.Key == p.key)) continue;
++            if (_openRetryAt.TryGetValue(p.key, out double retryAt) && now < retryAt) continue;
+ 
+-            // Port de sortie — cherche par nom, fallback index identique
+-            int outIdx = FindOutPortIndex(name, i);
+-            if (outIdx >= 0)
++            var opened = OpenDevice(p.key, p.name, p.index);
++            if (opened == null)
+             {
+-                MidiOut outPort = MidiOut.Create();
+-                if (outPort != null && outPort.IsOk)
+-                {
+-                    outPort.OpenPort(outIdx, name + "_out");
+-                    _outPorts.Add(outPort);
+-                    _warnedNoOut = false;          // re-arm the "no Out" warning
+-                    _failedOutPorts.Remove(outPort);
+-                    //Debug.Log($"[MidiHub] Out ouvert : port {outIdx}");
+-                }
++                if (!_openRetryAt.ContainsKey(p.key))
++                    Debug.LogWarning($"[MidiHub] {p.key} refused to open - retrying every {OpenRetryPeriod:0} s.");
++                _openRetryAt[p.key] = now + OpenRetryPeriod;
++                continue;
+             }
+ 
+-            //Debug.Log($"[MidiHub] Connect� : {name} (in port {i})");
++            _openRetryAt.Remove(p.key);
++            _devices.Add(opened);
++            if (_lostNames.Remove(p.key)) Debug.Log($"[MidiHub] Back : {p.key}");
++            changed = true;
+         }
+ 
+-        if (_ports.Count == 0) return;
++        if (!changed) return;
++        _portNames.Clear();
++        foreach (var dev in _devices) _portNames.Add(dev.Key);
++        OnConnectionChanged?.Invoke();
++    }
+ 
+-        if (anyNew)
+-        {
+-            EditorApplication.update -= TryOpenPorts;
+-            EditorApplication.update += PollNewPorts;
+-            EditorApplication.update += ProcessQueue;
+-            OnConnectionChanged?.Invoke();
++    /// <summary>MIDI inputs as Windows lists them now ; null when the probe
++    /// failed. The key is the name without the index RtMidi appends on WinMM
++    /// ("Roto-Control 0" -> "Roto-Control"), so that it survives the device
++    /// being renumbered ; a second identical device gets " #2".</summary>
++    static List<(string key, string name, int index)> ListInputs()
++    {
++        MidiIn probe = null;
++        try
++        {
++            probe = MidiIn.Create();
++            if (probe == null || !probe.IsOk) return null;
++
++            int count = probe.PortCount;
++            var list  = new List<(string key, string name, int index)>(count);
++            var seen  = new Dictionary<string, int>();
++            for (int i = 0; i < count; i++)
++            {
++                string name = probe.GetPortName(i);
++                if (string.IsNullOrEmpty(name)) name = $"Port {i}";
++
++                string key = StripPortSuffix(name);
++                seen.TryGetValue(key, out int n);
++                seen[key] = ++n;
++                list.Add((n == 1 ? key : $"{key} #{n}", name, i));
++            }
++            return list;
+         }
++        catch { return null; }
++        finally { probe?.Dispose(); }   // a probe never opens a port : plain free is safe
+     }
+ 
+-    // V�rifie p�riodiquement si de nouveaux ports apparaissent
+-    private static float _pollTimer = 0f;
+-    static void PollNewPorts()
++    /// <summary>Opens a listed input, and the Out port matched to it by name.
++    /// Null when the input refused to open.</summary>
++    static Device OpenDevice(string key, string name, int index)
+     {
+-        _pollTimer += 0.016f;
+-        if (_pollTimer < 3f) return; // v�rifie toutes les 3 secondes
+-        _pollTimer = 0f;
+-
+-        var probe = MidiIn.Create();
+-        if (probe == null || !probe.IsOk) return;
+-
+-        int portCount = probe.PortCount;
+-        probe.Dispose();
++        MidiIn input = MidiIn.Create();
++        if (input == null || !input.IsOk) { SafeDispose(input); return null; }
+ 
+-        if (portCount <= _ports.Count) return;
+-
+-        // Nouveaux ports d�tect�s
+-        for (int i = _ports.Count; i < portCount; i++)
++        input.MessageReceived = OnMessageReceived;
++        input.OpenPort(index, name);
++        if (!input.IsOk)                       // RtMidi reports a refused open only through this flag
+         {
+-            var check = MidiIn.Create();
+-            string name = check?.GetPortName(i) ?? $"Port {i}";
+-            check?.Dispose();
+-
+-            if (_portNames.Contains(name)) continue;
+-
+-            MidiIn port = MidiIn.Create();
+-            if (port == null || !port.IsOk) continue;
+-
+-            port.MessageReceived = OnMessageReceived;
+-            port.OpenPort(i, name);
++            SafeDispose(input);
++            return null;
++        }
+ 
+-            _ports.Add(port);
+-            _portNames.Add(name);
++        var dev = new Device { Key = key, In = input };
+ 
+-            Debug.Log($"[MidiHub] Nouveau port d�tect� : {name} (port {i})");
+-            OnConnectionChanged?.Invoke();
++        int outIdx = FindOutPortIndex(name, index);
++        if (outIdx >= 0)
++        {
++            MidiOut output = MidiOut.Create();
++            if (output != null && output.IsOk) output.OpenPort(outIdx, name + "_out");
++            if (output != null && output.IsOk)
++            {
++                dev.Out = output;
++                _warnedNoOut = false;          // re-arm the "no Out" warning
++            }
++            else SafeDispose(output);
+         }
++        return dev;
++    }
++
++    static void CloseDevice(Device dev)
++    {
++        SafeDispose(dev.In);
++        if (dev.Out != null) _failedOutPorts.Remove(dev.Out);
++        SafeDispose(dev.Out);
+     }
+ 
+     static void OnMessageReceived(double timeStamp, System.ReadOnlySpan<byte> message)
+@@ -352,7 +412,7 @@
+     /// <summary>Envoie un CC à tous les ports de sortie ouverts (feedback knobs motorisés).</summary>
+     public static void SendCC(byte channel, byte cc, byte value)
+     {
+-        if (_outPorts.Count == 0)
++        if (!HasOutput)
+         {
+             // LFO / audio routes call this every tick — warn once per "no Out"
+             // stretch instead of flooding the console when nothing is plugged in.
+@@ -367,9 +427,11 @@
+         // ch=255 = "tout canal accepté en entrée" → on envoie sur canal 0 en sortie
+         byte ch = channel == 255 ? (byte)0 : channel;
+         byte[] msg = { (byte)(0xB0 | (ch & 0x0F)), cc, value };
+-        //Debug.Log($"[MidiHub] → SendCC ch={ch + 1} cc={cc} val={value} ({_outPorts.Count} port(s))");
+-        foreach (var port in _outPorts)
++        //Debug.Log($"[MidiHub] → SendCC ch={ch + 1} cc={cc} val={value} ({_devices.Count} device(s))");
++        foreach (var dev in _devices)
+         {
++            var port = dev.Out;
++            if (port == null) continue;
+             try
+             {
+                 port.SendMessage(msg);
+@@ -467,44 +529,35 @@
+ 
+     static void Cleanup()
+     {
++        EditorApplication.update -= Watchdog;
+         EditorApplication.update -= ProcessQueue;
+-        EditorApplication.update -= PollNewPorts;
+ 
+-        foreach (var port in _ports)    SafeDispose(port);
+-        foreach (var port in _outPorts) SafeDispose(port);
++        foreach (var dev in _devices) CloseDevice(dev);
+ 
+-        _ports.Clear();
++        _devices.Clear();
+         _portNames.Clear();
+-        _outPorts.Clear();
+         _failedOutPorts.Clear();
+     }
+ 
+     /// <summary>
+-    /// Force-close and re-open every MIDI port. Use this when the controller
+-    /// shows as connected but no messages arrive — the native RtMidi callback
+-    /// can go silent after a domain reload or if the port was briefly grabbed by
+-    /// another app, and the managed wrapper keeps thinking it is open. Tearing
+-    /// down and re-opening re-registers the callback. Re-opening is deferred to
+-    /// the next editor tick(s) so the OS can release the handles first, and
+-    /// <see cref="TryOpenPorts"/> retries on its own until they come back.
++    /// Close every MIDI port and reopen whatever Windows lists now. A port
++    /// whose device dropped is already handled by the watchdog (see
++    /// <see cref="Watchdog"/>) ; this is the manual "start over" - for a port
++    /// that refused to open, or one that went silent while its device stayed
++    /// listed. The lost list is cleared : after a Reconnect, only what is
++    /// listed counts. Reopening happens on the next editor tick.
+     /// </summary>
+     public static void Reconnect()
+     {
+-        EditorApplication.update -= ProcessQueue;
+-        EditorApplication.update -= PollNewPorts;
+-        EditorApplication.update -= TryOpenPorts;
+-
+-        foreach (var port in _ports)    SafeDispose(port);
+-        foreach (var port in _outPorts) SafeDispose(port);
+-        _ports.Clear();
++        foreach (var dev in _devices) CloseDevice(dev);
++        _devices.Clear();
+         _portNames.Clear();
+-        _outPorts.Clear();
++        _lostNames.Clear();
++        _openRetryAt.Clear();
+         _failedOutPorts.Clear();
+-        _pollTimer = 0f;
++        _nextWatch = 0;                         // reopen on the next tick
+ 
+         OnConnectionChanged?.Invoke();          // UI reflects the drop immediately
+-
+-        EditorApplication.update += TryOpenPorts;   // re-opens (and re-wires) next tick
+     }
+ }
+ 
+--- a/Editor/KontrolsWindow.Midi.cs
++++ b/Editor/KontrolsWindow.Midi.cs
+@@ -24,15 +24,41 @@
+         {
+             // Guard against double-subscription on repeated OnEnable
+             MidiHub.OnCC                -= OnMidiCC;
+-            MidiHub.OnConnectionChanged -= Repaint;
++            MidiHub.OnConnectionChanged -= OnMidiConnectionChanged;
+             MidiHub.OnCC                += OnMidiCC;
+-            MidiHub.OnConnectionChanged += Repaint;
++            MidiHub.OnConnectionChanged += OnMidiConnectionChanged;
+         }
+ 
+         void UnsubscribeMidi()
+         {
+             MidiHub.OnCC                -= OnMidiCC;
+-            MidiHub.OnConnectionChanged -= Repaint;
++            MidiHub.OnConnectionChanged -= OnMidiConnectionChanged;
++        }
++
++        [NonSerialized] int    _midiPortsSeen;
++        [NonSerialized] double _midiResyncAt = double.NegativeInfinity;
++        const double MidiResyncMinGap = 5.0;   // s
++
++        // A controller that just (re)opened - at startup, after a reload, or back
++        // from a USB drop - shows whatever its LEDs / motors were left at : push
++        // the current values so it matches the window again (the feedback sent
++        // from OnEnable went nowhere, the ports open on a later tick). Only when
++        // a port was added, and at most once per MidiResyncMinGap : if moving
++        // every motor at once is what knocks a bus-powered controller off USB,
++        // resyncing on each comeback would keep it bouncing.
++        void OnMidiConnectionChanged()
++        {
++            int  ports = MidiHub.PortNames.Count;
++            bool added = ports > _midiPortsSeen;
++            _midiPortsSeen = ports;
++
++            double now = EditorApplication.timeSinceStartup;
++            if (added && MidiHub.HasOutput && now - _midiResyncAt >= MidiResyncMinGap)
++            {
++                _midiResyncAt = now;
++                SendAllFeedback();
++            }
++            Repaint();
+         }
+ 
+         void LoadMidiMappings()
+@@ -214,8 +240,8 @@
+                     ok ? MidiHub.PortName : "(no controller detected)",
+                     EditorStyles.miniLabel);
+ 
+-                // Recover from a "connected but silent" port (stale RtMidi callback
+-                // after a domain reload, or a port briefly held by another app).
++                // Manual "start over". A controller that dropped off USB is
++                // reopened by MidiHub on its own ; this is for the rest.
+                 if (GUILayout.Button(new GUIContent("Reconnect",
+                         "Close and re-open the MIDI ports. Use this if the controller " +
+                         "shows connected but Learn / knobs no longer respond."),
+@@ -226,6 +252,12 @@
+                 }
+             }
+             EditorGUILayout.EndHorizontal();
++
++            if (MidiHub.LostPortNames.Count > 0)
++                EditorGUILayout.HelpBox(
++                    $"Lost : {string.Join(", ", MidiHub.LostPortNames)} — reopens automatically " +
++                    "as soon as Windows lists it again (check the cable / USB hub).",
++                    MessageType.Warning);
+         }
+ 
+         void DrawMidiMapFooter()
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -35,6 +35,22 @@
+   `std::terminate`. Closing before freeing was not enough. A port whose close
+   fails is now quarantined — kept, never freed — at the cost of a few KB per
+   incident.
++- **Controller "connected" but dead after a USB drop** — a port whose device
++  dropped off the bus raises no error, it just goes silent, and MidiHub kept it
++  forever : `IsConnected` only counted open objects, and new ports were looked
++  for only when Windows listed *more* inputs than were open, so a controller
++  coming back was never reopened. A watchdog now compares, twice a second, the
++  inputs Windows lists with the open ports : a port no longer listed is closed
++  and reported as lost (`MidiHub.LostPortNames`, warning in the MIDI Map tab),
++  and reopened as soon as it is listed again. Ports are matched by name without
++  RtMidi's index suffix, so a renumbered device is not opened twice. A port that
++  refuses to open is no longer shown as connected ; it is retried every 2 s.
++  Each window resends its feedback when a controller (re)opens, so motorised
++  knobs match the values again — including after a domain reload, where the
++  feedback sent from `OnEnable` used to go out before the ports were open. At
++  most once per 5 s : a controller that drops whenever all its motors move
++  would otherwise bounce in a loop.
++  New : `MidiHub.HasOutput`.
+ 
+ ## [0.5.1] — 2026-09-23
+ 

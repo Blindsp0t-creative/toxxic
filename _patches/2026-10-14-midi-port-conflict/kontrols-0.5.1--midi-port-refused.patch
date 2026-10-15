@@ -1,0 +1,498 @@
+Subject: [PATCH] MIDI In: honour a refused port, and let one be reserved for another app
+
+MIDI inputs are exclusive on Windows: midiInOpen fails if another process
+already holds the device, and RtMidi surfaces that through the live IsOk/Error
+pair rather than a return value. MidiIn.OpenPort is void, and TryOpenPorts /
+PollNewPorts registered the port no matter what came back:
+
+    port.OpenPort(i, name);
+    _ports.Add(port);
+    _portNames.Add(name);
+
+A port held by, say, a VJ application running alongside the editor therefore
+showed up as connected, never delivered a message, and was never retried --
+PollNewPorts skips any name already in _portNames. The banner stayed green, and
+Reconnect only helped if the other application happened to let go in between.
+Diagnosed on a show machine where the editor and MadMapper share two
+controllers; the symptom reads as "the controller is dead".
+
+Honouring the refusal:
+
+ - check IsOk after OpenPort, on In and on Out. A refused In is logged once with
+   the driver's own message, disposed, and left out of _ports/_portNames, so the
+   retry keeps trying and IsConnected tells the truth;
+ - keep the refused ports in _busyPorts, exposed as BusyPortNames /
+   AnyPortBusy / BusyPortError, and show them in the MIDI Map banner: that is
+   the one case where "no controller detected" is the wrong thing to say;
+ - scan every port index in PollNewPorts instead of starting at _ports.Count: a
+   refused port is not in _ports, so the old loop could never look at it again
+   (names already open are still skipped, as before);
+ - throttle TryOpenPorts to the same 3 s cadence as the poll. It now stays
+   subscribed for as long as a port is missing or busy, and probing the driver
+   on every editor tick would cost frames in a focused editor. Reconnect primes
+   the timer so it still re-opens on the very next tick.
+
+Arbitrating the conflict, rather than only surviving it -- MidiHub opens every
+input it can see, so on a shared machine it takes controllers that belong to the
+other application:
+
+ - SetPortIgnored(name, bool) / IsPortIgnored, persisted editor-wide under
+   MidiHub_IgnoredPorts. An ignored input is never opened, and is closed on the
+   spot if it was open, so the other application can take it without waiting;
+   clearing the flag primes the retry and takes it back on the next tick;
+ - AvailablePortNames lists every input the driver exposes, open or not, so a
+   port can be reserved before Kontrols ever gets to it. It is refreshed by
+   ReadPortNames, one probe pass now shared by both open paths instead of two
+   MidiIn.Create() per index;
+ - a fold-out under the MIDI Map banner, one line per input: a toggle to listen
+   or leave it alone, and its state (listening / busy / ignored);
+ - ClosePort(name) closes a single In and the feedback Out that came with it;
+   _outPortNames keeps that pairing, which nothing tracked before.
+
+Recovery is now automatic: free the controller in the other application and
+Kontrols takes the port back within 3 s, no Reconnect, no domain reload. And a
+controller meant for that application can be kept out of Kontrols' reach for
+good.
+
+Package: com.blindspot.kontrols 0.5.1 - Unity 6000.3.10f1
+Rationale, decisions and known limits: see RAPPORT.md shipped alongside.
+---
+--- a/Editor/MidiHub.cs
++++ b/Editor/MidiHub.cs
+@@ -24,6 +24,33 @@
+     /// <summary>Out ports whose send failure has already been logged; cleared when ports are re-opened.</summary>
+     private static readonly HashSet<MidiOut> _failedOutPorts = new HashSet<MidiOut>();
+ 
++    /// <summary>In ports the driver refused to open : name -> reason, as RtMidi
++    /// reported it. MIDI inputs are exclusive on Windows, so the usual reason is
++    /// another application holding the controller. A refused port is NOT
++    /// registered as open : it stays listed here, is logged once, and the retry
++    /// below keeps trying until it frees up.</summary>
++    private static readonly Dictionary<string, string> _busyPorts = new Dictionary<string, string>();
++
++    /// <summary>How often a port that is absent or refused is retried.</summary>
++    private const float OPEN_RETRY_S = 3f;
++
++    /// <summary>In ports the user told Kontrols to leave alone, by name. MIDI
++    /// inputs are exclusive on Windows, so on a machine sharing controllers with
++    /// another application this is how a controller is reserved for that one :
++    /// an ignored port is never opened, and is closed at once if it was open.
++    /// Persisted editor-wide, since the conflict is editor-wide.</summary>
++    private const string IGNORED_KEY = "MidiHub_IgnoredPorts";
++    private static readonly HashSet<string> _ignoredPorts = LoadIgnoredPorts();
++
++    /// <summary>Every In port the driver exposes, in index order, refreshed on
++    /// each probe. The UI lists these : a port has to be listable before it can
++    /// be ignored, including while it is ignored or held by another app.</summary>
++    private static readonly List<string> _availablePorts = new List<string>();
++
++    /// <summary>In port names, aligned with <see cref="_outPorts"/>, so closing
++    /// one port also closes the feedback port that came with it.</summary>
++    private static readonly List<string> _outPortNames = new List<string>();
++
+     // --- Queue thread-safe ---
+     private struct MidiMessage { public byte Status, Data1, Data2; }
+     private static readonly ConcurrentQueue<MidiMessage> _queue
+@@ -58,6 +85,66 @@
+     // --- �tat connexion ---
+     public static bool IsConnected => _ports.Count > 0;
+     public static List<string> PortNames => _portNames;
++
++    /// <summary>In ports another application is holding (see <see cref="_busyPorts"/>).</summary>
++    public static IEnumerable<string> BusyPortNames => _busyPorts.Keys;
++    public static bool AnyPortBusy => _busyPorts.Count > 0;
++
++    /// <summary>Why that port was refused, as RtMidi reported it ; "" if it is open.</summary>
++    public static string BusyPortError(string name)
++        => _busyPorts.TryGetValue(name, out var why) ? why : "";
++
++    /// <summary>Every In port the driver exposes, open or not.</summary>
++    public static IReadOnlyList<string> AvailablePortNames => _availablePorts;
++
++    public static bool IsPortOpen   (string name) => _portNames.Contains(name);
++    public static bool IsPortBusy   (string name) => _busyPorts.ContainsKey(name);
++    public static bool IsPortIgnored(string name) => _ignoredPorts.Contains(name);
++
++    /// <summary>Reserve a controller for another application, or take it back.
++    /// Ignoring a port closes it immediately so the other application can grab
++    /// it without waiting ; un-ignoring queues it for the next tick.</summary>
++    public static void SetPortIgnored(string name, bool ignored)
++    {
++        if (string.IsNullOrEmpty(name)) return;
++
++        bool changed = ignored ? _ignoredPorts.Add(name) : _ignoredPorts.Remove(name);
++        if (!changed) return;
++
++        SaveIgnoredPorts();
++
++        if (ignored)
++        {
++            ClosePort(name);                        // hand it over now
++        }
++        else
++        {
++            // Prime whichever retry is currently subscribed (TryOpenPorts
++            // before the first port opens, PollNewPorts after) so the port is
++            // taken on the next tick rather than up to OPEN_RETRY_S later.
++            _openTimer = OPEN_RETRY_S;
++            _pollTimer = OPEN_RETRY_S;
++        }
++
++        _busyPorts.Remove(name);                    // its state is ours again
++        OnConnectionChanged?.Invoke();
++    }
++
++    // A port name can hold commas and spaces, but not a control character, so
++    // that is the safe separator for the persisted list.
++    private const char IGNORED_SEP = '\n';
++
++    static HashSet<string> LoadIgnoredPorts()
++    {
++        var set = new HashSet<string>();
++        foreach (var n in EditorPrefs.GetString(IGNORED_KEY, "").Split(IGNORED_SEP))
++            if (!string.IsNullOrEmpty(n)) set.Add(n);
++        return set;
++    }
++
++    static void SaveIgnoredPorts()
++        => EditorPrefs.SetString(IGNORED_KEY,
++               string.Join(IGNORED_SEP.ToString(), _ignoredPorts));
+     public static string PortName => _portNames.Count > 0
+         ? string.Join(", ", _portNames) : "";
+ 
+@@ -69,8 +156,18 @@
+         AssemblyReloadEvents.beforeAssemblyReload += Cleanup;
+     }
+ 
++    // Starts at the retry interval so the very first tick attempts immediately.
++    private static float _openTimer = OPEN_RETRY_S;
++
+     static void TryOpenPorts()
+     {
++        // Throttled : while a port is missing or held by another application
++        // this method stays subscribed, and probing the driver on every editor
++        // tick would cost real frames.
++        _openTimer += 0.016f;
++        if (_openTimer < OPEN_RETRY_S) return;
++        _openTimer = 0f;
++
+         var probe = MidiIn.Create();
+         if (probe == null || !probe.IsOk) return;
+ 
+@@ -80,15 +177,16 @@
+         if (portCount == 0) return;
+ 
+         // Ouvre tous les ports pas encore ouverts
++        var names = ReadPortNames(portCount);
++
+         bool anyNew = false;
+         for (int i = 0; i < portCount; i++)
+         {
+-            // V�rifie si ce port est d�j� ouvert
+-            var check = MidiIn.Create();
+-            string name = check?.GetPortName(i) ?? $"Port {i}";
+-            check?.Dispose();
++            string name = names[i];
+ 
++            // V�rifie si ce port est d�j� ouvert
+             if (_portNames.Contains(name)) continue;
++            if (IsPortIgnored(name)) { ClearBusyPort(name); continue; }   // reserved for another app
+ 
+             MidiIn port = MidiIn.Create();
+             if (port == null || !port.IsOk) continue;
+@@ -96,6 +194,18 @@
+             port.MessageReceived = OnMessageReceived;
+             port.OpenPort(i, name);
+ 
++            // OpenPort is void : RtMidi reports a refused port through the live
++            // IsOk / Error pair. Registering it regardless used to leave the
++            // banner green on a port that never delivers a message, with its
++            // name in _portNames so the poll never retried it.
++            if (!port.IsOk)
++            {
++                NoteBusyPort(name, port.Error);
++                port.Dispose();
++                continue;
++            }
++            ClearBusyPort(name);
++
+             _ports.Add(port);
+             _portNames.Add(name);
+             anyNew = true;
+@@ -108,7 +218,21 @@
+                 if (outPort != null && outPort.IsOk)
+                 {
+                     outPort.OpenPort(outIdx, name + "_out");
++
++                    // Same refusal check as the In port above. Feedback is
++                    // optional : a refused Out only costs the motorised knobs,
++                    // and the existing "no Out" warning already covers it.
++                    if (!outPort.IsOk)
++                    {
++                        outPort.Dispose();
++                        outPort = null;
++                    }
++                }
++
++                if (outPort != null && outPort.IsOk)
++                {
+                     _outPorts.Add(outPort);
++                    _outPortNames.Add(name);
+                     _warnedNoOut = false;          // re-arm the "no Out" warning
+                     _failedOutPorts.Remove(outPort);
+                     //Debug.Log($"[MidiHub] Out ouvert : port {outIdx}");
+@@ -134,7 +258,7 @@
+     static void PollNewPorts()
+     {
+         _pollTimer += 0.016f;
+-        if (_pollTimer < 3f) return; // v�rifie toutes les 3 secondes
++        if (_pollTimer < OPEN_RETRY_S) return; // v�rifie toutes les 3 secondes
+         _pollTimer = 0f;
+ 
+         var probe = MidiIn.Create();
+@@ -143,16 +267,19 @@
+         int portCount = probe.PortCount;
+         probe.Dispose();
+ 
+-        if (portCount <= _ports.Count) return;
+ 
+         // Nouveaux ports d�tect�s
+-        for (int i = _ports.Count; i < portCount; i++)
++        var names = ReadPortNames(portCount);
++
++        // Every index, not only those past _ports.Count : a port refused
++        // earlier is not in _ports, so starting there would never look at it
++        // again. Ports already open are skipped by name just below.
++        for (int i = 0; i < portCount; i++)
+         {
+-            var check = MidiIn.Create();
+-            string name = check?.GetPortName(i) ?? $"Port {i}";
+-            check?.Dispose();
++            string name = names[i];
+ 
+             if (_portNames.Contains(name)) continue;
++            if (IsPortIgnored(name)) { ClearBusyPort(name); continue; }   // reserved for another app
+ 
+             MidiIn port = MidiIn.Create();
+             if (port == null || !port.IsOk) continue;
+@@ -160,6 +287,14 @@
+             port.MessageReceived = OnMessageReceived;
+             port.OpenPort(i, name);
+ 
++            if (!port.IsOk)
++            {
++                NoteBusyPort(name, port.Error);
++                port.Dispose();
++                continue;
++            }
++            ClearBusyPort(name);
++
+             _ports.Add(port);
+             _portNames.Add(name);
+ 
+@@ -168,6 +303,81 @@
+         }
+     }
+ 
++    // -------------------------------------------------------
++    // Ports refused by the driver
++    // -------------------------------------------------------
++
++    /// <summary>Records a port the driver would not open, and says so once.
++    /// The port is deliberately left out of <see cref="_ports"/> so the retry
++    /// keeps trying and the UI stops claiming it is connected.</summary>
++    static void NoteBusyPort(string name, string error)
++    {
++        string why = string.IsNullOrEmpty(error) ? "the driver refused the port" : error;
++        if (_busyPorts.TryGetValue(name, out var known) && known == why) return;
++
++        _busyPorts[name] = why;
++        Debug.LogWarning(
++            $"[MidiHub] '{name}' could not be opened : {why}\n" +
++            "MIDI inputs are exclusive on Windows, so another application is most " +
++            "likely holding this controller. Free it there : Kontrols retries every " +
++            $"{OPEN_RETRY_S:0} s and takes the port back on its own.");
++        OnConnectionChanged?.Invoke();
++    }
++
++    /// <summary>Clears a port from the busy list once it opens.</summary>
++    static void ClearBusyPort(string name)
++    {
++        if (_busyPorts.Remove(name)) OnConnectionChanged?.Invoke();
++    }
++
++    /// <summary>Reads every port name in one pass and refreshes
++    /// <see cref="_availablePorts"/>, notifying the UI when the set changes.</summary>
++    static List<string> ReadPortNames(int portCount)
++    {
++        var names = new List<string>(portCount);
++        for (int i = 0; i < portCount; i++)
++        {
++            var check = MidiIn.Create();
++            names.Add(check?.GetPortName(i) ?? $"Port {i}");
++            check?.Dispose();
++        }
++
++        bool changed = names.Count != _availablePorts.Count;
++        for (int i = 0; i < names.Count && !changed; i++)
++            changed = names[i] != _availablePorts[i];
++
++        if (changed)
++        {
++            _availablePorts.Clear();
++            _availablePorts.AddRange(names);
++            OnConnectionChanged?.Invoke();
++        }
++        return names;
++    }
++
++    /// <summary>Closes one open In port and the feedback port that came with
++    /// it, leaving the rest of the connection untouched.</summary>
++    static void ClosePort(string name)
++    {
++        int idx = _portNames.IndexOf(name);
++        if (idx >= 0)
++        {
++            try { _ports[idx]?.Dispose(); } catch { }
++            _ports.RemoveAt(idx);
++            _portNames.RemoveAt(idx);
++        }
++
++        int outIdx = _outPortNames.IndexOf(name);
++        if (outIdx >= 0)
++        {
++            var outPort = _outPorts[outIdx];
++            _failedOutPorts.Remove(outPort);
++            try { outPort?.Dispose(); } catch { }
++            _outPorts.RemoveAt(outIdx);
++            _outPortNames.RemoveAt(outIdx);
++        }
++    }
++
+     static void OnMessageReceived(double timeStamp, System.ReadOnlySpan<byte> message)
+     {
+         if (message.Length < 1) return;   // System Real-Time (Clock/Start/Stop) are 1 byte
+@@ -429,7 +639,9 @@
+         _ports.Clear();
+         _portNames.Clear();
+         _outPorts.Clear();
++        _outPortNames.Clear();
+         _failedOutPorts.Clear();
++        _busyPorts.Clear();
+     }
+ 
+     /// <summary>
+@@ -452,8 +664,11 @@
+         _ports.Clear();
+         _portNames.Clear();
+         _outPorts.Clear();
++        _outPortNames.Clear();
+         _failedOutPorts.Clear();
++        _busyPorts.Clear();
+         _pollTimer = 0f;
++        _openTimer = OPEN_RETRY_S;              // re-open on the very next tick
+ 
+         OnConnectionChanged?.Invoke();          // UI reflects the drop immediately
+ 
+--- a/Editor/KontrolsWindow.Midi.cs
++++ b/Editor/KontrolsWindow.Midi.cs
+@@ -151,6 +151,7 @@
+         void DrawMidiMapTab()
+         {
+             DrawMidiConnectionStatus();
++            DrawMidiPortList();
+             EditorGUILayout.Space(6);
+ 
+             if (_model == null || _model.ById.Count == 0)
+@@ -214,6 +215,23 @@
+                     ok ? MidiHub.PortName : "(no controller detected)",
+                     EditorStyles.miniLabel);
+ 
++                // A port the driver refused : almost always another application
++                // holding it, since MIDI inputs are exclusive on Windows. Worth
++                // its own line - it is the one case where "no controller" is
++                // wrong, and where Reconnect will not help until the other app
++                // lets go.
++                if (MidiHub.AnyPortBusy)
++                {
++                    GUI.color = new Color(1f, 0.75f, 0.3f);
++                    EditorGUILayout.LabelField(
++                        new GUIContent("busy : " + string.Join(", ", MidiHub.BusyPortNames),
++                            "Another application has this input open - MIDI inputs are " +
++                            "exclusive on Windows. Close it there ; Kontrols retries on " +
++                            "its own, or hit Reconnect to retry now."),
++                        EditorStyles.miniLabel);
++                    GUI.color = prev;
++                }
++
+                 // Recover from a "connected but silent" port (stale RtMidi callback
+                 // after a domain reload, or a port briefly held by another app).
+                 if (GUILayout.Button(new GUIContent("Reconnect",
+@@ -228,6 +246,67 @@
+             EditorGUILayout.EndHorizontal();
+         }
+ 
++        // One line per input the driver exposes, with the switch that reserves
++        // it for another application. Folded away by default : it only matters
++        // on a machine that shares controllers.
++        bool _midiPortsFoldout;
++
++        void DrawMidiPortList()
++        {
++            var ports = MidiHub.AvailablePortNames;
++            if (ports.Count == 0) return;
++
++            _midiPortsFoldout = EditorGUILayout.Foldout(_midiPortsFoldout,
++                $"Inputs ({ports.Count})", true);
++            if (!_midiPortsFoldout) return;
++
++            EditorGUI.indentLevel++;
++            for (int i = 0; i < ports.Count; i++)
++            {
++                string name = ports[i];
++                EditorGUILayout.BeginHorizontal();
++                {
++                    bool listen = !MidiHub.IsPortIgnored(name);
++                    EditorGUI.BeginChangeCheck();
++                    listen = EditorGUILayout.ToggleLeft(
++                        new GUIContent(name,
++                            "Off : leave this input to another application. MIDI " +
++                            "inputs are exclusive on Windows, so an input Kontrols " +
++                            "holds is one nothing else can read."),
++                        listen);
++                    if (EditorGUI.EndChangeCheck())
++                        MidiHub.SetPortIgnored(name, !listen);
++
++                    bool   busy = MidiHub.IsPortBusy(name);
++                    Color  prev = GUI.color;
++                    string state;
++                    if (!listen)
++                    {
++                        state = "ignored";
++                        GUI.color = new Color(0.65f, 0.65f, 0.65f);
++                    }
++                    else if (busy)
++                    {
++                        state = "busy";
++                        GUI.color = new Color(1f, 0.75f, 0.3f);
++                    }
++                    else if (MidiHub.IsPortOpen(name))
++                    {
++                        state = "listening";
++                        GUI.color = new Color(0.4f, 1f, 0.4f);
++                    }
++                    else state = "opening";
++
++                    EditorGUILayout.LabelField(
++                        new GUIContent(state, busy ? MidiHub.BusyPortError(name) : ""),
++                        EditorStyles.miniLabel, GUILayout.Width(70));
++                    GUI.color = prev;
++                }
++                EditorGUILayout.EndHorizontal();
++            }
++            EditorGUI.indentLevel--;
++        }
++
+         void DrawMidiMapFooter()
+         {
+             EditorGUILayout.BeginHorizontal();

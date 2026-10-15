@@ -1,0 +1,207 @@
+Subject: [PATCH] Scene-scoped target resolution (editor cost + cross-scene name bleed)
+
+config.goTargets is a single global list spanning every content scene, and
+Capture()/Apply() walk all of it on every capture and every recall. For a
+target in an unloaded scene that cost a slow GlobalObjectId lookup, a native
+"Assertion failed: manager != NULL" with a managed stack-trace extraction,
+and then a by-name fallback walking EVERY GameObject in memory. Measured:
+283 such warnings (and 283 full scans) in one editor session.
+
+The unscoped by-name fallback was also a correctness hole: several scenes
+hold objects with the SAME name (ANCHOR_VR exists in three content scenes),
+so a target of scene A could latch onto the homonym in scene B and receive
+the wrong preset.
+
+ - classify an anchor by the scene GUID carried in its GlobalObjectId and
+   skip resolution entirely when that scene is not loaded (fails open);
+ - restrict the by-name fallback to the anchor's own scene;
+ - keep "not found" warnings for genuinely missing objects in LOADED scenes,
+   stay silent for targets that are merely out of play.
+
+Additive public surface only: TargetSceneUnloaded(string) and the
+FindGOInScene(string, Scene) overload; FindGOInScene(string) is preserved.
+Package: com.blindspot.presets 0.3.0 - Unity 6000.3.10f1
+Rationale, decisions and measurements: see RAPPORT.md shipped alongside.
+---
+--- a/Editor/SceneObjects.cs
++++ b/Editor/SceneObjects.cs
+@@ -8,10 +8,16 @@
+ //  we fall back to a by-name search that, unlike GameObject.Find,
+ //  also finds INACTIVE objects and children (a hard requirement for
+ //  a system that saves / restores active state).
++//
++//  Both steps are SCENE SCOPED (see ScopeOf below) : the show keeps a
++//  single content scene loaded at a time, so most targets of the bank
++//  point into a scene that is currently out of play.
+ // ============================================================
+ 
++using System;
+ using UnityEditor;
+ using UnityEngine;
++using UnityEngine.SceneManagement;
+ using Object = UnityEngine.Object;
+ 
+ namespace Presets
+@@ -30,21 +36,91 @@
+             return GlobalObjectId.GlobalObjectIdentifierToObjectSlow(gid);
+         }
+ 
++        // ── Scene scoping ────────────────────────────────────────────
++        //
++        // A scene-object GlobalObjectId carries the GUID of the scene asset
++        // it lives in. When that scene is not loaded there is nothing to
++        // resolve, and asking anyway is expensive :
++        //   - GlobalObjectIdentifierToObjectSlow does a slow lookup and
++        //     fires a native "Assertion failed : manager != NULL", which
++        //     drags a managed stack-trace extraction and a log write;
++        //   - the by-name fallback then walks EVERY GameObject in memory.
++        // That was paid per out-of-scene target, on every capture and
++        // every preset recall (and recalls can be quantized to the beat).
++        //
++        // Scoping also closes a correctness hole : several scenes hold
++        // objects with the SAME name (ANCHOR_VR exists in all three content
++        // scenes, ANCHOR_Rokoko in two). An unscoped by-name fallback could
++        // resolve a target of scene A to the homonym in scene B and then
++        // apply the wrong preset to it.
++        //
++        // Everything here fails OPEN : when the scene of an id cannot be
++        // determined we go through the normal path, exactly as before.
++
++        enum IdScope
++        {
++            Unknown,        // not a scene object, or scene undeterminable
++            SceneLoaded,
++            SceneNotLoaded,
++        }
++
++        const string NullGuid = "00000000000000000000000000000000";
++        const int    SceneObjectIdType = 2;   // GlobalObjectId.identifierType
++
++        static IdScope ScopeOf(string id, out Scene scene)
++        {
++            scene = default;
++            if (string.IsNullOrEmpty(id)) return IdScope.Unknown;
++            if (!GlobalObjectId.TryParse(id, out var gid)) return IdScope.Unknown;
++            if (gid.identifierType != SceneObjectIdType) return IdScope.Unknown;
++
++            string guid = gid.assetGUID.ToString();
++            if (string.IsNullOrEmpty(guid) || guid == NullGuid) return IdScope.Unknown;
++
++            string path = AssetDatabase.GUIDToAssetPath(guid);
++            if (string.IsNullOrEmpty(path)) return IdScope.Unknown;
++            if (!path.EndsWith(".unity", StringComparison.OrdinalIgnoreCase)) return IdScope.Unknown;
++
++            // Not in the hierarchy at all, or present but unloaded : either
++            // way the object cannot be reached right now.
++            scene = SceneManager.GetSceneByPath(path);
++            if (!scene.IsValid() || !scene.isLoaded)
++            {
++                scene = default;
++                return IdScope.SceneNotLoaded;
++            }
++            return IdScope.SceneLoaded;
++        }
++
++        /// <summary>
++        /// True when <paramref name="id"/> anchors into a scene that is not
++        /// loaded. Call sites use it to stay quiet instead of warning about
++        /// a target that is simply out of play right now.
++        /// </summary>
++        public static bool TargetSceneUnloaded(string id)
++            => ScopeOf(id, out _) == IdScope.SceneNotLoaded;
++
+         // ── GameObject resolution ────────────────────────────────────
+ 
+         public static GameObject ResolveGameObject(string id, string nameFallback)
+         {
++            var scope = ScopeOf(id, out var scene);
++            if (scope == IdScope.SceneNotLoaded) return null;
++
+             var obj = Resolve(id);
+             if (obj is GameObject go) return go;
+             if (obj is Component c)   return c.gameObject;
+-            return FindGOInScene(nameFallback);
++
++            // Keep the fallback inside the target's own scene when we know it.
++            return FindGOInScene(nameFallback, scope == IdScope.SceneLoaded ? scene : default);
+         }
+ 
+         // ── Component resolution ─────────────────────────────────────
+ 
+         public static Component ResolveComponent(string compId, string typeName, GameObject ownerFallback)
+         {
+-            if (Resolve(compId) is Component c) return c;
++            if (ScopeOf(compId, out _) != IdScope.SceneNotLoaded
++                && Resolve(compId) is Component c) return c;
+ 
+             // Fallback : find a component of the stored type on the owner GO.
+             if (ownerFallback != null && !string.IsNullOrEmpty(typeName))
+@@ -73,14 +149,24 @@
+         /// inactive objects — fatal for active-state save / restore.
+         /// </summary>
+         public static GameObject FindGOInScene(string goName)
++            => FindGOInScene(goName, default);
++
++        /// <summary>
++        /// Same, restricted to <paramref name="restrictTo"/> when that scene
++        /// is valid. Prevents a target of one scene from latching onto a
++        /// homonym in another one.
++        /// </summary>
++        public static GameObject FindGOInScene(string goName, Scene restrictTo)
+         {
+             if (string.IsNullOrEmpty(goName)) return null;
++            bool scoped = restrictTo.IsValid();
+             foreach (GameObject go in Resources.FindObjectsOfTypeAll<GameObject>())
+             {
+                 if (go.name != goName) continue;
+                 if (go.hideFlags != HideFlags.None) continue;
+                 // Skip prefab assets / objects not in a loaded scene.
+                 if (!go.scene.IsValid()) continue;
++                if (scoped && go.scene != restrictTo) continue;
+                 return go;
+             }
+             return null;
+--- a/Editor/GameObjectCapture.cs
++++ b/Editor/GameObjectCapture.cs
+@@ -37,7 +37,11 @@
+                 var go = SceneObjects.ResolveGameObject(t.goId, t.name);
+                 if (go == null)
+                 {
+-                    Debug.LogWarning($"[Presets] Capture : GameObject '{t.name}' not found — skipped.");
++                    // A target whose scene is simply not loaded is expected in a
++                    // multi-scene show : skip it silently. Warning on it logged a
++                    // stack trace per out-of-scene target, on every capture.
++                    if (!SceneObjects.TargetSceneUnloaded(t.goId))
++                        Debug.LogWarning($"[Presets] Capture : GameObject '{t.name}' not found — skipped.");
+                     continue;
+                 }
+ 
+@@ -106,7 +110,9 @@
+                 var go = SceneObjects.ResolveGameObject(snap.goId, snap.name);
+                 if (go == null)
+                 {
+-                    Debug.LogWarning($"[Presets] Apply : GameObject '{snap.name}' not found — skipped.");
++                    // Same here : out-of-scene targets are normal, not a fault.
++                    if (!SceneObjects.TargetSceneUnloaded(snap.goId))
++                        Debug.LogWarning($"[Presets] Apply : GameObject '{snap.name}' not found — skipped.");
+                     continue;
+                 }
+ 
+--- a/Editor/PresetsWindow.cs
++++ b/Editor/PresetsWindow.cs
+@@ -776,7 +776,14 @@
+ 
+             var go = SceneObjects.ResolveGameObject(t.goId, t.name);
+             if (go == null)
+-                EditorGUILayout.HelpBox("GameObject not currently resolvable in a loaded scene.", MessageType.Warning);
++            {
++                bool outOfScene = SceneObjects.TargetSceneUnloaded(t.goId);
++                EditorGUILayout.HelpBox(
++                    outOfScene
++                        ? "Its scene is not loaded — nothing to resolve right now."
++                        : "GameObject not currently resolvable in a loaded scene.",
++                    outOfScene ? MessageType.Info : MessageType.Warning);
++            }
+ 
+             foreach (var ct in t.components)
+                 DrawComponentTarget(ct, go);

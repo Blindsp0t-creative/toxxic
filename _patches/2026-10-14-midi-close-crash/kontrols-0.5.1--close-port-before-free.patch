@@ -1,0 +1,91 @@
+Subject: [PATCH] Close a MIDI port before freeing it (editor crash on domain reload)
+
+Entering play mode with two controllers open killed the editor:
+
+    Reloading assemblies for play mode.
+    Kontrols.MidiHub:Cleanup ()                        MidiHub.cs:453
+    RtMidi.MidiIn:FreeDeviceHandle (intptr)            MidiIn.cs:32
+    MidiInWinMM::openPort: error closing Windows MM MIDI input port
+        (midiInUnprepareHeader).
+    terminate called after throwing an instance of 'rt::midi::RtMidiError'
+
+Cleanup disposes the open ports on beforeAssemblyReload. Dispose goes through
+SafeHandle.ReleaseHandle to rtmidi_in_free, which deletes the C++ object; the
+destructor calls closePort(), the WinMM backend fails to unprepare the sysex
+header the driver has not returned yet, and throws. rtmidi_in_free has no
+try/catch -- unlike rtmidi_close_port, which catches RtMidiError and turns it
+into the device error flag -- so the exception escapes a destructor through the
+C API and reaches std::terminate. The process is gone before Unity can log
+anything of its own.
+
+Closing explicitly first leaves the destructor nothing to do, so the throw never
+happens: closePort() is guarded by RtMidi's own connected_ flag, and the error,
+if any, is swallowed where it is catchable. A port that was never opened is
+unaffected -- closing it is a no-op.
+
+ - SafeDispose(MidiBase): ClosePort() then Dispose(), both guarded;
+ - used for both port lists in Cleanup() and Reconnect().
+
+This is the failure the surrounding "connected but silent" symptoms came from:
+when the same close failure does not abort the process, it leaves the WinMM
+device in a state where the next domain's open no longer delivers messages, with
+nothing logged anywhere. Recompile, lose the controller, restart the editor,
+get it back -- until the next reload.
+
+Package: com.blindspot.kontrols 0.5.1 - Unity 6000.3.10f1
+RtMidi: jp.keijiro.rtmidi 2.2.0
+Rationale and the full crash trace: see RAPPORT.md shipped alongside.
+---
+--- a/Editor/MidiHub.cs
++++ b/Editor/MidiHub.cs
+@@ -418,13 +418,37 @@
+ 
+     // -------------------------------------------------------
+ 
++    /// <summary>Closes a port, then frees it.
++    ///
++    /// <para>The order matters and is not cosmetic. <c>rtmidi_close_port</c>
++    /// catches the <c>RtMidiError</c> the WinMM backend throws when
++    /// <c>midiInUnprepareHeader</c> fails on a port whose buffers the driver has
++    /// not returned yet, and turns it into an error flag. <c>rtmidi_in_free</c>
++    /// does not : it deletes the C++ object, whose destructor calls the same
++    /// <c>closePort()</c>, and an exception escaping a destructor through the C
++    /// API reaches <c>std::terminate</c> - the editor process dies on the spot.
++    /// Observed on a domain reload with two controllers open : "MidiInWinMM::
++    /// openPort: error closing Windows MM MIDI input port (midiInUnprepareHeader)"
++    /// followed by "terminate called after throwing an instance of
++    /// rt::midi::RtMidiError".</para>
++    ///
++    /// <para>Closing first leaves the destructor nothing to do, so the throw
++    /// never happens. A port that was never opened is unaffected : closing it is
++    /// a no-op.</para></summary>
++    static void SafeDispose(MidiBase port)
++    {
++        if (port == null) return;
++        try { port.ClosePort(); } catch { }
++        try { port.Dispose();   } catch { }
++    }
++
+     static void Cleanup()
+     {
+         EditorApplication.update -= ProcessQueue;
+         EditorApplication.update -= PollNewPorts;
+ 
+-        foreach (var port in _ports)    port?.Dispose();
+-        foreach (var port in _outPorts) port?.Dispose();
++        foreach (var port in _ports)    SafeDispose(port);
++        foreach (var port in _outPorts) SafeDispose(port);
+ 
+         _ports.Clear();
+         _portNames.Clear();
+@@ -447,8 +471,8 @@
+         EditorApplication.update -= PollNewPorts;
+         EditorApplication.update -= TryOpenPorts;
+ 
+-        foreach (var port in _ports)    { try { port?.Dispose(); } catch { } }
+-        foreach (var port in _outPorts) { try { port?.Dispose(); } catch { } }
++        foreach (var port in _ports)    SafeDispose(port);
++        foreach (var port in _outPorts) SafeDispose(port);
+         _ports.Clear();
+         _portNames.Clear();
+         _outPorts.Clear();

@@ -1,0 +1,191 @@
+Subject: [PATCH] Scene-scoped binding resolution (editor cost + cross-scene fallback)
+
+A binding anchored in a scene that is not loaded can never resolve.
+ResolveBinding called GlobalObjectIdentifierToObjectSlow anyway, which is
+slow AND fires a native "Assertion failed: manager != NULL", dragging a
+managed stack-trace extraction and a log write behind it. OnHierarchyChanged
+retried every such binding on EVERY hierarchy change, so in a multi-scene
+show (one content scene loaded at a time, preset recalls churning the
+hierarchy) this was paid dozens of times per recall. Measured: 868
+assertions in one editor session, 100% of them via OnHierarchyChanged.
+
+ - guard ResolveBinding on the anchor's scene being loaded (fails open:
+   non-scene anchors and undeterminable scenes keep the old path);
+ - gate the re-resolution pass in OnHierarchyChanged on the loaded-scene
+   set actually changing, and subscribe the events that can change the
+   outcome (sceneOpened/Closed, sceneLoaded/Unloaded, playModeStateChanged)
+   with a one-frame deferred retry, so resolution timing does not regress.
+
+Public surface unchanged. Unresolved state identical to before.
+Package: com.blindspot.kontrols 0.5.1 - Unity 6000.3.10f1
+Rationale, decisions and measurements: see RAPPORT.md shipped alongside.
+---
+--- a/Editor/KontrolsWindow.References.cs
++++ b/Editor/KontrolsWindow.References.cs
+@@ -4,7 +4,9 @@
+ using System.Reflection;
+ using Kontrols.Internal;
+ using UnityEditor;
++using UnityEditor.SceneManagement;
+ using UnityEngine;
++using UnityEngine.SceneManagement;
+ #if KONTROLS_HAS_VFX
+ using UnityEngine.VFX;
+ #endif
+@@ -45,16 +47,52 @@
+         {
+             EditorApplication.hierarchyChanged -= OnHierarchyChanged;
+             EditorApplication.hierarchyChanged += OnHierarchyChanged;
++
++            // An unresolved binding can only become resolvable when scenes
++            // come and go, so those are the events that must force a retry.
++            // hierarchyChanged on its own is far too frequent to use for it
++            // (preset recalls, spawned objects, cloth proxies, ...).
++            EditorSceneManager.sceneOpened          -= OnSceneOpenedRefs;
++            EditorSceneManager.sceneOpened          += OnSceneOpenedRefs;
++            EditorSceneManager.sceneClosed          -= OnSceneClosedRefs;
++            EditorSceneManager.sceneClosed          += OnSceneClosedRefs;
++            SceneManager.sceneLoaded                -= OnSceneLoadedRefs;
++            SceneManager.sceneLoaded                += OnSceneLoadedRefs;
++            SceneManager.sceneUnloaded              -= OnSceneUnloadedRefs;
++            SceneManager.sceneUnloaded              += OnSceneUnloadedRefs;
++            EditorApplication.playModeStateChanged  -= OnPlayModeChangedRefs;
++            EditorApplication.playModeStateChanged  += OnPlayModeChangedRefs;
+         }
+ 
+         void UnsubscribeReferences()
+         {
+-            EditorApplication.hierarchyChanged -= OnHierarchyChanged;
++            EditorApplication.hierarchyChanged      -= OnHierarchyChanged;
++            EditorSceneManager.sceneOpened          -= OnSceneOpenedRefs;
++            EditorSceneManager.sceneClosed          -= OnSceneClosedRefs;
++            SceneManager.sceneLoaded                -= OnSceneLoadedRefs;
++            SceneManager.sceneUnloaded              -= OnSceneUnloadedRefs;
++            EditorApplication.playModeStateChanged  -= OnPlayModeChangedRefs;
++            EditorApplication.delayCall             -= ResolveUnresolvedBindings;
+         }
+ 
+-        void OnHierarchyChanged()
++        void OnSceneOpenedRefs(Scene s, OpenSceneMode m)      => ScheduleResolvePass();
++        void OnSceneClosedRefs(Scene s)                       => ScheduleResolvePass();
++        void OnSceneLoadedRefs(Scene s, LoadSceneMode m)      => ScheduleResolvePass();
++        void OnSceneUnloadedRefs(Scene s)                     => ScheduleResolvePass();
++        void OnPlayModeChangedRefs(PlayModeStateChange c)     => ScheduleResolvePass();
++
++        /// <summary>
++        /// Retry one frame later : a scene event can fire before every object
++        /// of that scene is actually in place.
++        /// </summary>
++        void ScheduleResolvePass()
++        {
++            EditorApplication.delayCall -= ResolveUnresolvedBindings;
++            EditorApplication.delayCall += ResolveUnresolvedBindings;
++        }
++
++        void ResolveUnresolvedBindings()
+         {
+-            // Cheap: only re-resolve bindings that are unresolved.
+             bool any = false;
+             foreach (var list in _refMap.Values)
+             foreach (var b in list)
+@@ -65,10 +103,22 @@
+                     any = true;
+                 }
+             }
+-            _optionCache.Clear();
+             if (any) Repaint();
+         }
+ 
++        void OnHierarchyChanged()
++        {
++            // Option lists are keyed on instance ids, so they always go.
++            _optionCache.Clear();
++
++            // Re-resolving on every hierarchy change was the expensive part :
++            // see the note above ResolveBinding. Only the set of loaded scenes
++            // can change the outcome, and scene events above cover the rest.
++            if (!LoadedSceneSetChanged()) return;
++
++            ResolveUnresolvedBindings();
++        }
++
+         // ── Load / save ──────────────────────────────────────────────
+ 
+         void LoadReferences()
+@@ -155,6 +205,64 @@
+             return list;
+         }
+ 
++        // ── Scene scoping ────────────────────────────────────────────
++        //
++        // A scene-object GlobalObjectId carries the GUID of the scene asset it
++        // lives in. When that scene is not loaded the binding cannot resolve,
++        // and asking anyway is expensive : GlobalObjectIdentifierToObjectSlow
++        // does a slow lookup AND fires a native "Assertion failed : manager !=
++        // NULL", which drags a managed stack-trace extraction and a log write
++        // behind it. A show that keeps one content scene loaded at a time has
++        // most of its bindings in that state, so this used to be paid dozens of
++        // times per hierarchy change.
++        //
++        // Everything here fails OPEN : when the scene of an id cannot be
++        // determined, resolution proceeds exactly as before.
++
++        const string NullGuid          = "00000000000000000000000000000000";
++        const int    SceneObjectIdType = 2;   // GlobalObjectId.identifierType
++
++        static readonly HashSet<string> s_LoadedSceneGuids = new HashSet<string>();
++        static string s_LoadedSceneSig;
++
++        /// <summary>
++        /// Refreshes the loaded-scene GUID set and reports whether it moved.
++        /// </summary>
++        static bool LoadedSceneSetChanged()
++        {
++            var sb = new System.Text.StringBuilder();
++            for (int i = 0; i < SceneManager.sceneCount; i++)
++            {
++                var sc = SceneManager.GetSceneAt(i);
++                sb.Append(sc.handle).Append(sc.isLoaded ? ":1;" : ":0;");
++            }
++            string sig = sb.ToString();
++            if (sig == s_LoadedSceneSig) return false;
++            s_LoadedSceneSig = sig;
++
++            s_LoadedSceneGuids.Clear();
++            for (int i = 0; i < SceneManager.sceneCount; i++)
++            {
++                var sc = SceneManager.GetSceneAt(i);
++                if (!sc.isLoaded || string.IsNullOrEmpty(sc.path)) continue;
++                string guid = AssetDatabase.AssetPathToGUID(sc.path);
++                if (!string.IsNullOrEmpty(guid)) s_LoadedSceneGuids.Add(guid);
++            }
++            return true;
++        }
++
++        static bool TargetSceneLoaded(GlobalObjectId gid)
++        {
++            if (gid.identifierType != SceneObjectIdType) return true;   // asset, not a scene object
++
++            string guid = gid.assetGUID.ToString();
++            if (string.IsNullOrEmpty(guid) || guid == NullGuid) return true;
++
++            LoadedSceneSetChanged();                      // keeps the set current
++            if (s_LoadedSceneGuids.Count == 0) return true;   // unknown state : do not block
++            return s_LoadedSceneGuids.Contains(guid);
++        }
++
+         // ── Resolution (GlobalObjectId → Component + Method/Property) ─
+ 
+         void ResolveBinding(BindingTarget binding)
+@@ -168,6 +276,11 @@
+             if (string.IsNullOrEmpty(binding.GoId)) return;
+             if (!GlobalObjectId.TryParse(binding.GoId, out var goid)) return;
+ 
++            // Scene out of play : nothing to resolve, and the slow path would
++            // only cost an assertion + a stack trace. The binding is left
++            // unresolved, exactly as it would have been.
++            if (!TargetSceneLoaded(goid)) return;
++
+             var obj = GlobalObjectId.GlobalObjectIdentifierToObjectSlow(goid);
+             binding.ResolvedGo = obj as GameObject;
+             if (binding.ResolvedGo == null) return;

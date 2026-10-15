@@ -120,7 +120,6 @@ Assets/VertexField/VoluSmoke FX/Textures/VoluSmoke tex/B/B_RTB.tif
 Assets/VertexField/VoluSmoke FX/Textures/VoluSmoke tex/G/G_LBF.tif
 Assets/_medias/MarioKart_Short.mp4
 Assets/_avatars/3. Rainbow Road/DENIS/DENIS_Export.fbx
-_patches/2026-10-13-editor-focus-lag
 
 # ============================================================================
 # Sorties de bake lighting (regenerables via Lighting > Generate Lighting)
@@ -160,4 +159,3 @@ Assets/_lightMaps/**/*Baking Set*.bytes*
 Assets/_scenes/01_STRIP_CLUB.meta
 Assets/_scenes/02_PELLETEUSE.meta
 Assets/_scenes/03_RAINBOW.meta
-_patches

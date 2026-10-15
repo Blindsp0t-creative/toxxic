@@ -1,0 +1,193 @@
+Subject: [PATCH 2/2] Scale a control line with the column it sits in
+
+Applies on top of [PATCH 1/2] (it uses the column width that patch hands down).
+
+A control line is [label 120][control][CC button 72][LFO handle 30], all fixed,
+so it stops shrinking around 300 px. Below that the line does not narrow with
+its column: it overflows to the right, over the next column. That is the real
+floor on how narrow a band column can be, well above the 120 px clamp, and it
+makes the splitter look broken on a column that holds a slider -- the strip
+moves, the content does not.
+
+The two widths that are ours to give now scale with the column:
+
+ - side label: 120 px, down to 48 px (clamp(colW * 0.34, 48, 120));
+ - MIDI-Learn button: 72 px, down to 36 px (clamp(colW * 0.22, 36, 72));
+ - sliders carry an explicit GUILayout.MinWidth(40) instead of inheriting
+   EditorGUILayout's own, much larger, minimum.
+
+The upper bounds are the authored values, so a column wide enough for them
+renders exactly as before (above roughly 355 px for the label, 327 px for the
+CC button). Only narrow columns change, and they change to stay readable
+instead of overflowing.
+
+The column width reaches the control lines through _colContentW, set around
+each band column in DrawUserTab and -1 outside one, so the full-width area
+before the first [Column] keeps the authored sizes.
+
+Package: com.blindspot.kontrols 0.5.1 - Unity 6000.3.10f1
+Rationale and known limits: see RAPPORT.md shipped alongside.
+NOT yet exercised with a mouse - see "Statut des tests" in RAPPORT.md.
+---
+--- a/Editor/KontrolsWindow.cs
++++ b/Editor/KontrolsWindow.cs
+@@ -205,6 +205,9 @@
+                     var   col = band[i];
+                     float w   = Mathf.Max(MinColumnWidth, avail * (weights[i] / sumWeights));
+ 
++                    // Control lines read this to scale their label and their CC
++                    // button down when the column is too narrow for both.
++                    _colContentW = w;
+                     EditorGUILayout.BeginVertical(GUILayout.Width(w));
+                     {
+                         for (int s = 0; s < col.Sections.Count; s++)
+@@ -214,6 +217,7 @@
+                         }
+                     }
+                     EditorGUILayout.EndVertical();
++                    _colContentW = -1f;
+ 
+                     GUILayout.Space(SPLITTER_W);
+                     if (!laying) gapX[i] = GUILayoutUtility.GetLastRect().x;
+@@ -313,13 +317,14 @@
+         {
+             if (!inRow) EditorGUILayout.BeginHorizontal();
+             {
+-                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(120));
++                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(ControlLabelWidth));
+                 bool  pending = TryGetPending(c.Id, out float pv);
+                 float v = pending ? pv : (float)c.Field.GetValue(this);
+                 Color prev = GUI.backgroundColor;
+                 if (pending) GUI.backgroundColor = TempoTint;
+                 EditorGUI.BeginChangeCheck();
+-                float nv = EditorGUILayout.Slider(v, c.MinFloat, c.MaxFloat);
++                float nv = EditorGUILayout.Slider(v, c.MinFloat, c.MaxFloat,
++                    GUILayout.MinWidth(SLIDER_MIN_W));
+                 GUI.backgroundColor = prev;
+                 if (EditorGUI.EndChangeCheck())
+                     SubmitControl(c, nv, WriteOrigin.Ui, UiBypassQuantize);
+@@ -334,13 +339,14 @@
+         {
+             if (!inRow) EditorGUILayout.BeginHorizontal();
+             {
+-                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(120));
++                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(ControlLabelWidth));
+                 bool pending = TryGetPending(c.Id, out float pv);
+                 int  v = pending ? Mathf.RoundToInt(pv) : (int)c.Field.GetValue(this);
+                 Color prev = GUI.backgroundColor;
+                 if (pending) GUI.backgroundColor = TempoTint;
+                 EditorGUI.BeginChangeCheck();
+-                int nv = EditorGUILayout.IntSlider(v, c.MinInt, c.MaxInt);
++                int nv = EditorGUILayout.IntSlider(v, c.MinInt, c.MaxInt,
++                    GUILayout.MinWidth(SLIDER_MIN_W));
+                 GUI.backgroundColor = prev;
+                 if (EditorGUI.EndChangeCheck())
+                     SubmitControl(c, nv, WriteOrigin.Ui, UiBypassQuantize);
+@@ -355,7 +361,7 @@
+         {
+             if (!inRow) EditorGUILayout.BeginHorizontal();
+             {
+-                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(120));
++                if (!inRow) EditorGUILayout.LabelField(c.Label, GUILayout.Width(ControlLabelWidth));
+                 bool pending = TryGetPending(c.Id, out float pv);
+                 bool v = pending ? pv != 0f : (bool)c.Field.GetValue(this);
+ 
+--- a/Editor/KontrolsWindow.Layout.cs
++++ b/Editor/KontrolsWindow.Layout.cs
+@@ -33,8 +33,10 @@
+         const float SPLITTER_W = 5f;    // grab strip reserved on the right of a column
+ 
+         /// <summary>Narrowest a band column can be dragged, in pixels. Override
+-        /// in a window that wants to squeeze a column further, bearing in mind
+-        /// that a control line holds fixed-width parts of its own.</summary>
++        /// in a window that wants to squeeze a column further : control lines
++        /// shrink their label and their MIDI-Learn button to follow, but around
++        /// 150 px a line holding a slider runs out of room and starts to
++        /// overflow its column.</summary>
+         protected virtual float MinColumnWidth => 120f;
+ 
+         // ── State ────────────────────────────────────────────────────
+@@ -45,6 +47,11 @@
+         string _dragLayoutTab      = null;  // tab owning the splitter being dragged
+         int    _dragLayoutSplitter = -1;    // index of the slot on its left, -1 = no drag
+ 
++        // Width of the column being drawn, -1 outside a band column. Control
++        // lines read it to scale their fixed-width parts down in a narrow
++        // column (see ControlLabelWidth / LearnButtonWidth).
++        float _colContentW = -1f;
++
+         string ColumnLayoutKey(string tab) => $"Kontrols_{PrefsNamespace}_colw_{tab}";
+ 
+         // Only a band column constrains width ; the trailing space can close
+@@ -52,6 +59,27 @@
+         float SlotMinWidth(int slot, int columnCount) =>
+             slot < columnCount ? MinColumnWidth : 0f;
+ 
++        // ── Control metrics ──────────────────────────────────────────
++        // A control line is [label][control][CC button][LFO handle]. The label
++        // and the CC button are the two parts whose width is ours to give, so
++        // they are the ones that yield when the column cannot afford them.
++        // Both keep their authored size in a column wide enough for it, so a
++        // band nobody squeezed renders exactly as before.
++
++        const float LABEL_W       = 120f;   // authored label column
++        const float LABEL_MIN_W   = 48f;
++        const float LEARN_W       = 72f;    // authored MIDI-Learn button
++        const float LEARN_MIN_W   = 36f;
++        internal const float SLIDER_MIN_W = 40f;  // overrides Unity's own slider minimum
++
++        internal float ControlLabelWidth => _colContentW > 0f
++            ? Mathf.Clamp(_colContentW * 0.34f, LABEL_MIN_W, LABEL_W)
++            : LABEL_W;
++
++        internal float LearnButtonWidth => _colContentW > 0f
++            ? Mathf.Clamp(_colContentW * 0.22f, LEARN_MIN_W, LEARN_W)
++            : LEARN_W;
++
+         // ── Weights ──────────────────────────────────────────────────
+ 
+         /// <summary>Live slot weights for a tab band : the persisted override
+--- a/Editor/KontrolsWindow.Midi.cs
++++ b/Editor/KontrolsWindow.Midi.cs
+@@ -284,7 +284,7 @@
+             Color prevColor = GUI.backgroundColor;
+             GUI.backgroundColor = isLearning ? Color.red : Color.white;
+ 
+-            if (GUILayout.Button(label, GUILayout.Width(72), GUILayout.Height(18)))
++            if (GUILayout.Button(label, GUILayout.Width(LearnButtonWidth), GUILayout.Height(18)))
+             {
+                 if (isLearning)
+                 {
+--- a/README.md
++++ b/README.md
+@@ -130,6 +130,12 @@
+   A resized band is remembered per window and per tab in `EditorPrefs`, so the
+   `[Column(weight)]` values stay the layout you ship and the mouse handles the
+   per-screen tweak.
++- **Narrow columns** — a control line shrinks its label (120 → 48 px) and its
++  MIDI-Learn button (72 → 36 px) when the column cannot afford both, so a column
++  keeps working well under its authored width; wide enough columns are unchanged.
++  A column stops at `MinColumnWidth` (120 px) — `protected virtual`, so a window
++  that wants to squeeze one further can override it, bearing in mind that a line
++  holding a slider runs out of room around 150 px and starts to overflow.
+ 
+ ```csharp
+ [Tab("Mixer")]
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -17,6 +17,15 @@
+ - **`MinColumnWidth`** (`protected virtual`, 120 px) — how narrow a band column
+   can be dragged, overridable per window.
+ 
++### Changed
++
++- A control line now scales its two fixed-width parts with the column it sits
++  in : the side label (120 → 48 px) and the MIDI-Learn button (72 → 36 px), and
++  sliders carry an explicit 40 px minimum instead of Unity's much larger
++  default. A column wide enough for the authored sizes renders exactly as
++  before ; a narrow one stays readable instead of overflowing into its
++  neighbour.
++
+ ## [0.5.1] — 2026-09-23
+ 
+ ### Fixed

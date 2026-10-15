@@ -1,0 +1,165 @@
+Subject: [PATCH 3/3] Run each MIDI subscriber in its own try/catch
+
+MidiHub raised its events with a plain `?.Invoke`, which stops at the first
+handler that throws :
+
+ - the handlers registered after it never get the message ;
+ - ProcessQueue is left mid-queue (the rest waits for the next tick) ;
+ - EditorApplication.update skips its remaining callbacks for the frame.
+
+OnCC has three subscribers in this project (KontrolsWindow.OnMidiCC,
+KontrolsWindow.OnTempoCC, Presets' PresetRecall.OnCc). One that throws on
+every message -- a binding to a destroyed object, a scene-dependent target
+after a scene switch -- leaves every later subscriber dead while the port is
+perfectly alive : the same symptom as a lost controller, without one.
+
+Each subscriber of OnCC, OnNote, OnPitchBend, OnRealtime, OnConnectionChanged
+and of the learn callbacks now runs in its own try/catch (Each<T>, over
+GetInvocationList). A failing handler is logged with its declaring type and
+method, once per 5 s per handler, not once per message : a turning knob sends
+dozens a second and a flooded console slows the editor down.
+
+Cost : one invocation-list array and one closure per dispatched message,
+negligible at MIDI rates.
+
+Applies on top of patch 2 (OnConnectionChanged is raised from its watchdog).
+---
+--- a/Editor/MidiHub.cs
++++ b/Editor/MidiHub.cs
+@@ -155,7 +155,7 @@
+         if (!changed) return;
+         _portNames.Clear();
+         foreach (var dev in _devices) _portNames.Add(dev.Key);
+-        OnConnectionChanged?.Invoke();
++        Each(OnConnectionChanged, h => h());
+     }
+ 
+     /// <summary>MIDI inputs as Windows lists them now ; null when the probe
+@@ -239,6 +239,46 @@
+         });
+     }
+ 
++    // -------------------------------------------------------
++    // Dispatch isolation
++    //
++    // Every subscriber runs in its own try/catch. A plain event invoke stops
++    // at the first handler that throws : the handlers after it never get the
++    // message, ProcessQueue is left mid-queue, and EditorApplication.update
++    // skips its remaining callbacks for the frame. A subscriber that throws on
++    // every message (a binding to a destroyed object, say) would silence every
++    // subscriber registered after it - knobs dead with the port alive.
++    // -------------------------------------------------------
++
++    const double HandlerErrorMute = 5.0;   // s between two reports of the same failing handler
++    private static readonly Dictionary<System.Delegate, double> _handlerErrorAt
++        = new Dictionary<System.Delegate, double>();
++
++    /// <summary>Calls <paramref name="call"/> on each subscriber of
++    /// <paramref name="handlers"/>, each in its own try/catch.</summary>
++    static void Each<T>(T handlers, System.Action<T> call) where T : System.Delegate
++    {
++        if (handlers == null) return;
++        foreach (var handler in handlers.GetInvocationList())
++        {
++            try { call((T)handler); }
++            catch (System.Exception e) { ReportHandlerError(handler, e); }
++        }
++    }
++
++    // A knob being turned sends dozens of messages a second : a handler that
++    // throws on each is reported once per HandlerErrorMute, not per message.
++    static void ReportHandlerError(System.Delegate handler, System.Exception e)
++    {
++        double now = EditorApplication.timeSinceStartup;
++        if (_handlerErrorAt.TryGetValue(handler, out double at) && now - at < HandlerErrorMute) return;
++        _handlerErrorAt[handler] = now;
++
++        var m = handler.Method;
++        Debug.LogError($"[MidiHub] {m.DeclaringType?.Name}.{m.Name} threw while handling MIDI - the " +
++                       $"other subscribers were still served (muted for {HandlerErrorMute:0} s) :\n{e}");
++    }
++
+     static void ProcessQueue()
+     {
+         while (_queue.TryDequeue(out MidiMessage msg))
+@@ -247,7 +287,7 @@
+             // may interleave anywhere. Dispatch and skip the channel decode.
+             if (msg.Status >= 0xF8)
+             {
+-                OnRealtime?.Invoke(msg.Status);
++                Each(OnRealtime, h => h(msg.Status));
+                 continue;
+             }
+ 
+@@ -264,7 +304,7 @@
+                 // Valeur 14 bits : LSB = Data1, MSB = Data2 → 0-16383, centre = 8192
+                 int   raw14 = ((msg.Data2 & 0x7F) << 7) | (msg.Data1 & 0x7F);
+                 float norm  = Mathf.Clamp((raw14 - 8192) / 8192f, -1f, 1f);
+-                OnPitchBend?.Invoke(channel, norm);
++                Each(OnPitchBend, h => h(channel, norm));
+                 continue;
+             }
+ 
+@@ -275,7 +315,7 @@
+                 {
+                     var cb = _learnCCCb;
+                     CancelLearn();
+-                    cb?.Invoke(channel, msg.Data1);
++                    Each(cb, h => h(channel, msg.Data1));
+                     continue;
+                 }
+ 
+@@ -283,7 +323,7 @@
+                 {
+                     var cb = _learnNoteCb;
+                     CancelLearn();
+-                    cb?.Invoke(channel, msg.Data1);
++                    Each(cb, h => h(channel, msg.Data1));
+                     continue;
+                 }
+ 
+@@ -291,8 +331,8 @@
+             }
+ 
+             // --- Dispatch CC / Note ---
+-            if (isCC)   OnCC?.Invoke  (channel, msg.Data1, msg.Data2);
+-            if (isNote) OnNote?.Invoke(channel, msg.Data1, msg.Data2);
++            if (isCC)   Each(OnCC,   h => h(channel, msg.Data1, msg.Data2));
++            if (isNote) Each(OnNote, h => h(channel, msg.Data1, msg.Data2));
+         }
+     }
+ 
+@@ -537,6 +577,7 @@
+         _devices.Clear();
+         _portNames.Clear();
+         _failedOutPorts.Clear();
++        _handlerErrorAt.Clear();
+     }
+ 
+     /// <summary>
+@@ -557,7 +598,7 @@
+         _failedOutPorts.Clear();
+         _nextWatch = 0;                         // reopen on the next tick
+ 
+-        OnConnectionChanged?.Invoke();          // UI reflects the drop immediately
++        Each(OnConnectionChanged, h => h());    // UI reflects the drop immediately
+     }
+ }
+ 
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -51,6 +51,14 @@
+   most once per 5 s : a controller that drops whenever all its motors move
+   would otherwise bounce in a loop.
+   New : `MidiHub.HasOutput`.
++- **One failing MIDI subscriber silenced the others** — `MidiHub` raised its
++  events with a plain invoke, which stops at the first handler that throws :
++  the handlers after it never got the message, and the rest of the queue waited
++  for the next tick. A handler throwing on every message (e.g. a binding to a
++  destroyed object) left every later subscriber dead. Each subscriber of
++  `OnCC`, `OnNote`, `OnPitchBend`, `OnRealtime`, `OnConnectionChanged` and of
++  the learn callbacks now runs in its own try/catch ; a failing handler is
++  reported once per 5 s with its name, not once per message.
+ 
+ ## [0.5.1] — 2026-09-23
+ 

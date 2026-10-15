@@ -1,0 +1,129 @@
+Subject: [PATCH 1/3] Quarantine a MIDI port whose close failed instead of freeing it
+
+Closing a port whose device has dropped off the USB bus crashes the editor,
+whether the close comes from Reconnect, entering play mode or a recompile.
+
+On WinMM, RtMidi 6.0's MidiInWinMM::closePort deletes each sysex buffer and
+only then checks the midiInUnprepareHeader result. On failure -- always the
+case once the device is gone -- it calls midiInClose and returns early :
+connected_ stays true, the critical section stays held, and the buffer list
+is not cleared. Every later close walks the same list and deletes the same
+buffers again. The destructor that Dispose reaches through rtmidi_in_free is
+such a later close.
+
+The previous fix ("close before free") relied on the first close leaving the
+destructor nothing to do. That holds when the close succeeds, and it is only
+needed when it does not. In this project it turned the std::terminate seen
+before (RtMidi.dll, 0x40000015) into a heap corruption (ntdll, 0xc0000374),
+25 s after the Roto-Control dropped off the bus :
+
+    MidiInWinMM::openPort: error closing Windows MM MIDI input port
+        (midiInUnprepareHeader).
+    -- process gone, Application Error 1000, ntdll.dll, 0xc0000374
+
+rtmidi_close_port catches that error and clears the wrapper's ok flag, so a
+failed close is visible from C#. When it fails, the port is now quarantined:
+its message callback is cancelled, the SafeHandle is marked invalid (neither
+Dispose nor the finalizer will call rtmidi_in_free), and it is kept in a
+static list. The native object leaks (a few KB per incident) ; the OS handle
+does not, the error path having called midiInClose. A port whose open failed
+is not connected, so it is freed directly without a close.
+
+The wrapper's error message is deliberately not read : rtmidi_c stores
+err.what() of an exception that no longer exists once the catch returns.
+
+Package: com.blindspot.kontrols 0.5.1 (+ column-resize 01/02, close-port-before-free)
+Unity 6000.3.10f1 - RtMidi: jp.keijiro.rtmidi 2.2.0 (RtMidi 6.0, MinGW build)
+Rationale, crash timeline and event logs: see RAPPORT.md shipped alongside.
+---
+--- a/Editor/MidiHub.cs
++++ b/Editor/MidiHub.cs
+@@ -418,28 +418,51 @@
+ 
+     // -------------------------------------------------------
+ 
+-    /// <summary>Closes a port, then frees it.
++    /// <summary>Ports whose close failed. Never freed : see <see cref="SafeDispose"/>.</summary>
++    private static readonly List<MidiBase> _quarantine = new List<MidiBase>();
++
++    /// <summary>Closes a port, then frees it - unless the close failed, in which
++    /// case the port is quarantined and deliberately never freed.
++    ///
++    /// <para>RtMidi 6.0 cannot survive a failed close on WinMM. When
++    /// <c>midiInUnprepareHeader</c> fails - which it does on a port whose device
++    /// has dropped off the USB bus - <c>MidiInWinMM::closePort</c> has already
++    /// deleted the sysex buffers and returns early : <c>connected_</c> stays
++    /// true, its critical section stays held and the buffer list is not cleared.
++    /// Any second close deletes the same buffers again, and the destructor run
++    /// by <c>Dispose</c> (<c>rtmidi_in_free</c>) is such a second close : heap
++    /// corruption (0xc0000374), or <c>std::terminate</c> (0x40000015) when its
++    /// "error closing ... (midiInUnprepareHeader)" exception escapes the
++    /// destructor. Both seen on a Reconnect / play-mode reload after a
++    /// controller had dropped off USB.</para>
+     ///
+-    /// <para>The order matters and is not cosmetic. <c>rtmidi_close_port</c>
+-    /// catches the <c>RtMidiError</c> the WinMM backend throws when
+-    /// <c>midiInUnprepareHeader</c> fails on a port whose buffers the driver has
+-    /// not returned yet, and turns it into an error flag. <c>rtmidi_in_free</c>
+-    /// does not : it deletes the C++ object, whose destructor calls the same
+-    /// <c>closePort()</c>, and an exception escaping a destructor through the C
+-    /// API reaches <c>std::terminate</c> - the editor process dies on the spot.
+-    /// Observed on a domain reload with two controllers open : "MidiInWinMM::
+-    /// openPort: error closing Windows MM MIDI input port (midiInUnprepareHeader)"
+-    /// followed by "terminate called after throwing an instance of
+-    /// rt::midi::RtMidiError".</para>
++    /// <para><c>rtmidi_close_port</c> catches that error and clears the
++    /// wrapper's ok flag, which is how a failed close is told apart. Its error
++    /// message is not read : the wrapper keeps a pointer into the exception it
++    /// caught, which no longer exists. A port that is not ok to begin with
++    /// never opened, so there is nothing to close and it is freed directly.</para>
+     ///
+-    /// <para>Closing first leaves the destructor nothing to do, so the throw
+-    /// never happens. A port that was never opened is unaffected : closing it is
+-    /// a no-op.</para></summary>
++    /// <para>A quarantined port leaks its native object (a few KB) for the life
++    /// of the editor process. Its OS handle is released all the same : the error
++    /// path calls <c>midiInClose</c> before returning.</para></summary>
+     static void SafeDispose(MidiBase port)
+     {
+-        if (port == null) return;
+-        try { port.ClosePort(); } catch { }
+-        try { port.Dispose();   } catch { }
++        if (port == null || port.IsClosed) return;
++
++        if (port.IsOk)
++        {
++            try { port.ClosePort(); } catch { }
++            if (!port.IsOk)
++            {
++                Debug.LogWarning("[MidiHub] Closing a MIDI port failed (device gone ?) : " +
++                                 "the port is quarantined instead of freed.");
++                try { if (port is MidiIn input) input.MessageReceived = null; } catch { }
++                port.SetHandleAsInvalid();   // neither Dispose nor the finalizer frees it now
++                _quarantine.Add(port);
++                return;
++            }
++        }
++        try { port.Dispose(); } catch { }
+     }
+ 
+     static void Cleanup()
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -26,6 +26,16 @@
+   before ; a narrow one stays readable instead of overflowing into its
+   neighbour.
+ 
++### Fixed
++
++- **Editor crash when closing a MIDI port whose device is gone** (Reconnect,
++  entering play mode, recompiling — after a controller dropped off USB). On
++  WinMM, RtMidi 6.0 leaves a port half-closed when `midiInUnprepareHeader`
++  fails, and freeing it then deletes its buffers twice : heap corruption, or
++  `std::terminate`. Closing before freeing was not enough. A port whose close
++  fails is now quarantined — kept, never freed — at the cost of a few KB per
++  incident.
++
+ ## [0.5.1] — 2026-09-23
+ 
+ ### Fixed
