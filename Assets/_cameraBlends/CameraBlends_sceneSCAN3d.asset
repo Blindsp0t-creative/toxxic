@@ -325,7 +325,7 @@ MonoBehaviour:
     m_To: Virtual Camera_10_planMarioKart01
     m_Blend:
       m_Style: 1
-      m_Time: 4
+      m_Time: 6
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

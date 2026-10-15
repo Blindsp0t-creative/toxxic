@@ -2816,7 +2816,7 @@
                         },
                         {
                             "id": "elevationavatarJen",
-                            "value": 0.699999988079071
+                            "value": 0.7716535329818726
                         },
                         {
                             "id": "dissolveEVGAvatar",
@@ -2948,7 +2948,7 @@
                                 {
                                     "path": "m_LocalPosition",
                                     "type": 9,
-                                    "value": "67.43395,0.7,13.7468243"
+                                    "value": "67.43395,0.771653533,13.7468243"
                                 },
                                 {
                                     "path": "m_LocalRotation",
