@@ -314,11 +314,11 @@ public class avatarRenderLayer_scanScene : MonoBehaviour
             SetLayerRecursive(avatarRoot.transform,
                               jenMirrorVisibility ? hiddenFromMainLayer : vrOnlyLayer);
         }
-
+        /*
         Debug.Log($"[avatarRenderLayer] {avatarRoot.name} : " +
                   $"main={(IsVisibleInMainCamera ? "ON" : "OFF")} " +
                   $"miroir={(IsVisibleInMirrorCamera ? "ON" : "OFF")} " +
-                  $"VR=ON ({resolvedVrCameras.Count} cam VR)");
+                  $"VR=ON ({resolvedVrCameras.Count} cam VR)");*/
     }
 
     // ---------- Utilitaires ----------

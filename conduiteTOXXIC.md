@@ -62,12 +62,12 @@
   - zoom cowboy => finParticules 
 
 - ## Infra 3
-  - Yoga : s'assied = france travail
+  - Yoga : s'assied (attendre flexion bien bas) = france travail
   - Ring Light => Video reveal
 
 - ## Video Reveal
   - la meuse 'lié au paysage' => Notif Camille
-  - "Que j'ignore encore" => Notif John
+  - vous m'apprenez rien, "dites moi "  => Notif John
 
 - ## Looners 
   - Pète le ballon => postLooner
@@ -104,14 +104,19 @@
   - "leve toi " => denisLeveJen
   - "j'ai une idée" => suit Denis 
   - chiwawa
-  - chiwawa2 
+  - Jen danse 5s => chiwawa2 
   - lasso / bisou => top Jen disparait 
-  - desactive denis + Jen enleve la combi / top porte
+  - desactive denis    
+  - Jen Enleve le bas de la combi => top porte
+  - Jen dans la baignoire => top reve (madMapper)
   
+
 - ## TOP REVE 	
   - Fin du reve : apparition PNJ
-  - Tombée de la baignoire => FADE OUT fin video (cue fadeout)
-  -
+  - Jambe qui sort avant tombée de la baignoire => FADE OUT fin video (cue fadeout)
+
+    - SHUTTER VP
+  
   - Fin limace, pont => laser shoes (touche L)
   - Retour pied au sol => coupe lasers (touche L)
   - Remonte pied => laser shoes (touche L)

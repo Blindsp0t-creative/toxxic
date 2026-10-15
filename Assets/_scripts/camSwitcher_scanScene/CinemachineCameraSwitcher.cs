@@ -203,7 +203,7 @@ public class CinemachineCameraSwitcher : MonoBehaviour
         // Le slot peut etre vide (aucune vcam assignee) : on log sans deferencer,
         // sinon l'exception coupe Start() avant SetupVideo() / blackOutSphere.
         var active = _allCameras[currentIndex];
-        Debug.Log($"[CameraSwitcher] Camera active : [{currentIndex}] {(active != null ? active.name : "<slot vide>")}");
+        //Debug.Log($"[CameraSwitcher] Camera active : [{currentIndex}] {(active != null ? active.name : "<slot vide>")}");
     }
 
     // ─────────────────────────────────────────────

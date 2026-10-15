@@ -65,7 +65,7 @@ namespace ArktoonShaders
             if(EditorApplication.isPlayingOrWillChangePlaymode) return;
 
             // ローカルバージョンを確認
-            Debug.Log ("[Arktoon] Checking local version.");
+            //Debug.Log ("[Arktoon] Checking local version.");
             string localVersion = EditorUserSettings.GetConfigValue("arktoon_version_local") ?? "";
 
             if (!localVersion.Equals(version)) {
@@ -76,7 +76,7 @@ namespace ArktoonShaders
             EditorUserSettings.SetConfigValue("arktoon_version_local", version);
 
             // リモート(githubのpublic release)のバージョンを取得
-            Debug.Log ("[Arktoon] Checking remote version.");
+            //Debug.Log ("[Arktoon] Checking remote version.");
             www = UnityWebRequest.Get(url);
             #if UNITY_2017_OR_NEWER
             www.SendWebRequest();
