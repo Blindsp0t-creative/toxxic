@@ -9,3 +9,8 @@
 # envoyer en LFS n'aurait fait que consommer le quota GitHub sans benefice.
 # Les .exr tiers (Poiyomi, VoluSmoke, Stage equipment...) restent en git
 # brut, comme ils l'ont toujours ete.
+
+# Patches des packages locaux (_patches/) : toujours en LF, comme les sources
+# qu'ils modifient. Sinon core.autocrlf les extrait en CRLF sur un clone neuf
+# et `patch -p1` ne s'applique plus.
+*.patch text eol=lf
