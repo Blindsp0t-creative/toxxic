@@ -32,7 +32,7 @@
 | mains au sol / equilibre | dollySol2 |
 | vers monticule - pointe Winnie du doigt | dollyPublic |
 | charley  | dollyLapDDance  |
-| reak sur le son (kick 4/4) | Cut Public => <span style="color:red">CALIB</span> |
+| break sur le son (kick 4/4) | Cut Public => <span style="color:red">CALIB</span> |
 | Saut sur le lit | Camera ORC |
 | Se releve | coup de pied orc |
 | contreplongée + slider disparait + madMapper | finParticules |
@@ -95,8 +95,8 @@
   - "on s'assoit" - deplacement Jen => Canap
   - S'assoit => next '2 dans le canap'
   - "Ca te dirait de jouer ?" => derriere Canap
-  - "lance ta partie" => Top video
-  - top tv Mario
+  - "lance ta partie" => Top video Mario
+  - top tv 
   - ascenceur = Cut
   - reviens sur eux
   - "j'aimerai essayer qqchose " => face canap
