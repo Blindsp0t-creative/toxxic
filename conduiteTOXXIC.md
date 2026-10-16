@@ -82,7 +82,7 @@
 - ## RAINBOW
   - POV
   - marche => couloir 
-  - ciel etoilé, marche => mirroir
+  - ciel etoilé => mirroir
   - matrix => contre champ Gustave
   - retournement => top matrix
   - salon déplacement => salon 
